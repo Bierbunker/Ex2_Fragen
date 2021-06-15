@@ -14,6 +14,7 @@
 \usepackage{amsmath, amssymb, amstext}
 \usepackage{icomma}
 \usepackage{physics}
+\usepackage{mathtools}
 
 \usepackage{pdfpages}
 \usepackage{lastpage}
@@ -547,38 +548,194 @@ Spannungswerte kann nun $n$ und in weiterer Folge $e$ bestimmt werden.
 
 \paragraph{Was bedeuten die Begriffe elektrischer Strom, Stromdichte und Driftgeschwindigkeit und
 wie sind sie miteinander verknüpft? Welche Einheiten habe diese Größen? Sind es skalare oder
-vektorielle Grössen?}
+vektorielle Grössen?} ~
+
+\begin{itemize}
+    \item Elektrischer Strom $I$: Transport von elektrischen Ladungsträgern $[I] = \si{\A}$
+        \begin{equation}
+            I = \int_A \bold{j} d\bold{A}
+        \end{equation}
+    
+    \item Stromdichte $\bold{j}$: Verhältnis der Stromstärke $I$ zur Verfügung stehenden
+        Querschnittsfläche $A$ $[j] = \si{\A\per\m^2}$
+        \begin{equation}
+            \bold{j} = n \cdot q \cdot \bold{v_D} 
+        \end{equation}
+    
+    \item Driftgeschwindigkeit $\bold{v_D}$: Die mittlere Geschwindigkeit der Ladungsträger aufgrund
+        eines äußeren Feldes $[v] = \si{\m\per\s}$
+\end{itemize}
 
 \paragraph{Was bedeuten die Begriffe Beweglichkeit und elektrische Leitfähigkeit und spezifischer
-Widerstand? Welche Einheit haben sie und in welcher Beziehung stehen sie zur Stromdichte?}
+Widerstand? Welche Einheit haben sie und in welcher Beziehung stehen sie zur Stromdichte?} ~
+
+\begin{itemize}
+    \item Beweglichkeit $\mu$: Gibt die Driftgeschwindigkeit der Ladungsträger bei einer
+        elektrischen Feldstärke von \SI{1}{\V\per\m} an $[\mu] = \si{\m\squared\per\V\per\s}$
+        \begin{equation}
+            \bold{j} = \sigma \cdot \frac{\bold{v_d}}{\mu}
+        \end{equation}
+    
+    \item Elektrische Leitfähigkeit $\sigma$: Fähigkeit eines Stoffes, den elektrischen Strom zu
+        leiten $[\sigma] = \si{\A\per\V\per\m}$
+        \begin{equation}
+            \bold{j} = \sigma \cdot \bold{E}
+        \end{equation}
+    
+    \item Spezifischer Widerstand $\rho_s$: Kehrwert der elektrischen Leitfähigkeit
+        $[\rho_s] = \si{\ohm\m}$
+        \begin{equation}
+            \bold{E} = \rho \cdot \bold{j}
+        \end{equation}
+\end{itemize}
 
 \paragraph{Was besagt das Ohm‘sche Gesetz? Schreiben Sie das Ohm‘sche Gesetz in seiner lokalen und
-integralen Form an. Was ist ein Ohm‘scher Leiter?}
+integralen Form an. Was ist ein Ohm‘scher Leiter?} ~
+
+Die Stärke des durch ein Objekt fließenden elektrischen Stroms ist proportional der elektrischen
+Spannung.
+\begin{equation}
+    \bold{j} = \sigma \cdot \bold{E} ~~~ R = \int_0^l \frac{\rho}{s} dl
+\end{equation}
+Einen Leiter, für welchen $\rho_s$ unabhängig von Strom $I$ und Spannung $U$ sind, nennt man
+ohm'schen Leiter. Die Spannung $U$ und der Strom $I$ sind also über $R$ proportional zueinander.
 
 \paragraph{Eine ideale Spannungsquelle liefert eine Klemmspannung von \SI{10}{\V}. Entwerfen und
 dimensionieren Sie eine einfache Schaltung aus Widerständen, die es ihnen erlaubt eine Spannung von
 \SI{4}{\V} abzugreifen. Der gesamtwiderstand der Schaltung sollte \SI{10}{\kilo\ohm} sein.}
 
+\begin{equation}
+    I = \frac{U_0}{R_{ges}} = \frac{U_1}{R_1} = \frac{U_2}{R_2}
+\end{equation}
+\begin{equation}
+    \begin{rcases}
+        R_1 = R_{ges} \cdot \frac{U_1}{U_0} \\
+        R_2 = R_1 \cdot \frac{U_2}{U_1}
+    \end{rcases}
+    \implies
+    R_2 = R_{ges} \cdot \frac{U_2}{U_0} = \SI{4}{\kilo\ohm}
+\end{equation}
+\begin{equation}
+    R_1 = R_{ges} - R_1 = \SI{6}{\kilo\ohm}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{image/3/4}
+\end{figure}
+
 \paragraph{Das Material eines metallischen Leiters (Draht) mit konstanter Querschnittsfläche $F$ und
 einer Länge $L$, habe den spezifischen Widerstand $\rho$. Berechnen Sie den Ohm‘schen Widerstand des
-Drahtes.}
+Drahtes.} ~
+\begin{equation}
+    R = \rho \cdot \frac{L}{F}
+\end{equation}
 
 \paragraph{Beschreiben Sie den Ladungsvorgang eines Kondensators, der über einen Widerstand
 plötzlich mit einer idealen Spannungsquelle verbunden wird (Strom und Spannungen als Funktion der
-Zeit).}
+Zeit).} ~
+
+\begin{equation}
+    U(t) = U_0 \cdot \left( 1 - e^{-t /(R C)} \right)
+\end{equation}
+\begin{equation}
+    I(t) = I_0 \cdot e^{-t /(R C)}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/3/6.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/3/6.2}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Beschreiben Sie den Entladungsvorgang eines geladenen Kondensators, dessen Kontakte über
-einen Widerstand plötzlich verbunden werden (Strom und Spannungen als Funktion der Zeit).}
+einen Widerstand plötzlich verbunden werden (Strom und Spannungen als Funktion der Zeit).} ~
+
+\begin{equation}
+    U(t) = U_0 \cdot e^{-t /(R C)}
+\end{equation}
+\begin{equation}
+    I(t) = I_0 \cdot e^{-t /(R C)}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{image/3/7}
+\end{figure}
 
 \paragraph{Beschreiben Sie die elektrische Leitung in Metallen. Wie ändert sich der spezifische
-Widerstand mit der Temperatur? Begründen Sie.}
+Widerstand mit der Temperatur? Begründen Sie.} ~
+
+Das Anlegen einer Spannung bewirkt ein elektrisches Feld im Metall, welches die Elektronen zum
+positiven Pol der Spannungsquelle hin beschleunigt. Duch die Kollision der Elektronen mit den Ionen
+im Kristallgitter verlieren erstere kinetische Energie, welche in Wärmeenergie umgewandelt wird.
+
+Bei höheren Temperaturen kommt es zu stärkeren Schwingungen der Metallionen, wodurch die Bewegung
+der Elektronen noch stärker beschränkt wird. Der spezifische Widerstand steigt also mit der
+Temperatur.
+
+Bei sehr tiefen Temperaturen können viele Metalle ihren Widerstand völlig verlieren, man spricht
+dann von Supraleitung.
 
 \paragraph{Beschreiben Sie die elektrische Leitung in Halbleitern. Wie ändert sich der spezifische
-Widerstand mit der Temperatur? Begründen Sie.}
+Widerstand mit der Temperatur? Begründen Sie.} ~
 
-\paragraph{Beschreiben Sie die elektrische Leitung in Gasen.}
+Die Atome im Halbleiter bilden stabile Elektronenpaarbindungen, bei tiefen Temperaturen sind also
+keine freien Elektronen verfügbar. Mit steigender Temperatur können aufgrund ihres höheren
+Energie-Niveaus jedoch Elektronen frei werden, die Leitfähigkeit steigt also währen der elektrische
+Widerstand mit steigender Temperatur sinkt.
 
-\paragraph{Beschreiben Sie die Ionenleitung in Flüssigkeiten.}
+Durch das Fehlen von Elektronen im Gitter entstehen Löcher, welche als positive Ladungsträger
+betrachtet werden können. Diese Löcher werden durch von Loch zu Loch springende Elektronen gefüllt,
+wodurch sie scheinbar in entgegengesetzter Richtung der Elektronen wandern und damit ebenso dem
+Ladungstransport dienen.
+
+\paragraph{Beschreiben Sie die elektrische Leitung in Gasen.} ~
+
+Der Ladungstransport in ionisierten Gasen, die auch als Plasma bezeichnet werden, erfolgt sowohl
+durch Elektronen als auch durch Ionen. Neben der Existenz dieser frei beweglichen Ladungsträger ist
+ein elektrisches Feld Voraussetzung für die Leitung in Gasen.
+
+Die Erzeugung von Ladungsträgern im Gas kann über verschiedene Methoden erfolgen:
+
+\begin{itemize}
+    \item Thermische Ionisation: Durch eine Kombination der thermischen Anregung und der damit
+        initiierten chemischen Prozesse entstehen Ladungsträger. Die erforderliche, sehr hohe
+        Temperatur kann durch Verwendung eines Katalysators verringert werden.
+    
+    \item Elektronenstoßionisation: Elektronen mit ausreichend hoher Energie können beim Stoß mit
+        Atomen oder Molekülen Elektronen aus der Elektronenhülle herausschlagen und damit ein
+        Elektron-Ion-Paar bilden.
+    
+    \item Photoionisation: Durch kurzwellige Strahlung wie etwa UV- oder Röntgenstrahlung können
+        Atome oder Moleküle aufgrund der hochenergetischen Photonen ihrer Elektronen beraubt werden.
+        Dies führt ebenfalls zur Entstehung von Elektron-Ion-Paaren.
+\end{itemize}
+
+\paragraph{Beschreiben Sie die Ionenleitung in Flüssigkeiten.} ~
+
+Flüssigkeiten, in denen Säuren, Laugen oder Salze gelöst sind, nennt man Elektrolyte. Im Gegensatz
+zu Metallen ist hier der Stromdurchgang mit einer chemischen Zersetzung des Elektrolyten verbunden.
+Sowohl an der Anode als auch an der Kathode werden Stoffe in fester oder gasförmiger Form
+abgeschieden.
+
+Durch Dissoziation - also durch Aufspaltung von Molekülen in kleinere Bestandteile - entstehen
+positiv und negativ geladene Ionen. Diese ermöglichen bei einer angelegten Spannung den
+Ladungstransport mit der sogenannten Driftgeschwindigkeit. Während die positiven Ionen zur Kathode
+wandern und dort Elektronen aufnehmen geben die negativen Ionen an der Anode ihre überschüssigen
+Elektronen ab. Dabei scheiden sie als neutrale Atome an der jeweiligen Elektrode ab.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/3/11}
+\end{figure}
 
 \newpage
 
