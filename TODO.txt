@@ -5,8 +5,8 @@ X <Name> ... vollständig
 
 X Dominik       Elektrostatik im Vakuum
 # Dominik       Materie im elektrischen Feld
-! Dominik       Elektrischer Strom I
-O               Elektrischer Strom II
+X Dominik       Elektrischer Strom I
+! Dominik       Elektrischer Strom II
 O               Statische Magnetfelder
 O               Materie im elektrischen Feld
 O               Zeitlich veränderliche Felder
