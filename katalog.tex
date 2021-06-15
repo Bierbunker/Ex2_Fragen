@@ -39,6 +39,9 @@
 \usepackage{siunitx}
 \sisetup{locale=DE, separate-uncertainty}
 
+% Line break after paragraph
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
 \begin{document}
 
 \maketitle
@@ -1042,14 +1045,34 @@ das Linsensystem.}
 mit einer Linse entstehen können.}
 
 \newpage
-
+% Start Elias 
 \section{Interferenz}
 
-\paragraph{Was versteht man unter „Interferenz“ und „Kohärenz“?}
+\myparagraph{Was versteht man unter „Interferenz“ und „Kohärenz“?}
 
-\paragraph{Erklären Sie die Beugung von Licht am Young‘schen Doppelspalt durch Interfernz. Bei
+\textbf{Interferenz} ist die Überlagerung von Teilwellen. Die Folgen von konstruktiver und destruktiver Interferenz werden als Interferenzmuster bezeichnet.\\
+\textbf{Kohärenz} Wellen nennt man hkhärent, wenn sie die gleiche Phasenbeziehung beibehalten. Dabei unterscheidet man:
+\begin{itemize}
+    \item \textbf{räumliche Kohärenz: } die Phasendifferenz zwischen Teilwellen bleibt räumlich konstant
+    \item \textbf{zeitliche Kohärenz: } die Phasendifferenz zwischen Teilwellen bleibt zeitlich konstant
+\end{itemize}
+
+\myparagraph{Erklären Sie die Beugung von Licht am Young‘schen Doppelspalt durch Interfernz. Bei
 Welchen Winkeln trete im Fraunhoferschen Limit Intensitätsmaxima auf? Leiten Sie die
 Formel für diese Winkel her.}
+
+Einfallende Wellen treffen auf die beiden Spalten $S_1$ und $S_2$ und werden jeweils gebeugt. Am Schirm (B) bildet sich so ein Interferenzmuster. 
+Dieses Interferenzmuster lässt sich durch die unterschiedliche Weglänge, welche von den Teilstrahlen zurückgelegt wird erklären.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Youngscher Doppelspalt.png}
+\end{figure}
+Frauenhofer Limit $\rightarrow$ großer Abstand zwischen Quelle und Schirm, bzw. kleine Quelle.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Doppelspalt_Wegunterschied.png}
+\end{figure}
+
 
 \paragraph{Beschreiben Sie den Aufbau und Funktion eines Michelson-Interferometers und schreiben
 sie einen Ausdruck für die Intensität am Detektor als Funktion der Längendifferenz der
