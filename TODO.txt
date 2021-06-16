@@ -20,7 +20,7 @@ O               Wellen in Materie
 O               Wellen an Grenzflächen, optische Anisotropie und Polarisation
 ! Alisa         Geometrische Optik I         
 ! Alisa         Geometrische Optik II         
-X Elias         Interferenz
+! Elias         Interferenz
 O               Beugung
 ! David         Optische Instrumente I
 O               Optische Instrumente II
