@@ -14,6 +14,7 @@
 \usepackage{amsmath, amssymb, amstext}
 \usepackage{icomma}
 \usepackage{physics}
+\usepackage{mathtools}
 
 \usepackage{pdfpages}
 \usepackage{lastpage}
@@ -38,6 +39,9 @@
 
 \usepackage{siunitx}
 \sisetup{locale=DE, separate-uncertainty}
+
+% Line break after paragraph
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 
 \begin{document}
 
@@ -547,79 +551,412 @@ Spannungswerte kann nun $n$ und in weiterer Folge $e$ bestimmt werden.
 
 \paragraph{Was bedeuten die Begriffe elektrischer Strom, Stromdichte und Driftgeschwindigkeit und
 wie sind sie miteinander verknüpft? Welche Einheiten habe diese Größen? Sind es skalare oder
-vektorielle Grössen?}
+vektorielle Grössen?} ~
+
+\begin{itemize}
+    \item Elektrischer Strom $I$: Transport von elektrischen Ladungsträgern $[I] = \si{\A}$
+        \begin{equation}
+            I = \int_A \bold{j} d\bold{A}
+        \end{equation}
+    
+    \item Stromdichte $\bold{j}$: Verhältnis der Stromstärke $I$ zur Verfügung stehenden
+        Querschnittsfläche $A$ $[j] = \si{\A\per\m^2}$
+        \begin{equation}
+            \bold{j} = n \cdot q \cdot \bold{v_D} 
+        \end{equation}
+    
+    \item Driftgeschwindigkeit $\bold{v_D}$: Die mittlere Geschwindigkeit der Ladungsträger aufgrund
+        eines äußeren Feldes $[v] = \si{\m\per\s}$
+\end{itemize}
 
 \paragraph{Was bedeuten die Begriffe Beweglichkeit und elektrische Leitfähigkeit und spezifischer
-Widerstand? Welche Einheit haben sie und in welcher Beziehung stehen sie zur Stromdichte?}
+Widerstand? Welche Einheit haben sie und in welcher Beziehung stehen sie zur Stromdichte?} ~
+
+\begin{itemize}
+    \item Beweglichkeit $\mu$: Gibt die Driftgeschwindigkeit der Ladungsträger bei einer
+        elektrischen Feldstärke von \SI{1}{\V\per\m} an $[\mu] = \si{\m\squared\per\V\per\s}$
+        \begin{equation}
+            \bold{j} = \sigma \cdot \frac{\bold{v_d}}{\mu}
+        \end{equation}
+    
+    \item Elektrische Leitfähigkeit $\sigma$: Fähigkeit eines Stoffes, den elektrischen Strom zu
+        leiten $[\sigma] = \si{\A\per\V\per\m}$
+        \begin{equation}
+            \bold{j} = \sigma \cdot \bold{E}
+        \end{equation}
+    
+    \item Spezifischer Widerstand $\rho_s$: Kehrwert der elektrischen Leitfähigkeit
+        $[\rho_s] = \si{\ohm\m}$
+        \begin{equation}
+            \bold{E} = \rho \cdot \bold{j}
+        \end{equation}
+\end{itemize}
 
 \paragraph{Was besagt das Ohm‘sche Gesetz? Schreiben Sie das Ohm‘sche Gesetz in seiner lokalen und
-integralen Form an. Was ist ein Ohm‘scher Leiter?}
+integralen Form an. Was ist ein Ohm‘scher Leiter?} ~
+
+Die Stärke des durch ein Objekt fließenden elektrischen Stroms ist proportional der elektrischen
+Spannung.
+\begin{equation}
+    \bold{j} = \sigma \cdot \bold{E} ~~~ R = \int_0^l \frac{\rho}{s} dl
+\end{equation}
+Einen Leiter, für welchen $\rho_s$ unabhängig von Strom $I$ und Spannung $U$ sind, nennt man
+ohm'schen Leiter. Die Spannung $U$ und der Strom $I$ sind also über $R$ proportional zueinander.
 
 \paragraph{Eine ideale Spannungsquelle liefert eine Klemmspannung von \SI{10}{\V}. Entwerfen und
 dimensionieren Sie eine einfache Schaltung aus Widerständen, die es ihnen erlaubt eine Spannung von
 \SI{4}{\V} abzugreifen. Der gesamtwiderstand der Schaltung sollte \SI{10}{\kilo\ohm} sein.}
 
+\begin{equation}
+    I = \frac{U_0}{R_{ges}} = \frac{U_1}{R_1} = \frac{U_2}{R_2}
+\end{equation}
+\begin{equation}
+    \begin{rcases}
+        R_1 = R_{ges} \cdot \frac{U_1}{U_0} \\
+        R_2 = R_1 \cdot \frac{U_2}{U_1}
+    \end{rcases}
+    \implies
+    R_2 = R_{ges} \cdot \frac{U_2}{U_0} = \SI{4}{\kilo\ohm}
+\end{equation}
+\begin{equation}
+    R_1 = R_{ges} - R_1 = \SI{6}{\kilo\ohm}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{image/3/4}
+\end{figure}
+
 \paragraph{Das Material eines metallischen Leiters (Draht) mit konstanter Querschnittsfläche $F$ und
 einer Länge $L$, habe den spezifischen Widerstand $\rho$. Berechnen Sie den Ohm‘schen Widerstand des
-Drahtes.}
+Drahtes.} ~
+\begin{equation}
+    R = \rho \cdot \frac{L}{F}
+\end{equation}
 
 \paragraph{Beschreiben Sie den Ladungsvorgang eines Kondensators, der über einen Widerstand
 plötzlich mit einer idealen Spannungsquelle verbunden wird (Strom und Spannungen als Funktion der
-Zeit).}
+Zeit).} ~
+
+\begin{equation}
+    U(t) = U_0 \cdot \left( 1 - e^{-t /(R C)} \right)
+\end{equation}
+\begin{equation}
+    I(t) = I_0 \cdot e^{-t /(R C)}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/3/6.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/3/6.2}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Beschreiben Sie den Entladungsvorgang eines geladenen Kondensators, dessen Kontakte über
-einen Widerstand plötzlich verbunden werden (Strom und Spannungen als Funktion der Zeit).}
+einen Widerstand plötzlich verbunden werden (Strom und Spannungen als Funktion der Zeit).} ~
+
+\begin{equation}
+    U(t) = U_0 \cdot e^{-t /(R C)}
+\end{equation}
+\begin{equation}
+    I(t) = I_0 \cdot e^{-t /(R C)}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{image/3/7}
+\end{figure}
 
 \paragraph{Beschreiben Sie die elektrische Leitung in Metallen. Wie ändert sich der spezifische
-Widerstand mit der Temperatur? Begründen Sie.}
+Widerstand mit der Temperatur? Begründen Sie.} ~
+
+Das Anlegen einer Spannung bewirkt ein elektrisches Feld im Metall, welches die Elektronen zum
+positiven Pol der Spannungsquelle hin beschleunigt. Duch die Kollision der Elektronen mit den Ionen
+im Kristallgitter verlieren erstere kinetische Energie, welche in Wärmeenergie umgewandelt wird.
+
+Bei höheren Temperaturen kommt es zu stärkeren Schwingungen der Metallionen, wodurch die Bewegung
+der Elektronen noch stärker beschränkt wird. Der spezifische Widerstand steigt also mit der
+Temperatur.
+
+Bei sehr tiefen Temperaturen können viele Metalle ihren Widerstand völlig verlieren, man spricht
+dann von Supraleitung.
 
 \paragraph{Beschreiben Sie die elektrische Leitung in Halbleitern. Wie ändert sich der spezifische
-Widerstand mit der Temperatur? Begründen Sie.}
+Widerstand mit der Temperatur? Begründen Sie.} ~
 
-\paragraph{Beschreiben Sie die elektrische Leitung in Gasen.}
+Die Atome im Halbleiter bilden stabile Elektronenpaarbindungen, bei tiefen Temperaturen sind also
+keine freien Elektronen verfügbar. Mit steigender Temperatur können aufgrund ihres höheren
+Energie-Niveaus jedoch Elektronen frei werden, die Leitfähigkeit steigt also währen der elektrische
+Widerstand mit steigender Temperatur sinkt.
 
-\paragraph{Beschreiben Sie die Ionenleitung in Flüssigkeiten.}
+Durch das Fehlen von Elektronen im Gitter entstehen Löcher, welche als positive Ladungsträger
+betrachtet werden können. Diese Löcher werden durch von Loch zu Loch springende Elektronen gefüllt,
+wodurch sie scheinbar in entgegengesetzter Richtung der Elektronen wandern und damit ebenso dem
+Ladungstransport dienen.
+
+\paragraph{Beschreiben Sie die elektrische Leitung in Gasen.} ~
+
+Der Ladungstransport in ionisierten Gasen, die auch als Plasma bezeichnet werden, erfolgt sowohl
+durch Elektronen als auch durch Ionen. Neben der Existenz dieser frei beweglichen Ladungsträger ist
+ein elektrisches Feld Voraussetzung für die Leitung in Gasen.
+
+Die Erzeugung von Ladungsträgern im Gas kann über verschiedene Methoden erfolgen:
+
+\begin{itemize}
+    \item Thermische Ionisation: Durch eine Kombination der thermischen Anregung und der damit
+        initiierten chemischen Prozesse entstehen Ladungsträger. Die erforderliche, sehr hohe
+        Temperatur kann durch Verwendung eines Katalysators verringert werden.
+    
+    \item Elektronenstoßionisation: Elektronen mit ausreichend hoher Energie können beim Stoß mit
+        Atomen oder Molekülen Elektronen aus der Elektronenhülle herausschlagen und damit ein
+        Elektron-Ion-Paar bilden.
+    
+    \item Photoionisation: Durch kurzwellige Strahlung wie etwa UV- oder Röntgenstrahlung können
+        Atome oder Moleküle aufgrund der hochenergetischen Photonen ihrer Elektronen beraubt werden.
+        Dies führt ebenfalls zur Entstehung von Elektron-Ion-Paaren.
+\end{itemize}
+
+\paragraph{Beschreiben Sie die Ionenleitung in Flüssigkeiten.} ~
+
+Flüssigkeiten, in denen Säuren, Laugen oder Salze gelöst sind, nennt man Elektrolyte. Im Gegensatz
+zu Metallen ist hier der Stromdurchgang mit einer chemischen Zersetzung des Elektrolyten verbunden.
+Sowohl an der Anode als auch an der Kathode werden Stoffe in fester oder gasförmiger Form
+abgeschieden.
+
+Durch Dissoziation - also durch Aufspaltung von Molekülen in kleinere Bestandteile - entstehen
+positiv und negativ geladene Ionen. Diese ermöglichen bei einer angelegten Spannung den
+Ladungstransport mit der sogenannten Driftgeschwindigkeit. Während die positiven Ionen zur Kathode
+wandern und dort Elektronen aufnehmen geben die negativen Ionen an der Anode ihre überschüssigen
+Elektronen ab. Dabei scheiden sie als neutrale Atome an der jeweiligen Elektrode ab.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/3/11}
+\end{figure}
 
 \newpage
 
 \section{Elektrischer Strom II}
 
 \paragraph{Beschreiben Sie die Funktionsweise eines galvanischen Elementes. Wodurch ist die
-erzielbare Spannung bestimmt?}
+erzielbare Spannung bestimmt?} ~
 
-\paragraph{Beschreiben Sie die Funktionsweise einer Brennstoffzelle.}
+Das Prinzip einer galvanischen Zelle beruht darauf, dass unterschiedliche Metalle eine
+unterschiedliche Tendenz aufweisen, Elektronen abzugeben. Die Potentialdifferenz und damit auch die
+abgreifbare Spannung sind umso größer, je unterschiedlicher die einzelnen die einzelnen Elemente
+in dieser Hinsicht sind.
 
-\paragraph{Beschreiben Sie den Seebeck-Effekt und die Ursache der Thermospannung.}
+Werden zwei Metallelektroden in eine gemeinsame Elektrolytlösung getaucht, so gibt eine der
+Elektroden Metallionen an das Elektrolyt ab während die Elektronen auf der Elektrode zurückbleiben.
+Von dem mit Ionen angereicherten Elektrolyt werden wiederum Metallionen auf die andere Elektrode
+übertragen und dort entladen. Werden die Elektroden über einen elektrischen Leiter verbunden, so
+können die Elektronen von einer Elektrode auf die andere übertragen werden. Die Reaktion läuft so
+lange ab, bis sich die Elektrode aufgelöst hat.
+
+Neben den verwendeten Metallen hängt die abgreifbare Spannung auch vom Elektrolyt ab.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4cm]{image/4/1}
+\end{figure}
+
+\paragraph{Beschreiben Sie die Funktionsweise einer Brennstoffzelle.} ~
+
+Brennstoffzellen ermöglichen die direkte Umwandlung von chemischer in elektrische Energie ohne den
+Umweg über Wärmeenergie.
+
+Durch geschickte Konstruktion werden die Oxidations- sowie Reduktionsreaktion von Sauerstoff mit dem
+verwendeten Brennstoff (wie etwa Wasserstoff) räumlich getrennt. Durch beispielsweise poröse, mit
+Katalysatorstoffen versehene Elektroden im gemeinsamen Elektrolyt wird kontinuierlich Sauerstoff und
+Wasserstoff zugeführt. Die beiden Reaktionen laufen dann getrennt an der jeweiligen Elektrode ab.
+
+Der Wasserstoff an der Anode zerfüllt durch die katalytische Wirkung schon bei Raumtemperatur in
+Protonen und Elektronen. Die Protonen gelangen durch das Elektrolyt auf die Kathodenseite. Die
+Elektronen wandern durch den geschlossenen äußeren Stromkreis zur Kathode und verrichten auf diesem
+Wege elektrische Arbeit. An der Kathode verbinden sich Protonen, Elektronen und Sauerstoff zu
+Wasser.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/4/2}
+\end{figure}
+
+\paragraph{Beschreiben Sie den Seebeck-Effekt und die Ursache der Thermospannung.} ~
+
+Werden zwei Leiter unterschiedlicher Stoffe zu einem geschlossenen Stromkreis verlötet, so misst man
+bei unterschiedlichen Temperaturen der Lötstellen eine Spannung. Man spricht vom Seebeck-Effekt.
+
+Am heißen Ende des Leiters gibt es mehr Elektronen mit hoher Energie und weniger Elektronen mit
+geringer Energie. Durch Diffusion bewegen sich die energiereichen Elektronen zum kalten Ende und
+Elektronen mit wenig Energie zum heißen Ende. Das entstehende Ungleichgewicht wird durch ein
+elektrisches Feld ausgeglichen, die entstehende Spannung ist die Seebeck-Spannung.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{image/4/3}
+\end{figure}
 
 \paragraph{Was ist der Innenwiderstand einer Spannungsquelle? Wie groß ist der Innenwiderstand einer
-idealen Spannungsquelle bzw. einer idealen Stromquelle?}
+idealen Spannungsquelle bzw. einer idealen Stromquelle?} ~
+
+Der Innenwiderstand $R_i$ einer Spannungsquelle rührt daher, dass die Ladungsträger auf dem Weg vom
+Ort ihrer Trennung bis zu den Ausgangsklemmen der Quelle Stöße mit Atomen oder Molekülen innerhalb
+der Quelle erleiden.
+
+Der Innenwiderstand einer idealen Spannungsquelle ist \SI{0}{\ohm}, der einer idealen Stromquelle
+$\infty~\si{\ohm}$.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=4cm]{image/4/4.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=4cm]{image/4/4.2}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Wie kann man den Kurzschlussstrom und den Innenwiderstand eines Akkumulators durch
 Strom und Spannungsmessung ermitteln, ohne den Akku wirklich kurz zu schließen? Der Akkumulator sei
-in guter Näherung eine lineare Spannungsquelle. Schaltungsskizze!}
+in guter Näherung eine lineare Spannungsquelle. Schaltungsskizze!} ~
+
+\begin{enumerate}
+    \item Leerlaufspannung $U_0$ direkt per Voltmeter messen
+    
+    \item Potentiometer als Lastwiderstand schalten und derart einstellen, dass genau die Hälfte
+        der Leerlaufspannung am Potentiometer abfällt. Der nun am Potentiometer eingestellte Wert
+        entspricht genau dem des Innenwiderstandes $R_i$.
+    
+    \item Der Kurzschlussstrom ergibt sich mit $I_K = \frac{U_0}{R_i}$
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/4/5.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/4/5.2}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Zeichnen Sie das Ersatzschaltbild einer mit einem Widerstand $R$ belasteten linearen
 Spannungsquelle mit Innenwiderstand $R_i$ und elektromotorischer Kraft $U$. Berechnen Sie einen
-Ausdruck für die Klemmspannnung.}
+Ausdruck für die Klemmspannnung.} ~
+
+\begin{equation}
+    U_K = U_0 - R_i \cdot I = U_0 - R_i \cdot \frac{U_0}{R_i + R}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{image/4/6}
+\end{figure}
 
 \paragraph{Was versteht man unter Leistungsanpassung bei einer Spannungsquelle? Bei welchem Last-
-bzw. Innenwiderstand ist dies erfüllt?}
+bzw. Innenwiderstand ist dies erfüllt?} ~
+
+Unter Leistungsanpassung versteht man die Dimensionierung des Innen- und Lastwiderstandes, sodass
+die im Verbraucher umgesetzte Leistung maximal wird. Dies ist der Fall, wenn $R_i = R_L$ gilt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/4/7}
+\end{figure}
 
 \paragraph{Beschreiben und erklären Sie die Funktionsweise eines Dual-Slope Analog-Digital
-Umsetzers.}
+Umsetzers.} ~
 
-\paragraph{Beschreiben und erklären Sie die Funktionsweise eines Flash Analog-Digital Umsetzers.}
+Ein Analog-Digital-Umsetzer ist eine elektronisches Gerät zur Umsetzung analoger Eingangssignale in
+einen digitalen Datenstrom. Die Eingangsgröße ist dabei immer eine elektrische Spannung.
+
+Beim Dual-Slope-Verfahren wird ein Kondensator während einer Integrationszeit von der analogen
+Eingangsspannung aufgeladen. Nach Abschluss der Integrationszeit wird eine Gegenspannung an den
+Integrator angelegt, die den Kondensator wieder vollständig entlädt. Hat der Kondensator eine hohe
+Spannung, so ist die Entladezeit länger. Analog dazu ist sie bei einer geringeren Spannung kürzer.
+Die Entladezeit ist somit ein Maß für die Eingangsspannung. Sie ergibt sich durch zählen der
+Taktimpulse beim Entladevorgang.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/4/8}
+\end{figure}
+
+\paragraph{Beschreiben und erklären Sie die Funktionsweise eines Flash Analog-Digital Umsetzers.} ~
+
+Flash-Umsetzer sind sogenannte Paralellumsetzer, bei denen alle logischen Entscheidungen parallel
+ausgeführt werden. Sie zeichnen sich durch eine extrem schnelle Wandlungsgeschwindigkeit aus, die
+nur einen Taktzyklus kurz ist.
+
+Die Komperatoren haben zwei Eingänge, an welchen einerseits die Eingangsspannung verbunden ist und
+am anderen über eine Widerstandsmatrix eine Bezugsspannung bezogen wird. Das analoge Eingangssignal
+wird parallel an viele sogenannte Komparatoren geführt, wo es mit den erzeugten Referenzspannungen
+verglichen wird. Hierbei ist für jeden möglichen Ausgangswert ein eigener Komparator erforderlich,
+was bedeutet dass die Anzahl der Komparatoren exponentiell mit der Auflösung steigt.
+
+Die Ausgänge der Komparatoren representieren diskrete digitale Zustände, deren Pegel codiert und
+digitalisiert in jedem Taktzyklus als Ausgangssignal weitergeleitet wird.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=6cm]{image/4/9}
+\end{figure}
 
 \paragraph{Aus welchen Beiträgen setzt sich die Gesamtunsicherheit eines Digitalvoltmeters
-zusammen?}
+zusammen?} ~
+
+\begin{itemize}
+    \item Abgleichabweichung: Die Kennlinie eines Analog-Digital-Umsetzers ist eine Gerade durch den
+        Nullpunkt und steht für die gewünschte Proportionalität zwischen Anzeige und Messgröße.
+        Sowohl die horizontale Verschiebung zum Nullpunkt als auch die Steigung der Kennlinie können
+        nur innerhalb gewisser Unsicherheitsgrenzen eingestellt werden.
+    
+    \item Quantisierungsabweichung: Dadurch, dass die Messgröße nur schrittweise abgebildet wird,
+        entsteht eine Quantisierungsabweichung.
+    
+    \item Linearitätsabweichung: Man unterscheidet zwischen einer integralen Linearitätsabweichung
+        durch eine Nichtlinearität der Kennlinie und einer differenziellen Linearitätsabweichung
+        durch ungleiche Breite der benachbarten Quantisierungsschritte.
+\end{itemize}
 
 \paragraph{Die maximal messbare Spannung eines Voltmeters mit Innenwiderstand $R_i$ ist $U_m$. Der
 Messbereich soll auf $10 \cdot U_m$ erweitert werden. Zeichnen und dimensionieren Sie eine
-Widerstandsschaltung die dies ermöglicht. Wie groß ist der Gesamtwiderstand dieser Schaltung?}
+Widerstandsschaltung die dies ermöglicht. Wie groß ist der Gesamtwiderstand dieser Schaltung?} ~
+
+Es muss zusätzlich ein Widerstand $R_V = 9 \cdot R_i$ in Serie vor das Voltmeter geschaltet werden.
+Dies verzehnfacht den gesamten Innenwiderstand des Voltmeters, wobei aber $\frac{9}{10}$ am
+Vorwiderstand abfallen. Damit sind auch 10 mal größere Messwiderstände möglich, was entsprechend
+zum zehnfachen Messbereich für $U_m$ führt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4cm]{image/4/11}
+\end{figure}
 
 \paragraph{Die maximal mit einem Amperemeter (Innenwiderstand $R_i$) messbare Strom sei $I_m$. Der
 Messbereich soll auf $10 \cdot I_m$ erweitert werden. Zeichnen und dimensionieren Sie eine
-Widerstandsschaltung die dies ermöglicht. Wie groß ist der Gesamtwiderstand dieser Schaltung?}
+Widerstandsschaltung die dies ermöglicht. Wie groß ist der Gesamtwiderstand dieser Schaltung?} ~
+
+Es muss zusätzlich ein Widerstand $R_m = \frac{R_i}{9}$ parallel zum Amperemeter geschaltet. Dadurch
+wird der Strom vor das Amperemeter aufgeteilt, nur noch ein Zehntel fließt durch das Amperemeter.
+Dies ermöglicht die Messung eines verzehnfachten Stromes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4cm]{image/4/12}
+\end{figure}
 
 \newpage
 
@@ -628,26 +965,77 @@ Widerstandsschaltung die dies ermöglicht. Wie groß ist der Gesamtwiderstand di
 \paragraph{Schreiben Sie das Ampere‘sche Gesetz an. Leiten Sie daraus einen Ausdruck für das
 Magnetfeld eines geraden, sehr langen, zylindrischen Leiters ab, durch den ein elektrischer Strom
 mit über den Leiterquerschnitt homogener Stromdichte fließt.}
-
+Das Ringintegral entlang einer geschlossenen Magnetfeldlinie, ist immer gleich dem eingeschlossenen Strom mal der magnetischen Feldkonstante,
+wie aus dem Amperschen Gesetz \ref{AmperschesGesetz} ersichtlicht wird.  
+\begin{equation}
+    \oint \textbf{B} \hspace{0.2em} d\textbf{s} = \mu_0\cdot I
+\end{equation}
+Wählt man nun als Integrationsweg die den Draht umschließende Feldlinie mit dem Abstand $r$, so ergibt sich:
+\begin{equation}
+    \int_{0}^{2\pi} rBd\phi = 2 \pi r B(r) = \mu_0\cdot I
+\end{equation}
+\begin{equation}
+    B(r) = \frac{\mu_0\cdot I}{2 \pi r} \hspace{2.5em} \text{für} \hspace{1em} r > r_0
+\end{equation}
+\begin{equation}
+    B(r) = \frac{\mu_0\cdot I}{r_{0}^{2} 2 \pi} \cdot r  \hspace{2.5em} \text{für} \hspace{1em} r < r_0
+\end{equation}
 \paragraph{Schreiben Sie das Ampere‘sche Gesetz an. Leiten Sie daraus einen Ausdruck für das
 Magnetfeld im Inneren einer geraden, sehr langen, zylindrischen Leiterspule ab.}
-
+Der Integrationsweg wird so gewählt, dass nur der Teil im Inneren der Spule einen Beitrag leistet.
+\begin{figure}
+    \label{Integrationsweg}
+    \includegraphics[height=5cm]{image/5/5.2.JPG}
+\end{figure}
+$N$ ist in diesem Zusammenhang die Anzahl der Windungen.
+\begin{equation}
+    \int_A^{B} B \hspace{0.2em} ds = B\cdot L = N\mu_0 I
+\end{equation}
+\begin{equation}
+    B = \frac{N}{L}\mu_0 I \hspace{5em} \text{mit} \hspace{1em} \frac{N}{L} = n \hspace{0.5em} \text{(Windungsdichte)}
+\end{equation}
 \paragraph{Schreiben Sie einen Ausdruck für die Lorentzkraft (nicht die verallgemeinerte
 Lorentzkraft) einer bewegten Ladung im Magnetfeld an. Beschreiben Sie alle verwendeten Formelsymbole
 und leiten Sie damit die Kraft auf einen geraden, stromdruchflossenen Leiter im homogenen Magnetfeld
 her.}
-
+\begin{equation}
+    F = q(textbf{v} \times \textbf{B})
+\end{equation}
+\begin{itemize}
+    \item $q$ Ladung auf die die Kraft wirkt 
+    \item \textbf{v} die Geschwindigkeit des Ladungsträgers
+    \item \textbf{B} Magnetfeld, welches der Ladungsträgert passiert
+\end{itemize}
+\begin{equation}
+    d\textbf{F} = (\textbf{j} \times \textbf{B})\hspace{0.2em} dV \hspace{3em} dV = A\cdot dL \hspace{1em}\& \hspace{1em} j \cdot A = I
+\end{equation}
+\begin{align}
+    d\textbf{F} &= I (d\textbf{L} \times \textbf{B})  \\
+    \notag \\ 
+    \textbf{F} &= I (\textbf{L} \times \textbf{B})
+\end{align}
 \paragraph{Schreiben Sie eine Ausdruck für das Magnetfeld zweier paralleler, stromdurchflossener,
 zylindrischer Leiter an. Erstellen Sie ein Diagramm der magnetischen Feldstärke als Funktion des
 Ortes entlang einer Linie, die die Achsen beider Leiter unter \SI{90}{\degree} schneidet. Welche
 Richtung hat das Magnetfeld entlang dieser Linie?}
-
+Das Magnetfeld des einen Leiters übt eine Kraft, abhängig von der Stromrichtung, auf den anderen aus.
+Dieses Magnetfeld  $B = \frac{\mu_0 I}{2 \pi r} \cdot \hat{e}^{\phi}$ steht tangential auf konzentrischen Feldlinien.
+Setzt man diesen Zusammenhang in die hergeleitete Formel der letzten Frage, so bemerkt man das $B$ orthognal auf $L$ steht. 
+Somit ergibt sich:
+\begin{align}
+    F_1 &= I_1(L_1 \cdot \frac{\mu_0 I_2}{2 \pi r} ) \\
+    \\
+    \frac{F_1}{L_1} &= \frac{\mu_0}{2 \pi r} \cdot I_2 \cdot I_1
+\end{align}
 \paragraph{Leiten Sie ausgehend von der Kraft auf einen stromdurchflossenen, geraden Draht im
 homogenen Magnetfeld einen Ausdruck für das Drehmoment einer rechteckigen Leiterschleife im
 homogenen Magnetfeld her. Die Drehachse ist parallel zu zwei Seiten der Leiterschleife und senkrecht
 zur Richtung des Magnetfeldes. Bei welchem Winkel zwischen Leiterschleife und Magnetfeldrichtung ist
 das Drehmoment maximal? Bei welchem Winkel ist der magnetische Fluss durch die Leiterschleife
 maximal?}
+\begin{figure}
+    label{Drehmomen}
+\end{figure}
 
 \paragraph{Ein geladenes Teilchen ist bei $t=0$ am Ort $x=(0,0,0)$ mit der Geschwindigkeit
 $v=(v_x,0,v_z)$ in einem homogenen Magnetfeld $B=(0,0,B_z)$. Wie wird die weitere Bahn des Teilchens
@@ -671,21 +1059,191 @@ eine möglichst große Hall-Spannung zu beobachten.}
 \paragraph{Ein kleiner Probekörper mit bekanntem Volumen befindet sich in einem inhomogenen
 magnetischen Feld. Der Probekörper wird durch das äußere Magnetfeld magnetisiert und erfährt daher
 eine Kraft. Wie groß ist diese Kraft und welche Richtung hat sie bei positiver oder negativer
-magnetischer Suzeptiblität?}
+magnetischer Suzeptiblität?} ~
+
+\begin{equation}
+    \bold{F} = \bold{p_m} \cdot \nabla \bold{B} = - M \cdot V \cdot \frac{dB}{dr} \bold{\hat{r}}
+\end{equation}
+
+Für die Magnetisierung $M = \chi \cdot H$ ergibt sich bei diamagnetischen Stoffen ($\chi < 0$) eine
+radiale Kraft nach außen, paramagnetische Stoffe ($\chi > 0$) hingegen werden zum Zentrum gezogen.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/6/1.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/6/1.2}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Welche magnetischen Stoffklassen gibt es und wie unterscheiden sie sich in ihren
-magnetischen Eigenschaften?}
+magnetischen Eigenschaften?} ~
+
+\begin{itemize}
+    \item Konstante magnetische Suszeptibilität $\chi$
+    
+        \begin{itemize}
+            \item \textbf{Paramagnete} besitzen ein permanentes magnetisches Dipolmoment
+                $\bold{p_m}$, welches aber aufgrund thermischer Bewegung statistisch im Raum 
+                vererteilt ist und in Summe Null ergibt.
+                
+                Durch ein äußeres Magnetfeld werden die Dipole parallel ausgerichtet und verstärken
+                so das äußere Feld im Inneren des Stoffes. Mit steigender Temperatur sinkt die
+                Suszeptibilität.
+                
+                Paramegnete werden im inhomogenen Magnetfeld zur höheren Feldstärke hingezogen.
+                
+            \item \textbf{Diamagnete} besitzen kein eigenes magnatisches Dipolmoment $\bold{p_m}$.
+                Sie entwickeln im  äußeren Magnetfeld ein induziertes, inneres Magnetfeld, welches
+                dem äußeren entgegenwirkt.
+                
+                Diamagnete werden im inhomogenen Magnetfeld zur niederen Feldstärke hingezogen.
+        \end{itemize}
+    
+    \item Variable magnetische Suszeptibilität $\chi$
+        
+        \begin{itemize}
+            \item \textbf{Ferromagnete} besitzen eine hohe magnetische Suszeptibilität $\chi$, die
+                Magnetisierung $M$ kann im Vergleich zu Paramagneten um viele Größenordnungen höher
+                sein.
+                
+                Sie richten im externen Feld ihre magnetischen Momente innerhalb kleiner Bereiche
+                (Weiß'sche Bezirke) parallel aus und behalten diese Ausrichtung auch nach Entfernung
+                des Feldes. Ferromagnete erzeugen entweder selbst ein dauerhaftes Magnetfeld oder
+                werden von einem Pol eines äußeren Magnetfelds stark angezogen.
+                
+                Über der sogenannten Curie-Temperatur wird die magnetische Ordnung aufgebrochen,
+                der Stoff ist dann nur noch paramagnetisch.
+                
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[height=3cm]{image/6/2.1}
+                \end{figure}
+            
+            \item \textbf{Antiferromagnete} weisen ein Kristallgitter mit zwei ineinander gestellten
+                Untergittern auf, wobei ohne äußeres Magnetfeld die magnetischen Momente der Atome
+                A des einen Gitters antiparallel zu denen der Atome B im anderen Gitter stehen,
+                wodurch die Magnetisierung $M$ insgesamt Null ist.
+                
+                Ähnlich wie bei Ferromagneten gehen die Antiferromagnete bei der kritischen,
+                sogenannten Néel-Temperatur in den paramagnetischen Zustand über.
+                
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[height=3cm]{image/6/2.2}
+                \end{figure}
+            
+            \item \textbf{Ferrimagnete} weisen wie Antiferromagnete zwei Untergitter auf, allerdings
+                sind die magnetischen Momente der verschiedenen Atome unterschiedlich groß, sodass
+                sich eine spontane Magnetisierung auch ohne äußeres Feld ergibt.
+                
+                Sie weisen eine ähnliche Magnetisierungskurve wie Ferromagnete auf, die
+                Sättigungsmagnetisierung ist allerdings wesentlich geringer.
+        \end{itemize}
+\end{itemize}
 
 \paragraph{Was versteht man unter Diamagnetismus und Paramagnetismus? Welche spezielle Eigenschaft
-haben Moleküle oder Atome eines dia- oder paramegnetischen Stoffes?}
+haben Moleküle oder Atome eines dia- oder paramegnetischen Stoffes?} ~
+
+\begin{itemize}
+    \item \textbf{Paramagnete} besitzen ein permanentes magnetisches Dipolmoment
+        $\bold{p_m}$, welches aber aufgrund thermischer Bewegung statistisch im Raum 
+        vererteilt ist und in Summe Null ergibt.
+        
+        Durch ein äußeres Magnetfeld werden die Dipole parallel ausgerichtet und verstärken
+        so das äußere Feld im Inneren des Stoffes. Mit steigender Temperatur sinkt die
+        Suszeptibilität.
+        
+        Paramegnete werden im inhomogenen Magnetfeld zur höheren Feldstärke hingezogen.
+        
+    \item \textbf{Diamagnete} besitzen kein eigenes magnatisches Dipolmoment $\bold{p_m}$.
+        Sie entwickeln im  äußeren Magnetfeld ein induziertes, inneres Magnetfeld, welches
+        dem äußeren entgegenwirkt.
+        
+        Diamagnete werden im inhomogenen Magnetfeld zur niederen Feldstärke hingezogen.
+\end{itemize}
 
 \paragraph{Beschreiben Sie die Eigenschaften eines ferromagnetischen Stoffes? Nennen Sie drei
-Beispiele für ferromagnetische Stoffe.}
+Beispiele für ferromagnetische Stoffe.} ~
 
-\paragraph{Was sind antiferromagnetische und ferrimagnetische Stoffe?}
+Ferromagnetismus tritt nur in Festkörpern auf. Ferromagnete zeigen die Tendenz, ihre magnetische
+Ordnung auch entgegen äußeren Einflüssen zu behalten. Dies führt dazu, dass die im Inneren erzeugte
+magnetische Ordnung und somit das äußere erzeugte Magnetfeld behalten, auch wenn sie keinem
+Magnetfled mehr ausgesetzt sind. Diese als Remanenz bezeichnete Tendenz wird durch Effekte in zwei
+verschiedenen Größenordnungen verursacht:
+
+\begin{itemize}
+    \item Mikroskopisch: Die gleichgerichtete magnetische Ordnung der Elementarmagnete (also
+        beispielsweise der Elektronenspins) in atomarer Größenordnung.
+        
+    \item Makroskopisch: Die Anordnung der Weiß-Bezirke in der Größenordnung von Mikro- bis
+        Nanometern.
+\end{itemize}
+
+Die meisten ferromagnetischen Materialien bestehen aus Übergangselementen, also aus Atomen mit nicht
+aufgefüllten inneren Elektronenschalen wie Eisen, Nickel oder Kobalt. Über der sogenannten
+Curie-Temperatur wird die magnetische Ordnung aufgebrochen, der Stoff ist dann nur noch
+paramagnetisch.
+
+\paragraph{Was sind antiferromagnetische und ferrimagnetische Stoffe?} ~
+
+\begin{itemize}
+        \item \textbf{Antiferromagnete} weisen ein Kristallgitter mit zwei ineinander gestellten
+            Untergittern auf, wobei ohne äußeres Magnetfeld die magnetischen Momente der Atome
+            A des einen Gitters antiparallel zu denen der Atome B im anderen Gitter stehen,
+            wodurch die Magnetisierung $M$ insgesamt Null ist.
+            
+            Ähnlich wie bei Ferromagneten gehen die Antiferromagnete bei der kritischen,
+            sogenannten Néel-Temperatur in den paramagnetischen Zustand über.
+            
+            \begin{figure}[H]
+                \centering
+                \includegraphics[height=3cm]{image/6/2.2}
+            \end{figure}
+        
+        \item \textbf{Ferrimagnete} weisen wie Antiferromagnete zwei Untergitter auf, allerdings
+            sind die magnetischen Momente der verschiedenen Atome unterschiedlich groß, sodass
+            sich eine spontane Magnetisierung auch ohne äußeres Feld ergibt.
+            
+            Sie weisen eine ähnliche Magnetisierungskurve wie Ferromagnete auf, die
+            Sättigungsmagnetisierung ist allerdings wesentlich geringer.
+    \end{itemize}
 
 \paragraph{Schreiben Sie die Feldgleichungen der Elektro- und Magnetostatik an. Welche
-Stetigkeitsbedingungen müssen die elektrischen und magnetischen Felder an Grenzflächen erfüllen?}
+Stetigkeitsbedingungen müssen die elektrischen und magnetischen Felder an Grenzflächen erfüllen?} ~
+
+\begin{itemize}
+    \item \textbf{Magnetostatik:} Mit den Stetigkeitsbedingungen $H_{\parallel,1} = H_{\parallel,2}$
+        sowie $B_{\perp,1} = B_{\perp,2}$ gilt
+        
+        \begin{equation}
+            \bold{B} = \mu_0 \mu \bold{H}
+        \end{equation}
+        \begin{equation}
+            \oint \bold{B} d\bold{A} = 0 ~~~ \text{bzw} ~~~ div \bold{B} = 0
+        \end{equation}
+        \begin{equation}
+            \oint \bold{H} d\bold{s} = I_A ~~~ \text{bzw} ~~~ rot \bold{H} = \bold{j}
+        \end{equation}
+        
+    \item \textbf{Elektrostatik:} Mit den Stetigkeitsbedingungen $E_{\parallel,1} = E_{\parallel,2}$
+        sowie $E_{\perp,1} = E_{\perp,2}$ gilt
+        
+        \begin{equation}
+            \bold{D} = \epsilon_0 \epsilon \bold{E}
+        \end{equation}
+        \begin{equation}
+            \oint \bold{D} d\bold{A} = Q ~~~ \text{bzw} ~~~ div \bold{D} = \rho
+        \end{equation}
+        \begin{equation}
+            \oint \bold{E} d\bold{s} = 0 ~~~ \text{bzw} ~~~ rot \bold{E} = 0
+        \end{equation}
+\end{itemize}
 
 \newpage
 
@@ -873,25 +1431,79 @@ Ausgangsspannung als Funktion der Zeit in einem Diagramm dar und erklären Sie d
 \section{Elektromagnetische Schwingungen und Entstehung von Wellen}
 
 \paragraph{Zeichnen Sie den Schaltplan eines gedämpften Serienschwingkreises und erstellen Sie ein
-Diagramm der im Schwingkreis verbrauchten Wirkleistung als Funktion der Frequenz.}
+Diagramm der im Schwingkreis verbrauchten Wirkleistung als Funktion der Frequenz.} 
+Grenzfrequenz ist jene Frequenz, bei welcher sich die imaginären Anteile von der Spule und dem Kondensator gegenseitig aufheben. Ergo kann L und C im Schlatplan weggedacht werden.
+\\
+Wird L und C weggedacht, bleibt ein ohmscher Widerstand übrig -> Die Leistung ist ohmsch \\
+-> Maximum (weil verbrauchte Wirkleistung = volle Wirkleistung)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/12/1.png}
+\end{figure}
 
 \paragraph{Zeichnen Sie den Schaltplan eines gedämpften Parallelschwingkreises der an eine
 Wechselspannungsquelle angeschlossen ist und erstellen Sie ein Diagramm der im Schwingkreis
 verbrauchten Wirkleistung als Funktion der Frequenz der Wechselspannung.}
+Grenzfrequenz ist jene Frequenz, bei welcher sich die imaginären Anteile von der Spule und dem Kondensator gegenseitig aufheben. Ergo kann L und C im Schlatplan weggedacht werden.
+\\
+Wird L und C weggedacht, bleibt ein Kurzschluss übrig! \\
+Daher Leistungsminimum bei Grenzfrequenz
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/12/2.png}
+\end{figure}
 
 \paragraph{Erstellen Sie das Zeigerdiagramm für Strom und Spannung eines an eine
 Wechselspannungsquelle angeschlossenen, gedämpften Serienschwingkreis für eine Frequenz unterhalb,
 oberhalb und bei der Resonanzfrequenz. Zeichnen Sie auch alle Teilspannungen bzw. Ströme an den
-einzelnen Bauelementen ein.}
+einzelnen Bauelementen ein}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{image/12/3.png}
+\end{figure}
+Bild 2:
+\begin{itemize}
+\item niedrige Frequenz erhöht den Widerstand am Kondensator
+\item niedrige Frequenz senkt den Widerstand an der Spule
+\item Hoher Widerstand an C -> hohe Spannung -> größerer Zeiger nach unten
+\end{itemize}
+Bild 3:
+\begin{itemize}
+\item hohe Frequenz erhöht den Widerstand an der Spule
+\item hohe Frequenz senkt den Widerstand an der Spule
+\item hoher Widerstand an C -> hohe Spannung -> größerer Zeiger nach unten
+\end{itemize}
 
 \paragraph{Gegeben sei ein gedämpfter Serienschwingkreis. Zeichnen Sie ein Diagramm des Stromes als
 Funktion der Zeit nach einem Spannungssprung ($I(0)=0$; $\dot{I}(0)\neq 0$) am Schwingkreis für den
-Kriechfall, den Aperiodischen Grenzfall und eine gedämpfte Schwingung.}
+Kriechfall, den Aperiodischen Grenzfall und eine gedämpfte Schwingung}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{image/12/4.png}
+\end{figure}
 
 \paragraph{Wie sieht die Abstrahlcharakteristik (räumliche Verteilung der Leistungsabstrahlung in
-großer Entfernung) eines schwingenden Dipols aus?}
+großer Entfernung) eines schwingenden Dipols aus}\textbf{?}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{image/12/5.png}
+\end{figure}
+
 
 \paragraph{Was ist Bremsstrahlung und mit welchen Geräten wird sie technisch Erzeugt?}
+Bremsstrahlung ist elektromagnetische Strahlung, die entsteht, wenn der Impuls eines geladenen Teilchens, z.B. eines Elektrons, geändert wird. Dem liegt zugrunde, dass jede Geschwindigkeitsänderung eines geladenen Teilchens mit der Absorption oder Emission von elektromagnetischer Strahlung verbunden ist (Energieerhaltung !).\\
+\textbf{Technische Erzeugung:} \\
+\begin{itemize}
+\item Teilchenbeschleuniger
+\item Röntgenröhren in der Medizin
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/12/6.png}
+\end{figure}
+\textbf{Bilderläuterung:} \\
+Wird z.B. ein Elektron um einen Kern gebremst, so verändert sich dessen Impuls und somit $E_{Kin}$. \\
+Die Energiedifferenz wird also abgestrahlt. Dieses Phänomen nennt man Bremsstrahlung. Dieser Effekt tritt aber ebenso bei Beschleunigung auf, nicht nur bei Bremsung. Dabei wird ein Photon absorbiert (Die Energie des Photons ist dann der Betrag, mit welchem beschleunigt wird).
 
 \newpage
 
@@ -1042,14 +1654,45 @@ das Linsensystem.}
 mit einer Linse entstehen können.}
 
 \newpage
-
+% Start Elias 
 \section{Interferenz}
 
-\paragraph{Was versteht man unter „Interferenz“ und „Kohärenz“?}
+\myparagraph{Was versteht man unter „Interferenz“ und „Kohärenz“?}
 
-\paragraph{Erklären Sie die Beugung von Licht am Young‘schen Doppelspalt durch Interfernz. Bei
+\textbf{Interferenz} ist die Überlagerung von Teilwellen. Die Folgen von konstruktiver und destruktiver Interferenz werden als Interferenzmuster bezeichnet.\\
+\textbf{Kohärenz} Wellen nennt man hkhärent, wenn sie die gleiche Phasenbeziehung beibehalten. Dabei unterscheidet man:
+\begin{itemize}
+    \item \textbf{räumliche Kohärenz: } die Phasendifferenz zwischen Teilwellen bleibt räumlich konstant
+    \item \textbf{zeitliche Kohärenz: } die Phasendifferenz zwischen Teilwellen bleibt zeitlich konstant
+\end{itemize}
+
+\myparagraph{Erklären Sie die Beugung von Licht am Young‘schen Doppelspalt durch Interfernz. Bei
 Welchen Winkeln trete im Fraunhoferschen Limit Intensitätsmaxima auf? Leiten Sie die
 Formel für diese Winkel her.}
+
+Einfallende Wellen treffen auf die beiden Spalten $S_1$ und $S_2$ und werden jeweils gebeugt. Am Schirm (B) bildet sich so ein Interferenzmuster. 
+Dieses Interferenzmuster lässt sich durch die unterschiedliche Weglänge, welche von den Teilstrahlen zurückgelegt wird erklären.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Youngscher_Doppelspalt.png}
+\end{figure}
+Frauenhofer Limit $\rightarrow$ großer Abstand zwischen Quelle und Schirm, bzw. kleine Quelle.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Doppelspalt_Wegunterschied.png}
+\end{figure}
+Der Winkel $\theta$ beschreibt die Verbindung eines beliebigen Punktes P mit der Mitte der beiden Spalte. 
+In Abb. b) sieht man, dass $\Delta$ L (grün) die Phasendifferenz der beiden Strahlen r1 und r2 bestimmt. Beide 
+Strahlen sind annähernd parallel dank großem Abstand zwischen Schirm und Doppelspalt. 
+\[\sin \theta = \frac{\Delta L}{d} \hspace{1cm} \rightarrow \hspace{1cm} \Delta L = d \cdot \sin \theta\]
+Ist $\Delta$ L ein Vielfaches n$\in\mathbb{N}$ der Wellenlänge $\lambda$, entsteht konstruktive Interferenz/ein Maximum.
+\[d \cdot \sin \theta = n \cdot \lambda\]
+Somit ergeben sich die die Intensitätsmaxima unter folgendem Winkel:
+\begin{equation}
+    \label{eq:Intensitaetsmaxima_Young_Doppelspalt}
+    \arcsin \theta = \frac{n \cdot \lambda}{d}
+\end{equation}
+
 
 \paragraph{Beschreiben Sie den Aufbau und Funktion eines Michelson-Interferometers und schreiben
 sie einen Ausdruck für die Intensität am Detektor als Funktion der Längendifferenz der
