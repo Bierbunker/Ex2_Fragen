@@ -1694,25 +1694,125 @@ Somit ergeben sich die die Intensitätsmaxima unter folgendem Winkel:
 \end{equation}
 
 
-\paragraph{Beschreiben Sie den Aufbau und Funktion eines Michelson-Interferometers und schreiben
+\myparagraph{Beschreiben Sie den Aufbau und Funktion eines Michelson-Interferometers und schreiben
 sie einen Ausdruck für die Intensität am Detektor als Funktion der Längendifferenz der
 Lichtwege an.}
 
-\paragraph{Was versteht man unter „zeitlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
+Ein Michelson-Interferometer trennt einen monochromatischen kohärenten Lichtstrahl am halbdurchlässigen Spiegel auf. Unterscheiden sich die Abstände der beiden Spiegel, so kommt es
+je nach Wegunterschied zur Interferenz am Detektor. Ursprünglich versuchte man mittels des Interferometers die Äthertheorie zu bestätigen. Hier vermutete man, dass es zu einem Gangunterschied 
+zwischen den Teilwellen kommt, da sich die Erde durch den Äther (vermutetes Ausbreitungsmedium des Lichts) bewegt, dies wurde jedoch experimentell widerlegt. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Michelson_Interferometer.png}
+\end{figure}
+Die Intensität am Detektor (B) ist gegeben durch:
+\[I_T = c \epsilon_0 (E_1+E_2)^2\]
+wobei $E_1$ und $E_2r$ durch:
+\[E_1 = \sqrt{RT} A_e \cdot \cos(\omega t + \varphi_1) \hspace{5mm} \text{bzw.} \hspace{5mm} E_2 = \sqrt{RT} A_e \cdot \cos(\omega t + \varphi_2)\]
+gegeben sind. Somit ergibt sich $I_T$ weiter zu:
+\[I_T = c \epsilon_0 RT A_e^2[\cos(\omega t + \varphi_1) + \cos(\omega t + \varphi_2)]^2\]
+Seien nun die Wege zu den Spiegeln (1 und 2) als $s_1$ und $s_2$ ergibt sich deren Differenz zu $\Delta s$. 
+Der Klammerterm unterscheidet sich nur um die Phase $\Delta \varphi$ welche sich mittels der Wege auch als
+\[\Delta \varphi = \varphi_1 - \varphi_2 = \frac{2\pi}{\lambda}\cdot \Delta s\]
+schreiben lässt. Setzt man nun $\varphi_1$ auf 0 und $\varphi_2$ auf $\Delta \varphi$ ergibt sich ein Term für die Intensität in Abhängigkeit der Längendifferenz:
+\begin{equation}
+    I_T = c \epsilon_0 RT A_e^2[\cos(\omega t) + \cos(\omega t + frac{2\pi}{\lambda}\cdot \Delta s)]^2
+\end{equation}
+Nochmals grafisch:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Michelson_Funktion_Wegunterschied.png}
+\end{figure}
+
+\myparagraph{Was versteht man unter „zeitlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
 beeinflussen? Mit welchem Gerät könnte man sie wie bestimmen?}
 
-\paragraph{Was versteht man unter „räumlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
+Als \glqq zeitlich kohärent \grqq bezeichnet man Wellen die ihre Phasendifferenz zeitlich beibehalten. Wie links abgebildet laufen die Wellen in beliebige Richtung aus der Quelle
+starten jedoch alle bei der gleichen Phase (Nulldurchgang) und haben nach gleichen Zeitintervallen alle dieselbe Phasenverschiebung zum Ausgangspunkt [diskrete Zeiten farbig markiert].
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/18_Interferenz/Zeitlich_kohärent.png}
+        Zeitlich
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/18_Interferenz/räumliche_kohärenz.png}
+        Räumlich
+    \end{minipage}
+\end{figure}
+
+\textbf{Kohärenzzeit $\Delta t_C$}: maximale Zeitspanne, während der sich die Phasendifferenz $\Delta \varphi$ um weniger als $2\pi$ ändert. 
+$\Delta t_C = 1/(\Delta f)$ wobei $\Delta f$ die spektrale Frequenzbreite der Lichtquelle ist. \\\\
+Messung mittels Interferometer (z.B.: Michelson-Interferometer)\\\\
+Eine Quelle ist nicht zeitlich kohärente falls:
+\begin{enumerate}
+    \item Sich die Frequenz (des Senders) mit der Zeit ändert. 
+    \item Bei endlichen Wellenzügen mit statistisch verteilten Phasen
+    \item Bei zeitlichen Änderungen des Brechungsindex zwischen Sender und Empfänger
+\end{enumerate}
+\myparagraph{Was versteht man unter „räumlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
 beeinflussen? Mit welchem Gerät könnte man sie wie bestimmen?}
 
-\paragraph{Zeichnen Sie den prinzipiellen Aufbau / Strahlengang eines Sagnac und eines Mach-Zehnder Interferometers.}
+Als \glqq räumlich kohärent \grqq bezeichnet man Wellen welche entlang einer Achse (meist jene senkrecht zur Ausbreitungsrichtung) eine feste Phasendiffernz aufweisen (siehe rechts oben).
+Letztere Achse wird auch als Kohärenzfläche bezeichnet. \\
+\textbf{Kohoärenzlänge $\Delta x$}: Länge welche das Licht während der Kohärenzzeit zurücklegt. \\$\Delta x = c \cdot \Delta t_C$.\\
+Messung mittels Interferometer.
 
-\paragraph{Erklären Sie Aufbau, Funktion und Transmissionsverhalten eines
+\myparagraph{Zeichnen Sie den prinzipiellen Aufbau / Strahlengang eines Sagnac und eines Mach-Zehnder Interferometers.}
+
+\textbf{Sagnac:} Rotiert das Interferometer um seine Achse brauchen die beiden Teilstrahen unterschiedlich Lange (Spiegel drehen sich von ihnen weg bzw. auf sie zu). 
+Damit wurde die Erdrotationsperiode gemessen.\\
+\textbf{Mach-Zehnder:} Durch den unterschiedlichen Brechungsindex kommt es zu einer Wegdifferenz und somit zu einer Interferenz der beiden Teilstrahlen, dies erlaubt genaue Rückschlüsse auf den
+Brechungsindex (z.B. von Gasen).
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.35\textwidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{image/18_Interferenz/Sagnac_Interferometer.png}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{image/18_Interferenz/Mach-Zehnder_Interferometer.png}
+    \end{minipage}
+\end{figure}
+
+\myparagraph{Erklären Sie Aufbau, Funktion und Transmissionsverhalten eines
 Fabry-Perot-Interferometers. Skizzieren Sie den spektralen Verlauf der Transmission als Funktion der
 Finesse. Wie ist die Finesse definiert?}
+Besteht aus 2-teilreflektierenden Platten. Die einzelnen Strahlen interferieren miteinander, wobei nur gewisse Wellenlängen größtenteils transmittiert werden. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/18_Interferenz/Fabry-Perot_Interferometer.png}
+\end{figure}
+Die Finesse F ist definiert als das Verhältnis zwischen freiem Spektralbereich $\Delta\lambda$ und der Halbwertsbreite $\delta\lambda$ eines einzelnen Maximums. 
+\begin{equation}
+    F = \frac{\Delta \lambda}{\delta \lambda} = \frac{\delta f}{\Delta f}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Finesse.png}
+\end{figure}
+Bei höherer Finesse wird mehr nach Wellenlänge \glqq selektiert \grqq. Es löscht sich also mehr Licht durch Interferenz aus und es wird gemittelt über einen Wellenlängenbereich weniger
+transmittiert als bei geringerer Finesse. Exemplarisch ist dieser Zusammenhang unten dargestellt (y-Achse: Mittel der Transmittierten Intensität, x-Achse: Finesse)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/18_Interferenz/Finesse_gegen_Transmission.png}
+\end{figure} 
 
-\paragraph{Beschreiben Sie die Funktionsweise einer einfachen Antireflexbeschichtung aus einer
+\myparagraph{Beschreiben Sie die Funktionsweise einer einfachen Antireflexbeschichtung aus einer
 dielektrischen Schicht.}
-
+Eine Antireflexbeschichtung besteht aus einem Träger (Glas) auf dem eine $\lambda/4$ - Schicht mit Brechungsindex zwischen Glas und Luft aufgetragen wird. Der einfallende Strahl
+$I_0$ wird zum Teil an der Grenzfläche $n_1$ - $n_2$ bzw. an $n_2$ - $n_3$ reflektiert. Wählt man $n_2$ richtig, so sind die beiden reflektierten Strahlen genau um $\pi/2$ phasenverschoben,
+was zu einer gegenseitigen Auslöschung führt. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Antireflexionsbeschichtung.png}
+\end{figure} 
+Durch verwenden von mehreren Schichten, kann ein größerer Spektralbereich abgedeckt werden. 
 \newpage
 
 \section{Beugung}
