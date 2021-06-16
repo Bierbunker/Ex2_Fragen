@@ -14,7 +14,7 @@ O               Elektrische Generatoren und Motoren
 ! Alisa         Wechselstrom und Drehstrom
 O               Wechselstromkreise und Lineare Netzwerke
 O               Transformator und Gleichrichter
-! David         Elektromagnetische Schwingungen und Entstehung von Wellen
+X David         Elektromagnetische Schwingungen und Entstehung von Wellen
 ! David         Elektromagnetische Wellen
 O               Wellen in Materie
 O               Wellen an Grenzflächen, optische Anisotropie und Polarisation
