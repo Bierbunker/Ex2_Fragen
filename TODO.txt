@@ -7,7 +7,7 @@ X Dominik       Elektrostatik im Vakuum
 # Dominik       Materie im elektrischen Feld
 X Dominik       Elektrischer Strom I
 ! Dominik       Elektrischer Strom II
-O               Statische Magnetfelder
+! Aleksey       Statische Magnetfelder
 O               Materie im elektrischen Feld
 O               Zeitlich veränderliche Felder
 O               Elektrische Generatoren und Motoren
