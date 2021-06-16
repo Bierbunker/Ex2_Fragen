@@ -3,24 +3,24 @@ O <Name> ... offen
 # <Name> ... teilweise
 X <Name> ... vollständig
 
-X Dominik       Elektrostatik im Vakuum
-# Dominik       Materie im elektrischen Feld
-X Dominik       Elektrischer Strom I
-X Dominik       Elektrischer Strom II
-! Aleksey       Statische Magnetfelder
-X Dominik       Materie im elektrischen Feld
-# Dominik       Zeitlich veränderliche Felder
-X Dominik       Elektrische Generatoren und Motoren
-! Alisa         Wechselstrom und Drehstrom
-! Dominik       Wechselstromkreise und Lineare Netzwerke
-! Elias         Transformator und Gleichrichter
-X David         Elektromagnetische Schwingungen und Entstehung von Wellen
-! David         Elektromagnetische Wellen
-O               Wellen in Materie
-O               Wellen an Grenzflächen, optische Anisotropie und Polarisation
-! Alisa         Geometrische Optik I         
-! Alisa         Geometrische Optik II         
-X Elias         Interferenz
-O               Beugung
-! David         Optische Instrumente I
-O               Optische Instrumente II
+X Dominik                           Elektrostatik im Vakuum
+X Dominik                           Materie im elektrischen Feld
+X Dominik                           Elektrischer Strom I
+X Dominik                           Elektrischer Strom II
+! Aleksey                           Statische Magnetfelder
+X Dominik                           Materie im elektrischen Feld
+# Dominik       10, 11              Zeitlich veränderliche Felder
+X Dominik                           Elektrische Generatoren und Motoren
+# Alisa         1, 3, 5, 7          Wechselstrom und Drehstrom
+! Dominik                           Wechselstromkreise und Lineare Netzwerke
+! Elias                             Transformator und Gleichrichter
+X David                             Elektromagnetische Schwingungen und Entstehung von Wellen
+! David                             Elektromagnetische Wellen
+O                                   Wellen in Materie
+O                                   Wellen an Grenzflächen, optische Anisotropie und Polarisation   
+# Alisa         7, 8                Geometrische Optik I         
+X Alisa                             Geometrische Optik II         
+X Elias                             Interferenz
+O                                   Beugung
+! David                             Optische Instrumente I
+O                                   Optische Instrumente II
