@@ -1250,58 +1250,197 @@ Stetigkeitsbedingungen müssen die elektrischen und magnetischen Felder an Grenz
 \section{Zeitlich veränderliche Felder}
 
 \paragraph{Schreiben Sie das Faradaysche Induktionsgesetz an. Welche Prozesse können zu einer
-induzierten Spannung in einer Leiterschleife führen?}
+induzierten Spannung in einer Leiterschleife führen?} ~
+
+\begin{equation}
+    U_{ind} = - \frac{d}{dt} \int \bold{B} d\bold{A} = - \frac{d \phi_m}{dt}
+\end{equation}
+
+Eine induzierte Spannung kann durch Änderung der magnetischen Feldstärke $\bold{B}$, des
+Flächeninhalts $A$ oder der Orientierung der beiden Größen relativ zueinander hervorgerufen werden.
 
 \paragraph{Eine quadratische Leiterschleife (Schleifenfläche A) dreht sich im homogenen Magnetfeld
 mit der Winkelgeschwindigkeit $\omega$ um eine Achse, die senkrecht zu den magnetischen Feldlininen
 steht. Schreiben Sie einen Ausdruck für die induzierte Spannung als Funktion des Winkels und der
 Zeit an. Bei welcher Orientierung der Leiterschleife relativ zum Magnetfeld ist die induzierte
-Spannung maximal (Skizze!)?}
+Spannung maximal (Skizze!)?} ~
+
+\begin{equation}
+    \phi_m = \int \bold{B} d\bold{A} = B \cdot N \cdot A \cdot cos(\omega \cdot t)
+\end{equation}
+\begin{equation}
+    U_{ind} = - \frac{d}{dt} \phi_m = B \cdot N \cdot A \cdot \omega \cdot sin(\omega \cdot t)
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=6cm]{image/7/2.1}
+\end{figure}
+
+Die induzierte Spannung ist maximal, wenn die Flächennormale mit $\varphi = \SI{90}{\degree}$
+senkrecht auf das Magnetfeld steht.
 
 \paragraph{Eine offene Leiterschleife befindet sich in einem homogenen Magnetfeld. Der
 Flächennormalvektor steht parallel zu den Feldlinien. Die magnetische Feldstärke nimmt mit der Zeit
 zu. Skizzieren Sie die Situation und zeichnen Sie die Richtung der induzierten elektrischen
-Feldstärke sowie die Polarität der beiden offenen Enden der Leiterschleife ein.}
+Feldstärke sowie die Polarität der beiden offenen Enden der Leiterschleife ein.} ~
 
-\paragraph{Beschreiben Sie Aufbau und Funktion einer Induktionsschleuder.}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/7/3.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/7/3.2}
+    \end{minipage}
+\end{figure}
 
-\paragraph{Was versteht man unter Selbstinduktion? Was bedeutet der Selbstinduktionskoeffizient?}
+\paragraph{Beschreiben Sie Aufbau und Funktion einer Induktionsschleuder.} ~
+
+Auf einem langen Eisenjoch liegt über einer Feldspule ein Aluminiumring. Wird die Spule
+eingeschaltet, so wird im Ring ein Induktionsstrom erzeugt dessen magnetisches Moment so gerichtet
+ist, dass der Ring hochgeschleudert wird. Dieses Prinzip kann technisch angewandt werden, um
+kleinere Projektile auf große Geschwindigkeiten von bis zu \SI{8}{\km\per\s} beschleunigen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{image/7/4}
+\end{figure}
+
+\paragraph{Was versteht man unter Selbstinduktion? Was bedeutet der Selbstinduktionskoeffizient?} ~
+
+In einer stromdurchflossenen Spule wird bei einer zeitlichen Änderung des Stromes der magnetische
+Fluss durch die Spule geändert, weshalb nun aufgrund des Magnetfelds der Spule auch in der Spule
+selbst eine Induktionsspannung entsteht. Diese ist gemäß der Lenz'schen Regel der Änderung der von
+außen angelegten stromtreibenden Spannung entgegengerichtet.
+
+Da das von der Spule erzeugte Magnetfeld proportional zum Strom $I$ durch die Spule ist, folgt mit
+$\phi_m = L \cdot I$ die Proportionalitätskonstante $L$ mit der Maßeinheit Henry, welche auch als
+Selbstinduktionskoeffizient bekannt ist.
 
 \paragraph{Eine Doppelleitung besteht aus zwei zylindrischen, parallelen Leitern, durch die der
 gleiche Strom aber mit unterschiedlichen Vorzeichen fließt. Fertigen Sie eine Skizze an, skizzieren
 Sie das Magnetfeld der Anordnung und schreiben Sie das Magnetfeld zwischen den Leitern analytisch
 an. Zeigen Sie, wie man daraus (im Prinzip) den Selbstinduktionskoeffizienten der Doppelleitung
-berechnen kann.}
+berechnen kann.} ~
 
-\paragraph{Was versteht man unter Gegeninduktion? Wie kann man sie formal beschreiben?}
+\begin{equation}
+    B_a = \frac{\mu_0 I}{2 \pi} \left( \frac{1}{\frac{d}{2} + x} + \frac{1}{\frac{d}{2} - x} \right)
+\end{equation}
+\begin{equation}
+    B_{1i} = \frac{\mu_0 I}{2 \pi r_0^2} \left( \frac{d}{2} + x \right) + B_{2a}
+\end{equation}
+\begin{equation}
+    B_{2i} = \frac{\mu_0 I}{2 \pi r_0^2} \left( \frac{d}{2} - x \right) + B_{1a}
+\end{equation}
+Durch Integration über die magnetische Flussdichte $B$ ergibt sich zunächst der magnetische Fluss
+$\phi_m$ und in weiterer Folge der Selbstinduktionskoeffizient $L$.
+\begin{equation}
+    \phi_m = l \cdot \int_{-d/2}^{d/2} B dx
+\end{equation}
+\begin{equation}
+    L
+    = \frac{\phi_m}{I}
+    = ...
+    = \frac{\mu_0 I}{2 \pi} \left( 1 + 2 \cdot ln \frac{d - r_0}{r_0} \right)
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/7/6.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/7/6.2}
+    \end{minipage}
+\end{figure}
+
+\paragraph{Was versteht man unter Gegeninduktion? Wie kann man sie formal beschreiben?} ~
+
+Ein vom Strom $I_1$ durchflossener Stromkreis 1 erzeugt im Punkt $\bold{P(r_2)}$ ein Magnetfeld
+$\bold{B}$. Dieses Magnetfeld erzeugt einen magnetischen Fluss durch die vom Leiterkreis 2
+eingeschlossene Fläche $A$. Die diesen Fluss $\phi_m = L_{12} \cdot I_1$ mit dem Strom $I_1$ im
+Stromkreis 1 verknüpfende Proportionalitätskonstante $L_{12} = L_{21}$ heißt Koeffizient der
+gegenseitigen Induktivität.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/7/7}
+\end{figure}
 
 \paragraph{Beschreiben Sie den Strom- und Spannungsverlauf einer Serienschaltung aus idealer
 Induktivität und ohm‘schen Widerstand, wenn diese über einen Schalter mit einer idealen
 Spannungsquelle verbunden werden (Einschaltvorgang). Schreiben Sie die Funktionen $I(t)$ sowie
-$U(t)$ für Widerstand und Spule an und erstellen Sie die entsprechenden Diagramme.}
+$U(t)$ für Widerstand und Spule an und erstellen Sie die entsprechenden Diagramme.} ~
+
+\begin{equation}
+    I(t) = \frac{U_0}{R} \cdot \left( 1 - e^{-Rt/L} \right)
+\end{equation}
+\begin{equation}
+    U_L(t) = U_0 \cdot e^{-Rt/L} ~~~ U_R = U_0 \cdot \left( 1 - e^{-Rt/l}) \right)
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/7/8}
+\end{figure}
 
 \paragraph{Beschreiben Sie den Strom- und Spannungsverlauf einer Serienschaltung aus idealer
 Induktivität und ohm‘schen Widerstand, wenn diese über einen Schalter von einer
 Spannungsquelle plötzlich getrennt werden (Ausschaltvorgang). Schreiben Sie die
 Funktionen $I(t)$ sowie $U(t)$ für Widerstand und Spule an und erstellen Sie die entsprechenden
-Diagramme.}
+Diagramme.} ~
+
+\begin{equation}
+    I(t) = \frac{U_0}{R} \cdot e^{-Rt/L}
+\end{equation}
+\begin{equation}
+    U_L(t) = - U_0 \cdot e^{-Rt/L} ~~~ U_R = U_0 \cdot e^{-Rt/L}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/7/9}
+\end{figure}
 
 \paragraph{Wie kann man im Prinzip die Induktivität z.B. einer Spule durch eine Zeitmessung
-bestimmen (Schaltplan und Beschreibung)?}
+bestimmen (Schaltplan und Beschreibung)?} ~
 
 \paragraph{Zwei dünne, lange Spulen sind auf den gleichen Kern gewickelt, sodass der gesamte
 magnetische Fluss der einen Spule durch die andere fließt. Berechnen Sie die in einer Spule
 induzierte Spannung, wenn sich in der andern der Strom ändert. Die Spulenlängen, die Anzahl der
 Windungen, die Spulenquerschnitte, und die magnetischen Eigenschaften des Spulenkerns seien
-bekannt.}
+bekannt.} ~
 
 \paragraph{Berechnen Sie die im magnetischen Feld einer dünnen, langen Spule gespeicherte Energie
 als Funktion des Stromes. Die Spulenlänge, die Anzahl der Windungen, der Spulenquerschnitt, und die
 magnetischen Eigenschaften des Spulenkerns seien bekannt.}
 
+\begin{equation}
+    W(I) = \frac{1}{2} \cdot I^2 \cdot L = \frac{1}{2} \cdot I^2 \cdot \mu_r \mu_0 n^2 \frac{A}{l}
+\end{equation}
+
 \paragraph{Schreiben Sie die Maxwell-Gleichungen an und visualisieren Sie die Quellen der
 elektrischen und magnetischen Felder sowie die Ursache der elektrischen und magnetischen
-Wirbelfelder. (vgl. Folie 23).}
+Wirbelfelder. (vgl. Folie 23).} ~
+
+\begin{equation}
+    rot~\bold{E} + \pdv{\bold{B}}{t} = 0 ~~~ div~\bold{D} = \rho
+\end{equation}
+\begin{equation}
+    rot~\bold{H} - \pdv{\bold{D}}{t} = \bold{j} ~~~ div~\bold{B} = 0
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/7/13}
+\end{figure}
 
 \newpage
 
