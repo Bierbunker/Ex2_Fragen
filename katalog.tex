@@ -1059,21 +1059,191 @@ eine möglichst große Hall-Spannung zu beobachten.}
 \paragraph{Ein kleiner Probekörper mit bekanntem Volumen befindet sich in einem inhomogenen
 magnetischen Feld. Der Probekörper wird durch das äußere Magnetfeld magnetisiert und erfährt daher
 eine Kraft. Wie groß ist diese Kraft und welche Richtung hat sie bei positiver oder negativer
-magnetischer Suzeptiblität?}
+magnetischer Suzeptiblität?} ~
+
+\begin{equation}
+    \bold{F} = \bold{p_m} \cdot \nabla \bold{B} = - M \cdot V \cdot \frac{dB}{dr} \bold{\hat{r}}
+\end{equation}
+
+Für die Magnetisierung $M = \chi \cdot H$ ergibt sich bei diamagnetischen Stoffen ($\chi < 0$) eine
+radiale Kraft nach außen, paramagnetische Stoffe ($\chi > 0$) hingegen werden zum Zentrum gezogen.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/6/1.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/6/1.2}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Welche magnetischen Stoffklassen gibt es und wie unterscheiden sie sich in ihren
-magnetischen Eigenschaften?}
+magnetischen Eigenschaften?} ~
+
+\begin{itemize}
+    \item Konstante magnetische Suszeptibilität $\chi$
+    
+        \begin{itemize}
+            \item \textbf{Paramagnete} besitzen ein permanentes magnetisches Dipolmoment
+                $\bold{p_m}$, welches aber aufgrund thermischer Bewegung statistisch im Raum 
+                vererteilt ist und in Summe Null ergibt.
+                
+                Durch ein äußeres Magnetfeld werden die Dipole parallel ausgerichtet und verstärken
+                so das äußere Feld im Inneren des Stoffes. Mit steigender Temperatur sinkt die
+                Suszeptibilität.
+                
+                Paramegnete werden im inhomogenen Magnetfeld zur höheren Feldstärke hingezogen.
+                
+            \item \textbf{Diamagnete} besitzen kein eigenes magnatisches Dipolmoment $\bold{p_m}$.
+                Sie entwickeln im  äußeren Magnetfeld ein induziertes, inneres Magnetfeld, welches
+                dem äußeren entgegenwirkt.
+                
+                Diamagnete werden im inhomogenen Magnetfeld zur niederen Feldstärke hingezogen.
+        \end{itemize}
+    
+    \item Variable magnetische Suszeptibilität $\chi$
+        
+        \begin{itemize}
+            \item \textbf{Ferromagnete} besitzen eine hohe magnetische Suszeptibilität $\chi$, die
+                Magnetisierung $M$ kann im Vergleich zu Paramagneten um viele Größenordnungen höher
+                sein.
+                
+                Sie richten im externen Feld ihre magnetischen Momente innerhalb kleiner Bereiche
+                (Weiß'sche Bezirke) parallel aus und behalten diese Ausrichtung auch nach Entfernung
+                des Feldes. Ferromagnete erzeugen entweder selbst ein dauerhaftes Magnetfeld oder
+                werden von einem Pol eines äußeren Magnetfelds stark angezogen.
+                
+                Über der sogenannten Curie-Temperatur wird die magnetische Ordnung aufgebrochen,
+                der Stoff ist dann nur noch paramagnetisch.
+                
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[height=3cm]{image/6/2.1}
+                \end{figure}
+            
+            \item \textbf{Antiferromagnete} weisen ein Kristallgitter mit zwei ineinander gestellten
+                Untergittern auf, wobei ohne äußeres Magnetfeld die magnetischen Momente der Atome
+                A des einen Gitters antiparallel zu denen der Atome B im anderen Gitter stehen,
+                wodurch die Magnetisierung $M$ insgesamt Null ist.
+                
+                Ähnlich wie bei Ferromagneten gehen die Antiferromagnete bei der kritischen,
+                sogenannten Néel-Temperatur in den paramagnetischen Zustand über.
+                
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[height=3cm]{image/6/2.2}
+                \end{figure}
+            
+            \item \textbf{Ferrimagnete} weisen wie Antiferromagnete zwei Untergitter auf, allerdings
+                sind die magnetischen Momente der verschiedenen Atome unterschiedlich groß, sodass
+                sich eine spontane Magnetisierung auch ohne äußeres Feld ergibt.
+                
+                Sie weisen eine ähnliche Magnetisierungskurve wie Ferromagnete auf, die
+                Sättigungsmagnetisierung ist allerdings wesentlich geringer.
+        \end{itemize}
+\end{itemize}
 
 \paragraph{Was versteht man unter Diamagnetismus und Paramagnetismus? Welche spezielle Eigenschaft
-haben Moleküle oder Atome eines dia- oder paramegnetischen Stoffes?}
+haben Moleküle oder Atome eines dia- oder paramegnetischen Stoffes?} ~
+
+\begin{itemize}
+    \item \textbf{Paramagnete} besitzen ein permanentes magnetisches Dipolmoment
+        $\bold{p_m}$, welches aber aufgrund thermischer Bewegung statistisch im Raum 
+        vererteilt ist und in Summe Null ergibt.
+        
+        Durch ein äußeres Magnetfeld werden die Dipole parallel ausgerichtet und verstärken
+        so das äußere Feld im Inneren des Stoffes. Mit steigender Temperatur sinkt die
+        Suszeptibilität.
+        
+        Paramegnete werden im inhomogenen Magnetfeld zur höheren Feldstärke hingezogen.
+        
+    \item \textbf{Diamagnete} besitzen kein eigenes magnatisches Dipolmoment $\bold{p_m}$.
+        Sie entwickeln im  äußeren Magnetfeld ein induziertes, inneres Magnetfeld, welches
+        dem äußeren entgegenwirkt.
+        
+        Diamagnete werden im inhomogenen Magnetfeld zur niederen Feldstärke hingezogen.
+\end{itemize}
 
 \paragraph{Beschreiben Sie die Eigenschaften eines ferromagnetischen Stoffes? Nennen Sie drei
-Beispiele für ferromagnetische Stoffe.}
+Beispiele für ferromagnetische Stoffe.} ~
 
-\paragraph{Was sind antiferromagnetische und ferrimagnetische Stoffe?}
+Ferromagnetismus tritt nur in Festkörpern auf. Ferromagnete zeigen die Tendenz, ihre magnetische
+Ordnung auch entgegen äußeren Einflüssen zu behalten. Dies führt dazu, dass die im Inneren erzeugte
+magnetische Ordnung und somit das äußere erzeugte Magnetfeld behalten, auch wenn sie keinem
+Magnetfled mehr ausgesetzt sind. Diese als Remanenz bezeichnete Tendenz wird durch Effekte in zwei
+verschiedenen Größenordnungen verursacht:
+
+\begin{itemize}
+    \item Mikroskopisch: Die gleichgerichtete magnetische Ordnung der Elementarmagnete (also
+        beispielsweise der Elektronenspins) in atomarer Größenordnung.
+        
+    \item Makroskopisch: Die Anordnung der Weiß-Bezirke in der Größenordnung von Mikro- bis
+        Nanometern.
+\end{itemize}
+
+Die meisten ferromagnetischen Materialien bestehen aus Übergangselementen, also aus Atomen mit nicht
+aufgefüllten inneren Elektronenschalen wie Eisen, Nickel oder Kobalt. Über der sogenannten
+Curie-Temperatur wird die magnetische Ordnung aufgebrochen, der Stoff ist dann nur noch
+paramagnetisch.
+
+\paragraph{Was sind antiferromagnetische und ferrimagnetische Stoffe?} ~
+
+\begin{itemize}
+        \item \textbf{Antiferromagnete} weisen ein Kristallgitter mit zwei ineinander gestellten
+            Untergittern auf, wobei ohne äußeres Magnetfeld die magnetischen Momente der Atome
+            A des einen Gitters antiparallel zu denen der Atome B im anderen Gitter stehen,
+            wodurch die Magnetisierung $M$ insgesamt Null ist.
+            
+            Ähnlich wie bei Ferromagneten gehen die Antiferromagnete bei der kritischen,
+            sogenannten Néel-Temperatur in den paramagnetischen Zustand über.
+            
+            \begin{figure}[H]
+                \centering
+                \includegraphics[height=3cm]{image/6/2.2}
+            \end{figure}
+        
+        \item \textbf{Ferrimagnete} weisen wie Antiferromagnete zwei Untergitter auf, allerdings
+            sind die magnetischen Momente der verschiedenen Atome unterschiedlich groß, sodass
+            sich eine spontane Magnetisierung auch ohne äußeres Feld ergibt.
+            
+            Sie weisen eine ähnliche Magnetisierungskurve wie Ferromagnete auf, die
+            Sättigungsmagnetisierung ist allerdings wesentlich geringer.
+    \end{itemize}
 
 \paragraph{Schreiben Sie die Feldgleichungen der Elektro- und Magnetostatik an. Welche
-Stetigkeitsbedingungen müssen die elektrischen und magnetischen Felder an Grenzflächen erfüllen?}
+Stetigkeitsbedingungen müssen die elektrischen und magnetischen Felder an Grenzflächen erfüllen?} ~
+
+\begin{itemize}
+    \item \textbf{Magnetostatik:} Mit den Stetigkeitsbedingungen $H_{\parallel,1} = H_{\parallel,2}$
+        sowie $B_{\perp,1} = B_{\perp,2}$ gilt
+        
+        \begin{equation}
+            \bold{B} = \mu_0 \mu \bold{H}
+        \end{equation}
+        \begin{equation}
+            \oint \bold{B} d\bold{A} = 0 ~~~ \text{bzw} ~~~ div \bold{B} = 0
+        \end{equation}
+        \begin{equation}
+            \oint \bold{H} d\bold{s} = I_A ~~~ \text{bzw} ~~~ rot \bold{H} = \bold{j}
+        \end{equation}
+        
+    \item \textbf{Elektrostatik:} Mit den Stetigkeitsbedingungen $E_{\parallel,1} = E_{\parallel,2}$
+        sowie $E_{\perp,1} = E_{\perp,2}$ gilt
+        
+        \begin{equation}
+            \bold{D} = \epsilon_0 \epsilon \bold{E}
+        \end{equation}
+        \begin{equation}
+            \oint \bold{D} d\bold{A} = Q ~~~ \text{bzw} ~~~ div \bold{D} = \rho
+        \end{equation}
+        \begin{equation}
+            \oint \bold{E} d\bold{s} = 0 ~~~ \text{bzw} ~~~ rot \bold{E} = 0
+        \end{equation}
+\end{itemize}
 
 \newpage
 
