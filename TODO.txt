@@ -9,8 +9,8 @@ X Dominik       Elektrischer Strom I
 X Dominik       Elektrischer Strom II
 ! Aleksey       Statische Magnetfelder
 X Dominik       Materie im elektrischen Feld
-! Dominik       Zeitlich veränderliche Felder
-O               Elektrische Generatoren und Motoren
+# Dominik       Zeitlich veränderliche Felder
+! Dominik       Elektrische Generatoren und Motoren
 ! Alisa         Wechselstrom und Drehstrom
 O               Wechselstromkreise und Lineare Netzwerke
 O               Transformator und Gleichrichter
