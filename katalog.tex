@@ -1539,24 +1539,79 @@ Zeigerdiagramm und Ausdruck für die Ausgangsspannung.}
 
 \section{Transformator und Gleichrichter}
 
-\paragraph{Erklären Sie Aufbau, Sinn und Funktionsprinzip eines Transformators.}
+\myparagraph{Erklären Sie Aufbau, Sinn und Funktionsprinzip eines Transformators.}
 
-\paragraph{Zeigen Sie, dass bei einem unbelasteten Transformator das Spannungsverhältnis gleich dem
+Transformatoren bestehen aus zwei Spulen, welche mit einem Eisenjoch verbunden sind. Die beiden Spulen sind nicht im gleichen Netzwerk. 
+Sinn des Trafos ist es, eine Spannung $U_1$ auf eine andere Spannung $U_2$ zu transformieren. Das ist aufgrund vom Farady-Gesetz möglich. Das Eisenjoch ist für beide Spulen 
+ein Eisenkern und bündelt den magnetischen Fluss. \\
+Je nach Windungssinn ergibt sich der Spannungsabfall $U_2$ wie folgt:
+\begin{figure}[H]
+    \centering
+    \includegraphics[]{image/11_Trafo/Trafo_Aufbau.png}
+\end{figure}
+Für die Primär- und Sekundärspannung folgt somit:
+\begin{equation}
+    \textbf{gegensinnige Wicklung: } \frac{U_2}{U_1} = \frac{N_2}{N_1} \hspace{2cm} \textbf{gleichsinnige Wicklung: } \frac{U_2}{U_1} = - \frac{N_2}{N_1}
+\end{equation}
+\myparagraph{Zeigen Sie, dass bei einem unbelasteten Transformator das Spannungsverhältnis gleich dem
 Verhältnis der Wicklungsanzahl von Primär- und Sekundärseite ist (Beträge). Wie ändert sich die
 Sekundärspannung qualitativ bei Belastung.}
-
-\paragraph{Zeigen Sie, dass beim unbelasteten Trafo der primärseitig aufgenommene Strom nicht null
+Legt man an der Primärspule eine Wechselspannung $U_1$ an, so fließt ein Strom $I_1$ dieser erzeugt einen magentischen Fluss $\phi_m$ welcher wiederum eine Induktionsspannung 
+$U_{ind}$ bewirkt. 
+\[U_{ind} = - L_1 \frac{d I_1}{d t} = -N_1 \frac{d \phi_m}{d t} = -U_1\]
+Wie man sieht gilt auch hier die Maschenregel $U_1 + U_{ind} = 0$. 
+Tritt nun der gesamte in $L_1$ induzierte Fluss auch durch $L_2$ so wird hier eine Spannung $U_2$ induziert:
+\[U_2 = -N_2 \frac{d \phi_m}{d t}\]
+Aus den oberen Termen folgt nun:
+\begin{equation}
+    - \frac{U_2}{N_2} = \frac{U_1}{N_1} \rightarrow \frac{U_2}{U_1} = - \frac{N_2}{N_1} 
+\end{equation}
+Fließt beim belasteten Trafo nun ein Strom $I_2$ durch einen Verbraucher, so erzeugt dieser ein selbstinduziertes Magnetfeld $\phi_{sekundär}$
+welches $U_2$ verringert. Da die Energieerhaltung gilt muss somit folgendes gelten:
+\[P_1 = P_2 \rightarrow U_1 \cdot I_1 = U_2 \cdot I_2\]
+\myparagraph{Zeigen Sie, dass beim unbelasteten Trafo der primärseitig aufgenommene Strom nicht null
 ist, dass aber die aufgenommene Wirkleistung null ist.}
-
-\paragraph{Leiten Sie eine Ausdruck für das Verhältnis der Ströme von Primär- und Sekundärseite
+Ein unbelasteter Trafo ist nichts anderes als eine glorifizierte Spule mit Eisenkern (da ja schließlich der Sekundärkreis nicht geschlossen ist).
+Wie schon bei normaler Induktion ergibt sich die mittlere Leistung einer Spule zu:
+\begin{equation}
+    \bar{P}_{Wirkleistung} = \frac{1}{2} U I \cos(\phi) = 0
+\end{equation}
+Die Spannung und Strom durch die Spule sind dabei um $\pi/2$ verschoben, was zu einem reinem Blindstrom und somit zu keiner Wirkleistung führt.
+\myparagraph{Leiten Sie einen Ausdruck für das Verhältnis der Ströme von Primär- und Sekundärseite
 eines belasteten Transformators ab. Die Impedanz der Last sei $Z$.}
-
-\paragraph{Erklären Sie die charakteristischen Eigenschaften einer Diode anhand einer typischen
+Es gilt für die Spannung in der Primär- sowie Sekundärspule (Belastung mit Last $Z$):
+\[U_1 = i\omega L_1 I_1 + i\omega L_{12} I_2\]
+\[U_2 = I_2 \cdot Z = -i \omega L_2 I_2 - i \omega L_{12} I_1\]
+Hierbei sind $L_1$ und $L_2$ die jeweiligen Induktivitäten in Primär- und Sekundärspule. $L_{12}$ ist die gegenseitige Induktivität.
+Das Minus bei $U_2$ lässt sich damit erklären, da die Spannung hier 90° nacheilt, während sie im Primärkreis 90° voreilt (Gegenüber Strom; gleiche Phase im Eisenkern).
+Löst man nach $Z$ auf ergibt sich:
+\begin{equation}
+    I_2 \cdot Z = -i \omega(L_2 I_2 + L_{12} I_1) \hspace{5mm} \rightarrow \hspace{5mm} Z = -i \omega L_2 - (i \omega L{12} \frac{I_1}{I_2})
+\end{equation}
+Schließlich ergibt sich somit das Verhältnis von $I_1$ zu $I_2$ zu:
+\begin{equation}
+    \frac{I_1}{I_2} = \frac{z + i \omega L_2}{-i \omega L_{12}}
+\end{equation}
+\newpage
+\myparagraph{Erklären Sie die charakteristischen Eigenschaften einer Diode anhand einer typischen
 Diodenkennlinie.}
-
-\paragraph{Erklären Sie Aufbau und Funktion einer Röhrendiode.}
-
-\paragraph{Beschreiben Sie die Einweig- und Zweiweggleichrichtung sowie die Grätz-Schaltung mit
+Eine Diode ist ein Bauelementen welches Strom beim anlegen einer Spannung nur in eine Richtung fließen lässt (Abgesehen vom Sperrstrom).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/11_Trafo/Diode_Kennlinie.png}
+\end{figure}
+Legt man beispielsweise eine positive Spannung an, so fließt viel Strom durch die Diode. Polt man die Spannung um, kommt es zu einem kleinen 
+Sperrstrom, dieser ist aber um einige Größenordnungen kleiner als jener Durchflussrichtung.  
+\myparagraph{Erklären Sie Aufbau und Funktion einer Röhrendiode.}
+Bei gegebener Polung werden Elektronen von der geheizten Kathode (K) zur Anode (A) beschleunigt. Beide befinden sich in einem evakuiertem Behältnis (meist Glaskolben)
+Ist die anliegende Spannung $U_a$ anders gepolt verbleiben die Elektronen auf der Kathode und es fließt kein Strom.  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/11_Trafo/Röhrendiode.png}
+\end{figure}
+Funktion: Strom kann nur in eine Richtung fließen. \\
+Verwendung: Für Gleichrichtung, Audiotechnik, etc.
+\myparagraph{Beschreiben Sie die Einweig- und Zweiweggleichrichtung sowie die Grätz-Schaltung mit
 Schaltplan und zeitlichem Verlauf der Eingangs- und Ausgangsspannung.}
 
 \paragraph{Erklären Sie die Glättung einer pulsierenden Gleichspannung mit einem Kondensator, wenn
