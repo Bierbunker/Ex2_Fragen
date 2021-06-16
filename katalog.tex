@@ -742,41 +742,218 @@ Elektronen ab. Dabei scheiden sie als neutrale Atome an der jeweiligen Elektrode
 \section{Elektrischer Strom II}
 
 \paragraph{Beschreiben Sie die Funktionsweise eines galvanischen Elementes. Wodurch ist die
-erzielbare Spannung bestimmt?}
+erzielbare Spannung bestimmt?} ~
 
-\paragraph{Beschreiben Sie die Funktionsweise einer Brennstoffzelle.}
+Das Prinzip einer galvanischen Zelle beruht darauf, dass unterschiedliche Metalle eine
+unterschiedliche Tendenz aufweisen, Elektronen abzugeben. Die Potentialdifferenz und damit auch die
+abgreifbare Spannung sind umso größer, je unterschiedlicher die einzelnen die einzelnen Elemente
+in dieser Hinsicht sind.
 
-\paragraph{Beschreiben Sie den Seebeck-Effekt und die Ursache der Thermospannung.}
+Werden zwei Metallelektroden in eine gemeinsame Elektrolytlösung getaucht, so gibt eine der
+Elektroden Metallionen an das Elektrolyt ab während die Elektronen auf der Elektrode zurückbleiben.
+Von dem mit Ionen angereicherten Elektrolyt werden wiederum Metallionen auf die andere Elektrode
+übertragen und dort entladen. Werden die Elektroden über einen elektrischen Leiter verbunden, so
+können die Elektronen von einer Elektrode auf die andere übertragen werden. Die Reaktion läuft so
+lange ab, bis sich die Elektrode aufgelöst hat.
+
+Neben den verwendeten Metallen hängt die abgreifbare Spannung auch vom Elektrolyt ab.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4cm]{image/4/1}
+\end{figure}
+
+\paragraph{Beschreiben Sie die Funktionsweise einer Brennstoffzelle.} ~
+
+Brennstoffzellen ermöglichen die direkte Umwandlung von chemischer in elektrische Energie ohne den
+Umweg über Wärmeenergie.
+
+Durch geschickte Konstruktion werden die Oxidations- sowie Reduktionsreaktion von Sauerstoff mit dem
+verwendeten Brennstoff (wie etwa Wasserstoff) räumlich getrennt. Durch beispielsweise poröse, mit
+Katalysatorstoffen versehene Elektroden im gemeinsamen Elektrolyt wird kontinuierlich Sauerstoff und
+Wasserstoff zugeführt. Die beiden Reaktionen laufen dann getrennt an der jeweiligen Elektrode ab.
+
+Der Wasserstoff an der Anode zerfüllt durch die katalytische Wirkung schon bei Raumtemperatur in
+Protonen und Elektronen. Die Protonen gelangen durch das Elektrolyt auf die Kathodenseite. Die
+Elektronen wandern durch den geschlossenen äußeren Stromkreis zur Kathode und verrichten auf diesem
+Wege elektrische Arbeit. An der Kathode verbinden sich Protonen, Elektronen und Sauerstoff zu
+Wasser.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/4/2}
+\end{figure}
+
+\paragraph{Beschreiben Sie den Seebeck-Effekt und die Ursache der Thermospannung.} ~
+
+Werden zwei Leiter unterschiedlicher Stoffe zu einem geschlossenen Stromkreis verlötet, so misst man
+bei unterschiedlichen Temperaturen der Lötstellen eine Spannung. Man spricht vom Seebeck-Effekt.
+
+Am heißen Ende des Leiters gibt es mehr Elektronen mit hoher Energie und weniger Elektronen mit
+geringer Energie. Durch Diffusion bewegen sich die energiereichen Elektronen zum kalten Ende und
+Elektronen mit wenig Energie zum heißen Ende. Das entstehende Ungleichgewicht wird durch ein
+elektrisches Feld ausgeglichen, die entstehende Spannung ist die Seebeck-Spannung.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{image/4/3}
+\end{figure}
 
 \paragraph{Was ist der Innenwiderstand einer Spannungsquelle? Wie groß ist der Innenwiderstand einer
-idealen Spannungsquelle bzw. einer idealen Stromquelle?}
+idealen Spannungsquelle bzw. einer idealen Stromquelle?} ~
+
+Der Innenwiderstand $R_i$ einer Spannungsquelle rührt daher, dass die Ladungsträger auf dem Weg vom
+Ort ihrer Trennung bis zu den Ausgangsklemmen der Quelle Stöße mit Atomen oder Molekülen innerhalb
+der Quelle erleiden.
+
+Der Innenwiderstand einer idealen Spannungsquelle ist \SI{0}{\ohm}, der einer idealen Stromquelle
+$\infty~\si{\ohm}$.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=4cm]{image/4/4.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=4cm]{image/4/4.2}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Wie kann man den Kurzschlussstrom und den Innenwiderstand eines Akkumulators durch
 Strom und Spannungsmessung ermitteln, ohne den Akku wirklich kurz zu schließen? Der Akkumulator sei
-in guter Näherung eine lineare Spannungsquelle. Schaltungsskizze!}
+in guter Näherung eine lineare Spannungsquelle. Schaltungsskizze!} ~
+
+\begin{enumerate}
+    \item Leerlaufspannung $U_0$ direkt per Voltmeter messen
+    
+    \item Potentiometer als Lastwiderstand schalten und derart einstellen, dass genau die Hälfte
+        der Leerlaufspannung am Potentiometer abfällt. Der nun am Potentiometer eingestellte Wert
+        entspricht genau dem des Innenwiderstandes $R_i$.
+    
+    \item Der Kurzschlussstrom ergibt sich mit $I_K = \frac{U_0}{R_i}$
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/4/5.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/4/5.2}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Zeichnen Sie das Ersatzschaltbild einer mit einem Widerstand $R$ belasteten linearen
 Spannungsquelle mit Innenwiderstand $R_i$ und elektromotorischer Kraft $U$. Berechnen Sie einen
-Ausdruck für die Klemmspannnung.}
+Ausdruck für die Klemmspannnung.} ~
+
+\begin{equation}
+    U_K = U_0 - R_i \cdot I = U_0 - R_i \cdot \frac{U_0}{R_i + R}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{image/4/6}
+\end{figure}
 
 \paragraph{Was versteht man unter Leistungsanpassung bei einer Spannungsquelle? Bei welchem Last-
-bzw. Innenwiderstand ist dies erfüllt?}
+bzw. Innenwiderstand ist dies erfüllt?} ~
+
+Unter Leistungsanpassung versteht man die Dimensionierung des Innen- und Lastwiderstandes, sodass
+die im Verbraucher umgesetzte Leistung maximal wird. Dies ist der Fall, wenn $R_i = R_L$ gilt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/4/7}
+\end{figure}
 
 \paragraph{Beschreiben und erklären Sie die Funktionsweise eines Dual-Slope Analog-Digital
-Umsetzers.}
+Umsetzers.} ~
 
-\paragraph{Beschreiben und erklären Sie die Funktionsweise eines Flash Analog-Digital Umsetzers.}
+Ein Analog-Digital-Umsetzer ist eine elektronisches Gerät zur Umsetzung analoger Eingangssignale in
+einen digitalen Datenstrom. Die Eingangsgröße ist dabei immer eine elektrische Spannung.
+
+Beim Dual-Slope-Verfahren wird ein Kondensator während einer Integrationszeit von der analogen
+Eingangsspannung aufgeladen. Nach Abschluss der Integrationszeit wird eine Gegenspannung an den
+Integrator angelegt, die den Kondensator wieder vollständig entlädt. Hat der Kondensator eine hohe
+Spannung, so ist die Entladezeit länger. Analog dazu ist sie bei einer geringeren Spannung kürzer.
+Die Entladezeit ist somit ein Maß für die Eingangsspannung. Sie ergibt sich durch zählen der
+Taktimpulse beim Entladevorgang.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/4/8}
+\end{figure}
+
+\paragraph{Beschreiben und erklären Sie die Funktionsweise eines Flash Analog-Digital Umsetzers.} ~
+
+Flash-Umsetzer sind sogenannte Paralellumsetzer, bei denen alle logischen Entscheidungen parallel
+ausgeführt werden. Sie zeichnen sich durch eine extrem schnelle Wandlungsgeschwindigkeit aus, die
+nur einen Taktzyklus kurz ist.
+
+Die Komperatoren haben zwei Eingänge, an welchen einerseits die Eingangsspannung verbunden ist und
+am anderen über eine Widerstandsmatrix eine Bezugsspannung bezogen wird. Das analoge Eingangssignal
+wird parallel an viele sogenannte Komparatoren geführt, wo es mit den erzeugten Referenzspannungen
+verglichen wird. Hierbei ist für jeden möglichen Ausgangswert ein eigener Komparator erforderlich,
+was bedeutet dass die Anzahl der Komparatoren exponentiell mit der Auflösung steigt.
+
+Die Ausgänge der Komparatoren representieren diskrete digitale Zustände, deren Pegel codiert und
+digitalisiert in jedem Taktzyklus als Ausgangssignal weitergeleitet wird.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=6cm]{image/4/9}
+\end{figure}
 
 \paragraph{Aus welchen Beiträgen setzt sich die Gesamtunsicherheit eines Digitalvoltmeters
-zusammen?}
+zusammen?} ~
+
+\begin{itemize}
+    \item Abgleichabweichung: Die Kennlinie eines Analog-Digital-Umsetzers ist eine Gerade durch den
+        Nullpunkt und steht für die gewünschte Proportionalität zwischen Anzeige und Messgröße.
+        Sowohl die horizontale Verschiebung zum Nullpunkt als auch die Steigung der Kennlinie können
+        nur innerhalb gewisser Unsicherheitsgrenzen eingestellt werden.
+    
+    \item Quantisierungsabweichung: Dadurch, dass die Messgröße nur schrittweise abgebildet wird,
+        entsteht eine Quantisierungsabweichung.
+    
+    \item Linearitätsabweichung: Man unterscheidet zwischen einer integralen Linearitätsabweichung
+        durch eine Nichtlinearität der Kennlinie und einer differenziellen Linearitätsabweichung
+        durch ungleiche Breite der benachbarten Quantisierungsschritte.
+\end{itemize}
 
 \paragraph{Die maximal messbare Spannung eines Voltmeters mit Innenwiderstand $R_i$ ist $U_m$. Der
 Messbereich soll auf $10 \cdot U_m$ erweitert werden. Zeichnen und dimensionieren Sie eine
-Widerstandsschaltung die dies ermöglicht. Wie groß ist der Gesamtwiderstand dieser Schaltung?}
+Widerstandsschaltung die dies ermöglicht. Wie groß ist der Gesamtwiderstand dieser Schaltung?} ~
+
+Es muss zusätzlich ein Widerstand $R_V = 9 \cdot R_i$ in Serie vor das Voltmeter geschaltet werden.
+Dies verzehnfacht den gesamten Innenwiderstand des Voltmeters, wobei aber $\frac{9}{10}$ am
+Vorwiderstand abfallen. Damit sind auch 10 mal größere Messwiderstände möglich, was entsprechend
+zum zehnfachen Messbereich für $U_m$ führt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4cm]{image/4/11}
+\end{figure}
 
 \paragraph{Die maximal mit einem Amperemeter (Innenwiderstand $R_i$) messbare Strom sei $I_m$. Der
 Messbereich soll auf $10 \cdot I_m$ erweitert werden. Zeichnen und dimensionieren Sie eine
-Widerstandsschaltung die dies ermöglicht. Wie groß ist der Gesamtwiderstand dieser Schaltung?}
+Widerstandsschaltung die dies ermöglicht. Wie groß ist der Gesamtwiderstand dieser Schaltung?} ~
+
+Es muss zusätzlich ein Widerstand $R_m = \frac{R_i}{9}$ parallel zum Amperemeter geschaltet. Dadurch
+wird der Strom vor das Amperemeter aufgeteilt, nur noch ein Zehntel fließt durch das Amperemeter.
+Dies ermöglicht die Messung eines verzehnfachten Stromes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4cm]{image/4/12}
+\end{figure}
 
 \newpage
 
