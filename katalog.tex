@@ -21,17 +21,21 @@
 \usepackage{graphicx}
 \usepackage{float}
 
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks,colorlinks]{hyperref}
+%Colorlinks setup:
+\hypersetup{
+    colorlinks = false,
+    linkbordercolor = {white}
+}
 
 \usepackage[headsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}
 \setkomafont{pagehead}{\normalfont} 
 \setkomafont{pagefoot}{\normalfont}
-\ihead{Experimentalphysik 2}
-\chead{Fragenkatalog}
+\ihead{\hyperlink{Fehler}{\color{cyan}Fehlermeldungen}}
+\chead{Experimentalphysik 2 Fragenkatalog}
 \ohead{\today}
 \cfoot{\pagemark{} / \pageref*{LastPage}}
-
 \usepackage{caption, subcaption}
 \captionsetup[table]{name=Tabelle}
 \captionsetup[figure]{name=Abbildung}
@@ -1444,173 +1448,29 @@ Wirbelfelder. (vgl. Folie 23).} ~
 
 \newpage
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Elektrische Generatoren und Motoren}
 
 \paragraph{Erklären Sie das Prinzip eines einfachen Wechselstromgenerators mit einer Spule im
 homogenen äußeren Magentfeld. Schreiben Sie die Beziehung für den elektrischen Fluss an und leiten
-Sie daraus die induzierte Spannung bei konstanter Winkelgeschwindigkeit als Funktion der Zeit
-her.} ~
-
-Eine rechteckige Spule mit der Windungsfläche $F$ befindet sich im homogenen Magnetfeld $\bold{B}$
-und wird mit der Winkelgeschwindigkeit $\omega$ gedreht. Dabei wird an den Enden der Spule eine
-Wechselspannung induziert, welche über zwei Schleifkontakte abgegriffen werden kann.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=7cm]{image/8/1}
-\end{figure}
-
-\begin{equation}
-    \phi_m = \int \bold{B} d\bold{A} = B \cdot N \cdot A \cdot cos(\omega \cdot t)
-\end{equation}
-\begin{equation}
-    U_{ind} = - \frac{d}{dt} \phi_m = B \cdot N \cdot A \cdot \omega \cdot sin(\omega \cdot t)
-\end{equation}
+Sie daraus die induzierte Spannung bei konstanter Winkelgeschwindigkeit als Funktion der Zeit her.}
 
 \paragraph{Doppel-T Anker und Trommelanker: Beschreiben Sie die Funktion eines permanenterregten
 Generators mit Doppel-T Anker und Kommutator. Skizzieren Sie den Anker inklusive Stellung und
 Anschluss des Kommutators relativ zur Spulenorientierung. Erstellen Sie ein Diagramm der
 Klemmspannung als Funktion der Zeit für konstante Drehgeschwindigkeit. Welche Vorteile bringt ein
-Trommelanker?} ~
-
-Am permanent erregten Generator wird das magnetische Feld durch einen als Stator dienenden
-Permanentmagneten erzeugt. Die bei Drehung des Rotors in den Spulen induzierte Spannung wird über
-den Kommutator abgenommen, welcher je Spule genau ein Segment aufweist.
-
-Die Verwendung eines Trommelankers stellt im Gegensatz zum Doppel-T-Anker eine Verbesserung dar,
-bei der der magnetische Kraftfluss $\phi_m$ vergrößert wird. Mit der Anzahl der Spulen wird die
-erzeugte Gleichspannung immer gleichmäßiger. Im Fall von Gleichstrommotoren ermöglicht ein
-Trommelanker zudem ein selbständiges Anlaufen des Motors, da immer auf mindestens ein Ankerelement
-ein Drehmoment wirkt.
-
-\begin{figure}[H]
-    \centering
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=3cm]{image/8/2.1}
-    \end{minipage}
-    \hspace{2cm}
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=6cm]{image/8/2.2}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=7cm]{image/8/2.3}
-\end{figure}
+Trommelanker?}
 
 \paragraph{Skizzieren Sie den Aufbau und Schaltplan einer Hauptschlussmaschine. Wie sieht bei einem
 Generator dieser Bauart die Klemmspannung als Funktion des Stromes aus? Wie sieht bei einem Motor
 dieser Bauart der Strom und das Drehmoment als Funktion der Drehzahl bei konstanter
-Versorgungsspannung aus?} ~
-
-\begin{figure}[H]
-    \centering
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[height=4cm]{image/8/3.1}
-    \end{minipage}
-    \hspace{2cm}
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[height=4cm]{image/8/3.2}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[height=2cm]{image/8/3.3}
-    \end{minipage}
-    \hspace{2cm}
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[height=2cm]{image/8/3.4}
-    \end{minipage}
-\end{figure}
+Versorgungsspannung aus?}
 
 \paragraph{Skizzieren Sie den Aufbau und Schaltplan einer Nebenschlussmaschine. Wie sieht bei einem
 Generator dieser Bauart die Klemmspannung als Funktion des Stromes aus? Wie sieht bei einem Motor
 dieser Bauart der Strom und das Drehmoment als Funktion der Drehzahl bei konstanter
-Versorgungsspannung aus?} ~
+Versorgungsspannung aus?}
 
-\begin{figure}[H]
-    \centering
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[height=4cm]{image/8/4.1}
-    \end{minipage}
-    \hspace{2cm}
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[height=4cm]{image/8/4.2}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[height=2cm]{image/8/4.3}
-    \end{minipage}
-    \hspace{2cm}
-    \begin{minipage}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[height=2cm]{image/8/4.4}
-    \end{minipage}
-\end{figure}
-
-\paragraph{Nennen und erklären Sie drei Arten von Erregung bei Gleichstrommaschinen.} ~
-
-\begin{itemize}
-    \item Permanente Erregung: Das Statorfeld wird durch einen Permenentmagneten erzeugt.
-    
-    \item Elektrische Erregung: Das Statorfeld wird durch einen Elektromagneten erzeugt. Werden
-        Erreger- und Ankerwicklung von der gleichen Quelle betrieben unterscheidet man je nach
-        Schaltung zwischen einer Reihen- oder Nebenschlussmaschine. Bei unabhängigem Betrieb spricht
-        man von Fremderregung.
-\end{itemize}
+\paragraph{Nennen und erklären Sie drei Arten von Erregung bei Gleichstrommaschinen.}
 
 \newpage
 
@@ -1809,7 +1669,7 @@ Eine Diode ist ein Bauelementen welches Strom beim anlegen einer Spannung nur in
 Legt man beispielsweise eine positive Spannung an, so fließt viel Strom durch die Diode. Polt man die Spannung um, kommt es zu einem kleinen 
 Sperrstrom, dieser ist aber um einige Größenordnungen kleiner als jener Durchflussrichtung.  
 \myparagraph{Erklären Sie Aufbau und Funktion einer Röhrendiode.}
-Bei gegebener Polung werden Elektronen von der geheizten Kathode (K) zur Anode (A) beschleunigt. Beide befinden sich in einem evakuiertem Behältnis (meist Glaskolben)
+\hypertarget{diode_link}{Bei} gegebener Polung werden Elektronen von der geheizten Kathode (K) zur Anode (A) beschleunigt. Beide befinden sich in einem evakuiertem Behältnis (meist Glaskolben)
 Ist die anliegende Spannung $U_a$ anders gepolt verbleiben die Elektronen auf der Kathode und es fließt kein Strom.  
 \begin{figure}[H]
     \centering
@@ -1820,12 +1680,49 @@ Verwendung: Für Gleichrichtung, Audiotechnik, etc.
 \myparagraph{Beschreiben Sie die Einweig- und Zweiweggleichrichtung sowie die Grätz-Schaltung mit
 Schaltplan und zeitlichem Verlauf der Eingangs- und Ausgangsspannung.}
 
-\paragraph{Erklären Sie die Glättung einer pulsierenden Gleichspannung mit einem Kondensator, wenn
+\textbf{Einweg-Gleichrichter: } Es wird nur eine z.B.: positive Halbwelle durchgelassen die Diode verhindert den Durchfluss in die entgegengesetzte Richtung.\\
+\textbf{Zweiweg-Gleichrichter: } Die sekundär Spule ist effektiv in zwei Teile geteilt. Dadurch liegt immer eine positive Spannung an, jedoch nur mehr mit der halben Amplitude.\\
+\textbf{Grätz-Gleichrichter: } Hier fließt immer eine Spannung unabhängig von der Polung, es ändert sich lediglich der Weg durch die Dioden. Die Amplitude der Ausgangsspannung ist 
+somit gleich wie die Eingehende. \\
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/11_Trafo/Einweg_Gleichrichter.png}
+        Einweg
+    \end{minipage}
+    \hspace{5mm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/11_Trafo/Zweiweg_Gleichrichter.png}
+        Zweiweg
+    \end{minipage}
+    \hspace{5mm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/11_Trafo/Grätz-Schaltung.png}
+        Grätz
+    \end{minipage}
+\end{figure}
+
+\myparagraph{Erklären Sie die Glättung einer pulsierenden Gleichspannung mit einem Kondensator, wenn
 die Schaltung mit einem ohm‘schen Widerstand belastet ist. Stellen Sie Eingangs- und
 Ausgangsspannung als Funktion der Zeit in einem Diagramm dar und erklären Sie den Spannungsverlauf.}
-
-\paragraph{Erklären Sie Aufbau und Funktionsweise eines einfachen Röhrenverstärkers.}
-
+Der Kondensator wird während der positiven Halbwelle aufgeladen. Während der negativen Halbwelle fließt kein Strom durch die Diode, 
+der Kondensator entlädt sich und \glqq glättet \grqq rudimentär die pulsierende Gleichspannung.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{image/11_Trafo/Glättung_Gleichspannung.png}
+\end{figure}
+\myparagraph{Erklären Sie Aufbau und Funktionsweise eines einfachen Röhrenverstärkers.}
+Funktionsweise ähnlich wie die einer Röhrendiode. Von einer Glühkathode (K) werden die Elektronen zur Anode (A) beschleunigt. Jedoch müssen diese durch ein Streugitter (G) fliegen.
+Liegt nun am Gitter eine zu große negative Spannung an, so werden die Elektronen wieder abgelenkt und es kommt zu keinem Strom zwischen Kathode und Anode. Durch die Steuerung 
+der am Gitter angelegten Spannung kann somit auch der Gesamtstrom von K zu A und somit der Ausgangsstrom kontrolliert werden. \\
+Röhrenverstärker $\rightarrow$ Vakuumröhren mit Kathode und Anode  (siehe auf \hyperlink{diode_link}{Röhrendiode})
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{image/11_Trafo/Röhrenverstärker.png}
+\end{figure}
 \newpage
 
 \section{Elektromagnetische Schwingungen und Entstehung von Wellen}
@@ -2450,5 +2347,26 @@ bezeichnen Sie alle wesentlichen Elemente.}
 
 \paragraph{Wie ist das spektrale Auflösungsvermögen definiert? Schreiben Sie einen Ausdruck für das
 spektrale Auflösungsvermögen eins Gittermonochromators an.}
+\newpage
+\section{Fehlermeldungen}
+\label{sec:Fehler}
+\hypertarget{Fehler}{Fehlermeldungen} auf dem \href{https://github.com/etschgi1/Ex2_Fragen/issues}{\underline{Github Repo}} erstellen.\\
+Dazu auf \glqq New Issue\grqq klicken.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{image/Misc/Issues.png}
+\end{figure}
+Schließlich den Fehler im Dokument beschreiben und bestenfalls die korrekte Lösung beschreiben. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{image/Misc/Issue_erstellen.png}
+\end{figure}
+Zuletzt noch ein passendes Label (rechts neben dem Issue comment Feld auswählen) hinzufügen.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{image/Misc/Labels.png}
+\end{figure}
+\vspace{5mm}
+\textbf{Direkte Änderungen} am .tex file, bzw. Änderungen bei den Grafiken gerne einen \href{https://github.com/etschgi1/Ex2_Fragen/pulls}{\underline{Pull request}} erstellen!
 
 \end{document}
