@@ -1250,84 +1250,367 @@ Stetigkeitsbedingungen müssen die elektrischen und magnetischen Felder an Grenz
 \section{Zeitlich veränderliche Felder}
 
 \paragraph{Schreiben Sie das Faradaysche Induktionsgesetz an. Welche Prozesse können zu einer
-induzierten Spannung in einer Leiterschleife führen?}
+induzierten Spannung in einer Leiterschleife führen?} ~
+
+\begin{equation}
+    U_{ind} = - \frac{d}{dt} \int \bold{B} d\bold{A} = - \frac{d \phi_m}{dt}
+\end{equation}
+
+Eine induzierte Spannung kann durch Änderung der magnetischen Feldstärke $\bold{B}$, des
+Flächeninhalts $A$ oder der Orientierung der beiden Größen relativ zueinander hervorgerufen werden.
 
 \paragraph{Eine quadratische Leiterschleife (Schleifenfläche A) dreht sich im homogenen Magnetfeld
 mit der Winkelgeschwindigkeit $\omega$ um eine Achse, die senkrecht zu den magnetischen Feldlininen
 steht. Schreiben Sie einen Ausdruck für die induzierte Spannung als Funktion des Winkels und der
 Zeit an. Bei welcher Orientierung der Leiterschleife relativ zum Magnetfeld ist die induzierte
-Spannung maximal (Skizze!)?}
+Spannung maximal (Skizze!)?} ~
+
+\begin{equation}
+    \phi_m = \int \bold{B} d\bold{A} = B \cdot N \cdot A \cdot cos(\omega \cdot t)
+\end{equation}
+\begin{equation}
+    U_{ind} = - \frac{d}{dt} \phi_m = B \cdot N \cdot A \cdot \omega \cdot sin(\omega \cdot t)
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=6cm]{image/7/2.1}
+\end{figure}
+
+Die induzierte Spannung ist maximal, wenn die Flächennormale mit $\varphi = \SI{90}{\degree}$
+senkrecht auf das Magnetfeld steht.
 
 \paragraph{Eine offene Leiterschleife befindet sich in einem homogenen Magnetfeld. Der
 Flächennormalvektor steht parallel zu den Feldlinien. Die magnetische Feldstärke nimmt mit der Zeit
 zu. Skizzieren Sie die Situation und zeichnen Sie die Richtung der induzierten elektrischen
-Feldstärke sowie die Polarität der beiden offenen Enden der Leiterschleife ein.}
+Feldstärke sowie die Polarität der beiden offenen Enden der Leiterschleife ein.} ~
 
-\paragraph{Beschreiben Sie Aufbau und Funktion einer Induktionsschleuder.}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/7/3.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=3cm]{image/7/3.2}
+    \end{minipage}
+\end{figure}
 
-\paragraph{Was versteht man unter Selbstinduktion? Was bedeutet der Selbstinduktionskoeffizient?}
+\paragraph{Beschreiben Sie Aufbau und Funktion einer Induktionsschleuder.} ~
+
+Auf einem langen Eisenjoch liegt über einer Feldspule ein Aluminiumring. Wird die Spule
+eingeschaltet, so wird im Ring ein Induktionsstrom erzeugt dessen magnetisches Moment so gerichtet
+ist, dass der Ring hochgeschleudert wird. Dieses Prinzip kann technisch angewandt werden, um
+kleinere Projektile auf große Geschwindigkeiten von bis zu \SI{8}{\km\per\s} beschleunigen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{image/7/4}
+\end{figure}
+
+\paragraph{Was versteht man unter Selbstinduktion? Was bedeutet der Selbstinduktionskoeffizient?} ~
+
+In einer stromdurchflossenen Spule wird bei einer zeitlichen Änderung des Stromes der magnetische
+Fluss durch die Spule geändert, weshalb nun aufgrund des Magnetfelds der Spule auch in der Spule
+selbst eine Induktionsspannung entsteht. Diese ist gemäß der Lenz'schen Regel der Änderung der von
+außen angelegten stromtreibenden Spannung entgegengerichtet.
+
+Da das von der Spule erzeugte Magnetfeld proportional zum Strom $I$ durch die Spule ist, folgt mit
+$\phi_m = L \cdot I$ die Proportionalitätskonstante $L$ mit der Maßeinheit Henry, welche auch als
+Selbstinduktionskoeffizient bekannt ist.
 
 \paragraph{Eine Doppelleitung besteht aus zwei zylindrischen, parallelen Leitern, durch die der
 gleiche Strom aber mit unterschiedlichen Vorzeichen fließt. Fertigen Sie eine Skizze an, skizzieren
 Sie das Magnetfeld der Anordnung und schreiben Sie das Magnetfeld zwischen den Leitern analytisch
 an. Zeigen Sie, wie man daraus (im Prinzip) den Selbstinduktionskoeffizienten der Doppelleitung
-berechnen kann.}
+berechnen kann.} ~
 
-\paragraph{Was versteht man unter Gegeninduktion? Wie kann man sie formal beschreiben?}
+\begin{equation}
+    B_a = \frac{\mu_0 I}{2 \pi} \left( \frac{1}{\frac{d}{2} + x} + \frac{1}{\frac{d}{2} - x} \right)
+\end{equation}
+\begin{equation}
+    B_{1i} = \frac{\mu_0 I}{2 \pi r_0^2} \left( \frac{d}{2} + x \right) + B_{2a}
+\end{equation}
+\begin{equation}
+    B_{2i} = \frac{\mu_0 I}{2 \pi r_0^2} \left( \frac{d}{2} - x \right) + B_{1a}
+\end{equation}
+Durch Integration über die magnetische Flussdichte $B$ ergibt sich zunächst der magnetische Fluss
+$\phi_m$ und in weiterer Folge der Selbstinduktionskoeffizient $L$.
+\begin{equation}
+    \phi_m = l \cdot \int_{-d/2}^{d/2} B dx
+\end{equation}
+\begin{equation}
+    L
+    = \frac{\phi_m}{I}
+    = ...
+    = \frac{\mu_0 I}{2 \pi} \left( 1 + 2 \cdot ln \frac{d - r_0}{r_0} \right)
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/7/6.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/7/6.2}
+    \end{minipage}
+\end{figure}
+
+\paragraph{Was versteht man unter Gegeninduktion? Wie kann man sie formal beschreiben?} ~
+
+Ein vom Strom $I_1$ durchflossener Stromkreis 1 erzeugt im Punkt $\bold{P(r_2)}$ ein Magnetfeld
+$\bold{B}$. Dieses Magnetfeld erzeugt einen magnetischen Fluss durch die vom Leiterkreis 2
+eingeschlossene Fläche $A$. Die diesen Fluss $\phi_m = L_{12} \cdot I_1$ mit dem Strom $I_1$ im
+Stromkreis 1 verknüpfende Proportionalitätskonstante $L_{12} = L_{21}$ heißt Koeffizient der
+gegenseitigen Induktivität.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/7/7}
+\end{figure}
 
 \paragraph{Beschreiben Sie den Strom- und Spannungsverlauf einer Serienschaltung aus idealer
 Induktivität und ohm‘schen Widerstand, wenn diese über einen Schalter mit einer idealen
 Spannungsquelle verbunden werden (Einschaltvorgang). Schreiben Sie die Funktionen $I(t)$ sowie
-$U(t)$ für Widerstand und Spule an und erstellen Sie die entsprechenden Diagramme.}
+$U(t)$ für Widerstand und Spule an und erstellen Sie die entsprechenden Diagramme.} ~
+
+\begin{equation}
+    I(t) = \frac{U_0}{R} \cdot \left( 1 - e^{-Rt/L} \right)
+\end{equation}
+\begin{equation}
+    U_L(t) = U_0 \cdot e^{-Rt/L} ~~~ U_R = U_0 \cdot \left( 1 - e^{-Rt/l}) \right)
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/7/8}
+\end{figure}
 
 \paragraph{Beschreiben Sie den Strom- und Spannungsverlauf einer Serienschaltung aus idealer
 Induktivität und ohm‘schen Widerstand, wenn diese über einen Schalter von einer
 Spannungsquelle plötzlich getrennt werden (Ausschaltvorgang). Schreiben Sie die
 Funktionen $I(t)$ sowie $U(t)$ für Widerstand und Spule an und erstellen Sie die entsprechenden
-Diagramme.}
+Diagramme.} ~
+
+\begin{equation}
+    I(t) = \frac{U_0}{R} \cdot e^{-Rt/L}
+\end{equation}
+\begin{equation}
+    U_L(t) = - U_0 \cdot e^{-Rt/L} ~~~ U_R = U_0 \cdot e^{-Rt/L}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/7/9}
+\end{figure}
 
 \paragraph{Wie kann man im Prinzip die Induktivität z.B. einer Spule durch eine Zeitmessung
-bestimmen (Schaltplan und Beschreibung)?}
+bestimmen (Schaltplan und Beschreibung)?} ~
 
 \paragraph{Zwei dünne, lange Spulen sind auf den gleichen Kern gewickelt, sodass der gesamte
 magnetische Fluss der einen Spule durch die andere fließt. Berechnen Sie die in einer Spule
 induzierte Spannung, wenn sich in der andern der Strom ändert. Die Spulenlängen, die Anzahl der
 Windungen, die Spulenquerschnitte, und die magnetischen Eigenschaften des Spulenkerns seien
-bekannt.}
+bekannt.} ~
 
 \paragraph{Berechnen Sie die im magnetischen Feld einer dünnen, langen Spule gespeicherte Energie
 als Funktion des Stromes. Die Spulenlänge, die Anzahl der Windungen, der Spulenquerschnitt, und die
 magnetischen Eigenschaften des Spulenkerns seien bekannt.}
 
+\begin{equation}
+    W(I) = \frac{1}{2} \cdot I^2 \cdot L = \frac{1}{2} \cdot I^2 \cdot \mu_r \mu_0 n^2 \frac{A}{l}
+\end{equation}
+
 \paragraph{Schreiben Sie die Maxwell-Gleichungen an und visualisieren Sie die Quellen der
 elektrischen und magnetischen Felder sowie die Ursache der elektrischen und magnetischen
-Wirbelfelder. (vgl. Folie 23).}
+Wirbelfelder. (vgl. Folie 23).} ~
+
+\begin{equation}
+    rot~\bold{E} + \pdv{\bold{B}}{t} = 0 ~~~ div~\bold{D} = \rho
+\end{equation}
+\begin{equation}
+    rot~\bold{H} - \pdv{\bold{D}}{t} = \bold{j} ~~~ div~\bold{B} = 0
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/7/13}
+\end{figure}
 
 \newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Elektrische Generatoren und Motoren}
 
 \paragraph{Erklären Sie das Prinzip eines einfachen Wechselstromgenerators mit einer Spule im
 homogenen äußeren Magentfeld. Schreiben Sie die Beziehung für den elektrischen Fluss an und leiten
-Sie daraus die induzierte Spannung bei konstanter Winkelgeschwindigkeit als Funktion der Zeit her.}
+Sie daraus die induzierte Spannung bei konstanter Winkelgeschwindigkeit als Funktion der Zeit
+her.} ~
+
+Eine rechteckige Spule mit der Windungsfläche $F$ befindet sich im homogenen Magnetfeld $\bold{B}$
+und wird mit der Winkelgeschwindigkeit $\omega$ gedreht. Dabei wird an den Enden der Spule eine
+Wechselspannung induziert, welche über zwei Schleifkontakte abgegriffen werden kann.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/8/1}
+\end{figure}
+
+\begin{equation}
+    \phi_m = \int \bold{B} d\bold{A} = B \cdot N \cdot A \cdot cos(\omega \cdot t)
+\end{equation}
+\begin{equation}
+    U_{ind} = - \frac{d}{dt} \phi_m = B \cdot N \cdot A \cdot \omega \cdot sin(\omega \cdot t)
+\end{equation}
 
 \paragraph{Doppel-T Anker und Trommelanker: Beschreiben Sie die Funktion eines permanenterregten
 Generators mit Doppel-T Anker und Kommutator. Skizzieren Sie den Anker inklusive Stellung und
 Anschluss des Kommutators relativ zur Spulenorientierung. Erstellen Sie ein Diagramm der
 Klemmspannung als Funktion der Zeit für konstante Drehgeschwindigkeit. Welche Vorteile bringt ein
-Trommelanker?}
+Trommelanker?} ~
+
+Am permanent erregten Generator wird das magnetische Feld durch einen als Stator dienenden
+Permanentmagneten erzeugt. Die bei Drehung des Rotors in den Spulen induzierte Spannung wird über
+den Kommutator abgenommen, welcher je Spule genau ein Segment aufweist.
+
+Die Verwendung eines Trommelankers stellt im Gegensatz zum Doppel-T-Anker eine Verbesserung dar,
+bei der der magnetische Kraftfluss $\phi_m$ vergrößert wird. Mit der Anzahl der Spulen wird die
+erzeugte Gleichspannung immer gleichmäßiger. Im Fall von Gleichstrommotoren ermöglicht ein
+Trommelanker zudem ein selbständiges Anlaufen des Motors, da immer auf mindestens ein Ankerelement
+ein Drehmoment wirkt.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=3cm]{image/8/2.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=6cm]{image/8/2.2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=7cm]{image/8/2.3}
+\end{figure}
 
 \paragraph{Skizzieren Sie den Aufbau und Schaltplan einer Hauptschlussmaschine. Wie sieht bei einem
 Generator dieser Bauart die Klemmspannung als Funktion des Stromes aus? Wie sieht bei einem Motor
 dieser Bauart der Strom und das Drehmoment als Funktion der Drehzahl bei konstanter
-Versorgungsspannung aus?}
+Versorgungsspannung aus?} ~
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/8/3.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/8/3.2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=2cm]{image/8/3.3}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=2cm]{image/8/3.4}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Skizzieren Sie den Aufbau und Schaltplan einer Nebenschlussmaschine. Wie sieht bei einem
 Generator dieser Bauart die Klemmspannung als Funktion des Stromes aus? Wie sieht bei einem Motor
 dieser Bauart der Strom und das Drehmoment als Funktion der Drehzahl bei konstanter
-Versorgungsspannung aus?}
+Versorgungsspannung aus?} ~
 
-\paragraph{Nennen und erklären Sie drei Arten von Erregung bei Gleichstrommaschinen.}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/8/4.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/8/4.2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=2cm]{image/8/4.3}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=2cm]{image/8/4.4}
+    \end{minipage}
+\end{figure}
+
+\paragraph{Nennen und erklären Sie drei Arten von Erregung bei Gleichstrommaschinen.} ~
+
+\begin{itemize}
+    \item Permanente Erregung: Das Statorfeld wird durch einen Permenentmagneten erzeugt.
+    
+    \item Elektrische Erregung: Das Statorfeld wird durch einen Elektromagneten erzeugt. Werden
+        Erreger- und Ankerwicklung von der gleichen Quelle betrieben unterscheidet man je nach
+        Schaltung zwischen einer Reihen- oder Nebenschlussmaschine. Bei unabhängigem Betrieb spricht
+        man von Fremderregung.
+\end{itemize}
 
 \newpage
 
@@ -1400,24 +1683,79 @@ Zeigerdiagramm und Ausdruck für die Ausgangsspannung.}
 
 \section{Transformator und Gleichrichter}
 
-\paragraph{Erklären Sie Aufbau, Sinn und Funktionsprinzip eines Transformators.}
+\myparagraph{Erklären Sie Aufbau, Sinn und Funktionsprinzip eines Transformators.}
 
-\paragraph{Zeigen Sie, dass bei einem unbelasteten Transformator das Spannungsverhältnis gleich dem
+Transformatoren bestehen aus zwei Spulen, welche mit einem Eisenjoch verbunden sind. Die beiden Spulen sind nicht im gleichen Netzwerk. 
+Sinn des Trafos ist es, eine Spannung $U_1$ auf eine andere Spannung $U_2$ zu transformieren. Das ist aufgrund vom Farady-Gesetz möglich. Das Eisenjoch ist für beide Spulen 
+ein Eisenkern und bündelt den magnetischen Fluss. \\
+Je nach Windungssinn ergibt sich der Spannungsabfall $U_2$ wie folgt:
+\begin{figure}[H]
+    \centering
+    \includegraphics[]{image/11_Trafo/Trafo_Aufbau.png}
+\end{figure}
+Für die Primär- und Sekundärspannung folgt somit:
+\begin{equation}
+    \textbf{gegensinnige Wicklung: } \frac{U_2}{U_1} = \frac{N_2}{N_1} \hspace{2cm} \textbf{gleichsinnige Wicklung: } \frac{U_2}{U_1} = - \frac{N_2}{N_1}
+\end{equation}
+\myparagraph{Zeigen Sie, dass bei einem unbelasteten Transformator das Spannungsverhältnis gleich dem
 Verhältnis der Wicklungsanzahl von Primär- und Sekundärseite ist (Beträge). Wie ändert sich die
 Sekundärspannung qualitativ bei Belastung.}
-
-\paragraph{Zeigen Sie, dass beim unbelasteten Trafo der primärseitig aufgenommene Strom nicht null
+Legt man an der Primärspule eine Wechselspannung $U_1$ an, so fließt ein Strom $I_1$ dieser erzeugt einen magentischen Fluss $\phi_m$ welcher wiederum eine Induktionsspannung 
+$U_{ind}$ bewirkt. 
+\[U_{ind} = - L_1 \frac{d I_1}{d t} = -N_1 \frac{d \phi_m}{d t} = -U_1\]
+Wie man sieht gilt auch hier die Maschenregel $U_1 + U_{ind} = 0$. 
+Tritt nun der gesamte in $L_1$ induzierte Fluss auch durch $L_2$ so wird hier eine Spannung $U_2$ induziert:
+\[U_2 = -N_2 \frac{d \phi_m}{d t}\]
+Aus den oberen Termen folgt nun:
+\begin{equation}
+    - \frac{U_2}{N_2} = \frac{U_1}{N_1} \rightarrow \frac{U_2}{U_1} = - \frac{N_2}{N_1} 
+\end{equation}
+Fließt beim belasteten Trafo nun ein Strom $I_2$ durch einen Verbraucher, so erzeugt dieser ein selbstinduziertes Magnetfeld $\phi_{sekundär}$
+welches $U_2$ verringert. Da die Energieerhaltung gilt muss somit folgendes gelten:
+\[P_1 = P_2 \rightarrow U_1 \cdot I_1 = U_2 \cdot I_2\]
+\myparagraph{Zeigen Sie, dass beim unbelasteten Trafo der primärseitig aufgenommene Strom nicht null
 ist, dass aber die aufgenommene Wirkleistung null ist.}
-
-\paragraph{Leiten Sie eine Ausdruck für das Verhältnis der Ströme von Primär- und Sekundärseite
+Ein unbelasteter Trafo ist nichts anderes als eine glorifizierte Spule mit Eisenkern (da ja schließlich der Sekundärkreis nicht geschlossen ist).
+Wie schon bei normaler Induktion ergibt sich die mittlere Leistung einer Spule zu:
+\begin{equation}
+    \bar{P}_{Wirkleistung} = \frac{1}{2} U I \cos(\phi) = 0
+\end{equation}
+Die Spannung und Strom durch die Spule sind dabei um $\pi/2$ verschoben, was zu einem reinem Blindstrom und somit zu keiner Wirkleistung führt.
+\myparagraph{Leiten Sie einen Ausdruck für das Verhältnis der Ströme von Primär- und Sekundärseite
 eines belasteten Transformators ab. Die Impedanz der Last sei $Z$.}
-
-\paragraph{Erklären Sie die charakteristischen Eigenschaften einer Diode anhand einer typischen
+Es gilt für die Spannung in der Primär- sowie Sekundärspule (Belastung mit Last $Z$):
+\[U_1 = i\omega L_1 I_1 + i\omega L_{12} I_2\]
+\[U_2 = I_2 \cdot Z = -i \omega L_2 I_2 - i \omega L_{12} I_1\]
+Hierbei sind $L_1$ und $L_2$ die jeweiligen Induktivitäten in Primär- und Sekundärspule. $L_{12}$ ist die gegenseitige Induktivität.
+Das Minus bei $U_2$ lässt sich damit erklären, da die Spannung hier 90° nacheilt, während sie im Primärkreis 90° voreilt (Gegenüber Strom; gleiche Phase im Eisenkern).
+Löst man nach $Z$ auf ergibt sich:
+\begin{equation}
+    I_2 \cdot Z = -i \omega(L_2 I_2 + L_{12} I_1) \hspace{5mm} \rightarrow \hspace{5mm} Z = -i \omega L_2 - (i \omega L{12} \frac{I_1}{I_2})
+\end{equation}
+Schließlich ergibt sich somit das Verhältnis von $I_1$ zu $I_2$ zu:
+\begin{equation}
+    \frac{I_1}{I_2} = \frac{z + i \omega L_2}{-i \omega L_{12}}
+\end{equation}
+\newpage
+\myparagraph{Erklären Sie die charakteristischen Eigenschaften einer Diode anhand einer typischen
 Diodenkennlinie.}
-
-\paragraph{Erklären Sie Aufbau und Funktion einer Röhrendiode.}
-
-\paragraph{Beschreiben Sie die Einweig- und Zweiweggleichrichtung sowie die Grätz-Schaltung mit
+Eine Diode ist ein Bauelementen welches Strom beim anlegen einer Spannung nur in eine Richtung fließen lässt (Abgesehen vom Sperrstrom).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/11_Trafo/Diode_Kennlinie.png}
+\end{figure}
+Legt man beispielsweise eine positive Spannung an, so fließt viel Strom durch die Diode. Polt man die Spannung um, kommt es zu einem kleinen 
+Sperrstrom, dieser ist aber um einige Größenordnungen kleiner als jener Durchflussrichtung.  
+\myparagraph{Erklären Sie Aufbau und Funktion einer Röhrendiode.}
+Bei gegebener Polung werden Elektronen von der geheizten Kathode (K) zur Anode (A) beschleunigt. Beide befinden sich in einem evakuiertem Behältnis (meist Glaskolben)
+Ist die anliegende Spannung $U_a$ anders gepolt verbleiben die Elektronen auf der Kathode und es fließt kein Strom.  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/11_Trafo/Röhrendiode.png}
+\end{figure}
+Funktion: Strom kann nur in eine Richtung fließen. \\
+Verwendung: Für Gleichrichtung, Audiotechnik, etc.
+\myparagraph{Beschreiben Sie die Einweig- und Zweiweggleichrichtung sowie die Grätz-Schaltung mit
 Schaltplan und zeitlichem Verlauf der Eingangs- und Ausgangsspannung.}
 
 \paragraph{Erklären Sie die Glättung einer pulsierenden Gleichspannung mit einem Kondensator, wenn
@@ -1694,25 +2032,125 @@ Somit ergeben sich die die Intensitätsmaxima unter folgendem Winkel:
 \end{equation}
 
 
-\paragraph{Beschreiben Sie den Aufbau und Funktion eines Michelson-Interferometers und schreiben
+\myparagraph{Beschreiben Sie den Aufbau und Funktion eines Michelson-Interferometers und schreiben
 sie einen Ausdruck für die Intensität am Detektor als Funktion der Längendifferenz der
 Lichtwege an.}
 
-\paragraph{Was versteht man unter „zeitlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
+Ein Michelson-Interferometer trennt einen monochromatischen kohärenten Lichtstrahl am halbdurchlässigen Spiegel auf. Unterscheiden sich die Abstände der beiden Spiegel, so kommt es
+je nach Wegunterschied zur Interferenz am Detektor. Ursprünglich versuchte man mittels des Interferometers die Äthertheorie zu bestätigen. Hier vermutete man, dass es zu einem Gangunterschied 
+zwischen den Teilwellen kommt, da sich die Erde durch den Äther (vermutetes Ausbreitungsmedium des Lichts) bewegt, dies wurde jedoch experimentell widerlegt. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Michelson_Interferometer.png}
+\end{figure}
+Die Intensität am Detektor (B) ist gegeben durch:
+\[I_T = c \epsilon_0 (E_1+E_2)^2\]
+wobei $E_1$ und $E_2r$ durch:
+\[E_1 = \sqrt{RT} A_e \cdot \cos(\omega t + \varphi_1) \hspace{5mm} \text{bzw.} \hspace{5mm} E_2 = \sqrt{RT} A_e \cdot \cos(\omega t + \varphi_2)\]
+gegeben sind. Somit ergibt sich $I_T$ weiter zu:
+\[I_T = c \epsilon_0 RT A_e^2[\cos(\omega t + \varphi_1) + \cos(\omega t + \varphi_2)]^2\]
+Seien nun die Wege zu den Spiegeln (1 und 2) als $s_1$ und $s_2$ ergibt sich deren Differenz zu $\Delta s$. 
+Der Klammerterm unterscheidet sich nur um die Phase $\Delta \varphi$ welche sich mittels der Wege auch als
+\[\Delta \varphi = \varphi_1 - \varphi_2 = \frac{2\pi}{\lambda}\cdot \Delta s\]
+schreiben lässt. Setzt man nun $\varphi_1$ auf 0 und $\varphi_2$ auf $\Delta \varphi$ ergibt sich ein Term für die Intensität in Abhängigkeit der Längendifferenz:
+\begin{equation}
+    I_T = c \epsilon_0 RT A_e^2[\cos(\omega t) + \cos(\omega t + frac{2\pi}{\lambda}\cdot \Delta s)]^2
+\end{equation}
+Nochmals grafisch:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Michelson_Funktion_Wegunterschied.png}
+\end{figure}
+
+\myparagraph{Was versteht man unter „zeitlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
 beeinflussen? Mit welchem Gerät könnte man sie wie bestimmen?}
 
-\paragraph{Was versteht man unter „räumlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
+Als \glqq zeitlich kohärent \grqq bezeichnet man Wellen die ihre Phasendifferenz zeitlich beibehalten. Wie links abgebildet laufen die Wellen in beliebige Richtung aus der Quelle
+starten jedoch alle bei der gleichen Phase (Nulldurchgang) und haben nach gleichen Zeitintervallen alle dieselbe Phasenverschiebung zum Ausgangspunkt [diskrete Zeiten farbig markiert].
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/18_Interferenz/Zeitlich_kohärent.png}
+        Zeitlich
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/18_Interferenz/räumliche_kohärenz.png}
+        Räumlich
+    \end{minipage}
+\end{figure}
+
+\textbf{Kohärenzzeit $\Delta t_C$}: maximale Zeitspanne, während der sich die Phasendifferenz $\Delta \varphi$ um weniger als $2\pi$ ändert. 
+$\Delta t_C = 1/(\Delta f)$ wobei $\Delta f$ die spektrale Frequenzbreite der Lichtquelle ist. \\\\
+Messung mittels Interferometer (z.B.: Michelson-Interferometer)\\\\
+Eine Quelle ist nicht zeitlich kohärente falls:
+\begin{enumerate}
+    \item Sich die Frequenz (des Senders) mit der Zeit ändert. 
+    \item Bei endlichen Wellenzügen mit statistisch verteilten Phasen
+    \item Bei zeitlichen Änderungen des Brechungsindex zwischen Sender und Empfänger
+\end{enumerate}
+\myparagraph{Was versteht man unter „räumlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
 beeinflussen? Mit welchem Gerät könnte man sie wie bestimmen?}
 
-\paragraph{Zeichnen Sie den prinzipiellen Aufbau / Strahlengang eines Sagnac und eines Mach-Zehnder Interferometers.}
+Als \glqq räumlich kohärent \grqq bezeichnet man Wellen welche entlang einer Achse (meist jene senkrecht zur Ausbreitungsrichtung) eine feste Phasendiffernz aufweisen (siehe rechts oben).
+Letztere Achse wird auch als Kohärenzfläche bezeichnet. \\
+\textbf{Kohoärenzlänge $\Delta x$}: Länge welche das Licht während der Kohärenzzeit zurücklegt. \\$\Delta x = c \cdot \Delta t_C$.\\
+Messung mittels Interferometer.
 
-\paragraph{Erklären Sie Aufbau, Funktion und Transmissionsverhalten eines
+\myparagraph{Zeichnen Sie den prinzipiellen Aufbau / Strahlengang eines Sagnac und eines Mach-Zehnder Interferometers.}
+
+\textbf{Sagnac:} Rotiert das Interferometer um seine Achse brauchen die beiden Teilstrahen unterschiedlich Lange (Spiegel drehen sich von ihnen weg bzw. auf sie zu). 
+Damit wurde die Erdrotationsperiode gemessen.\\
+\textbf{Mach-Zehnder:} Durch den unterschiedlichen Brechungsindex kommt es zu einer Wegdifferenz und somit zu einer Interferenz der beiden Teilstrahlen, dies erlaubt genaue Rückschlüsse auf den
+Brechungsindex (z.B. von Gasen).
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.35\textwidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{image/18_Interferenz/Sagnac_Interferometer.png}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{image/18_Interferenz/Mach-Zehnder_Interferometer.png}
+    \end{minipage}
+\end{figure}
+
+\myparagraph{Erklären Sie Aufbau, Funktion und Transmissionsverhalten eines
 Fabry-Perot-Interferometers. Skizzieren Sie den spektralen Verlauf der Transmission als Funktion der
 Finesse. Wie ist die Finesse definiert?}
+Besteht aus 2-teilreflektierenden Platten. Die einzelnen Strahlen interferieren miteinander, wobei nur gewisse Wellenlängen größtenteils transmittiert werden. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/18_Interferenz/Fabry-Perot_Interferometer.png}
+\end{figure}
+Die Finesse F ist definiert als das Verhältnis zwischen freiem Spektralbereich $\Delta\lambda$ und der Halbwertsbreite $\delta\lambda$ eines einzelnen Maximums. 
+\begin{equation}
+    F = \frac{\Delta \lambda}{\delta \lambda} = \frac{\delta f}{\Delta f}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Finesse.png}
+\end{figure}
+Bei höherer Finesse wird mehr nach Wellenlänge \glqq selektiert \grqq. Es löscht sich also mehr Licht durch Interferenz aus und es wird gemittelt über einen Wellenlängenbereich weniger
+transmittiert als bei geringerer Finesse. Exemplarisch ist dieser Zusammenhang unten dargestellt (y-Achse: Mittel der Transmittierten Intensität, x-Achse: Finesse)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/18_Interferenz/Finesse_gegen_Transmission.png}
+\end{figure} 
 
-\paragraph{Beschreiben Sie die Funktionsweise einer einfachen Antireflexbeschichtung aus einer
+\myparagraph{Beschreiben Sie die Funktionsweise einer einfachen Antireflexbeschichtung aus einer
 dielektrischen Schicht.}
-
+Eine Antireflexbeschichtung besteht aus einem Träger (Glas) auf dem eine $\lambda/4$ - Schicht mit Brechungsindex zwischen Glas und Luft aufgetragen wird. Der einfallende Strahl
+$I_0$ wird zum Teil an der Grenzfläche $n_1$ - $n_2$ bzw. an $n_2$ - $n_3$ reflektiert. Wählt man $n_2$ richtig, so sind die beiden reflektierten Strahlen genau um $\pi/2$ phasenverschoben,
+was zu einer gegenseitigen Auslöschung führt. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Antireflexionsbeschichtung.png}
+\end{figure} 
+Durch verwenden von mehreren Schichten, kann ein größerer Spektralbereich abgedeckt werden. 
 \newpage
 
 \section{Beugung}
