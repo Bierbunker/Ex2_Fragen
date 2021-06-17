@@ -22,5 +22,5 @@ O                                   Wellen an Grenzflächen, optische Anisotropi
 X Alisa                             Geometrische Optik II         
 X Elias                             Interferenz
 O                                   Beugung
-! David                             Optische Instrumente I
+X David                             Optische Instrumente I
 O                                   Optische Instrumente II
