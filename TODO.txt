@@ -15,7 +15,7 @@ X Dominik                           Elektrische Generatoren und Motoren
 ! Dominik                           Wechselstromkreise und Lineare Netzwerke
 ! Elias                             Transformator und Gleichrichter
 X David                             Elektromagnetische Schwingungen und Entstehung von Wellen
-! David                             Elektromagnetische Wellen
+X David                             Elektromagnetische Wellen
 O                                   Wellen in Materie
 O                                   Wellen an Grenzflächen, optische Anisotropie und Polarisation   
 # Alisa         7, 8                Geometrische Optik I         

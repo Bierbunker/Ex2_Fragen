@@ -1621,11 +1621,26 @@ die Phase $\phi \neq 0$. Zeichnen Sie das Zeigerdiagramm für die Spannung zum Z
 $t=T/4$ , wobei $T$ die Periodendauer ist. Zeichnen Sie Periodendauer, Scheitelwert und Effektivwert
 ein.}
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/9/wechselstrom1}
+\end{figure}
+
+
+
 \paragraph{Eine Wechselspannungsquelle liefert an einen Verbraucher Spannung und Strom. Der Strom
 eilt der Spannung um einen Phasenwinkel von \SI{45}{\degree} nach. Zeichnen Sie den zeitlichen
 Spannungs- und Stromverlauf und das Zeigerdiagramm mit Spannung und Strom zum Zeitpunkt $t=0$ bei
 dem die Spannung gerade ihr Maximum hat, und zum Zeitpunkt $t=T/4$, wobei $T$ die Periodendauer
 ist.}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/9/wechselstrom2}
+\end{figure}
+
 
 \paragraph{Eine Wechselspannungsquelle liefert an einen Verbraucher Spannung und Strom. Der Strom
 eilt der Spannung um einen Phasenwinkel von \SI{45}{\degree} voraus. Zeichnen Sie den zeitlichen
@@ -1635,6 +1650,13 @@ berechnen Sie Wirk-, Blind-, und Scheinleistung.}
 \paragraph{Zeichnen Sie den zeitlichen Spannungsverlauf einer dreiphasigen Wechselspannung sowie das
 zugehörige Zeigerdiagramm.}
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/9/wechselstrom4}
+\end{figure}
+
+
 \paragraph{Zeichnen Sie die Schaltpläne für drei Widerstände, die in Stern- oder Dreieckschaltung an
 eine dreiphasige Wechselspannung angeschlossen sind. Erstellen Sie die zugehörigen Zeigerdiagramme.
 Berücksichitgen Sie im Zeigerdiagramm bei der Dreieckschaltung sowohl die Strangspannungen $U_i$ als
@@ -1643,6 +1665,29 @@ auch die Außenleiterspannungen $U_{ij}$ und deren Konstruktion.}
 \paragraph{Beschreiben und erklären Sie den Aufbau eines Asynchron-Motors mit Kurzschluss-Läufer.
 (Skizze und Benennung aller wesentlicher Bauteile)}
 
+Ist eine Drehstrommaschine, bei der der Rotor dem Drehfeld des Stators als Generator vor und als Elektromotor nachläuft. Entweder strändig oder fallweise kurzgeschlossen. Dreht sich der Rotor langsamer als das Magnetfeld ändert sich dadurch der magnetische Fluss, was eine Spannung induziert, die wiederum einen Strom hervorruft. Fließt Strom durch die Ständerwicklung wird dadurch ein Magnetfeld aufgebaut. Aufgrund der Kreisbewegung wandert das Magnetfeld. Das Ständerfeld kann auf das Drehfeld wirken und ein Drehmoment auf den Läufer ausüben. Da sich das Ständerfeld fortlaufend in eine Richtung bewegt, entsteht eine Drehbewegung.
+
+
+Aufbau: Ein Asynchronmotor besteht aus einem Gehäuse in dem sich ein Ständerblechpaket befindet. Zwischen den Ständerblechen werden drei Wicklungen geführt, an welche die drei Drehstrompha- sen gelegt werden.
+Innerhälb des Ständer befindet sich als bewegliches Element ein Läufer, der die elektrische Energie in eine Rotationsbewegung.
+Beim Läufer des Kurzschlussläufers wird in die Läufernuten nur jeweils ein Leiter in Form eines massiven Stabes geschoben.
+Diese Stäben werden an den Enden verbunden und damit kurzgeschlossen. Der Läufer hat damit die Form eines zylindrischen Käfigs (Käfigläufer).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/9/asynchronm}
+\end{figure}
+    \centering
+    \includegraphics[width=8cm]{image/9/asynchronm}
+\end{figure}
+
+
+    \centering
+    \includegraphics[width=8cm]{image/9/asynchronm}
+\end{figure}
+
+Eine Drehstrommaschine, bei der der Rotor dem Drehfeld des Stators  als Generator vor- und als Elektromotor nachläuft. Entweder ständig oder fallweise kurzgeschlossen.  Der magnetische Fluss ändert sich, da sich der Rotor langsamer dreht, als sich das Magnetfeld ändert
+
 \paragraph{Zeichnen Sie die Schaltpläne für drei Widerstände, die in Stern- oder Dreieckschaltung an
 eine dreiphasige Wechselspannung mit Scheitelwert $U_0$ angeschlossen sind. Berechnen Sie die in den
 beiden Schaltungen an den Widerständen anliegende Spannung, die elektrische Leistung sowie das
@@ -1650,6 +1695,23 @@ Verhältnis der Leistungen für beide Schaltungsvarianten.}
 
 \paragraph{Was versteht man unter Wirk-, Blind-, und Scheinleistung und wie kann man sie aus Strom-
 und Spannung berechnen?}
+
+Wirkleistung (mittlere abgegebene Leistung): ist die echt verbrauchte leistung in ohmschen Widerständen.  Elektrische leistung, die für die Umwandlung in andere Leistungen verfügbar ist (Blindleistung ist nicht dafür verwendbar). \\
+\begin{equation}
+P = U_{eff} I_{eff} cos(\phi)
+\end{equation}\\
+
+Blindleistung: fließt zur Spannungsquelle. Tritt auf, wenn elektrische Energie über Wechselstrom transportiert wird. Die Leistung zum Aufbau wird beim Abbau wieder ans Netz zurückgegeben, weshalb sie Blindleistung genannt wird.\\
+\begin{equation}
+P = I_{eff} U_{eff} sin(\phi)
+\end{equation}\\
+
+Scheinleistung: Gesamtleistung, welche für ein Netz bereitgestellt werden muss.  Ist eine Rechengröße, die im Blick auf Verluste, wenn elektrische Verbraucher elektrische Leistung zugeführt wird.\\
+\begin{equation}
+P_S = I_{eff} U_{eff}
+\end{equation}
+
+\newpage
 
 \newpage
 
@@ -1944,26 +2006,99 @@ von einer $\lambda/2$-Platte unterscheiden?}
 
 \section{Geometrische Optik I}
 
+
 \paragraph{Nennen Sie die Axiome der Geometrischen Optik und erklären Sie unter welchen Bedingungen
 diese gut erfüllt sind.}
+
+\begin{enumerate}
+\item In optisch homogenen Medien und Lichtstrahlen Geraden
+\item An Grenzflächen gilt das Reflexions- und Brechungsgesetzt
+\item Strahlen die sich durchdringen überlagern sich aber beeinflussen sich nicht gegenseitig
+\end{enumerate}
+ 
+gilt nur bei optisch linearen Phänomenen.
 
 \paragraph{Beschreiben Sie die Abbildung in einem ebenen Spiegel. Zeichen Sie den Strahlengang für
 die Abbildung von zwei Gegenständen in unterschiedlichem Abstand vom Spiegel.}
 
+Erzeugt eine ideale Abbildung, dass jeder Punkt P des Raumes einen anderen Punkt P' abbildet. Die Reflexionen gehen in den oberen Halbraum.  Die rückwärts Verlängerungen der Reflexion gehen in die Untere Halbebene.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/17/geo12}
+\end{figure}
+
+
 \paragraph{Erklären Sie den Unterschied zwischen einem reellen und einem virtuellen Bild.}
+
+reell: nur für einen Punkt eine genaue Abbildung, Bild ist wirklich vorhanden. Entsteht, wenn Lichtstrahlen von einem Objekt auf eine Fläche treffen und diese von dort in das Auge reflektiert werden.\\
+virtuell: Jeder Punkt ist eine genaue Abbildung. Bild entsteht hinter dem Spiegel (optisches Abbild). Es entstehht zwischen Brennpunkt und Linse (Spiegelbild).  Abbild durch Spiegel ist seitenverkehrt.  Das Bild kann an dem Ort, an dem es erscheint, nicht auf dem Schirm bagebildet werden. Die Lichtstrahlen des Objektes werden so gebrochen, dass es für den Betrachter größer erscheint.
 
 \paragraph{Zeichnen Sie die 3 Konstruktionsstrahlen bei der Abbildung durch eine dünne Linse.
 Erklären sie, warum diese Strahlen für die Bildkonstruktion gewählt werden und warum sie so
 verlaufen wie sie es eingezeichnet haben. Zeichen Sie Bildweite, Gegenstandsweite und Brennweite
 ein.}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/17/geo14}
+\end{figure}
+
+
+
+Mittelpunktstrahl (rot): von dem Gegenstand durch den Mittelpunkt zur Linse und auf selben Weg wieder zurück.\\
+Brennpunktstrahl (grün): Vom Gegenstand durch den Brennpunkt und aufgrund der umkehrbarkeit wird er zum parallel Strahl\\
+Parallelstrahl (blau): Vom Gegenstand zuerst parallel zur Linse dann durch den Brennpunkt (genau umgekehrt zum Brennpunktstrahl)
+
 \paragraph{Konstruieren Sie das Bild eines Gegenstandes durch eine dünne Sammellinse wenn (a) der
 Gegenstand mehr als $2f$ von der Linse entfernt ist und (b) wenn der Gegenstand weniger als $2f$ von
 der Linse entfernt ist. Dabei ist $f$ die Brennweite der Linse.}
 
+a)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/17/geo15a}
+\end{figure}
+
+
+
+b)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/17/geo15b}
+\end{figure}
+
+
+
+
+
+
+
 \paragraph{Konstruieren Sie das Bild eines Gegenstandes durch eine dünne Zerstruungslinse wenn (a)
 der Gegenstand mehr als $2f$ von der Linse entfernt ist und (b) wenn der Gegenstand weniger
 als $2f$ von der Linse entfernt ist. Dabei ist $f$ die Brennweite der Linse.}
+
+
+a)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/17/geo16a}
+\end{figure}
+
+
+
+b)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/17/geo16b}
+\end{figure}
+
+
+
+
+
+
+
 
 \paragraph{Wie ist die Vergrößerung definiert? Zeichen Sie die Abbildung mit einer dünnen
 Sammellinse und leiten Sie eine Formel zur Berechnung der Vergrößerung aus Bild- und
@@ -1980,6 +2115,8 @@ Gegenstandsweite her.}
 \paragraph{Erklären Sie die Bedeutung der Hauptebenen dicker Linsen sowie die Bildkonstruktion bei
 dicken Linsen.}
 
+Die BRechung kann an beiden Kugelflächen nicht mehr durch eine einzige, an der Mittelebene durchgeführte Brechung ersetzt werden. Deshalb wird die Grenzflächenberechnung gedanklich durch die beiden Hauptebenen ersetzt. Dadurch können alle Strahlen dazwischen als parallel zur optischen Achse angenommen werden
+
 \paragraph{Zeichen Sie zwei Sammellinsen, deren Abstand kleiner als die kleinere von den beiden
 Brennweiten ist. Konstruieren Sie den Strahlengang für die Abbildung eines Objektes durch
 das Linsensystem.}
@@ -1988,8 +2125,86 @@ das Linsensystem.}
 Brennweiten ist. Konstruieren Sie den Strahlengang für die Abbildung eines Objektes durch
 das Linsensystem.}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18/geo22}
+\end{figure}
+
+
 \paragraph{Nennen und erklären Sie die unterschiedlichen Abbildungsfehler, die bei einer Abbildung
 mit einer Linse entstehen können.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18/geo23}
+\end{figure}
+
+\begin{enumerate}
+\item Chromatische Aberration: Entsteht, wenn Licht verschiedener Wellenlängen unterschiedlich Stark an einem Medium gebrochen wird. Rotes Licht beispielsweise eine größere Wellenlänge als blaues und wird weniger stark gebrochen. Dies führt dazu, dass die Lichtstrahlen nach ihrer Brechung nicht am selben Punkt wieder aufeinander treffen. Kurz- und langwelliges Licht hat also unterschiedliche Brennweiten, das heißt, je nach Wellenlänge bzw. Farbe des Lichts verschiebt sich der Brennpunkt der Linse und es entstehen kontrastreicher Bildmotive an den Kantenrändern. Man kann die chromatische Abberation mithilfe von zwei Linsen verringern.\\
+
+Ursasche: Wellenlängenabhängigkeit der Brechzahl des Linsenmaterials\\
+Ausweg: Achromat (eine Farbabhängigkeit mehr)
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18/geo2chrom}
+\end{figure}
+
+\item Sphärische Aberration (auch öffnungsfehler, Kugelgestalsfehler): Ist ein Schärfefehler. Tritt bei einfachen konvexen Lisen auf. Lichtstahlen, die durch die Randzonen der Krümmung gehen, werden stärker gebrochen und dadurch an einen näher an der Linse liegenden Brennpunkt hin gebrochen. Die Folge ist ein leicht verschwommenes, unscharfes Bild.\\
+
+
+Ursache: Brennweite für achsennahe und -ferne Strahlen verschieden -> keine Punkt- zu- Punkt- Abbildung
+Verringern: Blende, Plan-Konvex Linse, Linsensystem
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18/geo2sphae}
+\end{figure}
+
+\item Koma: Treffen Strahlen, die parallel zur optischen Achse sind, auf eine schief stehende Linse, oder treffen Strahlen unter einem Winkel auf eine nicht schiefe Linse, so kommt es zu einer Verschiebung der Brenn- punkte. Unter Koma versteht man also eine Brennpunktverschiebung.\\
+
+
+Ursache: Brechwinkel unterscheiden sich für die ober und unter der Mittelstrahl laufende Strahlen bei schief stehender Linse
+
+\item Astigmatismus: Unterschiedliche Brechungen in x- und y-Achse der Linse tritt auf, wenn Objekt weit von der optischen Achse entfernt, wodurch die Eintrittswinkel für die Strahlen sich unterscheiden.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18/geo2koma}
+\end{figure}
+
+
+\item Bildfeldwölbung: Bild wird nicht eben auf einer Fläche abgebildet, sondern gewölbt. Damit kann man das Bild nicht an allen Punkten gleichzeitig scharf stellen. Dieser Fehler steht, weil Punkte am Rand der Linse näher an der optischen Achse abgebildet werden. Das Bildl ist nicht mehr in einer Ebene\\
+
+Ursache: unterschiedlich schräg einfallende Strahlenbündel-> unterschiedlich starke Brechung, astigmatische Fehler, Bildweite bi für Ai hängt vim Achsenabstand von $A_i$ ab.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18/geo2bildfeld}
+\end{figure}
+
+\item Verzeichnung (Verzerrung): Geometrisch nicht maßstabsgetreue Abbildung eines Objekts. Dieser Fehler entsteht durch einen veränderten Abbildungsmaßstab bei weit von der optischen Achse entfernten Bildpunkten. Dadurch werden die Lichtstrahlen die nicht durch den Bildmittel- punkt laufen, gekrümmt.\\
+
+Ursache: bei schrägen Strahlen und mit Ausblendung der Randstrahlen mittels Blende. Verzerrung flächenhafter Objekte.\\
+Arten: Tonnenförmig und Kissenförmig
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18/geo2verzeich}
+\end{figure}
+
+\item Aplantische Abbildung: Es werden kleine, zur optischen Achse senkrechten Flächenelemente durch Strahlenbündel mit großen Öffnungswinkel ohne Öffnungsfehler und ohne Koma scharf, aber nicht verzeichnungsfrei abgebildet.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18/geo2aplant}
+\end{figure}
+
+\end{enumerate}
+
+\newpage
+
 
 \newpage
 % Start Elias 
