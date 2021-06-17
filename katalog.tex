@@ -2476,32 +2476,139 @@ und skizzieren Sie diese in einem Diagramm.}
 
 \paragraph{Skizzieren und beschreiben Sie den Aufbau des Auges. Welche Arten von Sehzellen sind
 vorhanden und welche spektrale empfindlichkeit haben diese (Diagramm)?}
+Arten von Sehzellen: Stäbchen (Schwarzweiß), Zapfen (Farben)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/20/1.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/20/2.png}
+\end{figure}
 
 \paragraph{Zeichnen Sie den Strahlengang für eine Lupe, wobei das Auge auf unendlich eingestellt
 sein soll um ein scharfes Bild des Gegenstandes durch die Lupe zu sehen. Leiten Sie einen Ausdruck
 für die Winkelvergrößerung der Lupe her.}
+Strahlengang:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{image/20/3.png}
+\end{figure}
+\begin{equation}
+V \approx \frac{\text{tan}~ \epsilon}{\text{tan}~ \epsilon_0} = \frac{G}{f} \frac{s_0}{G} = \frac{s_0}{f}~ \text{mit} s_0 = 25~ \text{cm}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{image/20/4.png}
+\end{figure}
 
 \paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Mikroskopes mit dem Abbildungsstrahlengang
 (von einem Objektpunkt zum Bildpunkt). Wie ist die Vergrößerung definiert und wie kann man sie
-berechnen?}
+berechnen}?
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=9cm]{image/20/5.png}
+    \end{minipage}
+    \hspace{5cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=6cm]{image/20/6.png}
+    \end{minipage}
+\end{figure}
+Linkes Bild:
+\begin{itemize}
+\item Linse 1: reelles Zwischenbild (Objekt)
+\item Linse 2: quasi Lupe für Zwischenbild (Okular)
+\end{itemize}
+wenn $g = f_1$:
+\begin{equation}
+V = \frac{(d- f_2)s_0}{f_1 f_2}
+\end{equation}
 
 \paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Keplerschen Fernrohres mit dem
 Abbildungsstrahlengang (von einem weit entfernten Objektpunkt zum Bildpunkt). Wie ist die
-Vergrößerung definiert und wie kann man sie berechnen?}
+Vergrößerung definiert und wie kann man sie berechnen}?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/7.png}
+\end{figure}
+Die Vergrößerung des Fernrohrs ist gleich dem Verhältnis der Brennweiten von Objektiv und Okular.
+\begin{equation}
+V_F = \frac{f_1}{f_2}
+\end{equation}
 
 \paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Gallileischen Fernrohres mit dem
 Abbildungsstrahlengang (von einem weit entfernten Objektpunkt zum Bildpunkt). Wie ist die
-Vergrößerung definiert und wie kann man sie berechnen?}
+Vergrößerung definiert und wie kann man sie berechnen}?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/8.png}
+\end{figure}
+Die Vergrößerung des Fernrohrs ist gleich dem Verhältnis der Brennweiten von Objektiv und Okular.
+\begin{equation}
+V = \frac{\epsilon}{\epsilon_0} = \frac{f_1}{f_2} < 0
+\end{equation}
 
 \paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Projektors mit dem Abbildungsstrahlengang
-und dem Beleuchtungsstrahlengang.}
+und dem Beleuchtungsstrahlengang.} A = Abbildungsstrahlengang, B = Beleuchtungsstrahlengang
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/9.png}
+\end{figure}
+Prinzipieller Aufbau eines Dialprojektors:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/10.png}
+\end{figure}
 
 \paragraph{Was versteht man unter Schärfentiefe und Lichtstärke? Wie kann man diese Größen bei
 einer gegebenen Linse beeinflussen? Beschreiben Sie wie sich die Größen ändern.}
+\textbf{Schärfentiefe:} \\
+Man nennt den Bereich, in dem man die Objekte verschieben kann, ohne dass die Fläche dieser Bildscheibchen des Objektpunktes $A$ größer als die minimale vom Auge in der deutlichen Sehweite noch auflösbare Fläche wird, die Schärfentiefe des optischen Instrumentes.
+Die Schärfentiefe ist ein Maß für die Ausdehnung des scharfen Bereiches im Objektraum eines abbildenden optischen Systems. Die Schärfentiefe kann bei gegebener Linse durch den Durchmesser $u$ beeinflusst werden bzw. durch Veränderung der Abstände $b_v$ und $b_0$.
+\begin{equation}
+\frac{u}{D_B} = \frac{b_v - b_0}{b_v}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/11.png}
+\end{figure}
+\textbf{Lichtstärke:}
+Die Lichtstärke gibt den auf den Raumwinkel bezogenen Lichtstrom an. Sie beschreibt somit eine Eigenschaft der Lichtquelle und ist unabhängig von der Position des Beobachters. Ihre SI- Einheit ist Candela.
+\begin{equation}
+\Omega = \frac{\pi D^2/4}{f^2} = \frac{\pi}{4} (\frac{D}{f})^2
+\end{equation}
+$\Omega$ = Raumwinkel, $D$ = Durchmesser Eintrittspupille, $f$ = Brennweite\\
+Eine Veränderung des Blendendurchmesser $D$ beeinflusst die Lichtstärke.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/12.png}
+\end{figure}
 
 \paragraph{Welchen Einfluß hat Beugung auf die Abbildung mit einer Linse? Wie ist das
 Auflösungsvermögen definiert? Wie groß ist das Auflösungsvermögen einer Linse mit gegebenem
 Durchmesser und Brennweite für die Abbildung weit entfernter Gegenstände?}
+\textbf{Auslösungsvermögen:}\\
+Fähigkeit, zwei dicht nebeneinanderliegende Punkte unterscheiden zu können.
+\begin{equation}
+\Delta x_{min} = \frac{1,22 \cdot \lambda \cdot f}{D}
+\end{equation}
+$f$ = Brennweite, $D$ = Öffnungsdurchmesser, $\lambda$ = Wellenlänge, $\Delta x_{min}$ = kleinster auflösbarer Abstand\\
+Kleinster noch auflösbarer Winkelabstand:
+\begin{equation}
+\Theta_{min} = \frac{1,22 \lambda}{D}
+\end{equation}
+Kleinste noch auflösbare Länge:
+\begin{equation}
+\Delta x_{min} = f \cdot \text{sin} \Theta_{min} = \frac{1,22 \cdot \lambda \cdot f}{D}
+\end{equation}
+Einfluss der Beugung auf eine Abbildung mit Linse:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/13.png}
+\end{figure}
 
 \newpage
 
