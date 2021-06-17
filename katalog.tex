@@ -1657,27 +1657,134 @@ und Spannung berechnen?}
 
 \paragraph{Schreiben Sie die komplexen Impedanzwerte einer Spule, eines Widerstandes und eines
 Kondensators an. Wie ist die komplexwertige Impedanz definiert und in welchen Fällen kann man Sie
-zur Berechnung von Schaltungen verwenden?}
+zur Berechnung von Schaltungen verwenden?} ~
+
+\begin{equation}
+    Z_R = R ~~~ Z_L = i \omega L ~~~ Z_C = \frac{1}{i \omega C} = \frac{-i}{\omega C}
+\end{equation}
+
+Die komplexwertige Impedanz $Z = \frac{U}{I}$ ist der Quotient aus den Augenblickswerten der
+komplexen Wechselspannung und dem komplexen Wechselstrom. Sie gibt sowohl das Verhältnis der
+Amplituden von Wechselspannung zu Wechselstrom als auch den Phasenwinkel zwischen diesen Größen an.
+
+Mithilfe der komplexwertigen Impedanz können lineare Wechselstromnetzwerke im Rahmen der komplexen
+Notation völlig analog zu linearen Gleichstromnetzwerken berechnet werden. Die komplexe Notation
+macht ausschließlich bei rein harmonischem Wechselstrom Sinn. In allen anderen Fällen muss immer die
+Differentialgleichung für die Schaltung aufgestellt und gelöst werden.
 
 \paragraph{Eine Serienschaltung von Widerstand, Spule und Kondensator ist an einer
 Wechselspannungsquelle $U=U_0 cos (\omega t)$ angeschlossen. Zeichnen Sie das Zeigerdiagramm für
 Spannung und Strom an der Schaltung und an den einzelnen Elementen. Die Phasenlagen aller Größen
 muss ersichtlich sein. Berechnen Sie Effektivwert und Phasenlage des Stromes, der in die Schaltung
-fließt.}
+fließt.} ~
+
+\begin{equation}
+    Z
+    = Z_R + Z_L + Z_C
+    = R + i \omega L + \frac{-i}{\omega C}
+    = R + i \cdot \left(\omega L - \frac{1}{\omega C} \right)
+\end{equation}
+\begin{equation}
+    tan(\varphi)
+    = \frac{Im{Z}}{Re{Z}}
+    \implies
+    \varphi = arctan \left( \frac{\omega L - \frac{1}{\omega C}}{R} \right)
+\end{equation}
+\begin{equation}
+    I_0
+    = \frac{U_0}{|Z|}
+    \implies
+    I_{eff}
+    = \frac{I_0}{\sqrt{2}}
+    = \frac{U_0}{\sqrt{2 R^2 +2 \left(\omega L - \frac{1}{\omega C} \right)^2}}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4cm]{image/10/2}
+\end{figure}
 
 \paragraph{Erklären Sie einen passiven Hochpass. Zeichnen Sie das Zeigerdiagramm für Strom und
 Spannungen, leiten Sie einen Ausdruck für die Ausgangspannung her und skizzieren Sie das
-Bode-Diagramm für Ausgangsspannung und -phase.}
+Bode-Diagramm für Ausgangsspannung und -phase.} ~
+
+Ein passiver Hochpass ist eine elektrische Schaltung, welche hohe Frequenzen praktrisch ungedämpft
+durchlässt während niedere Frequenzen gesperrt werden. Am CR-Glied hat der Kondensator bei tiefen
+Frequenzen der sinusförmigen Eingangsspannung einen großen Widerstandswert, am Widerstand hingegen
+fällt fast keine Spannung ab. Bei hohen Frequenzen ist der Widerstandswert des Kondensators gering
+und die Eingangsspannung fällt fast nur über den Widerstand ab.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/10/3.1}
+\end{figure}
+\begin{equation}
+    U_a
+    = U_R
+    = \frac{U_e}{R + \frac{1}{i \omega C}} R
+    = U_e \frac{1}{1 + \frac{1}{i \omega R C}}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/10/3.2}
+\end{figure}
 
 \paragraph{Erklären Sie einen passiven Tiefpass. Zeichnen Sie das Zeigerdiagramm für Strom und
 Spannungen, leiten Sie einen Ausdruck für die Ausgangspannung her und skizzieren Sie das
-Bode-Diagramm für Ausgangsspannung und -phase.}
+Bode-Diagramm für Ausgangsspannung und -phase.} ~
+
+Ein passiver Tiefpass ist eine elektrische Schaltung, welche niedere Frequenzen praktisch ungedämpft
+durchlässt während höhere Frequenzen gesperrt werden. Am RC-Glied hat der Kondensator bei hohen
+Frequenzen der sinusförmigen Eingangsspannung einen geringen Widerstandswert, die Spannung fällt
+großteils am Widerstand ab. Bei niederen Frequenzen ist der Widerstandswert des Kondensators hoch,
+wodurch die Eingangsspannung fast nur am Kondensator abfällt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/10/4.1}
+\end{figure}
+\begin{equation}
+    U_a
+    = U_C
+    = \frac{U_e}{R + \frac{1}{i \omega C}} \frac{1}{i \omega C}
+    = U_e \frac{1}{1 + \frac{1}{i \omega R C}}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/10/4.2}
+\end{figure}
 
 \paragraph{Erklären Sie Aufbau und Funktion eines einfachen Bandpassfilters (Frequenzfilter) incl.
-Zeigerdiagramm und Ausdruck für die Ausgangsspannung.}
+Zeigerdiagramm und Ausdruck für die Ausgangsspannung.} ~
+
+Als Bandpassfilter wird ein Filter bezeichnet, welcher nur Signale eines bestimmten Frequenzbands
+passieren lässt während Frequenzen außerhalb des gewünschten Bereichs gesperrt oder deutlich
+abgeschwächt werden. Ein derartiger Filter kann unter anderem durch Reihenschaltung eines Hoch- und
+Tiefpassfilters umgesetzt werden.
+
+\begin{equation}
+    U_a = \frac{R}{R + i \left( \omega L - \frac{1}{\omega C} \right)} U_e
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/10/5}
+\end{figure}
 
 \paragraph{Erklären Sie Aufbau und Funktion eines einfachen Bandstoppfilters (Frequenzfilter) incl.
-Zeigerdiagramm und Ausdruck für die Ausgangsspannung.}
+Zeigerdiagramm und Ausdruck für die Ausgangsspannung.} ~
+
+Als Bandstoppfilter wird ein Filter bezeichnet, welcher nur Signale außerhalb eines bestimmten
+Frequenzbands passieren lässt während Frequenzen innerhalb des gewünschten Bereichs gesperrt oder
+deutlich abgeschwächt werden. Im Gegensatz zum Bandpassfilter werden hier Induktivität und
+Kapazität parallel geschaltet.
+
+\begin{equation}
+    U_a = \frac{R}{R + \frac{1}{\frac{1}{Z_C} + \frac{1}{Z_L}}} U_e
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{image/10/6}
+\end{figure}
 
 \newpage
 
