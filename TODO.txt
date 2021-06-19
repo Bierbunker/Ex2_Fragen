@@ -17,10 +17,10 @@ X Dominik                           Wechselstromkreise und Lineare Netzwerke
 X David                             Elektromagnetische Schwingungen und Entstehung von Wellen
 X David                             Elektromagnetische Wellen
 ! Dominik                           Wellen in Materie
-O                                   Wellen an Grenzflächen, optische Anisotropie und Polarisation   
-# Alisa         7, 8                Geometrische Optik I         
+! Andi		                        Wellen an Grenzflächen, optische Anisotropie und Polarisation   
+X Alisa                             Geometrische Optik I         
 X Alisa                             Geometrische Optik II         
 X Elias                             Interferenz
-O                                   Beugung
+! Martin                            Beugung
 X David                             Optische Instrumente I
-O                                   Optische Instrumente II
+# Alisa        2, 3(zweite),4       Optische Instrumente II
