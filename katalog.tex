@@ -1441,11 +1441,28 @@ Diagramme.} ~
 \paragraph{Wie kann man im Prinzip die Induktivität z.B. einer Spule durch eine Zeitmessung
 bestimmen (Schaltplan und Beschreibung)?} ~
 
+Nach Anlegen einer Gleichspannung und Schließen des Schalters kann die Zeitverzögerung
+$\tau = \frac{L}{R}$ zwischen dem Aufleuchten der Lampen gemessen werden. Aus diesem Zusammenhang
+folgt die Induktivität $L$, wenn der ohm'sche Widerstand der Spule bekannt ist.
+
+Dieser lässt sich durch gleichzeitiges Messen der abfallenden Spannung an der Spule sowie des zu
+diesem Zeitpunkt fließenden Stroms mit $R = \frac{U}{I}$ ermitteln.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{image/7/10}
+\end{figure}
+
 \paragraph{Zwei dünne, lange Spulen sind auf den gleichen Kern gewickelt, sodass der gesamte
 magnetische Fluss der einen Spule durch die andere fließt. Berechnen Sie die in einer Spule
 induzierte Spannung, wenn sich in der andern der Strom ändert. Die Spulenlängen, die Anzahl der
 Windungen, die Spulenquerschnitte, und die magnetischen Eigenschaften des Spulenkerns seien
 bekannt.} ~
+
+\begin{equation}
+    U_{ind} = -L \cdot \dot{I}
+    = - \mu_r \mu_0 n^2 \frac{A}{l} \cdot \dot{I}
+\end{equation}
 
 \paragraph{Berechnen Sie die im magnetischen Feld einer dünnen, langen Spule gespeicherte Energie
 als Funktion des Stromes. Die Spulenlänge, die Anzahl der Windungen, der Spulenquerschnitt, und die
