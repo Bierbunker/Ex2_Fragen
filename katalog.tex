@@ -79,7 +79,7 @@ elektrostatischen Potenzials wenn mehrere Punktladungen vorhanden sind.} ~
 \begin{equation}
     \bold{E(r)}
     = \frac{1}{4 \pi \epsilon_0} \sum_{i=1}^n
-        \frac{Q_i (\bold{r} - \bold{r_i})}{|\bold{r} - \bold{r_i}|^3} \bold{\hat{r_i}}
+        \frac{Q_i (\bold{r} - \bold{r_i})}{|\bold{r} - \bold{r_i}|^3}
     = \sum_{i=1}^n \bold{E}_i
 \end{equation}
 \begin{equation}
@@ -91,16 +91,15 @@ elektrostatischen Potenzials wenn mehrere Punktladungen vorhanden sind.} ~
 \paragraph{Schreiben Sie das Gauß‘sche Gesetz der Elektrostatik an. Beschreiben und definieren Sie
 alle darin vorkommenden Größen.} ~
 
-Die im Raum verteilten Ladungen sind die Quellen und Senken des elektrischen Feldes.
-
 \begin{equation}
-    div~\bold{E(r)} = \frac{\rho(\bold{r})}{\epsilon_0}
+    \phi_{el} = \oint_A \bold{E} d\bold{A} = \frac{Q}{\epsilon_0}
 \end{equation}
 
 \begin{itemize}
-    \item $\bold{r}$ Ortsvektor $[r] = \si{\m}$
+    \item $\phi_{el}$ elektrischer Fluss durch eine geschlossene Fläche $[\phi_{el}] = \si{\V\m}$
+    \item $A$ geschlossene Fläche $[A] = \si{\m^2}$
     \item $\bold{E} = \frac{\bold{F}}{q}$ elektrostatisches Feld $[E] = \si{\V\per\m}$
-    \item $\rho = \frac{dQ}{dV}$ Raumladungsdichte $[\rho] = \si{\coulomb\per\m^3}$
+    \item $Q$ eingeschlossene Ladung $[Q] = \si{\coulomb}$
     \item $\epsilon_0$ elektrische Feldkonstante $[\epsilon_0] = \si{\A\s\per\V\per\m}$
 \end{itemize}
 
@@ -287,7 +286,7 @@ Fläche.} ~
     E = sgn(z) \cdot \frac{\sigma}{2 \epsilon_0}
 \end{equation}
 \begin{equation}
-    \phi = \int_{z}^0 E ds = - E \cdot z = - \frac{\sigma z}{2 \epsilon_0}
+    \phi = \int_{z}^0 E ds = - E \cdot z = - \frac{\sigma}{2 \epsilon_0} \cdot |z|
 \end{equation}
 
 Als Potentialreferenz wird hierbei $0$ anstatt $\infty$ verwendet.
@@ -311,7 +310,7 @@ endlichem Abstand.} ~
 
 \begin{equation}
     \text{eine Platte:} ~~~
-    \phi = \frac{Q}{\epsilon_0} = \frac{\sigma A}{\epsilon_0} = \oint{A} EdA = 2 E A
+    \phi = \frac{Q}{\epsilon_0} = \frac{\sigma A}{\epsilon_0} = \oint_A EdA = 2 E A
     \implies
     E = \frac{\sigma}{2 \epsilon_0}
 \end{equation}
@@ -348,7 +347,7 @@ homogenen elektrischen Feld.} ~
     = \bold{p} \times \bold{E}
 \end{equation}
 \begin{equation}
-    W_{pot} = Q (\phi_1 - \phi_2)
+    W_{pot} = Q (\phi_1 - \phi_2) = - \bold{p} \cdot \bold{E}
 \end{equation}
 
 \begin{figure}[H]
@@ -360,10 +359,10 @@ homogenen elektrischen Feld.} ~
 Sie eine Näherung für diese Kraft für den Grenzfall eines sehr kleinen Dipols an.} ~
 
 \begin{equation}
-    \bold{F} = \bold{F_+} + \bold{F_-} = q [ \bold{E} (\bold{r_-} + d) - \bold{E(r_-)}]
+    \bold{F} = \bold{F_+} + \bold{F_-} = q [ \bold{E} (\bold{r_-} + \bold{d}) - \bold{E(r_-)}]
 \end{equation}
 \begin{equation}
-    \bold{F} \approx Q \bold{d} \frac{d\bold{E(r)}}{d\bold{r}} = \bold{p} \times \nabla \bold{E(r)}
+    \bold{F} \approx Q \bold{d} \frac{d\bold{E(r)}}{d\bold{r}} = \bold{p} \nabla \bold{E(r)}
 \end{equation}
 
 \begin{figure}[H]
@@ -382,7 +381,7 @@ elektrische Feld und -Potenzial an der Leiteroberfläche und innerhalb des Leite
 Ein elektrischer Leiter ist ein Medium, welches eine hohe Dichte frei beweglicher Ladungsträger und
 daher eine gute elektrische Leitfähigkeit sowie einen möglichst geringen elektrischen Widerstand
 besitzt. Er ist dadurch zum Transport geladener Teilchen geeignet, welchen man auch als elektrischen
-Strom nennt.
+Strom bezeichnet.
 
 Es kommt zu einer Ladungsverschiebung aufgrund des E-Feldes, wodurch sich ein Gegenfeld aufbaut und
 das äußere Feld kompensiert. Das Innere des Leiters wird dadurch feldfrei, man spricht von Influenz.
@@ -454,7 +453,7 @@ $\epsilon_D$.
 \begin{equation}
     \text{nachher:} ~~~
     E_V = \frac{U}{d_C - d_D + \frac{d_D}{\epsilon_D}} ~~~
-    E_D = \frac{E_V}{\epsilon_0} ~~~
+    E_D = \frac{E_V}{\epsilon_D} ~~~
     D_V = D_D
 \end{equation}
 
@@ -563,7 +562,7 @@ Ladung $n \cdot e$ besitzen und zwischen die horizontalen Platten eines Kondensa
 Im feldfreien Kondensator wird die Schwerkraft $m \cdot g$ durch die Summe der Auftriebskraft
 $F_A = \rho_{Luft} \cdot \frac{4}{3} \pi R^3 \cdot g$ und der Reibungskraft
 $F_R = 6 \pi \eta R \cdot v$ kompensiert. Die sich einstellende konstante Sinkgeschwindigkeit kann
-gemessen werden, wodurch sich der Radius und in weiterer Folge die Masse des Tröpfchens ergibt.
+gemessen werden, wodurch sich der Radius und in weiterer Folge die Masse des Tröpfchens ergeben.
 
 Durch Anlegen einer geeigneten Spannung am Kondensator kann nun das Tröpfchen im E-Feld in Schwebe
 gehalten werden. Eine Ladungsänderung des Tröpfchens durch beispielsweise Röntgenstrahlung erfordert
@@ -606,7 +605,7 @@ Widerstand? Welche Einheit haben sie und in welcher Beziehung stehen sie zur Str
     \item Beweglichkeit $\mu$: Gibt die Driftgeschwindigkeit der Ladungsträger bei einer
         elektrischen Feldstärke von \SI{1}{\V\per\m} an $[\mu] = \si{\m\squared\per\V\per\s}$
         \begin{equation}
-            \bold{j} = \sigma \cdot \frac{\bold{v_d}}{\mu}
+            \bold{j} = \sigma \cdot \frac{\bold{v_D}}{\mu}
         \end{equation}
     
     \item Elektrische Leitfähigkeit $\sigma$: Fähigkeit eines Stoffes, den elektrischen Strom zu
@@ -618,7 +617,7 @@ Widerstand? Welche Einheit haben sie und in welcher Beziehung stehen sie zur Str
     \item Spezifischer Widerstand $\rho_s$: Kehrwert der elektrischen Leitfähigkeit
         $[\rho_s] = \si{\ohm\m}$
         \begin{equation}
-            \bold{E} = \rho \cdot \bold{j}
+            \bold{E} = \rho_s \cdot \bold{j}
         \end{equation}
 \end{itemize}
 
@@ -628,7 +627,7 @@ integralen Form an. Was ist ein Ohm‘scher Leiter?} ~
 Die Stärke des durch ein Objekt fließenden elektrischen Stroms ist proportional der elektrischen
 Spannung.
 \begin{equation}
-    \bold{j} = \sigma \cdot \bold{E} ~~~ R = \int_0^l \frac{\rho}{s} dl
+    \bold{j} = \sigma \cdot \bold{E} ~~~ I = \frac{\sigma_{el} \cdot A}{L} \cdot U = \frac{U}{R}
 \end{equation}
 Einen Leiter, für welchen $\rho_s$ unabhängig von Strom $I$ und Spannung $U$ sind, nennt man
 ohm'schen Leiter. Die Spannung $U$ und der Strom $I$ sind also über $R$ proportional zueinander.
@@ -722,7 +721,7 @@ Widerstand mit der Temperatur? Begründen Sie.} ~
 
 Die Atome im Halbleiter bilden stabile Elektronenpaarbindungen, bei tiefen Temperaturen sind also
 keine freien Elektronen verfügbar. Mit steigender Temperatur können aufgrund ihres höheren
-Energie-Niveaus jedoch Elektronen frei werden, die Leitfähigkeit steigt also währen der elektrische
+Energie-Niveaus jedoch Elektronen frei werden, die Leitfähigkeit steigt also während der elektrische
 Widerstand mit steigender Temperatur sinkt.
 
 Durch das Fehlen von Elektronen im Gitter entstehen Löcher, welche als positive Ladungsträger
