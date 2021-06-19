@@ -79,7 +79,7 @@ elektrostatischen Potenzials wenn mehrere Punktladungen vorhanden sind.} ~
 \begin{equation}
     \bold{E(r)}
     = \frac{1}{4 \pi \epsilon_0} \sum_{i=1}^n
-        \frac{Q_i (\bold{r} - \bold{r_i})}{|\bold{r} - \bold{r_i}|^3} \bold{\hat{r_i}}
+        \frac{Q_i (\bold{r} - \bold{r_i})}{|\bold{r} - \bold{r_i}|^3}
     = \sum_{i=1}^n \bold{E}_i
 \end{equation}
 \begin{equation}
@@ -286,7 +286,7 @@ Fläche.} ~
     E = sgn(z) \cdot \frac{\sigma}{2 \epsilon_0}
 \end{equation}
 \begin{equation}
-    \phi = \int_{z}^0 E ds = - E \cdot z = - \frac{\sigma z}{2 \epsilon_0}
+    \phi = \int_{z}^0 E ds = - E \cdot z = - \frac{\sigma}{2 \epsilon_0} \cdot |z|
 \end{equation}
 
 Als Potentialreferenz wird hierbei $0$ anstatt $\infty$ verwendet.
@@ -347,7 +347,7 @@ homogenen elektrischen Feld.} ~
     = \bold{p} \times \bold{E}
 \end{equation}
 \begin{equation}
-    W_{pot} = Q (\phi_1 - \phi_2)
+    W_{pot} = Q (\phi_1 - \phi_2) = - \bold{p} \cdot \bold{E}
 \end{equation}
 
 \begin{figure}[H]
