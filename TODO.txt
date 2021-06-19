@@ -13,14 +13,14 @@ X Dominik                           Materie im elektrischen Feld
 X Dominik                           Elektrische Generatoren und Motoren
 # Alisa         1, 3, 5, 7          Wechselstrom und Drehstrom
 X Dominik                           Wechselstromkreise und Lineare Netzwerke
-! Elias                             Transformator und Gleichrichter
+X Elias                             Transformator und Gleichrichter
 X David                             Elektromagnetische Schwingungen und Entstehung von Wellen
 X David                             Elektromagnetische Wellen
 ! Dominik                           Wellen in Materie
-! Andi		                        Wellen an Grenzflächen, optische Anisotropie und Polarisation   
+! Andi                              Wellen an Grenzflächen, optische Anisotropie und Polarisation   
 X Alisa                             Geometrische Optik I         
 X Alisa                             Geometrische Optik II         
 X Elias                             Interferenz
 ! Martin                            Beugung
 X David                             Optische Instrumente I
-# Alisa        2, 3(zweite),4       Optische Instrumente II
+# Alisa       2, 3(zweite), 4       Optische Instrumente II
