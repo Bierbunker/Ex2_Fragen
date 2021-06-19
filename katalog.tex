@@ -1478,25 +1478,131 @@ Wirbelfelder. (vgl. Folie 23).} ~
 
 \paragraph{Erklären Sie das Prinzip eines einfachen Wechselstromgenerators mit einer Spule im
 homogenen äußeren Magentfeld. Schreiben Sie die Beziehung für den elektrischen Fluss an und leiten
-Sie daraus die induzierte Spannung bei konstanter Winkelgeschwindigkeit als Funktion der Zeit her.}
+Sie daraus die induzierte Spannung bei konstanter Winkelgeschwindigkeit als Funktion der Zeit
+her.} ~
+
+Eine rechteckige Spule mit der Windungsfläche $F$ befindet sich im homogenen Magnetfeld $\bold{B}$
+und wird mit der Winkelgeschwindigkeit $\omega$ gedreht. Dabei wird an den Enden der Spule eine
+Wechselspannung induziert, welche über zwei Schleifkontakte abgegriffen werden kann.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/8/1}
+\end{figure}
+
+\begin{equation}
+    \phi_m = \int \bold{B} d\bold{A} = B \cdot N \cdot A \cdot cos(\omega \cdot t)
+\end{equation}
+\begin{equation}
+    U_{ind} = - \frac{d}{dt} \phi_m = B \cdot N \cdot A \cdot \omega \cdot sin(\omega \cdot t)
+\end{equation}
 
 \paragraph{Doppel-T Anker und Trommelanker: Beschreiben Sie die Funktion eines permanenterregten
 Generators mit Doppel-T Anker und Kommutator. Skizzieren Sie den Anker inklusive Stellung und
 Anschluss des Kommutators relativ zur Spulenorientierung. Erstellen Sie ein Diagramm der
 Klemmspannung als Funktion der Zeit für konstante Drehgeschwindigkeit. Welche Vorteile bringt ein
-Trommelanker?}
+Trommelanker?} ~
+
+Am permanent erregten Generator wird das magnetische Feld durch einen als Stator dienenden
+Permanentmagneten erzeugt. Die bei Drehung des Rotors in den Spulen induzierte Spannung wird über
+den Kommutator abgenommen, welcher je Spule genau ein Segment aufweist.
+
+Die Verwendung eines Trommelankers stellt im Gegensatz zum Doppel-T-Anker eine Verbesserung dar,
+bei der der magnetische Kraftfluss $\phi_m$ vergrößert wird. Mit der Anzahl der Spulen wird die
+erzeugte Gleichspannung immer gleichmäßiger. Im Fall von Gleichstrommotoren ermöglicht ein
+Trommelanker zudem ein selbständiges Anlaufen des Motors, da immer auf mindestens ein Ankerelement
+ein Drehmoment wirkt.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=3cm]{image/8/2.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=6cm]{image/8/2.2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=7cm]{image/8/2.3}
+\end{figure}
 
 \paragraph{Skizzieren Sie den Aufbau und Schaltplan einer Hauptschlussmaschine. Wie sieht bei einem
 Generator dieser Bauart die Klemmspannung als Funktion des Stromes aus? Wie sieht bei einem Motor
 dieser Bauart der Strom und das Drehmoment als Funktion der Drehzahl bei konstanter
-Versorgungsspannung aus?}
+Versorgungsspannung aus?} ~
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/8/3.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/8/3.2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=2cm]{image/8/3.3}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=2cm]{image/8/3.4}
+    \end{minipage}
+\end{figure}
 
 \paragraph{Skizzieren Sie den Aufbau und Schaltplan einer Nebenschlussmaschine. Wie sieht bei einem
 Generator dieser Bauart die Klemmspannung als Funktion des Stromes aus? Wie sieht bei einem Motor
 dieser Bauart der Strom und das Drehmoment als Funktion der Drehzahl bei konstanter
-Versorgungsspannung aus?}
+Versorgungsspannung aus?} ~
 
-\paragraph{Nennen und erklären Sie drei Arten von Erregung bei Gleichstrommaschinen.}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/8/4.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{image/8/4.2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=2cm]{image/8/4.3}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[height=2cm]{image/8/4.4}
+    \end{minipage}
+\end{figure}
+
+\paragraph{Nennen und erklären Sie drei Arten von Erregung bei Gleichstrommaschinen.} ~
+
+\begin{itemize}
+    \item Permanente Erregung: Das Statorfeld wird durch einen Permenentmagneten erzeugt.
+    
+    \item Elektrische Erregung: Das Statorfeld wird durch einen Elektromagneten erzeugt. Werden
+        Erreger- und Ankerwicklung von der gleichen Quelle betrieben unterscheidet man je nach
+        Schaltung zwischen einer Reihen- oder Nebenschlussmaschine. Bei unabhängigem Betrieb spricht
+        man von Fremderregung.
+\end{itemize}
 
 \newpage
 
@@ -1563,14 +1669,7 @@ Diese Stäben werden an den Enden verbunden und damit kurzgeschlossen. Der Läuf
     \centering
     \includegraphics[width=8cm]{image/9/asynchronm}
 \end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=8cm]{image/9/asynchronm}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=8cm]{image/9/asynchronm}
-\end{figure}
+
 
 Eine Drehstrommaschine, bei der der Rotor dem Drehfeld des Stators  als Generator vor- und als Elektromotor nachläuft. Entweder ständig oder fallweise kurzgeschlossen.  Der magnetische Fluss ändert sich, da sich der Rotor langsamer dreht, als sich das Magnetfeld ändert
 
