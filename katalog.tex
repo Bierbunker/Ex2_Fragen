@@ -1628,92 +1628,156 @@ Versorgungsspannung aus?} ~
 \paragraph{Zeichnen Sie den zeitlichen Spannungsverlauf einer Wechselspannung. Zum Zeitpunkt $0$ sei
 die Phase $\phi \neq 0$. Zeichnen Sie das Zeigerdiagramm für die Spannung zum Zeitpunkt $t=0$ und
 $t=T/4$ , wobei $T$ die Periodendauer ist. Zeichnen Sie Periodendauer, Scheitelwert und Effektivwert
-ein.}
-
+ein.} ~
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{image/9/wechselstrom1}
+    \includegraphics[width=10cm]{image/9/1}
 \end{figure}
-
-
 
 \paragraph{Eine Wechselspannungsquelle liefert an einen Verbraucher Spannung und Strom. Der Strom
 eilt der Spannung um einen Phasenwinkel von \SI{45}{\degree} nach. Zeichnen Sie den zeitlichen
 Spannungs- und Stromverlauf und das Zeigerdiagramm mit Spannung und Strom zum Zeitpunkt $t=0$ bei
 dem die Spannung gerade ihr Maximum hat, und zum Zeitpunkt $t=T/4$, wobei $T$ die Periodendauer
-ist.}
-
+ist.} ~
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{image/9/wechselstrom2}
+    \includegraphics[width=10cm]{image/9/2}
 \end{figure}
-
 
 \paragraph{Eine Wechselspannungsquelle liefert an einen Verbraucher Spannung und Strom. Der Strom
 eilt der Spannung um einen Phasenwinkel von \SI{45}{\degree} voraus. Zeichnen Sie den zeitlichen
 Spannungs- und Stromverlauf sowie den zeitlichen Verlauf der abgegebenen Leistung. Erklären und
-berechnen Sie Wirk-, Blind-, und Scheinleistung.}
-
-\paragraph{Zeichnen Sie den zeitlichen Spannungsverlauf einer dreiphasigen Wechselspannung sowie das
-zugehörige Zeigerdiagramm.}
-
+berechnen Sie Wirk-, Blind-, und Scheinleistung.} ~
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{image/9/wechselstrom4}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/9/3.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/9/3.2}
+    \end{minipage}
 \end{figure}
 
+\begin{equation}
+    \text{Scheinleistung:} ~~~ S = U \cdot I = \sqrt{P^2 + Q^2}
+\end{equation}
+\begin{equation}
+    \text{Wirkleistung:} ~~~ P = S \cdot cos(\varphi)
+\end{equation}
+\begin{equation}
+    \text{Blindleistung:} ~~~ Q = S \cdot sin(\varphi)
+\end{equation}
+
+\paragraph{Zeichnen Sie den zeitlichen Spannungsverlauf einer dreiphasigen Wechselspannung sowie das
+zugehörige Zeigerdiagramm.} ~
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/9/4}
+\end{figure}
 
 \paragraph{Zeichnen Sie die Schaltpläne für drei Widerstände, die in Stern- oder Dreieckschaltung an
 eine dreiphasige Wechselspannung angeschlossen sind. Erstellen Sie die zugehörigen Zeigerdiagramme.
 Berücksichitgen Sie im Zeigerdiagramm bei der Dreieckschaltung sowohl die Strangspannungen $U_i$ als
-auch die Außenleiterspannungen $U_{ij}$ und deren Konstruktion.}
-
-\paragraph{Beschreiben und erklären Sie den Aufbau eines Asynchron-Motors mit Kurzschluss-Läufer.
-(Skizze und Benennung aller wesentlicher Bauteile)}
-
-Ist eine Drehstrommaschine, bei der der Rotor dem Drehfeld des Stators als Generator vor und als Elektromotor nachläuft. Entweder strändig oder fallweise kurzgeschlossen. Dreht sich der Rotor langsamer als das Magnetfeld ändert sich dadurch der magnetische Fluss, was eine Spannung induziert, die wiederum einen Strom hervorruft. Fließt Strom durch die Ständerwicklung wird dadurch ein Magnetfeld aufgebaut. Aufgrund der Kreisbewegung wandert das Magnetfeld. Das Ständerfeld kann auf das Drehfeld wirken und ein Drehmoment auf den Läufer ausüben. Da sich das Ständerfeld fortlaufend in eine Richtung bewegt, entsteht eine Drehbewegung.
-
-
-Aufbau: Ein Asynchronmotor besteht aus einem Gehäuse in dem sich ein Ständerblechpaket befindet. Zwischen den Ständerblechen werden drei Wicklungen geführt, an welche die drei Drehstrompha- sen gelegt werden.
-Innerhälb des Ständer befindet sich als bewegliches Element ein Läufer, der die elektrische Energie in eine Rotationsbewegung.
-Beim Läufer des Kurzschlussläufers wird in die Läufernuten nur jeweils ein Leiter in Form eines massiven Stabes geschoben.
-Diese Stäben werden an den Enden verbunden und damit kurzgeschlossen. Der Läufer hat damit die Form eines zylindrischen Käfigs (Käfigläufer).
+auch die Außenleiterspannungen $U_{ij}$ und deren Konstruktion.} ~
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{image/9/asynchronm}
+    \includegraphics[width=10cm]{image/9/5.1}
+\end{figure}
+Bei der Sternschaltung gilt in jedem Fall $I_1 + I_2 + I_3 + I_0 = 0$, bei symmetrischer Belastung
+sogar $I_1 + I_2 + I_3= 0$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/9/5.2}
+\end{figure}
+Bei der Dreieckschaltung gilt bei unsymmetrischer Belastung $I_1 + I_2 + I_3 \neq 0$.
+
+\paragraph{Beschreiben und erklären Sie den Aufbau eines Asynchron-Motors mit Kurzschluss-Läufer.
+(Skizze und Benennung aller wesentlicher Bauteile)} ~
+
+Ist eine Drehstrommaschine, bei der der Rotor dem Drehfeld des Stators als Generator vor und als
+Elektromotor nachläuft. Entweder strändig oder fallweise kurzgeschlossen. Dreht sich der Rotor
+langsamer als das Magnetfeld ändert sich dadurch der magnetische Fluss, was eine Spannung induziert,
+die wiederum einen Strom hervorruft. Fließt Strom durch die Ständerwicklung wird dadurch ein
+Magnetfeld aufgebaut. Aufgrund der Kreisbewegung wandert das Magnetfeld. Das Ständerfeld kann auf
+das Drehfeld wirken und ein Drehmoment auf den Läufer ausüben. Da sich das Ständerfeld fortlaufend
+in eine Richtung bewegt, entsteht eine Drehbewegung.
+
+Aufbau: Ein Asynchronmotor besteht aus einem Gehäuse in dem sich ein Ständerblechpaket befindet.
+Zwischen den Ständerblechen werden drei Wicklungen geführt, an welche die drei Drehstromphasen
+gelegt werden. Innerhälb des Ständer befindet sich als bewegliches Element ein Läufer, der die
+elektrische Energie in eine Rotationsbewegung. Beim Läufer des Kurzschlussläufers wird in die
+Läufernuten nur jeweils ein Leiter in Form eines massiven Stabes geschoben. Diese Stäben werden an
+den Enden verbunden und damit kurzgeschlossen. Der Läufer hat damit die Form eines zylindrischen
+Käfigs (Käfigläufer).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{image/9/6}
 \end{figure}
 
-
-Eine Drehstrommaschine, bei der der Rotor dem Drehfeld des Stators  als Generator vor- und als Elektromotor nachläuft. Entweder ständig oder fallweise kurzgeschlossen.  Der magnetische Fluss ändert sich, da sich der Rotor langsamer dreht, als sich das Magnetfeld ändert
+Eine Drehstrommaschine, bei der der Rotor dem Drehfeld des Stators  als Generator vor- und als
+Elektromotor nachläuft. Entweder ständig oder fallweise kurzgeschlossen.  Der magnetische Fluss
+ändert sich, da sich der Rotor langsamer dreht, als sich das Magnetfeld ändert.
 
 \paragraph{Zeichnen Sie die Schaltpläne für drei Widerstände, die in Stern- oder Dreieckschaltung an
 eine dreiphasige Wechselspannung mit Scheitelwert $U_0$ angeschlossen sind. Berechnen Sie die in den
 beiden Schaltungen an den Widerständen anliegende Spannung, die elektrische Leistung sowie das
-Verhältnis der Leistungen für beide Schaltungsvarianten.}
+Verhältnis der Leistungen für beide Schaltungsvarianten.} ~
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/9/7.1}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=5cm]{image/9/7.2}
+    \end{minipage}
+\end{figure}
+
+\begin{equation}
+    U_Y = \frac{U_0}{\sqrt{2}} ~~~~~~ U_{\Delta} = \frac{U_0}{\sqrt{2}} \cdot \sqrt{3}
+\end{equation}
+\begin{equation}
+    P_Y = \frac{U_Y^2}{R} = \frac{U_0^2}{2R}
+    ~~~~~~
+    P_{\Delta} = \frac{U_{\Delta}^2}{R} = \frac{U_0^2}{2R} \cdot 3
+\end{equation}
+\begin{equation}
+    \frac{P_{\Delta}}{P_Y} = 3
+\end{equation}
 
 \paragraph{Was versteht man unter Wirk-, Blind-, und Scheinleistung und wie kann man sie aus Strom-
-und Spannung berechnen?}
+und Spannung berechnen?} ~
 
-Wirkleistung (mittlere abgegebene Leistung): ist die echt verbrauchte leistung in ohmschen Widerständen.  Elektrische leistung, die für die Umwandlung in andere Leistungen verfügbar ist (Blindleistung ist nicht dafür verwendbar). \\
+Wirkleistung (mittlere abgegebene Leistung): ist die echt verbrauchte leistung in ohmschen
+Widerständen.  Elektrische leistung, die für die Umwandlung in andere Leistungen verfügbar ist
+(Blindleistung ist nicht dafür verwendbar).
 \begin{equation}
 P = U_{eff} I_{eff} cos(\phi)
-\end{equation}\\
-
-Blindleistung: fließt zur Spannungsquelle. Tritt auf, wenn elektrische Energie über Wechselstrom transportiert wird. Die Leistung zum Aufbau wird beim Abbau wieder ans Netz zurückgegeben, weshalb sie Blindleistung genannt wird.\\
+\end{equation}
+Blindleistung: fließt zur Spannungsquelle. Tritt auf, wenn elektrische Energie über Wechselstrom
+transportiert wird. Die Leistung zum Aufbau wird beim Abbau wieder ans Netz zurückgegeben, weshalb
+sie Blindleistung genannt wird.
 \begin{equation}
 P = I_{eff} U_{eff} sin(\phi)
-\end{equation}\\
-
-Scheinleistung: Gesamtleistung, welche für ein Netz bereitgestellt werden muss.  Ist eine Rechengröße, die im Blick auf Verluste, wenn elektrische Verbraucher elektrische Leistung zugeführt wird.\\
+\end{equation}
+Scheinleistung: Gesamtleistung, welche für ein Netz bereitgestellt werden muss.  Ist eine
+Rechengröße, die im Blick auf Verluste, wenn elektrische Verbraucher elektrische Leistung zugeführt
+wird.
 \begin{equation}
 P_S = I_{eff} U_{eff}
 \end{equation}
-
-\newpage
 
 \newpage
 

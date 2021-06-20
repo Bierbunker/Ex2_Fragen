@@ -11,7 +11,7 @@ X Dominik                           Elektrischer Strom II
 X Dominik                           Materie im magnetischen Feld
 X Dominik                           Zeitlich veränderliche Felder
 X Dominik                           Elektrische Generatoren und Motoren
-# Alisa         1, 3, 5, 7          Wechselstrom und Drehstrom
+X Alisa                             Wechselstrom und Drehstrom
 X Dominik                           Wechselstromkreise und Lineare Netzwerke
 X Elias                             Transformator und Gleichrichter
 X David                             Elektromagnetische Schwingungen und Entstehung von Wellen
