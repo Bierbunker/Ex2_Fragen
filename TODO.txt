@@ -8,7 +8,7 @@ X Dominik                           Materie im elektrischen Feld
 X Dominik                           Elektrischer Strom I
 X Dominik                           Elektrischer Strom II
 ! Aleksey                           Statische Magnetfelder
-X Dominik                           Materie im elektrischen Feld
+X Dominik                           Materie im magnetischen Feld
 X Dominik                           Zeitlich veränderliche Felder
 X Dominik                           Elektrische Generatoren und Motoren
 # Alisa         1, 3, 5, 7          Wechselstrom und Drehstrom

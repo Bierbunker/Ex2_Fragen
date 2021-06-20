@@ -778,8 +778,8 @@ erzielbare Spannung bestimmt?} ~
 
 Das Prinzip einer galvanischen Zelle beruht darauf, dass unterschiedliche Metalle eine
 unterschiedliche Tendenz aufweisen, Elektronen abzugeben. Die Potentialdifferenz und damit auch die
-abgreifbare Spannung sind umso größer, je unterschiedlicher die einzelnen die einzelnen Elemente
-in dieser Hinsicht sind.
+abgreifbare Spannung sind umso größer, je unterschiedlicher die einzelnen Elementein dieser Hinsicht
+sind.
 
 Werden zwei Metallelektroden in eine gemeinsame Elektrolytlösung getaucht, so gibt eine der
 Elektroden Metallionen an das Elektrolyt ab während die Elektronen auf der Elektrode zurückbleiben.
@@ -1083,7 +1083,7 @@ eine möglichst große Hall-Spannung zu beobachten.}
 
 \newpage
 
-\section{Materie im elektrischen Feld}
+\section{Materie im magnetischen Feld}
 
 \paragraph{Ein kleiner Probekörper mit bekanntem Volumen befindet sich in einem inhomogenen
 magnetischen Feld. Der Probekörper wird durch das äußere Magnetfeld magnetisiert und erfährt daher
@@ -1119,13 +1119,13 @@ magnetischen Eigenschaften?} ~
         \begin{itemize}
             \item \textbf{Paramagnete} besitzen ein permanentes magnetisches Dipolmoment
                 $\bold{p_m}$, welches aber aufgrund thermischer Bewegung statistisch im Raum 
-                vererteilt ist und in Summe Null ergibt.
+                verteilt ist und in Summe Null ergibt.
                 
                 Durch ein äußeres Magnetfeld werden die Dipole parallel ausgerichtet und verstärken
                 so das äußere Feld im Inneren des Stoffes. Mit steigender Temperatur sinkt die
                 Suszeptibilität.
                 
-                Paramegnete werden im inhomogenen Magnetfeld zur höheren Feldstärke hingezogen.
+                Paramagnete werden im inhomogenen Magnetfeld zur höheren Feldstärke hingezogen.
                 
             \item \textbf{Diamagnete} besitzen kein eigenes magnatisches Dipolmoment $\bold{p_m}$.
                 Sie entwickeln im  äußeren Magnetfeld ein induziertes, inneres Magnetfeld, welches
@@ -1203,7 +1203,7 @@ Beispiele für ferromagnetische Stoffe.} ~
 Ferromagnetismus tritt nur in Festkörpern auf. Ferromagnete zeigen die Tendenz, ihre magnetische
 Ordnung auch entgegen äußeren Einflüssen zu behalten. Dies führt dazu, dass die im Inneren erzeugte
 magnetische Ordnung und somit das äußere erzeugte Magnetfeld behalten, auch wenn sie keinem
-Magnetfled mehr ausgesetzt sind. Diese als Remanenz bezeichnete Tendenz wird durch Effekte in zwei
+Magnetfeld mehr ausgesetzt sind. Diese als Remanenz bezeichnete Tendenz wird durch Effekte in zwei
 verschiedenen Größenordnungen verursacht:
 
 \begin{itemize}
@@ -1247,6 +1247,19 @@ paramagnetisch.
 Stetigkeitsbedingungen müssen die elektrischen und magnetischen Felder an Grenzflächen erfüllen?} ~
 
 \begin{itemize}
+    \item \textbf{Elektrostatik:} Mit den Stetigkeitsbedingungen $E_{\parallel,1} = E_{\parallel,2}$
+        sowie $D_{\perp,1} = D_{\perp,2}$ gilt
+        
+        \begin{equation}
+            \bold{D} = \epsilon_0 \epsilon \bold{E}
+        \end{equation}
+        \begin{equation}
+            \oint \bold{D} d\bold{A} = Q ~~~ \text{bzw} ~~~ div~\bold{D} = \rho
+        \end{equation}
+        \begin{equation}
+            \oint \bold{E} d\bold{s} = 0 ~~~ \text{bzw} ~~~ rot~\bold{E} = 0
+        \end{equation}
+        
     \item \textbf{Magnetostatik:} Mit den Stetigkeitsbedingungen $H_{\parallel,1} = H_{\parallel,2}$
         sowie $B_{\perp,1} = B_{\perp,2}$ gilt
         
@@ -1254,23 +1267,10 @@ Stetigkeitsbedingungen müssen die elektrischen und magnetischen Felder an Grenz
             \bold{B} = \mu_0 \mu \bold{H}
         \end{equation}
         \begin{equation}
-            \oint \bold{B} d\bold{A} = 0 ~~~ \text{bzw} ~~~ div \bold{B} = 0
+            \oint \bold{B} d\bold{A} = 0 ~~~ \text{bzw} ~~~ div~\bold{B} = 0
         \end{equation}
         \begin{equation}
-            \oint \bold{H} d\bold{s} = I_A ~~~ \text{bzw} ~~~ rot \bold{H} = \bold{j}
-        \end{equation}
-        
-    \item \textbf{Elektrostatik:} Mit den Stetigkeitsbedingungen $E_{\parallel,1} = E_{\parallel,2}$
-        sowie $E_{\perp,1} = E_{\perp,2}$ gilt
-        
-        \begin{equation}
-            \bold{D} = \epsilon_0 \epsilon \bold{E}
-        \end{equation}
-        \begin{equation}
-            \oint \bold{D} d\bold{A} = Q ~~~ \text{bzw} ~~~ div \bold{D} = \rho
-        \end{equation}
-        \begin{equation}
-            \oint \bold{E} d\bold{s} = 0 ~~~ \text{bzw} ~~~ rot \bold{E} = 0
+            \oint \bold{H} d\bold{s} = I_A ~~~ \text{bzw} ~~~ rot~\bold{H} = \bold{j}
         \end{equation}
 \end{itemize}
 
@@ -1295,10 +1295,10 @@ Zeit an. Bei welcher Orientierung der Leiterschleife relativ zum Magnetfeld ist 
 Spannung maximal (Skizze!)?} ~
 
 \begin{equation}
-    \phi_m = \int \bold{B} d\bold{A} = B \cdot N \cdot A \cdot cos(\omega \cdot t)
+    \phi_m = \int \bold{B} d\bold{A} = B \cdot A \cdot cos(\omega \cdot t)
 \end{equation}
 \begin{equation}
-    U_{ind} = - \frac{d}{dt} \phi_m = B \cdot N \cdot A \cdot \omega \cdot sin(\omega \cdot t)
+    U_{ind} = - \frac{d}{dt} \phi_m = B \cdot A \cdot \omega \cdot sin(\omega \cdot t)
 \end{equation}
 
 \begin{figure}[H]
@@ -1412,7 +1412,7 @@ $U(t)$ für Widerstand und Spule an und erstellen Sie die entsprechenden Diagram
     I(t) = \frac{U_0}{R} \cdot \left( 1 - e^{-Rt/L} \right)
 \end{equation}
 \begin{equation}
-    U_L(t) = U_0 \cdot e^{-Rt/L} ~~~ U_R = U_0 \cdot \left( 1 - e^{-Rt/l}) \right)
+    U_L(t) = U_0 \cdot e^{-Rt/L} ~~~ U_R = U_0 \cdot \left( 1 - e^{-Rt/L}) \right)
 \end{equation}
 
 \begin{figure}[H]
@@ -1497,7 +1497,7 @@ homogenen äußeren Magentfeld. Schreiben Sie die Beziehung für den elektrische
 Sie daraus die induzierte Spannung bei konstanter Winkelgeschwindigkeit als Funktion der Zeit
 her.} ~
 
-Eine rechteckige Spule mit der Windungsfläche $F$ befindet sich im homogenen Magnetfeld $\bold{B}$
+Eine rechteckige Spule mit der Windungsfläche $A$ befindet sich im homogenen Magnetfeld $\bold{B}$
 und wird mit der Winkelgeschwindigkeit $\omega$ gedreht. Dabei wird an den Enden der Spule eine
 Wechselspannung induziert, welche über zwei Schleifkontakte abgegriffen werden kann.
 
@@ -1507,10 +1507,10 @@ Wechselspannung induziert, welche über zwei Schleifkontakte abgegriffen werden 
 \end{figure}
 
 \begin{equation}
-    \phi_m = \int \bold{B} d\bold{A} = B \cdot N \cdot A \cdot cos(\omega \cdot t)
+    \phi_m = \int \bold{B} d\bold{A} = B \cdot A \cdot cos(\omega \cdot t)
 \end{equation}
 \begin{equation}
-    U_{ind} = - \frac{d}{dt} \phi_m = B \cdot N \cdot A \cdot \omega \cdot sin(\omega \cdot t)
+    U_{ind} = - \frac{d}{dt} \phi_m = B \cdot A \cdot \omega \cdot sin(\omega \cdot t)
 \end{equation}
 
 \paragraph{Doppel-T Anker und Trommelanker: Beschreiben Sie die Funktion eines permanenterregten
@@ -1521,7 +1521,8 @@ Trommelanker?} ~
 
 Am permanent erregten Generator wird das magnetische Feld durch einen als Stator dienenden
 Permanentmagneten erzeugt. Die bei Drehung des Rotors in den Spulen induzierte Spannung wird über
-den Kommutator abgenommen, welcher je Spule genau ein Segment aufweist.
+den Kommutator abgenommen, welcher je nach Anzahl der Spulen unterschiedlich viele Schleifkontakte
+aufweist.
 
 Die Verwendung eines Trommelankers stellt im Gegensatz zum Doppel-T-Anker eine Verbesserung dar,
 bei der der magnetische Kraftfluss $\phi_m$ vergrößert wird. Mit der Anzahl der Spulen wird die
