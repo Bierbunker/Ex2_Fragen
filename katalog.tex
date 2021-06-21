@@ -15,6 +15,7 @@
 \usepackage{icomma}
 \usepackage{physics}
 \usepackage{mathtools}
+\usepackage{derivative}
 
 \usepackage{pdfpages}
 \usepackage{lastpage}
@@ -2217,23 +2218,103 @@ Gegensatz zur laufenden Welle, bei der \textbf{E} und \textbf{B} in Phase schwin
 \section{Wellen in Materie}
 
 \paragraph{Beschreiben Sie die Leitung elektromagnetischer Wellen zwischen zwei elektrisch
-leitenden, ebenen Platten.}
+leitenden, ebenen Platten.} ~
+
+Die Welle wird an den Platten mit dem Ausfallswinkel $\alpha = \alpha'$ gegenphasig, jedoch mit
+gleicher Amplitude reflektiert.
+
+\begin{equation}
+    E = E_0(e^{i(k_x x + k_z z - \omega t)} - e^{i(-k_x x + k_z z - \omega t)})
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/14/1}
+\end{figure}
 
 \paragraph{Wellenleitung auf Kabeln: Leiten Sie einen Ausdruck für die Eingangsimpedanz
-(Wellenwiderstand) eines Kabels mit bekanntem Induktivitäts- und Kapazitätsbelag her.}
+(Wellenwiderstand) eines Kabels mit bekanntem Induktivitäts- und Kapazitätsbelag her.} ~
+
+Durch Differenziation der ersten Leitungsgleichung nach $z$ und Einsetzen des Ausdrucks für
+$\pdv{I}{z}$ ergibt sich eine lineare Differenzialgleichung zweiter Ordnung.
+
+\begin{equation}
+    \begin{rcases}
+        \pdv{U}{z} = - i \omega \hat{L} I \\
+        \pdv{I}{z} = - i \omega \hat{C} U
+    \end{rcases}
+    \implies
+    \pdv[2]{U}{z}
+    = i \omega \hat{L} \cdot i \omega \hat{C} U
+    = - \omega^2 \cdot \hat{L} \hat{C} \cdot U
+\end{equation}
+Mit dem Lösungsansatz $U = e^{\gamma z}$ durch Einsetzen mit $U'' = \gamma^2 e^{\gamma z}$ in die
+Gleichung folgt
+\begin{equation}
+    \gamma^2 e^{\gamma z} = - \omega^2 \cdot \hat{L} \hat{C} \cdot e^{\gamma z}
+    \implies
+    \gamma = \pm i \omega \cdot \sqrt{\hat{L} \hat{C}}
+\end{equation}
+Aus der ersten Leitungsgleichung ergibt sich dann durch Umformung und Einsetzen der Strom
+\begin{equation}
+    I = \frac{U'}{-i \omega \hat{L}} = \frac{\gamma e^{\gamma z}}{-i \omega \hat{L}}
+\end{equation}
+Unter Verwendung der negativen Lösung für $\gamma$ wird $Z$ der Quotient aus $U$ und $I$
+\begin{equation}
+    Z
+    = \frac{U}{I}
+    = \frac{-i \omega \hat{L} \cdot e^{\gamma z}}{\gamma e^{\gamma z}}
+    = \frac{L}{\sqrt{\hat{L} \hat{C}}}
+    = \sqrt{\frac{\hat{L}}{\hat{C}}}
+\end{equation}
 
 \paragraph{Erklären Sie das elektromagnetische Frequenzspektrum. Welchen Spektralbereich hat UV,
-sichtbares Licht, Infrarot, Mikrowellen und Radiowellen?}
+sichtbares Licht, Infrarot, Mikrowellen und Radiowellen?} ~
+
+Das elektromagnetische Spektrum ist die Gesamtheit aller elektromagnetischen Wellen verschiedener
+Wellenlängen. Das für den Menschen sichtbare Lichtspektrum ist ein kleiner Teil des EM-Spektrums.
+
+\begin{itemize}
+    \item Ultraviolett: \SI{10}{\nm} bis \SI{380}{\nm}
+    \item Sichtbares Licht: \SI{380}{\nm} bis \SI{780}{\nm}
+    \item Infrarot: \SI{780}{\nm} bis \SI{1}{\mm}
+    \item Mikrowellen: \SI{1}{\mm} bis \SI{1}{\m}
+    \item Radiowellen: \SI{1}{\m} bis \SI{10}{\km}
+\end{itemize}
 
 \paragraph{Was versteht man unter Brechungsindex und was bedeutet ein komplexwertiger
-Brechungsindex? Wie geht eine komplexwertiger Brechungsindex in die Wellengleichung ein?}
+Brechungsindex? Wie geht eine komplexwertiger Brechungsindex in die Wellengleichung ein?} ~
+
+Der Brechungsindex $n$ ist das Verhältnis der Wellenlänge $\lambda_{vac}$ im Vakuum zur Wellenlänge
+$\lambda_{med}$ im Medium.
+
+Der komplexwertige Brechungindex $\mathbf{n} = n_r + i \cdot n_i$ vereint den klassischen
+Brechungsindex und die Dämpfung der Welle in einer komplexen Größe. Der Realteil beschreibt also die 
+Dispersion, der Imaginärteil die Absorption der Welle im Medium.
+\begin{equation}
+    E(t,x) = E_0 \cdot e^{i(\omega t - \frac{\omega}{c} x \mathbf{n})}
+\end{equation}
 
 \paragraph{Schreiben Sie das Beer’sche Absorptionsgesetz an (Skizze). Erstellen Sie ein Diagramm der
-Intensität als Funktion der Ausbreitungslänge der Welle.}
+Intensität als Funktion der Ausbreitungslänge der Welle.} ~
+
+\begin{equation}
+    I = I_0 \cdot e^{- \alpha z} ~~~ \text{mit Absorptionskoeffizient} ~~~ \alpha = 2 k_0 \kappa
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{image/14/5}
+\end{figure}
 
 \paragraph{Wie sieht der frequenzabhängige Verlauf von Real- und Imaginärteil des Brechungsindex
 qualitativ aus? Erstellen Sie Diagramme. Eine Absorptionslinie sollte im betrachteten
-Frequenzbereich enthalten sein.}
+Frequenzbereich enthalten sein.} ~
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/14/6}
+\end{figure}
 
 \newpage
 
