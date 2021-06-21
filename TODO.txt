@@ -16,7 +16,7 @@ X Dominik                           Wechselstromkreise und Lineare Netzwerke
 X Elias                             Transformator und Gleichrichter
 X David                             Elektromagnetische Schwingungen und Entstehung von Wellen
 X David                             Elektromagnetische Wellen
-! Dominik                           Wellen in Materie
+X Dominik                           Wellen in Materie
 ! Andi                              Wellen an Grenzflächen, optische Anisotropie und Polarisation   
 X Alisa                             Geometrische Optik I         
 X Alisa                             Geometrische Optik II         
