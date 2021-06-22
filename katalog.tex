@@ -790,7 +790,7 @@ Magnetfeld eines geraden, sehr langen, zylindrischen Leiters ab, durch den ein e
 mit über den Leiterquerschnitt homogener Stromdichte fließt.}
 Das Ringintegral entlang einer geschlossenen Magnetfeldlinie, ist immer gleich dem eingeschlossenen Strom mal der magnetischen Feldkonstante,
 wie aus dem Amperschen Gesetz \ref{AmperschesGesetz} ersichtlicht wird.  
-\begin{equation}
+\begin{equation} \\
     \oint \textbf{B} \hspace{0.2em} d\textbf{s} = \mu_0\cdot I
 \end{equation}
 Wählt man nun als Integrationsweg die den Draht umschließende Feldlinie mit dem Abstand $r$, so ergibt sich:
@@ -804,11 +804,12 @@ Wählt man nun als Integrationsweg die den Draht umschließende Feldlinie mit de
     B(r) = \frac{\mu_0\cdot I}{r_{0}^{2} 2 \pi} \cdot r  \hspace{2.5em} \text{für} \hspace{1em} r < r_0
 \end{equation}
 \paragraph{Schreiben Sie das Ampere‘sche Gesetz an. Leiten Sie daraus einen Ausdruck für das
-Magnetfeld im Inneren einer geraden, sehr langen, zylindrischen Leiterspule ab.}
+Magnetfeld im Inneren einer geraden, sehr langen, zylindrischen Leiterspule ab.} 
 Der Integrationsweg wird so gewählt, dass nur der Teil im Inneren der Spule einen Beitrag leistet.
-\begin{figure}
+\begin{figure}[H]
+    \centering
     \label{Integrationsweg}
-    \includegraphics[height=5cm]{image/5/5.2.JPG}
+    \includegraphics[height=7cm]{image/5/5.2.JPG}
 \end{figure}
 $N$ ist in diesem Zusammenhang die Anzahl der Windungen.
 \begin{equation}
@@ -822,7 +823,7 @@ Lorentzkraft) einer bewegten Ladung im Magnetfeld an. Beschreiben Sie alle verwe
 und leiten Sie damit die Kraft auf einen geraden, stromdruchflossenen Leiter im homogenen Magnetfeld
 her.}
 \begin{equation}
-    F = q(textbf{v} \times \textbf{B})
+    \textbf{F} = q(\textbf{v} \times \textbf{B})
 \end{equation}
 \begin{itemize}
     \item $q$ Ladung auf die die Kraft wirkt 
@@ -840,41 +841,92 @@ her.}
 \paragraph{Schreiben Sie eine Ausdruck für das Magnetfeld zweier paralleler, stromdurchflossener,
 zylindrischer Leiter an. Erstellen Sie ein Diagramm der magnetischen Feldstärke als Funktion des
 Ortes entlang einer Linie, die die Achsen beider Leiter unter \SI{90}{\degree} schneidet. Welche
-Richtung hat das Magnetfeld entlang dieser Linie?}
+Richtung hat das Magnetfeld entlang dieser Linie?} 
+\vspace{1em}
 Das Magnetfeld des einen Leiters übt eine Kraft, abhängig von der Stromrichtung, auf den anderen aus.
 Dieses Magnetfeld  $B = \frac{\mu_0 I}{2 \pi r} \cdot \hat{e}^{\phi}$ steht tangential auf konzentrischen Feldlinien.
-Setzt man diesen Zusammenhang in die hergeleitete Formel der letzten Frage, so bemerkt man das $B$ orthognal auf $L$ steht. 
+Setzt man diesen Zusammenhang in die hergeleitete Formel der letzten Frage, so bemerkt man das $B$ orthognal auf $L$ steht, falls die zwei Drähte parallel zu einander verlaufen. 
 Somit ergibt sich:
 \begin{align}
     F_1 &= I_1(L_1 \cdot \frac{\mu_0 I_2}{2 \pi r} ) \\
     \\
     \frac{F_1}{L_1} &= \frac{\mu_0}{2 \pi r} \cdot I_2 \cdot I_1
 \end{align}
+\newpage
 \paragraph{Leiten Sie ausgehend von der Kraft auf einen stromdurchflossenen, geraden Draht im
 homogenen Magnetfeld einen Ausdruck für das Drehmoment einer rechteckigen Leiterschleife im
 homogenen Magnetfeld her. Die Drehachse ist parallel zu zwei Seiten der Leiterschleife und senkrecht
 zur Richtung des Magnetfeldes. Bei welchem Winkel zwischen Leiterschleife und Magnetfeldrichtung ist
 das Drehmoment maximal? Bei welchem Winkel ist der magnetische Fluss durch die Leiterschleife
 maximal?}
-\begin{figure}
-    label{Drehmomen}
+\begin{figure}[H]
+    \centering
+    \label{Drehmoment}
+    \includegraphics[height=6cm]{image/5/5.5.JPG}
 \end{figure}
-
+Ausgehend von den früher hergeleiteten Zusammenhang, kann man die Kraft, die auf die Leiterschleife wirkt als das Kreuzprodukt zwischen der Seite $a$ und dem Magnetfeld $B$ interpretieren. 
+Diese wirkt nur auf die Längen $a$, da diese parallel zur Drehachse liegen und somit die Vektoren des Magnetfeldes in beiden Drähten entgegengestetzte Richtungen aufzeigen.
+\begin{equation}
+    F = a I ( \hat{e}_a \times B)
+\end{equation}
+Um das wirkende Drehmoment zu bestimmen, wird das Kreuzprodukt des Abstandes vom Drehmittelpunkt mit der auf die Teile der Leiterschleife wirkende Kraft gebildet.
+\begin{equation}
+    \textbf{M} = 2\frac{b}{2} ( \hat{e}_b \times \textbf{F}) = abl (\hat{e}_b \times \hat{e}_a) \times \textbf{B} = I(\textbf{A}\times\textbf{B})
+\end{equation}
+Was man aus diesem Zusammenhang erkennt ist, dass das Drehmoment am größten ist wenn der Flächennormalvektor $\textbf{A}$ orthogonal und somit im 90° Winkel zum Vektorfeld $\textbf{B}$ steht
 \paragraph{Ein geladenes Teilchen ist bei $t=0$ am Ort $x=(0,0,0)$ mit der Geschwindigkeit
 $v=(v_x,0,v_z)$ in einem homogenen Magnetfeld $B=(0,0,B_z)$. Wie wird die weitere Bahn des Teilchens
 qualitativ aussehen und warum? Berechnen Sie die Kreisfrequenz und Radius.}
-
+Das Teilchen beschreibt eine Spiralförmige Bahn, da aus der Lorenzkraft folgt, dass die auf das Teilechen wirkende Kraft sich zu $F = q(textbf{v} \times \textbf{B})$ ergibt.
+Hierzu ist nur die $v_x$ komponente entscheidend, was sich trivialerweise aus dem Kreuzprodukt ergibt. Um auf den Radius $R$ und die Kreisfrequenz $\omega$ schließen zu können setzt man die Lorenzkraft mit der Zentrifugalkraft gleich. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5.5cm]{image/5/5.6.JPG}
+\end{figure}
+\begin{align}
+    R &= \frac{mv_x}{qB} \\ 
+    \\
+    \omega &= \frac{v}{R} = \frac{q}{m} B
+\end{align}
 \paragraph{Beschreiben Sie die Funktion und Aufbau eines Wien-Filters und leiten Sie einen Ausdruck
-für die Filter-Geschwindigkeit her.}
-
+für die Filter-Geschwindigkeit her.} 
+Teilchen in einem Geschwindigkeitsintervall werden nicht bzw. wenig abgelenkt. Durch das Varieren des E-feldes und B-Feldes wird die gewünschte
+Geschwindigkeit angepasst. Das Intervall kann direkt mit der Änderung der Spaltenbreite $\varDelta b$ und der Weglänge $\varDelta l$ skaliert werden.
+\begin{figure}[H]
+    \includegraphics{image/5/5.7.JPG}
+\end{figure}
+\begin{align}
+    \textbf{F} &= q(\textbf{E} + \textbf{v} \times \textbf{B}) = 0 \\
+    \\
+    v &= \frac{E}{B}
+\end{align}
 \paragraph{Beschreiben Sie den Hall-Effekt und leiten Sie ausgehend von der Lorentzkraft einen
 Ausdruck für die Hall-Spannung für einen Leiter mit rechteckigem Querschnitt im homogenen Magnetfeld
-her.}
+her.} 
+Bewegt sich ein Ladungsträger durch ein homogenes Magnetfeld, so wird er senktrecht dazu abgelenkt. Diese Ablenkung führt zu einer inhomogenen Ladungsverteilung im Medium und zu einer Ansammlung der Ladungströger an den Äquipotenzialflächen.
+Diese wiederum tragen zu einem sich aufbauenden E-Feld bei. Durch Variation der Stromstärke wird die Stärke des E-Feldes beeinflusst, die durch dieses E-Feld erzeugte Kraft, die der Lorenzkraft engegenwirkt, und der an den Aquipotenzialflächen abgreifbare Spannung $U_H$ (Hallspannung).
+\begin{figure}[H]
+    \includegraphics{image/5/5.8.JPG}
+\end{figure}
+\begin{align}
+   \textbf{F}_B &= nq(\textbf{v}_D \times \textbf{B}) \\
+  \\
+   \textbf{F}_E &= nq \textbf{E}_H\\
+   \\
+   nq \textbf{E}_H &= -qn(\textbf{v}_D \times \textbf{B}) \hspace{5em} U_H = \int \textbf{E}_H d\textbf{s} \\
+   \\
+   U_H &= - \frac{(\textbf{j} \times \textbf{B})\cdot b} {nq}      \hspace{5em} I = \textbf{j}\cdot \textbf{A} = j\cdot b \cdot d \\
+   \\
+   U_H &= -\frac{I\cdot B}{nqd}
+\end{align}
 
 \paragraph{Wie beeinflussen Stromdichte, Querschnittsabmessungen, Ladungsträgerdichte und Ladung
 der Ladungsträger die Hall-Spannung? Geben Sie an, ob die Parameter groß oder klein sein sollten, um
 eine möglichst große Hall-Spannung zu beobachten.}
-
+Die Dicke $d$, die Ladungsträgerdichte $n$ und Ladung $q$ sollten möglichst klein und die Stromstärke $I$ , das stationäre Magnetfeld $B$
+sollten möglichst groß sein, um eine große Hall-Spannung zu erzeugen. Die Ladungsträgerdichte ist eine spezifiche Größe für jedes Material, genauso sowie die Ladung selbst, was zufolge hat, dass
+bei gleicher Stromstärke verschiedene Stoffe unterschieldliche Driftgeschwindigkeiten besitzen. Je größer die Driftgeschwindigkeit, desto größer ist die wirkende Lorenzkraft.
+Die Querschnittsabmessungen beinflussen die Spannung massiv, für große Hallspannungen sollte hierzu $b$ größer gewählt werden.
 \newpage
 
 \section{Materie im elektrischen Feld}
