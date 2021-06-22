@@ -24,4 +24,4 @@ X Elias                             Interferenz
 ! Martin                            Beugung
 X David                             Optische Instrumente I
 # Alisa       2, 3(zweite), 4       Optische Instrumente II
-X Elias                             Fehlermeldungen
+X Elias                             Fehlermeldungen.
