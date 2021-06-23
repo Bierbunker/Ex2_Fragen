@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt, parskip=half]{scrartcl}
+\documentclass[a4paper, 11pt, ngerman, parskip=half]{scrartcl}
 
 \title{Experimentalphysik 2 - Fragenkatalog}
 \date{\today}
@@ -7,14 +7,14 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
-\usepackage{csquotes}
 \usepackage{lmodern}
+\usepackage{babel}
+\usepackage{csquotes}
+\usepackage{xurl}
 
-\usepackage{amsmath, amssymb, amstext}
+\usepackage{amsmath, amssymb, amstext, mathtools}
 \usepackage{icomma}
 \usepackage{physics}
-\usepackage{mathtools}
 \usepackage{derivative}
 
 \usepackage{pdfpages}
@@ -2372,22 +2372,152 @@ Frequenzbereich enthalten sein.} ~
 \newpage
 
 \section{Wellen an Grenzflächen, optische Anisotropie und Polarisation}
+\label{Wellen an Grenzflaechen, optische Anisotropie und Polarisation}
 
 \paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s-
 und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dichteren
 Medium.}
+\phantom{}  % invisible box, otherwise LaTeX puts the figure before the paragraph
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=\textwidth]{image/15/Luft_zu_Quarz.pdf}
+        \caption{Reflexion am optisch dichteren Medium}
+        \label{fig:reflexion_dicht}
+    \end{samepage}
+\end{figure}
 
 \paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s-
 und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dünneren
 Medium.}
+\phantom{}
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=\textwidth]{image/15/Quarz_zu_Luft.pdf}
+        \caption{Reflexion am optisch dünneren Medium}
+        \label{fig:reflexion_duenn}
+    \end{samepage}
+\end{figure}
 
 \paragraph{Was bedeutet „Reflexionskoeffizient“ und „Reflexionsvermögen“ (Reflektivität),
 „Transmissionskoeffizient“ und „Transmissionsvermögen“ (Transmissionsgrad)? Wie groß ist das
 Reflexionsvermögen einer Grenzfläche zwischen zwei transparenten Medien bei Lichteinfall senkrecht
-auf die Grenzfläche.}
+auf die Grenzfläche?}
+
+\subsubsection*{Reflexions- und Transmissionskoeffizient}
+Der Reflexionskoeffizient $\varrho_s$ beschreibt das Verhältnis der Amplituden von reflekiterter Welle zu Eingangswelle:
+
+\begin{equation}
+    \label{eq:reflexionskoeffizient}
+    \varrho_s = \frac{A_{\text{rs}}}{A_{\text{es}}} = \frac{1-a}{1+a} = -\frac{\sin (\alpha - \beta)}{\sin (\alpha + \beta)}
+\end{equation}
+
+Analog dazu der Transmissionskoeffizient $\tau_s$:
+
+\begin{equation}
+    \label{eq:transmissionskoeffizient}
+    \tau_s = \frac{A_{\text{gs}}}{A_{\text{es}}} = \frac{2}{1+a} = \frac{2 \sin (\beta) \cos{\alpha}}{\sin (\alpha + \beta)}
+\end{equation}
+
+\subsubsection*{Reflexions- und Transmissionsvermögen}
+Das Transmissionsvermögen $T$ beschreibt das Verhältnis der Intensitäten der hindurchgeschickten zur einfallenden Welle im zeitlichen Mittel.
+
+\begin{equation}
+    \label{eq:transmissionsvermoegen}
+    T = \frac{\bar{I}_{\text{t}} \cdot \cos (\beta)}{\bar{I}_{\text{e}}\cdot \cos (\alpha)} = \frac{n_2 \cos (\beta) A_{\text{g}}^2}{n_1 \cos (\alpha) A_{\text{e}}^2}
+\end{equation}
+
+Reflexionsvermögen:
+
+\begin{equation}
+    \label{eq:reflexionsvermoegen}
+    R = \frac{\bar{I}_{\text{r}}}{\bar{I}_{\text{e}}} = \frac{A_{\text{r}}^2}{A_{\text{e}}^2}
+\end{equation}
+
+Der Winkel spielt hierbei keine Rolle da $\alpha = \alpha'$ gilt.
+
+Normalkomponente von $R$ (s für senkrecht):
+
+\begin{equation}
+    \label{eq:reflexionsvermoegen_senkrecht}
+    R_{\text{s}} = \left( \frac{\sin(\alpha - \beta)}{\sin(\alpha + \beta)} \right)^2
+\end{equation}
+
+Parallelkomponente:
+
+\begin{equation}
+    \label{eq:reflexionsvermoegen_parallel}
+    R_{\text{p}} = \left( \frac{\tan(\alpha - \beta)}{\tan(\alpha + \beta)} \right)^2
+\end{equation}
+
+Senkrechter Einfall:
+
+\begin{equation}
+    \label{eq:reflexionsvermoegen_senkrechter_einfall}
+    R(\alpha = 0) = \left( \frac{n_1 - n_2}{n_1 + n_2} \right)^2
+\end{equation}
+
+Summe:
+
+\begin{equation}
+    \label{eq:summe_reflexion_transmission}
+    \begin{split}
+        T_p + R_p &= 1 \\
+        T_s + R_s &= 1 \\
+        T + R     &= 1
+    \end{split}
+\end{equation}
+
+
 
 \paragraph{Erklären Sie mithilfe einer Skizze die Begriffe „Einfallswinkel“, „Reflexionswinkel“, „Brechungswinkel“, „Einfallsebene“. Was bedeutet s- bzw. p-Polarisation? Leiten Sie das Reflexions-
 und Brechungsgesetz her.}
+\phantom{}
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.6\textwidth]{image/15/brechung_reflexion2.pdf}
+        \caption{Erklärung der Begriffe „Einfallswinkel“, „Reflexionswinkel“, „Brechungswinkel“, „Einfallsebene“}
+        \label{fig:reflexion_brechung}
+    \end{samepage}
+\end{figure}
+%
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.6\textwidth]{image/15/s-p-polarisation.jpg}
+        \caption{s- und p-Polarisation}
+        \label{fig:s-p-polarisation}
+    \end{samepage}
+\end{figure}
+%
+S- und p-Polarisation beschreiben die Schwingungsebene der elektromagnetischen Welle Licht relativ zum Lot (Flächennormale der Einfallsebene). \enquote{s} steht für \enquote{senkrecht} zum Lot, \enquote{p} steht für \enquote{parallel} zum Lot.
+
+\subsubsection*{Herleitung Reflexionsgesetz\footnote{\url{https://de.wikipedia.org/wiki/Fermatsches_Prinzip}}}
+Das Reflexionsgesätz lässt sich über das Fermat'sche Prinzip herleiten. Es besagt, dass das Licht, das vom Punkt $P_1$ ausgesandt wird, den Punkt $P_2$ immer auf dem Wege erreicht, für den die Lichtlaufzeit ein Extremum (Minimum) ist.
+%
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.4\textwidth]{image/15/reflexionsgesetz.png}
+        \caption{Skizze zur Herleitung des Reflexionsgesetzes}
+        \label{fig:reflexionsgesetz}
+    \end{samepage}
+\end{figure}
+%
+Die vergangene Laufzeit des Lichts ist abhängig von der momentanen Position des Lichtbündels:
+\[t(x) = \frac{1}{c_0} \cdot \left( \sqrt{x^2+a^2} + \sqrt{(d-x)^2 + b^2} \right)\]
+Extremum auffinden durch Ableiten (nach x) und mit Null gleichsetzen (und $c_0$ wegmultiplizieren):
+\[0 \overset{!}{=} \frac{x}{\sqrt{x^2 + a^2}} - \frac{d-x}{\sqrt{(d-x)^2 + b^2}}\]
+Wurzelausdrücke durch explizite Benennung der Längen ersetzen:
+\[0 = \frac{x}{l_1} - \frac{d-x}{l_2}\]
+Verhältnisse durch Sinus-Funktionen ersetzen:
+\[0 = \sin(\alpha) - \sin(\beta) \implies \sin(\alpha) = \sin(\beta)\]
+
+\subsubsection*{Herleitung Brechungsgesetz}
+
+
 
 \paragraph{Was ist der Brewsterwinkel? Erstellen Sie eine Skizze einer Luft-Glas Grenzfläche und
 zeichnen Sie alle mögliche Brewsterwinkel ein. Wie ist der Polarisationszustand der reflektierten
