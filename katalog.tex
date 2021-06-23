@@ -14,6 +14,7 @@
 
 \usepackage{amsmath, amssymb, amstext, mathtools}
 \usepackage{icomma}
+\usepackage[locale=DE, uncertainty-mode=separate]{siunitx}
 \usepackage{physics}
 \usepackage{derivative}
 
@@ -23,6 +24,7 @@
 \usepackage{float}
 
 \usepackage[hidelinks,colorlinks]{hyperref}
+\usepackage{xcolor}
 %Colorlinks setup:
 \hypersetup{
     colorlinks = false,
@@ -2297,7 +2299,7 @@ $\pdv{I}{z}$ ergibt sich eine lineare Differenzialgleichung zweiter Ordnung.
         \pdv{I}{z} = - i \omega \hat{C} U
     \end{rcases}
     \implies
-    \pdv[2]{U}{z}
+    %\pdv[2]{U}{z}
     = i \omega \hat{L} \cdot i \omega \hat{C} U
     = - \omega^2 \cdot \hat{L} \hat{C} \cdot U
 \end{equation}
@@ -2517,14 +2519,99 @@ Verhältnisse durch Sinus-Funktionen ersetzen:
 
 \subsubsection*{Herleitung Brechungsgesetz}
 
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.4\textwidth]{image/15/brechungsgesetz.jpg}
+        \caption{Skizze zur Herleitung des Brechungsgesetzes}
+        \label{fig:brechungsgesetz}
+    \end{samepage}
+\end{figure}
+%
+Ein Lichtstrahl wird als räumlich ausgedehntes Lichtbündel interpretiert. Beim übergang von beispielsweise einem optisch dünneren (Medium 1) in ein optisch dichteres Medium (2) verringert sich die Lichtgeschwindigkeit. Ein Teil des Lichtbündels wird früher, ein anderer erst später dieser Verlangsamung ausgesetzt, dadurch wird er abgelenkt. Die Übergangsstrecke sei mit $x$ bezeichnet, der noch nicht gebrochene Anteil mit $c_1 \cdot t$. Verhältnis als Sinus ausgedrückt:
+%
+\begin{equation}
+    \begin{split}
+        \sin(\alpha) = \frac{c_1 \cdot t}{x} \\
+        \sin(\beta) = \frac{c_2 \cdot t}{x}
+    \end{split}
+\end{equation}
+%
+Aus dem Verhältnis beider Gleichungen folgt:
+\begin{equation}
+    \label{eq:lichtbrechung_c}
+    \frac{\sin(\alpha)}{\sin(\beta)} = \frac{c_1}{c_2}
+\end{equation}
+%
+Für die Brechzahl $n$ gilt weiters:
+\begin{equation}
+    \label{eq:brechzahl}
+    n = \frac{c_0}{c_m}
+\end{equation}
+%
+$c_0$ beschreibt die Lichtgeschwindigkeit im Vakuum, $c_m$ die Lichtgeschwindigkeit im optisch durchlässigen Medium. Durch Einsetzen von \autoref{eq:brechzahl} in \autoref{eq:lichtbrechung_c} und Auflösen des Doppelbruchs folgt das Snellius'sche Brechungsgesetz:
+%
+\begin{equation}
+    \label{eq:brechungsgesetz_n}
+    \frac{\sin(\alpha)}{\sin(\beta)} = \frac{n_2}{n_1}
+\end{equation}
 
 
-\paragraph{Was ist der Brewsterwinkel? Erstellen Sie eine Skizze einer Luft-Glas Grenzfläche und
-zeichnen Sie alle mögliche Brewsterwinkel ein. Wie ist der Polarisationszustand der reflektierten
+
+\paragraph{Was ist der Brewsterwinkel? Erstellen Sie eine Skizze einer Luft-Glas Grenzfläche und zeichnen Sie alle möglichen Brewsterwinkel ein. Wie ist der Polarisationszustand der reflektierten
 und transmittierten Welle bei unpolarisierter einfallender Welle?}
+\phantom{}
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=\textwidth]{image/15/brewster.jpg}
+        \caption{Brewster-Winkel $\alpha_B$}
+        \label{fig:brewster-winkel}
+    \end{samepage}
+\end{figure}
+%
+Schließen bei Lichtbrechung und -reflexion der gebrochene und der reflektierte Lichtstrahl einen Winkel von \SI{90}{\degree} ein, so spricht man beim Eintrittswinkel vom \textit{Brewster-Winkel} $\alpha_B$. Sowohl das gebrochene, als auch das reflektierte Licht sind vollständig linear polarisiert, da nur s-polarisiertes Licht reflektiert wird. Das transmittierte Licht ist demnach p-polarisiert.
+%
+\begin{equation}
+    \label{eq:brewster-winkel}
+    \tan(\alpha_B) = \frac{n_2}{n_1}
+\end{equation}
+
+
 
 \paragraph{Was ist Totalreflextion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt
 die Polarisation dabei?}
+
+Von Totalreflexion spricht man, wenn ein einfallender Lichtstrahl vollständig reflektiert und nicht teilweise transmittiert wird.
+Lässt man eine Lichtwelle aus einem optisch dichteren Medium 1 ins optische dünnere Medium 2 ($n_1 > n_2$) laufen, so folgt
+aus dem Brechungsgesetz für den Winkel $\alpha$:
+%
+\[\sin(\alpha) = \frac{n_1}{n_1} \cdot \sin(\beta)\]
+%
+Aus $\sin(\beta) \leq 1$ folgt
+%
+\[\sin(\alpha) \leq \frac{n_2}{n_1}\]
+%
+damit die Welle überhaupt ins Medium 2 eintreten kann. Im Extremfall beträgt der Austrittswinkel $\beta = \SI{90}{\degree}$ und der Eintrittswinkel wird dann \textit{Grenzwinkel der Totalreflexion} $\alpha_G$ genannt.
+%
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.7\textwidth]{image/15/totalreflexion.jpg}
+        \caption{Zur Totalreflexion von Wellen, die aus dem optisch
+        dichteren Medium unter Winkeln $\alpha > \alpha_g$ auf die Grenzfläche fallen}
+        \label{fig:totalreflexion}
+    \end{samepage}
+\end{figure}
+%
+$\alpha_G$ berechnet sich wie folgt:
+\begin{equation}
+    \label{eq:grenzwinkel_totalreflexion}
+    \sin(\alpha_G) = \frac{n_2}{n_1}
+\end{equation}
+
+Ein anderes Anwendungsfeld ist der Einsatz der Totalreflexion auf Doppelbrechung basierte Polarisatoren. Dabei wird die Eigenschaft ausgenutzt, dass doppelbrechende Materialien polarisationsabhängige Brechungsindizes aufweisen, so dass in einem bestimmten Einfallswinkelbereich eine Polarisation zum Großteil transmittiert und die andere totalreflektiert wird. Dieses Verhalten kann man auch für polarisationsabhängige Strahlteiler nutzen.
+
 
 \paragraph{Was sind optisch anisotrope Kristalle und wie lassen sich die unterschiedlichen
 Richtungen der elektrischen Feldstärke und der dielektrischen Verschiebungsdichte mit dem
@@ -2538,7 +2625,7 @@ doppelbrechenden Kristalles?}
 optisch einachsigen Kristalles. Wie unterscheidet sich das Verhalten von ordentlichem und
 außerordentlichem Strahl bei optisch einachsigen Kristallen?}
 
-\paragraph{Beschreiben Sie die Funktion eines dichroitischen und eines Glan-Thompson Polarisators.
+\paragraph{Beschreiben Sie die Funktion eines dichroitischen und eines Glan-Thompson-Polarisators.
 (Skizze!)}
 
 \paragraph{Beschreiben Sie die Funktion eines $\lambda/4$-Plättchens. Welche Bedingungen muss es
