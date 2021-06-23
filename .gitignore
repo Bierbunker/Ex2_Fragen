@@ -33,3 +33,5 @@
 
 ## pdfs
 *.pdf
+
+!image/**
