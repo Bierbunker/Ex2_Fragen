@@ -1049,7 +1049,21 @@ her.}
 zylindrischer Leiter an. Erstellen Sie ein Diagramm der magnetischen Feldstärke als Funktion des
 Ortes entlang einer Linie, die die Achsen beider Leiter unter \SI{90}{\degree} schneidet. Welche
 Richtung hat das Magnetfeld entlang dieser Linie?} 
-\vspace{1em}
+Nach dem Superpositionsprinzip addieren sich die beiden Magnetfelder ($r_0$: Radius des Drahtes):
+\begin{align}
+    B_{ges} &=B_1 + B_2 \notag \\
+    \notag \\
+    B_1 &= \frac{\mu_0 I_1}{2 \pi (r -r_0)} \cdot \hat{e}^{\phi} \notag \\
+    \notag \\
+    B_2 &= \frac{\mu_0 I_2}{2 \pi (d-r_0 - r)} \cdot \hat{e}^{\phi} \notag
+\end{align}
+Für die Darstellung der Magnetfeldstärke sind zwei Fälle zu beachten. Wenn die Strom in beiden Leitern in die selbe Richtung fließt, löscht sich das Magnetfeld in der mitte aus und wenn er entgegengesetzt fließt, addieren sich die B-Vektoren .
+Wenn der Betrag des Magnetfeldes im Diagramm positiv ist, zeigt das Magnetfeld in positive z-Richtung sonst in die negative.
+\begin{figure}
+    \includegraphics[width=8cm]{image/5/5.4.jpg}
+    \captionof{figure}{links:entgegengesetzt, rechts:gleiche Richtung}
+\end{figure}
+\textbf{Extra: Kraft zwischen Drähten}\\
 Das Magnetfeld des einen Leiters übt eine Kraft, abhängig von der Stromrichtung, auf den anderen aus.
 Dieses Magnetfeld  $B = \frac{\mu_0 I}{2 \pi r} \cdot \hat{e}^{\phi}$ steht tangential auf konzentrischen Feldlinien.
 Setzt man diesen Zusammenhang in die hergeleitete Formel der letzten Frage, so bemerkt man das $B$ orthognal auf $L$ steht, falls die zwei Drähte parallel zu einander verlaufen. 
@@ -1079,6 +1093,12 @@ Diese wirkt nur auf die Längen $a$, da diese parallel zur Drehachse liegen und 
 Um das wirkende Drehmoment zu bestimmen, wird das Kreuzprodukt des Abstandes vom Drehmittelpunkt mit der auf die Teile der Leiterschleife wirkende Kraft gebildet.
 \begin{equation}
     \textbf{M} = 2\frac{b}{2} ( \hat{e}_b \times \textbf{F}) = abl (\hat{e}_b \times \hat{e}_a) \times \textbf{B} = I(\textbf{A}\times\textbf{B})
+\end{equation}
+Der Magnetische Fluss ist maximal, wenn das Flächenintegral aus Gleichung \ref{magnetischerfluss} den größten Wert annimmt. Bei einer einfachen Fläche und einem stationären Magnetfeld, wie es in diesem Beispiel der Fall ist, ist der magnetische Fluss am größten, wenn das 
+Skalarprodukt zwischen B-Vektor und dem Flächenvektor maximal ist. Also wenn die beiden Vektoren parallel sind.
+\begin{equation}
+    \label{magnetischerFluss}
+    \Phi_m = \int \textbf{B} d\textbf{A}
 \end{equation}
 Was man aus diesem Zusammenhang erkennt ist, dass das Drehmoment am größten ist wenn der Flächennormalvektor $\textbf{A}$ orthogonal und somit im 90° Winkel zum Vektorfeld $\textbf{B}$ steht
 \paragraph{Ein geladenes Teilchen ist bei $t=0$ am Ort $x=(0,0,0)$ mit der Geschwindigkeit
