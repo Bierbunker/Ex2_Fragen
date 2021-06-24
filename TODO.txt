@@ -7,7 +7,7 @@ X Dominik                           Elektrostatik im Vakuum
 X Dominik                           Materie im elektrischen Feld
 X Dominik                           Elektrischer Strom I
 X Dominik                           Elektrischer Strom II
-! Aleksey                           Statische Magnetfelder
+X Aleksey                           Statische Magnetfelder
 X Dominik                           Materie im magnetischen Feld
 X Dominik                           Zeitlich veränderliche Felder
 X Dominik                           Elektrische Generatoren und Motoren
@@ -24,3 +24,4 @@ X Elias                             Interferenz
 ! Martin                            Beugung
 X David                             Optische Instrumente I
 # Alisa       2, 3(zweite), 4       Optische Instrumente II
+X Elias                             Fehlermeldungen.

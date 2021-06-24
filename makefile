@@ -1,10 +1,13 @@
+# directories
 image := image
 output := output
 
-source := $(wildcard *.tex)
-target := $(patsubst %.tex,${output}/%.pdf,${source})
+# input files
+source := katalog.tex
+images := $(shell find image -type f -name "*")
 
-images := $(shell find ${image} -type f -name "*")
+# output file
+target := $(patsubst %.tex,${output}/%.pdf,${source})
 
 ${target}: ${source} ${images}
 	@mkdir -p ${output}
@@ -14,3 +17,6 @@ ${target}: ${source} ${images}
 force:
 	@rm -f ${target}
 	@${MAKE} ${target}
+
+clean:
+	@rm -rf ${output}
