@@ -2485,10 +2485,10 @@ und Brechungsgesetz her.}
     \end{samepage}
 \end{figure}
 %
-\begin{figure}[H]
+\begin{figure}[!h]
     \centering
     \begin{samepage}
-        \includegraphics[width=0.6\textwidth]{image/15/s-p-polarisation.jpg}
+        \includegraphics[width=0.5\textwidth]{image/15/p_s_polarisation.png}
         \caption{s- und p-Polarisation}
         \label{fig:s-p-polarisation}
     \end{samepage}
@@ -2579,12 +2579,12 @@ Schließen bei Lichtbrechung und -reflexion der gebrochene und der reflektierte 
 
 
 
-\paragraph{Was ist Totalreflextion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt
-die Polarisation dabei?}
+\paragraph{Was ist Totalreflextion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt die Polarisation dabei?}\mbox{}\\
+
+\textbf{Rolle?}
 
 Von Totalreflexion spricht man, wenn ein einfallender Lichtstrahl vollständig reflektiert und nicht teilweise transmittiert wird.
-Lässt man eine Lichtwelle aus einem optisch dichteren Medium 1 ins optische dünnere Medium 2 ($n_1 > n_2$) laufen, so folgt
-aus dem Brechungsgesetz für den Winkel $\alpha$:
+Lässt man eine Lichtwelle aus einem optisch dichteren Medium 1 ins optische dünnere Medium 2 ($n_1 > n_2$) laufen (\textbf{nur dicht nach dünn!}), so folgt aus dem Brechungsgesetz für den Winkel $\alpha$:
 %
 \[\sin(\alpha) = \frac{n_1}{n_1} \cdot \sin(\beta)\]
 %
@@ -2599,7 +2599,7 @@ damit die Welle überhaupt ins Medium 2 eintreten kann. Im Extremfall beträgt d
     \begin{samepage}
         \includegraphics[width=0.7\textwidth]{image/15/totalreflexion.jpg}
         \caption{Zur Totalreflexion von Wellen, die aus dem optisch
-        dichteren Medium unter Winkeln $\alpha > \alpha_g$ auf die Grenzfläche fallen}
+        dichteren Medium unter Winkeln $\alpha > \alpha_g$ auf die Grenzfläche fallen. Grenzwinkel: Lichtstrahl 2}
         \label{fig:totalreflexion}
     \end{samepage}
 \end{figure}
@@ -2610,7 +2610,21 @@ $\alpha_G$ berechnet sich wie folgt:
     \sin(\alpha_G) = \frac{n_2}{n_1}
 \end{equation}
 
-Ein anderes Anwendungsfeld ist der Einsatz der Totalreflexion auf Doppelbrechung basierte Polarisatoren. Dabei wird die Eigenschaft ausgenutzt, dass doppelbrechende Materialien polarisationsabhängige Brechungsindizes aufweisen, so dass in einem bestimmten Einfallswinkelbereich eine Polarisation zum Großteil transmittiert und die andere totalreflektiert wird. Dieses Verhalten kann man auch für polarisationsabhängige Strahlteiler nutzen.
+Bei der Totalreflexion erfolgen für die beiden Polarisationskomponenten (s und p) Phasensprünge $\Delta \varphi_i$, die verschieden groß sind.
+
+\textbf{senkrecht} polarisierte Komponente:
+%
+\begin{equation}
+    \label{eq:totalreflexion_s_polarisation}
+    \tan(\frac{\Delta \varphi_s}{2}) = \frac{1}{\cos(\alpha)} \sqrt{\sin^2(\alpha) - \left(\frac{n_2}{n_1}\right)^2}
+\end{equation}
+%
+\textbf{parallel} polarisierte Komponente:
+%
+\begin{equation}
+    \label{eq:totalreflexion_p_polarisation}
+    \tan(\frac{\Delta \varphi_p}{2}) = \frac{n_1^2}{n_2^2} \cdot \frac{1}{\cos(\alpha)} \sqrt{\sin^2(\alpha) - \left(\frac{n_2}{n_1}\right)^2}
+\end{equation}
 
 
 \paragraph{Was sind optisch anisotrope Kristalle und wie lassen sich die unterschiedlichen
