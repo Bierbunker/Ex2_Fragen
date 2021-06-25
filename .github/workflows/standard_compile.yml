@@ -11,6 +11,11 @@ jobs:
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@latest
         with:
-          root_file: katalog.tex
+          root_file: katalog.tex   
+      - name: Upload file
+        uses: actions/upload-artifact@v2
+        with:
+          name: FRAGENKATALOG
+          path: katalog.pdf
 
 
