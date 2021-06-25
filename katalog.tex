@@ -1049,7 +1049,22 @@ her.}
 zylindrischer Leiter an. Erstellen Sie ein Diagramm der magnetischen Feldstärke als Funktion des
 Ortes entlang einer Linie, die die Achsen beider Leiter unter \SI{90}{\degree} schneidet. Welche
 Richtung hat das Magnetfeld entlang dieser Linie?} 
-\vspace{1em}
+Nach dem Superpositionsprinzip addieren sich die beiden Magnetfelder ($r_0$: Radius des Drahtes):
+\begin{align}
+    B_{ges} &=B_1 + B_2 \notag \\
+    \notag \\
+    B_1 &= \frac{\mu_0 I_1}{2 \pi (r -r_0)} \cdot \hat{e}^{\phi} \notag \\
+    \notag \\
+    B_2 &= \frac{\mu_0 I_2}{2 \pi (d-r_0 - r)} \cdot \hat{e}^{\phi} \notag
+\end{align}
+Für die Darstellung der Magnetfeldstärke sind zwei Fälle zu beachten. Wenn die Strom in beiden Leitern in die selbe Richtung fließt, löscht sich das Magnetfeld in der mitte aus und wenn er entgegengesetzt fließt, addieren sich die B-Vektoren .
+Wenn der Betrag des Magnetfeldes im Diagramm positiv ist, zeigt das Magnetfeld in positive z-Richtung sonst in die negative.
+\begin{figure}
+    \centering
+    \includegraphics[width=11cm]{image/5/5.4.jpg}
+    \captionof{figure}{links:entgegengesetzt, rechts:gleiche Richtung}
+\end{figure}
+\textbf{Extra: Kraft zwischen Drähten}\\
 Das Magnetfeld des einen Leiters übt eine Kraft, abhängig von der Stromrichtung, auf den anderen aus.
 Dieses Magnetfeld  $B = \frac{\mu_0 I}{2 \pi r} \cdot \hat{e}^{\phi}$ steht tangential auf konzentrischen Feldlinien.
 Setzt man diesen Zusammenhang in die hergeleitete Formel der letzten Frage, so bemerkt man das $B$ orthognal auf $L$ steht, falls die zwei Drähte parallel zu einander verlaufen. 
@@ -1079,6 +1094,12 @@ Diese wirkt nur auf die Längen $a$, da diese parallel zur Drehachse liegen und 
 Um das wirkende Drehmoment zu bestimmen, wird das Kreuzprodukt des Abstandes vom Drehmittelpunkt mit der auf die Teile der Leiterschleife wirkende Kraft gebildet.
 \begin{equation}
     \textbf{M} = 2\frac{b}{2} ( \hat{e}_b \times \textbf{F}) = abl (\hat{e}_b \times \hat{e}_a) \times \textbf{B} = I(\textbf{A}\times\textbf{B})
+\end{equation}
+Der Magnetische Fluss ist maximal, wenn das Flächenintegral aus Gleichung \ref{magnetischerfluss} den größten Wert annimmt. Bei einer einfachen Fläche und einem stationären Magnetfeld, wie es in diesem Beispiel der Fall ist, ist der magnetische Fluss am größten, wenn das 
+Skalarprodukt zwischen B-Vektor und dem Flächenvektor maximal ist. Also wenn die beiden Vektoren parallel sind.
+\begin{equation}
+    \label{magnetischerFluss}
+    \Phi_m = \int \textbf{B} d\textbf{A}
 \end{equation}
 Was man aus diesem Zusammenhang erkennt ist, dass das Drehmoment am größten ist wenn der Flächennormalvektor $\textbf{A}$ orthogonal und somit im 90° Winkel zum Vektorfeld $\textbf{B}$ steht
 \paragraph{Ein geladenes Teilchen ist bei $t=0$ am Ort $x=(0,0,0)$ mit der Geschwindigkeit
@@ -2786,29 +2807,173 @@ was zu einer gegenseitigen Auslöschung führt.
 Durch verwenden von mehreren Schichten, kann ein größerer Spektralbereich abgedeckt werden. 
 \newpage
 
+%start Martin
 \section{Beugung}
+\label{Beugung}
 
-\paragraph{Leiten Sie die Formel für die Intensitätsverteilung einer regelmäßigen Anordnung von
+\myparagraph{Leiten Sie die Formel für die Intensitätsverteilung einer regelmäßigen Anordnung von
 kohärenten Emittern her und skizzieren Sie diese in einem Diagramm (Intensität vs.
 Winkel).}
+Das von den Emittern ausgesendete Licht, beobachtet in eine Richtung $\theta$, muss unterschiedlich lange Wegstrecken zurücklegen. Der Gangunterschied zwischen benachbarten
+Teilwellen ist $\Delta s = d \cdot \sin \theta$.
 
-\paragraph{Beugung am Einzelspalt: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/19/1.1}
+\end{figure}
+
+Dadurch kommt es zu einem Phasenversatz
+\begin{align*}
+	\Delta \varphi = \frac{2 \pi}{\lambda} \Delta s = \frac{2 \pi}{\lambda} d \cdot \sin \theta 
+\end{align*}
+zwischen benachbarten Teilwellen.
+Die Gesamtamplitude von N Emittern auf der Geraden in x-Richtung ist dann für gleiche Teilamplituden $Aj = A$ der einzelnen Streuer
+\begin{align*}
+	E = A \sum_{j=1}^{N} e^{i (\omega t + \varphi j)} = A e^{i \omega t} \sum_{j=1}^{N} e^{i (j -1) \Delta \varphi} 
+\end{align*}
+wenn wir die Phase der ersten Teilwelle $\varphi_1 = 0$ setzen. Die
+Summe der geometrischen Reihe ist:
+\begin{align*}
+	\sum_{j=1}^{N} e^{i (j -1) \Delta \varphi} &= \frac{e^{i N \Delta \varphi} - 1}{e^{i \Delta \varphi} - 1} \\
+	&= e^{i \frac{N-1}{2} \Delta \varphi} \cdot \frac{e^{i \frac{N}{2} \Delta \varphi} - e^{-i \frac{N}{2} \Delta \varphi}}{e^{i \Delta \varphi / 2} - e^{- i \Delta \varphi / 2}}\\
+	&= e^{i \frac{N-1}{2} \Delta \varphi} \cdot \frac{\sin [(N/2) \Delta \varphi]}{sin(\varphi/2)}
+\end{align*}
+Für die Intensität $I = c \varepsilon_0 |E|^2$ der Welle in Richtung $\theta$ folgt daraus:
+\begin{align*}
+	I(\theta) = I_0 \cdot \frac{\sin^2[N \pi (d/\lambda) \sin\theta]}{\sin^2[\pi (d/\lambda)\sin \theta]}
+\end{align*}
+$I_0$ entspricht hier der von einem Emitter ausgestrahlten Intensität ($I_0 = c \varepsilon_0 A^2$).
+
+\begin{figure}[H]
+    \centering
+    \caption{Streuintensität $I(\theta)$ für $d < \lambda$ und $D = N \cdot d = 100 \lambda$. Für die Fußpunktsbreite, zwischen den Nullstellen von $I(\theta)$, gilt $\Delta \theta = 2 \lambda / (N \cdot d)$.}
+    \includegraphics[width=10cm]{image/19/1.2}
+\end{figure}
+
+
+\myparagraph{Beugung am Einzelspalt: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
 Fraunhofer‘schen Beugungsbild eines einzelnen, mit einer ebenen Welle beleuchteten
 Spaltes an und skizzieren Sie diese in einem Diagramm. Bei welchem Winkel liegt das erste
 Beugungsminimum und wie lässt sich dies einfach erklären?}
 
-\paragraph{Beugung am Gitter: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
+\begin{figure}[H]
+	\begin{minipage}{.47\textwidth}
+		\centering	
+		\includegraphics[width=0.9\linewidth]{image/19/2.1}
+
+	\end{minipage}%
+	\hfill%
+	\begin{minipage}{.47\textwidth}		
+		\centering  		
+  		\includegraphics[width=0.92\linewidth]{image/19/2.2}	
+	\end{minipage}
+\end{figure}
+
+Für die Intensität $I$ in Abhängigkeit vom Winkel $\theta$ ergibt sich der folgende Ausdruck:
+
+\begin{align*}
+	I(\theta) = I_0 \cdot [\,\frac{\sin(\frac{\pi \cdot b \cdot \sin \theta}{\lambda})}{\frac{\pi \cdot b \cdot\sin \theta}{\lambda}}\,]^2
+\end{align*}
+
+\begin{figure}[H]
+		\centering	
+		\includegraphics[width=10cm]{image/19/2.3}
+  		\caption{Intensitätsverteilung $I(\theta)$ bei der Beugung am Spalt für verschiedene Werte des Verhältnisses $b/\lambda$}
+\end{figure}
+
+Das erste Beugungsminimum liegt bei $sin(\theta) = \lambda / b$. Es ergibt sich wenn der Gangunterschied $\Delta s = b \cdot \sin(\theta)$ der Randstrahlen genau $\lambda$ beträgt (destruktive Interferenz).
+
+\myparagraph{Beugung am Gitter: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
 Fraunhofer‘schen Beugungsbild eines mit einer ebenen Welle beleuchteten Spaltgitters an
 und skizzieren Sie diese in einem Diagramm. Bei welchen Winkeln liegen die Hauptmaxima
 und wie lassen sich diese Winkel einfach erklären?}
 
-\paragraph{Skizzieren Sie den Aufbau eins geblazeten Gitters und erklären Sie dessen Funktion.}
+Die Intensität $I$ in Abhängigkeit von $\theta$ ergibt sich zu folgendem Ausdruck:
+\begin{align*}
+	I(\theta) = I_s \cdot \frac{\sin^2[\pi (b/\lambda)\sin \theta]}{[\pi (b/\lambda) \sin \theta]^2} \cdot \frac{\sin^2 [N \pi (d/\lambda) \sin \theta]}{\sin^2[\pi (d/\lambda) \sin \theta]}
+\end{align*}
 
-\paragraph{Erklären und Skizzieren Sie Aufbau und Funktion einer Fresnel‘schen Zonenplatte.}
+Ein Hauptmaxima tritt auf wenn gilt:
 
-\paragraph{Beugung am Gitter: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
+\begin{align*}
+	d \cdot sin(\theta) = k \cdot \lambda \qquad \text{für} \qquad k \in {1;2;3;...}
+\end{align*}
+
+Maxima von $I(\theta)$ treten in denjenigen Richtungen auf, für welche der Gangunterschied zwischen äquivalenten Teilbündeln aus benachbarten Spalten ein ganzzahliges Vielfaches von $\lambda$ ist und es zu konstruktiver Interverenz kommt.
+
+\begin{figure}[H]
+    \centering
+    \caption{Intensitätsverteilung $I(\theta)$ bei einem Beugungsgitter mit acht Spalten, bei dem $d/b = 2$ ist. In die zweite Interferenzordnung gelangt wegen des Beugungsminimums kein Licht}
+    \includegraphics[width=\textwidth]{image/19/3}
+\end{figure}
+
+Wie groß diese Maxima sind, hängt von der Beugungsverteilung der Einzelspalte, d. h. vom ersten Faktor der Formel für die Intensität ab. Die Beugung sorgt dafür, dass überhaupt Licht in die Richtungen $\theta > 0$ gelangt. Je breiter die Spalte sind, desto geringer werden die möglichen Winkel , bei denen noch eine merkliche Intensität $I(\theta)$ auftritt.
+
+\myparagraph{Skizzieren Sie den Aufbau eins geblazeten Gitters und erklären Sie dessen Funktion.}
+
+Unter einem geblazten Gitter versteht man ein Reflexionsgitter, dessen Reflexionsflächen geneigt zur Gitterfläche stehen.
+
+\begin{figure}[H]
+		\centering	
+		\includegraphics[width=10cm]{image/19/4.1}
+\end{figure}
+
+Es gilt:
+\begin{align*}
+	I = I_s \cdot \frac{\sin^2[\pi (b/\lambda)(\sin(\alpha-\theta)-\sin(\beta + \theta))]}{[\pi (b/\lambda) (\sin(\alpha-\theta)-\sin(\beta + \theta))]^2} \cdot \frac{\sin^2 [N \pi (d/\lambda) (\sin\alpha - \sin\beta)]}{\sin^2[\pi (d/\lambda) (\sin \alpha - \sin \beta)]}
+\end{align*}
+
+Der sogenannte Blazewinkel $\theta$ kann für einen Bestimmten Wellenlängenbereich optimiert werden. Es kann eine Verschiebung der Hauptintesität von der 0. auf die m-te Ordnung bewirkt werden. Wählt man $\theta$ so, dass für die Mitte $\lambda_m$ des zu messenden Wellenlängenbereiches $\Delta \lambda$ der Winkel $\beta_m$, bei dem das Interferenzmaximum m-ter Ordnung auftritt, gleich dem Reflexionswinkel $r = \theta -\beta$ ist. Dann geht fast die gesamte eflektierte Intensität in die m-te Ordnung. Wegen der Beugung an jeder Furche der Breite b wird das reflektierte Licht in einen Winkelbereich $\Delta \beta$ um $\beta_m = r - \theta$ gebeugt, sodass man einen größeren Wellenlängenbereich $\Delta \lambda$ mit nur wenig variierender Intensität $I(\beta)$ messen kann. 
+
+\begin{figure}[H]
+		\centering	
+		\includegraphics[width=8cm]{image/19/4.2}
+\end{figure}
+
+Ein wichtiges Einsatzgebiert solcher Gitter befindet sich z.B. in der Spektroskopie.
+
+\myparagraph{Erklären und Skizzieren Sie Aufbau und Funktion einer Fresnel‘schen Zonenplatte.}
+
+Eine Fresnel‘schen Zonenplatte kann genutzt werden um nochmehr Licht auf den Punkt P zu konzentrieren, als es mit einer einfachen kreisförmigen Blende möglich wäre. Dazu wird z.B. eine Glasplatte, mit aufgedampften, undurchlässige Kreisringe, welche so angebracht sind dass sie z.B. den ungeradzahligen Fresnelzonen entsprechen, verwendet. Dadurch werden alle Beiträge der geradzahligen Zonen durchgelassen, sodass in der Summe alle Glieder gleichen Vorzeichens in Phase aufsummiert werden.
+
+\begin{figure}[H]
+	\begin{minipage}{.47\textwidth}
+		\centering	
+		\includegraphics[width=0.5\linewidth]{image/19/5.1}
+
+	\end{minipage}%
+	\hfill%
+	\begin{minipage}{.47\textwidth}		
+		\centering  		
+  		\includegraphics[width=0.92\linewidth]{image/19/5.2}	
+	\end{minipage}
+\end{figure}
+
+Die wirkung der Zonenplatte entspricht somit der einer optischen Linse, woche die Brennweite der Platte wellenlängenabhängig ist. Für den Radius der m-ten Zone gilt:
+
+\begin{align*}
+	\varrho_m = \sqrt{m r_0 \cdot \lambda}
+\end{align*}
+
+Die Zonenbreite nimmt mit steigendem $m$ ab, die Zonenfläche bleibt stets konstant.
+Anwendung: Röntgenlinsen, Linsen für Teilchenstrahlen
+
+\myparagraph{Beugung am Gitter: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
 Fraunhofer‘schen Beugungsbild einer mit einer ebenen Welle beleuchteten Kreisblende an
 und skizzieren Sie diese in einem Diagramm.}
+
+Durch Lösen des Beugungsintegrals kann die Lösung als Funktion der Bessel-Funktion 1. Ordnung gefunden werden.
+ 
+\begin{align*}
+	I(\theta) &= I_0 (\frac{2 J_1(x)}{x})^2\\
+	x &= \frac{2 \pi R}{\lambda} \sin \theta
+\end{align*}
+
+Das Interferenzmuster sieht folgendermaßen aus:
+\begin{figure}[H]
+		\centering	
+		\includegraphics[width=8cm]{image/19/6}
+\end{figure}
 
 \newpage
 
