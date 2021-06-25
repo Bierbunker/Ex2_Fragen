@@ -21,7 +21,7 @@ X Dominik                           Wellen in Materie
 X Alisa                             Geometrische Optik I         
 X Alisa                             Geometrische Optik II         
 X Elias                             Interferenz
-! Martin                            Beugung
+X Martin                            Beugung
 X David                             Optische Instrumente I
 # Alisa       2, 3(zweite), 4       Optische Instrumente II
 X Elias                             Fehlermeldungen.
