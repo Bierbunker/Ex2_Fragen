@@ -14,7 +14,7 @@
 
 \usepackage{amsmath, amssymb, amstext, mathtools}
 \usepackage{icomma}
-\usepackage[locale=DE, uncertainty-mode=separate]{siunitx}
+\usepackage[locale=DE]{siunitx}
 \usepackage{physics}
 \usepackage{derivative}
 
@@ -2199,20 +2199,20 @@ Die Energiedifferenz wird also abgestrahlt. Dieses Phänomen nennt man Bremsstra
 \paragraph{Was sind ebene elektromagnetische Wellen? Schreiben Sie die Gleichung für das elektrische
 Feld einer ebenen, harmonischen, elektromagnetische Welle an.} ~
 
-Ebene elektromagnetische Wellen nur in Richtung einer Koordinate, z.B. z- Koordinate
+Elektromagentische Wellen sind Wellen aus gekoppelten elektrischen und magentischen Feldern. Im Vergleich zu anderen Wellen (z.B.: Schallwellen) benötigen
+EM-Wellen kein Medium um sich ausbreiten zu können. Die Ausbreitungsgeschwindigkeit ist jedoch sehr wohl vom Medium abhängig, im Vakuum breiten sich EM-Wellen mit Lichtgeschwindigkeit aus.
+Ebene elektromagnetische Wellen: \textbf{E} Vektor und \textbf{B} Vektor schwingen transversal also senkrecht zur Ausbreitungsrichtung (welche entlang einer Raumachse verläuft).
+Zudem ist \textbf{E} Vektor und \textbf{B} Vektor phasengleich in jedem Punkt. 
 \begin{equation}
-\begin{split}
-\frac{\partial \vec{E}}{\partial x} = \frac{\partial \vec{E}}{\partial y} = \vec{0} \\
-\frac{\partial^2 \vec{E}}{\partial z^2} = \frac{1}{c^2} \frac{\partial^2 \vec{E}}{\partial t^2} \\
-\frac{\partial \vec{E}}{\partial \vec{z}} = 0 -> E_z = a = \text{räumlich const.}
-\end{split}
+    \textbf{E} = \textbf{E}_0 e^{i(\textbf{kr} - \omega t)}
 \end{equation}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=5cm]{image/13/1.png}
 \end{figure}
-d.h. der Vektor \textbf{E} hat auf einer Ebene $z = z_0 =$ const. zu einem festen Zeitpunkt
-$t = t_0$ überall den gleichen Wert und Richtung.
+% d.h. der Vektor \textbf{E} hat auf einer Ebene $z = z_0 =$ const. zu einem festen Zeitpunkt
+% $t = t_0$ überall den gleichen Wert und Richtung.
 
 Vektoren von elektrischem und magnetischem Feld stehen senkrecht aufeinander. Siehe Bild.
 Elektrisches und magnetisches Feld stehen senkrecht zur Ausbreitungsrichtung. Elektrisches und
@@ -2221,21 +2221,27 @@ magnetisches Feld schwingen in Phase.
 |\textbf{B}| = \frac{1}{c} |\textbf{E}|
 \end{equation}
 
-\newpage
-
 \paragraph{Skizzieren Sie zeitlichen und örtlichen Verlauf des elektrischen Feldes einer ebenen,
 harmonischen, elektromagnetischen Welle. Geben Sie die Wellengleichung an und markieren Sie
 Wellenlänge und Periodendauer in Ihren Skizzen. Wie gehen diese beiden Größen in die Wellengleichung
 ein?} ~
 
-\begin{equation}
-\textbf{E} = \textbf{E}_0 e^{i(\textbf{kr} - \omega t)}
-\end{equation}
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{image/13/2.png}
 \end{figure}
-
+Wellengleichung für eine ebene und harmonische EM-Welle:
+\begin{equation}
+    \begin{split}
+        \frac{\partial \vec{E}}{\partial x} = \frac{\partial \vec{E}}{\partial y} = \vec{0} \\
+        \frac{\partial^2 \vec{E}}{\partial z^2} = \frac{1}{c^2} \frac{\partial^2 \vec{E}}{\partial t^2} \\
+        \frac{\partial \vec{E}}{\partial \vec{z}} = 0 \quad \rightarrow E_z = a = \text{räumlich const.}
+    \end{split}  
+\end{equation}
+Die Ausbreitungsgeschwindigkeit im Vakuum $c$, die Wellenlänge $\lambda$ und die Periodendauer $T$ hängen wie folgt zusammen:
+\begin{equation}
+    c = \lambda \cdot T
+\end{equation}
 \paragraph{Was versteht man unter linearer, elliptischer, zirkulare Polarisation bzw. unter
 unpolarisiertem Licht?} ~
 
