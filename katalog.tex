@@ -14,7 +14,7 @@
 
 \usepackage{amsmath, amssymb, amstext, mathtools}
 \usepackage{icomma}
-\usepackage[locale=DE, uncertainty-mode=separate]{siunitx}
+\usepackage[locale=DE]{siunitx}
 \usepackage{physics}
 \usepackage{derivative}
 
@@ -22,6 +22,14 @@
 \usepackage{lastpage}
 \usepackage{graphicx}
 \usepackage{float}
+
+\usepackage[hidelinks,colorlinks]{hyperref}
+\usepackage{xcolor}
+%Colorlinks setup:
+\hypersetup{
+    colorlinks = false,
+    linkbordercolor = {white}
+}
 
 \usepackage[headsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}
@@ -31,19 +39,13 @@
 \chead{Experimentalphysik 2 Fragenkatalog}
 \ohead{\today}
 \cfoot{\pagemark{} / \pageref*{LastPage}}
-
 \usepackage{caption, subcaption}
 \captionsetup[table]{name=Tabelle}
 \captionsetup[figure]{name=Abbildung}
 \captionsetup{format=plain, font=small, labelfont=bf, justification=centering}
 
-\usepackage{xcolor}
-\usepackage[hidelinks,colorlinks]{hyperref}
-%Colorlinks setup:
-\hypersetup{
-    colorlinks = false,
-    linkbordercolor = {white}
-}
+\usepackage{siunitx}
+\sisetup{locale=DE, separate-uncertainty}
 
 % Line break after paragraph
 \newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
@@ -2396,17 +2398,15 @@ Frequenzbereich enthalten sein.} ~
     \includegraphics[width=10cm]{image/14/6}
 \end{figure}
 
-
 \newpage
-
 
 \section{Wellen an Grenzflächen, optische Anisotropie und Polarisation}
 \label{Wellen an Grenzflaechen, optische Anisotropie und Polarisation}
 
-\myparagraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s-
+\paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s-
 und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dichteren
 Medium.}
-%
+\phantom{}  % invisible box, otherwise LaTeX puts the figure before the paragraph
 \begin{figure}[H]
     \centering
     \begin{samepage}
@@ -2416,10 +2416,10 @@ Medium.}
     \end{samepage}
 \end{figure}
 
-\myparagraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s-
+\paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s-
 und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dünneren
 Medium.}
-%
+\phantom{}
 \begin{figure}[H]
     \centering
     \begin{samepage}
@@ -2429,66 +2429,66 @@ Medium.}
     \end{samepage}
 \end{figure}
 
-\myparagraph{Was bedeutet „Reflexionskoeffizient“ und „Reflexionsvermögen“ (Reflektivität),
+\paragraph{Was bedeutet „Reflexionskoeffizient“ und „Reflexionsvermögen“ (Reflektivität),
 „Transmissionskoeffizient“ und „Transmissionsvermögen“ (Transmissionsgrad)? Wie groß ist das
 Reflexionsvermögen einer Grenzfläche zwischen zwei transparenten Medien bei Lichteinfall senkrecht
 auf die Grenzfläche?}
-%
+
 \subsubsection*{Reflexions- und Transmissionskoeffizient}
 Der Reflexionskoeffizient $\varrho_s$ beschreibt das Verhältnis der Amplituden von reflekiterter Welle zu Eingangswelle:
-%
+
 \begin{equation}
     \label{eq:reflexionskoeffizient}
     \varrho_s = \frac{A_{\text{rs}}}{A_{\text{es}}} = \frac{1-a}{1+a} = -\frac{\sin (\alpha - \beta)}{\sin (\alpha + \beta)}
 \end{equation}
-%
+
 Analog dazu der Transmissionskoeffizient $\tau_s$:
-%
+
 \begin{equation}
     \label{eq:transmissionskoeffizient}
     \tau_s = \frac{A_{\text{gs}}}{A_{\text{es}}} = \frac{2}{1+a} = \frac{2 \sin (\beta) \cos{\alpha}}{\sin (\alpha + \beta)}
 \end{equation}
-%
+
 \subsubsection*{Reflexions- und Transmissionsvermögen}
 Das Transmissionsvermögen $T$ beschreibt das Verhältnis der Intensitäten der hindurchgeschickten zur einfallenden Welle im zeitlichen Mittel.
-%
+
 \begin{equation}
     \label{eq:transmissionsvermoegen}
     T = \frac{\bar{I}_{\text{t}} \cdot \cos (\beta)}{\bar{I}_{\text{e}}\cdot \cos (\alpha)} = \frac{n_2 \cos (\beta) A_{\text{g}}^2}{n_1 \cos (\alpha) A_{\text{e}}^2}
 \end{equation}
-%
+
 Reflexionsvermögen:
-%
+
 \begin{equation}
     \label{eq:reflexionsvermoegen}
     R = \frac{\bar{I}_{\text{r}}}{\bar{I}_{\text{e}}} = \frac{A_{\text{r}}^2}{A_{\text{e}}^2}
 \end{equation}
-%
+
 Der Winkel spielt hierbei keine Rolle da $\alpha = \alpha'$ gilt.
 
 Normalkomponente von $R$ (s für senkrecht):
-%
+
 \begin{equation}
     \label{eq:reflexionsvermoegen_senkrecht}
     R_{\text{s}} = \left( \frac{\sin(\alpha - \beta)}{\sin(\alpha + \beta)} \right)^2
 \end{equation}
-%
+
 Parallelkomponente:
-%
+
 \begin{equation}
     \label{eq:reflexionsvermoegen_parallel}
     R_{\text{p}} = \left( \frac{\tan(\alpha - \beta)}{\tan(\alpha + \beta)} \right)^2
 \end{equation}
-%
+
 Senkrechter Einfall:
-%
+
 \begin{equation}
     \label{eq:reflexionsvermoegen_senkrechter_einfall}
     R(\alpha = 0) = \left( \frac{n_1 - n_2}{n_1 + n_2} \right)^2
 \end{equation}
-%
+
 Summe:
-%
+
 \begin{equation}
     \label{eq:summe_reflexion_transmission}
     \begin{split}
@@ -2500,9 +2500,9 @@ Summe:
 
 
 
-\myparagraph{Erklären Sie mithilfe einer Skizze die Begriffe „Einfallswinkel“, „Reflexionswinkel“, „Brechungswinkel“, „Einfallsebene“. Was bedeutet s- bzw. p-Polarisation? Leiten Sie das Reflexions-
+\paragraph{Erklären Sie mithilfe einer Skizze die Begriffe „Einfallswinkel“, „Reflexionswinkel“, „Brechungswinkel“, „Einfallsebene“. Was bedeutet s- bzw. p-Polarisation? Leiten Sie das Reflexions-
 und Brechungsgesetz her.}
-%
+\phantom{}
 \begin{figure}[H]
     \centering
     \begin{samepage}
@@ -2522,7 +2522,7 @@ und Brechungsgesetz her.}
 \end{figure}
 %
 S- und p-Polarisation beschreiben die Schwingungsebene der elektromagnetischen Welle Licht relativ zum Lot (Flächennormale der Einfallsebene). \enquote{s} steht für \enquote{senkrecht} zum Lot, \enquote{p} steht für \enquote{parallel} zum Lot.
-%
+
 \subsubsection*{Herleitung Reflexionsgesetz\footnote{\url{https://de.wikipedia.org/wiki/Fermatsches_Prinzip}}}
 Das Reflexionsgesätz lässt sich über das Fermat'sche Prinzip herleiten. Es besagt, dass das Licht, das vom Punkt $P_1$ ausgesandt wird, den Punkt $P_2$ immer auf dem Wege erreicht, für den die Lichtlaufzeit ein Extremum (Minimum) ist.
 %
@@ -2543,9 +2543,9 @@ Wurzelausdrücke durch explizite Benennung der Längen ersetzen:
 \[0 = \frac{x}{l_1} - \frac{d-x}{l_2}\]
 Verhältnisse durch Sinus-Funktionen ersetzen:
 \[0 = \sin(\alpha) - \sin(\beta) \implies \sin(\alpha) = \sin(\beta)\]
-%
+
 \subsubsection*{Herleitung Brechungsgesetz}
-%
+
 \begin{figure}[H]
     \centering
     \begin{samepage}
@@ -2585,8 +2585,9 @@ $c_0$ beschreibt die Lichtgeschwindigkeit im Vakuum, $c_m$ die Lichtgeschwindigk
 
 
 
-\myparagraph{Was ist der Brewsterwinkel? Erstellen Sie eine Skizze einer Luft-Glas Grenzfläche und zeichnen Sie alle möglichen Brewsterwinkel ein. Wie ist der Polarisationszustand der reflektierten und transmittierten Welle bei unpolarisierter einfallender Welle?}
-%
+\paragraph{Was ist der Brewsterwinkel? Erstellen Sie eine Skizze einer Luft-Glas Grenzfläche und zeichnen Sie alle möglichen Brewsterwinkel ein. Wie ist der Polarisationszustand der reflektierten
+und transmittierten Welle bei unpolarisierter einfallender Welle?}
+\phantom{}
 \begin{figure}[H]
     \centering
     \begin{samepage}
@@ -2596,7 +2597,7 @@ $c_0$ beschreibt die Lichtgeschwindigkeit im Vakuum, $c_m$ die Lichtgeschwindigk
     \end{samepage}
 \end{figure}
 %
-Schließen bei Lichtbrechung und -reflexion der gebrochene und der reflektierte Lichtstrahl einen Winkel von \SI{90}{\degree} ein, so spricht man beim Eintrittswinkel vom \textit{Brewster-Winkel} $\alpha_B$. Unter diesem Einfallswinkel wird ausschließlich s-polarisiertes Licht teilweise reflektiert, der reflektierte Anteil ist somit vollständig linear polarisiert. Für die p-Komponente entfällt die Reflexion, diese wird vollständig gebrochen. Der gebrochene Anteil des Lichts enthält somit die gesamte p-Komponente und den übrigen Teil der s-Komponente (siehe Abbildungen \ref{fig:reflexion_dicht} und \ref{fig:reflexion_duenn}).
+Schließen bei Lichtbrechung und -reflexion der gebrochene und der reflektierte Lichtstrahl einen Winkel von \SI{90}{\degree} ein, so spricht man beim Eintrittswinkel vom \textit{Brewster-Winkel} $\alpha_B$. Sowohl das gebrochene, als auch das reflektierte Licht sind vollständig linear polarisiert, da nur s-polarisiertes Licht reflektiert wird. Das transmittierte Licht ist demnach p-polarisiert.
 %
 \begin{equation}
     \label{eq:brewster-winkel}
@@ -2605,8 +2606,10 @@ Schließen bei Lichtbrechung und -reflexion der gebrochene und der reflektierte 
 
 
 
-\myparagraph{Was ist Totalreflextion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt die Polarisation dabei?}
-\textbf{Rolle?} \\
+\paragraph{Was ist Totalreflextion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt die Polarisation dabei?}\mbox{}\\
+
+\textbf{Rolle?}
+
 Von Totalreflexion spricht man, wenn ein einfallender Lichtstrahl vollständig reflektiert und nicht teilweise transmittiert wird.
 Lässt man eine Lichtwelle aus einem optisch dichteren Medium 1 ins optische dünnere Medium 2 ($n_1 > n_2$) laufen (\textbf{nur dicht nach dünn!}), so folgt aus dem Brechungsgesetz für den Winkel $\alpha$:
 %
@@ -2633,9 +2636,9 @@ $\alpha_G$ berechnet sich wie folgt:
     \label{eq:grenzwinkel_totalreflexion}
     \sin(\alpha_G) = \frac{n_2}{n_1}
 \end{equation}
-%
+
 Bei der Totalreflexion erfolgen für die beiden Polarisationskomponenten (s und p) Phasensprünge $\Delta \varphi_i$, die verschieden groß sind.
-%
+
 \textbf{senkrecht} polarisierte Komponente:
 %
 \begin{equation}
@@ -2651,28 +2654,28 @@ Bei der Totalreflexion erfolgen für die beiden Polarisationskomponenten (s und 
 \end{equation}
 
 
-\myparagraph{Was sind optisch anisotrope Kristalle und wie lassen sich die unterschiedlichen
+\paragraph{Was sind optisch anisotrope Kristalle und wie lassen sich die unterschiedlichen
 Richtungen der elektrischen Feldstärke und der dielektrischen Verschiebungsdichte mit dem
 mechanischen Analogmodell verstehen? Wie sieht der Zusammenhang zwischen elektrischer Feldstärke und dielektrischer Verschiebungsdichte dabei formal aus?}
 
-\myparagraph{Was sind optisch einachsige bzw. optisch zweiachsige Kristalle. Wodurch unterscheidet
+\paragraph{Was sind optisch einachsige bzw. optisch zweiachsige Kristalle. Wodurch unterscheidet
 sich deren $\epsilon$-Tensoren in Hauptachsendarstellung? Was ist die optische Achse eines
 doppelbrechenden Kristalles?}
 
-\myparagraph{Zeichnen und erklären Sie eine zweidimensionale Darstellung des Indexellipsoides eines
+\paragraph{Zeichnen und erklären Sie eine zweidimensionale Darstellung des Indexellipsoides eines
 optisch einachsigen Kristalles. Wie unterscheidet sich das Verhalten von ordentlichem und
 außerordentlichem Strahl bei optisch einachsigen Kristallen?}
 
-\myparagraph{Beschreiben Sie die Funktion eines dichroitischen und eines Glan-Thompson-Polarisators.
+\paragraph{Beschreiben Sie die Funktion eines dichroitischen und eines Glan-Thompson-Polarisators.
 (Skizze!)}
 
-\myparagraph{Beschreiben Sie die Funktion eines $\lambda/4$-Plättchens. Welche Bedingungen muss es
+\paragraph{Beschreiben Sie die Funktion eines $\lambda/4$-Plättchens. Welche Bedingungen muss es
 erfüllen? (Skizze!)}
 
-\myparagraph{Beschreiben Sie die Funktion eines $\lambda/2$-Plättchens. Welche Bedingungen muss es
+\paragraph{Beschreiben Sie die Funktion eines $\lambda/2$-Plättchens. Welche Bedingungen muss es
 erfüllen? (Skizze!)}
 
-\myparagraph{Was ist optische Aktivität und wie lässt sich eine Platte aus optisch aktivem Material
+\paragraph{Was ist optische Aktivität und wie lässt sich eine Platte aus optisch aktivem Material
 von einer $\lambda/2$-Platte unterscheiden?}
 
 \newpage
