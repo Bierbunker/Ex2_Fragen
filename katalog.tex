@@ -2523,7 +2523,7 @@ und Brechungsgesetz her.}
 %
 S- und p-Polarisation beschreiben die Schwingungsebene der elektromagnetischen Welle Licht relativ zum Lot (Flächennormale der Einfallsebene). \enquote{s} steht für \enquote{senkrecht} zum Lot, \enquote{p} steht für \enquote{parallel} zum Lot.
 
-\subsubsection*{Herleitung Reflexionsgesetz\footnote{\url{https://de.wikipedia.org/wiki/Fermatsches_Prinzip}}}
+\subsubsection*{Herleitung Reflexionsgesetz}\footnote{\url{https://de.wikipedia.org/wiki/Fermatsches_Prinzip}}
 Das Reflexionsgesätz lässt sich über das Fermat'sche Prinzip herleiten. Es besagt, dass das Licht, das vom Punkt $P_1$ ausgesandt wird, den Punkt $P_2$ immer auf dem Wege erreicht, für den die Lichtlaufzeit ein Extremum (Minimum) ist.
 %
 \begin{figure}[H]
@@ -2608,7 +2608,7 @@ Schließen bei Lichtbrechung und -reflexion der gebrochene und der reflektierte 
 
 \paragraph{Was ist Totalreflextion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt die Polarisation dabei?}\mbox{}\\
 
-\textbf{Rolle?}
+%\textbf{Rolle?}
 
 Von Totalreflexion spricht man, wenn ein einfallender Lichtstrahl vollständig reflektiert und nicht teilweise transmittiert wird.
 Lässt man eine Lichtwelle aus einem optisch dichteren Medium 1 ins optische dünnere Medium 2 ($n_1 > n_2$) laufen (\textbf{nur dicht nach dünn!}), so folgt aus dem Brechungsgesetz für den Winkel $\alpha$:
@@ -2624,7 +2624,7 @@ damit die Welle überhaupt ins Medium 2 eintreten kann. Im Extremfall beträgt d
 \begin{figure}[H]
     \centering
     \begin{samepage}
-        \includegraphics[width=0.7\textwidth]{image/15/totalreflexion.jpg}
+        \includegraphics[width=0.6\textwidth]{image/15/totalreflexion.jpg}
         \caption{Zur Totalreflexion von Wellen, die aus dem optisch
         dichteren Medium unter Winkeln $\alpha > \alpha_g$ auf die Grenzfläche fallen. Grenzwinkel: Lichtstrahl 2}
         \label{fig:totalreflexion}
@@ -2654,29 +2654,204 @@ Bei der Totalreflexion erfolgen für die beiden Polarisationskomponenten (s und 
 \end{equation}
 
 
-\paragraph{Was sind optisch anisotrope Kristalle und wie lassen sich die unterschiedlichen
-Richtungen der elektrischen Feldstärke und der dielektrischen Verschiebungsdichte mit dem
-mechanischen Analogmodell verstehen? Wie sieht der Zusammenhang zwischen elektrischer Feldstärke und dielektrischer Verschiebungsdichte dabei formal aus?}
+\paragraph{Was sind optisch anisotrope Kristalle und wie lassen sich die unterschiedlichen Richtungen der elektrischen Feldstärke und der dielektrischen Verschiebungsdichte mit dem mechanischen Analogmodell verstehen? Wie sieht der Zusammenhang zwischen elektrischer Feldstärke und dielektrischer Verschiebungsdichte dabei formal aus?}
+%
+In optisch anisotropen Medien ist die Brechzahl von der Ausbreitungsrichtung der elektromagnetischen Lichtwelle abhängig. Die Rückstellkräfte der einzelnen Elektronen (und damit auch die Schwingungsrichtung der Gesamtwelle) hängen von der Kristallstruktur ab. Diese Struktur ist nicht rotationssymetrisch um die optische Achse des Gitters.
+
+Daraus resultiert, dass die elektrische Feldstärke $\textbf{E}$ und die dielektrischen Verschiebungsdichte $\textbf{D}$ im anisotropen Kristall \textit{nicht} unbedingt parallel sein müssen.
+
+Dies lässt sich durch ein mechanisches Analogmodell anschaulich beschreiben (\autoref{fig:mechanisches_analogmodell}):
+%
+\begin{figure}[!h]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.55\textwidth]{image/15/mechanisches_modell.jpg}
+        \caption{Mechanisches Analogmodell zur optischen Doppelbrechung. Kraft und Auslenkungsrichtung sind bei ungleichen Rückstellkräften nicht parallel. Erregendes Feld und Polarisation haben nicht mehr dieselbe Richtung.}
+        \label{fig:mechanisches_analogmodell}
+    \end{samepage}
+\end{figure}
+%
+Zwei verschieden starke Spiralfedern sind in $x$- bzw. $y$-Richtung aufgespannt. Der Verbindungspunkt P ist durch eine schwarze Scheibe markiert. Zieht man jetzt die Scheibe in die Diagonalrichtung, so folgt sie nicht dieser Richtung, sondern der in der Skizze strichlierten Linie, die gegen die Diagonale geneigt ist (resultierender Kraftvektor). [Die schwache Feder in positive $x$-Richtung lässt sich leichter auslenken als die in positive $y$-Richtung.]
+
+Um den Zusammenhang
+\[\textbf{D} = \varepsilon \cdot \varepsilon_0 \cdot \textbf{E}\]
+zu wahren, da nun -- wie bereits zuvor erwähnt -- $\textbf{E}$ und  $\textbf{D}$ \textit{nicht} mehr parallel sind, ist $\varepsilon$ keine Konstante (Skalar) mehr, sondern ein \textit{Tensor zweiter Stufe}.
+\[\varepsilon = \begin{pmatrix}
+    \varepsilon_{xx} & \varepsilon_{xy} & \varepsilon_{xz} \\
+    \varepsilon_{yx} & \varepsilon_{yy} & \varepsilon_{yz} \\
+    \varepsilon_{zx} & \varepsilon_{zy} & \varepsilon_{zz} \\
+\end{pmatrix}\]
+
 
 \paragraph{Was sind optisch einachsige bzw. optisch zweiachsige Kristalle. Wodurch unterscheidet
 sich deren $\epsilon$-Tensoren in Hauptachsendarstellung? Was ist die optische Achse eines
 doppelbrechenden Kristalles?}
 
+Die Brechungseigenschaften gewisser optisch anisotroper Kristalle lassen sich durch ein zugehöriges \textit{Brechungsindex-Ellipsoid} beschreiben (siehe nächste Frage).
+
+Dabei kommen zwei Varianten des Indexellipsoides vor:
+\begin{enumerate}
+    \item optisch einachsige Indexellipsoide
+    \item optisch zweiachsige Indexellipsoide
+\end{enumerate}
+
+\textbf{Optisch einachsige} haben \textit{eine} optische Achse und \textit{zwei} verschiedene Brechungsindizes.
+
+\textbf{Optisch zweiachsige} haben \textit{zwei} optische Achsen und \textit{drei} verschiedene Brechungsindizes.
+
+
 \paragraph{Zeichnen und erklären Sie eine zweidimensionale Darstellung des Indexellipsoides eines
 optisch einachsigen Kristalles. Wie unterscheidet sich das Verhalten von ordentlichem und
 außerordentlichem Strahl bei optisch einachsigen Kristallen?}
 
+\subsubsection*{Indexellipsoid}
+Für nicht-absorbierende und nicht-optisch-aktive Medien wird der relative Dielekrizitätstensor symmetrisch, dadurch lässt sich dieser Tensor ($\approx$Matrix) diagonalisieren (Hauptachsen-Transformation).
+\[\varepsilon_{HA} = \begin{pmatrix}
+    \varepsilon_1 & 0 & 0 \\
+    0 & \varepsilon_2 & 0 \\
+    0 & 0 & \varepsilon_3 \\
+\end{pmatrix}\]
+Der Brechungindex $n$ steht mit der relativen Dielektrizitätskonstante in folgender Beziehung:
+\begin{equation}
+    \label{eq:brechungsindex_permittivitaet}
+    n = \sqrt{\varepsilon}
+\end{equation}
+Demnach lassen sich aus den Eigenwerten von $\varepsilon_{HA}$ nach \autoref{eq:brechungsindex_permittivitaet} drei Brechungsindizes berechnen.
+
+Trägt man in einem Hauptachsensystem $(n_1, n_2, n_3)$ einen Vektor
+\[\textbf{n} = \begin{pmatrix}
+    n_x \\
+    n_y \\
+    n_z
+\end{pmatrix}\]
+vom Nullpunkt aus auf, so beschreibt sein Endpunkt ein Ellipsoid
+\[\frac{n_x^2}{n_1^2} + \frac{n_y^2}{n_2^2} + \frac{n_z^2}{n_3^2} = 1,\]
+das \textit{Indexellipsoid}.
+%
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.7\textwidth]{image/15/einachsiger_kristall.jpg}
+        \caption{\textbf{a} Rotationssymmetrisches Indexellipsoid mit der Symmetrieachse in Richtung der optischen Achse. \textbf{b} Zweidimensionale Darstellung von $n_a(\theta)$ und der nicht von $\theta$ abhängigen Größe $n_0$ für einen positiv einachsigen Kristall}
+        \label{fig:indexellipsoid_einachsig}
+    \end{samepage}
+\end{figure}
+%
+\subsubsection*{Ordentlicher und außerordentlicher Strahl}
+
+Lässt man in einen optisch anisotropen Kristall ein paralleles, unpolarisiertes Lichtbündel eintreten, so spaltet es sich immer in zwei Teilbündel auf. Ein Bündel folgt dem Snellius'schen Brechungsgesetz (bei $\alpha = 0$ ist auch $\beta = 0$). Es wird deshalb \textit{ordentlicher Strahl} genannt. Das andere Teilbündel hat auch für $\alpha = 0$ einen Brechwinkel $\beta \neq 0$ (\textit{außerordentlicher Strahl}).
+
+Misst man den Polarisationszustand der beiden Teilwellen, so stellt man fest, dass beide orthogonal zueinander polarisiert sind. Die ordentliche Welle ist senkrecht zur optischen Achse des Kristalls polarisiert, die außerordentliche parallel zu ihr.
+
+
 \paragraph{Beschreiben Sie die Funktion eines dichroitischen und eines Glan-Thompson-Polarisators.
 (Skizze!)}
+
+\subsection*{Dichroitischer Polarisator}
+%
+\begin{figure}[!h]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.6\textwidth]{image/15/dichroitische_folie.jpg}
+        \caption{Grundprinzip des dichroitischen Polarisators (Polarisationsfolie), wo eine Polarisationskomponente stärker absorbiert wird als die dazu senkrecht polarisierte}
+        \label{fig:dichroitischer_polarisator}
+    \end{samepage}
+\end{figure}
+%
+Ein in der Praxis simpler Polarisator ist eine Polarisationsfolie, die aus \textit{dichroitischen} (\enquote{zweifarbigen}) kleinen anisotropen Kristallen besteht. Diese absorbieren Licht in eine Polarisationsrichtung und sind durchlässig in die andere.
+
+Der Nachteil der Polarisationsfolien ist ihre relativ große Abschwächung auch für die gewünschte Polarisationskomponente.
+
+\subsubsection*{Glan-Thompson-Polarisator}
+%
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.7\textwidth]{image/15/Glan-Thompson.jpg}
+        \caption{Glan-Thompson-Polarisator}
+        \label{fig:Glan-Thompson-Polarisator}
+    \end{samepage}
+\end{figure}
+%
+Der Grundkristall für einen Glan-Thompson-Polarisator ist so aus einem Kalkspatkristall geschnitten, dass die optische Achse parallel zur Eintrittsfläche liegt. Beim Einfall von unpolarisierem Licht wird dieses in einen ordentlichen und einen außerordentlichen Strahl aufgespalten, die \textbf{parallel} zueinander verlaufen, jedoch mit unterschiedlichen Wellengeschwindigkeiten ($c = c_0 / n_i$). Beide Strahlen treffen unter demselben Winekl auf die Klebefläche.
+Der Kleber (z.B. Kanadabalsam) hat einen Brechungsindex $n_K = \num{1.54}$, der kleiner ist als der Brechungsindex $n_o = \num{1.66}$ des
+ordentlichen Strahls, aber größer als der des außerordentlichen Strahls ($n_e = \num{1.49}$). Aufgrund unterschiedlicher Verhältnisse der Brechungsindizes wird der ordentliche Strahl totalreflektiert, der außerordentliche wird transmittiert und läuft in dieselbe Richtung weiter.
+
 
 \paragraph{Beschreiben Sie die Funktion eines $\lambda/4$-Plättchens. Welche Bedingungen muss es
 erfüllen? (Skizze!)}
 
+Mit einem Zirkular-Polarisator ($\lambda/4$-Plättchen) lässt sich aus linear polarisiertem einfallenden Licht elliptisch oder zirkular polarisiertes transmittiertes Licht erzeugen (auch umgekehrte Richtung möglich).
+
+Beim Einfall in den Kristall wird das Licht in einen ordentlichen und einen außerordentlichen Lichtstrahl gebrochen (stehen orthogonal aufeinander). Diese erfahren unterschiedliche Brechungsindizes $n_1$ (schnell) bzw. $n_3$ (langsam) und haben nach Durchlaufen der Dicke $d$ des Kristalls die relative Phasenverschiebung
+%
+\[\Delta \varphi = \frac{2\pi}{\lambda_0} \cdot d \cdot \bigg( n_{\text{langsam}} - n_{\text{schnell}} \bigg) \]
+%
+Wählt man $d$ derart, dass $d \cdot (n_3 - n_1) = \lambda_0/4$ gilt, so beträgt die Phasenverschiebung, mit der sich die beiden Strahlen beim Austritt wieder überlagern, $\Delta \varphi = \pi/2$.
+
+Man dreht nun die optische Achse des Kristalls (dünne planparallele Platte mit optischer Achse in der Plattenebene, siehe \autoref{fig:lambda_viertel}) um einen bestimmten Winkel $\alpha$ gegen die Polarisationsrichtung $\textbf{E}$ der einfallenden Welle. Abhängig von $\alpha$ ist die austretende Welle
+\begin{itemize}
+    \item $\alpha = \SI{45}{\degree} \implies$ zirkular polarisiert
+    \item $\alpha \notin \{0;45\}\si{\degree} \implies$ elliptisch polarisiert
+\end{itemize}
+%Die Nulllage der resultierenden Lissajous-Figur ist um \SI{45}{\degree} gegenüber des Einfallwinkels gedreht (Überlagerung der um \SI{90}{\degree} verschobenen Komponenten).
+%Beträgt dagegen $\alpha = \SI{0}{\degree}$, so sind die beiden austretenden Strahlen wieder linear polarisiert, jedoch um $\pi/2$ phasenverschoben. Dies wird beim $\lambda/2$-Plättchen genutzt. %??
+%
+\begin{figure}[!h]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.5\textwidth]{image/15/lambda_viertel.jpg}
+        \caption{Prinzip des Zirkular-Polarisators ($\lambda/4$-Plättchen). \textbf{a} Anschauliche Darstellung; \textbf{b} Richtung des E-Vektors der einfallenden Welle}
+        \label{fig:lambda_viertel}
+    \end{samepage}
+\end{figure}
+
+
 \paragraph{Beschreiben Sie die Funktion eines $\lambda/2$-Plättchens. Welche Bedingungen muss es
 erfüllen? (Skizze!)}
 
+Ein Polarisationsdreher ($\lambda/2$-Plättchen) ergibt sich durch Hintereinanderschalten zweier $\lambda/4$-Plättchen bei paralleler Ausrichtung ihrer optischen Achsen. Das erste Plättchen polarisiert das einfallende linear polarisierte Licht zirkular, das zweite polarisiert das zirkulare Licht wieder linear. Das Prinzip ist ident zu dem eines $\lambda/4$-Plättchens: Für
+%
+\[d = \frac{\lambda_0}{2} \cdot \frac{1}{n_{\text{schnell}} - n_{\text{langsam}}}\]
+%
+ergibt sich eine Phasenverschiebung von $\Delta \varphi = \pi$ (statt $\pi/2$ bei $\lambda/4$) der beiden Komponenten. Fällt das Licht unter dem Winkel $\alpha$ ein, so verlässt es den Kristall wieder unter $-\alpha$, wurde also um $\Delta \alpha = -2 \alpha$ gedreht.
+%
+\begin{figure}[!h]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.6\textwidth]{image/15/lambda_halbe.jpg}
+        \caption{Drehung der Polarisationsebene einer polarisierten
+        Welle durch ein $\lambda/2$-Plättchen}
+        \label{fig:lambda_halbe}
+    \end{samepage}
+\end{figure}
+
+
 \paragraph{Was ist optische Aktivität und wie lässt sich eine Platte aus optisch aktivem Material
 von einer $\lambda/2$-Platte unterscheiden?}
+
+Optisch aktive Stoffe drehen bei beliebiger Richtung der Polarisationsebene des einfallenden linear polarisierten Lichtes diese Ebene beim Durchgang durch die Schichtdicke $d$ um einen Winkel
+%
+\[\alpha = \alpha_s \cdot d\]
+%
+Der Proportionalitätsfaktor $\alpha_s$ heißt \textit{spezifisches optisches Drehvermögen}. Man unterscheidet (inklusive Bezeichnungen):
+\begin{itemize}
+    \item rechtsdrehende
+    \begin{itemize}
+        \item + (positiver Drehwinkel)
+        \item D (lat. \textit{dexter} = rechts)
+    \end{itemize}
+    \item linksdrehende
+    \begin{itemize}
+        \item - (negativer Drehwinkel)
+        \item L (lat. \textit{laevus} = links)
+    \end{itemize}
+\end{itemize}
+optisch aktive Medien. Grund für den Drehsinn sind Symmetrieeigenschaften der Moleküle (quantenmechanische Erklärung).
+
+\textbf{Unterschied?}
+
+
 
 \newpage
 
