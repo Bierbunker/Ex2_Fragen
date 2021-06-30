@@ -14,7 +14,7 @@
 
 \usepackage{amsmath, amssymb, amstext, mathtools}
 \usepackage{icomma}
-\usepackage[locale=DE]{siunitx}
+\usepackage[locale=DE, uncertainty-mode=separate]{siunitx}
 \usepackage{physics}
 \usepackage{derivative}
 
@@ -46,6 +46,8 @@
 
 % Line break after paragraph
 \newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+
 
 \begin{document}
 
@@ -2497,7 +2499,7 @@ Summe:
 \begin{figure}[H]
     \centering
     \begin{samepage}
-        \includegraphics[width=0.6\textwidth]{image/15/brechung_reflexion2.pdf}
+        \includegraphics[width=0.6\textwidth]{image/15/brechung_reflexion.pdf}
         \caption{Erklärung der Begriffe „Einfallswinkel“, „Reflexionswinkel“, „Brechungswinkel“, „Einfallsebene“}
         \label{fig:reflexion_brechung}
     \end{samepage}
@@ -2512,7 +2514,7 @@ Summe:
     \end{samepage}
 \end{figure}
 %
-p- und p-Polarisation beschreiben die Schwingungsebene der elektromagnetischen Welle Licht relativ zum Lot (Flächennormale der Einfallsebene). \enquote{s} steht für \enquote{senkrecht} zum Lot, \enquote{p} steht für \enquote{parallel} zum Lot.
+s- und p-Polarisation beschreiben die Schwingungsebene der elektromagnetischen Welle Licht relativ zur Einfallsebene (siehe \autoref{fig:s-p-polarisation}). \enquote{s} steht für \enquote{senkrecht} zur Einfallsebene, \enquote{p} steht für \enquote{parallel} zur Einfallsebene (in der Einfallsebene liegend).
 %
 \subsubsection*{Herleitung Reflexionsgesetz\footnote{\url{https://de.wikipedia.org/wiki/Fermatsches_Prinzip}}}
 Das Reflexionsgesätz lässt sich über das Fermat'sche Prinzip herleiten. Es besagt, dass das Licht, das vom Punkt $P_1$ ausgesandt wird, den Punkt $P_2$ immer auf dem Wege erreicht, für den die Lichtlaufzeit ein Extremum (Minimum) ist.
