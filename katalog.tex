@@ -17,7 +17,7 @@
 \usepackage{icomma}
 \usepackage[locale=DE]{siunitx}
 \usepackage{physics}
-\usepackage{derivative}
+\usepackage{derivative}  % overrides derivatives of package physics!
 
 \usepackage{pdfpages}
 \usepackage{lastpage}
@@ -2197,10 +2197,11 @@ Die Energiedifferenz wird also abgestrahlt. Dieses Phänomen nennt man Bremsstra
 
 Elektromagentische Wellen sind Wellen aus gekoppelten elektrischen und magnetischen Feldern. Im Vergleich zu anderen Wellen (z.B.: Schallwellen) benötigen
 EM-Wellen kein Medium um sich ausbreiten zu können. Die Ausbreitungsgeschwindigkeit ist jedoch sehr wohl vom Medium abhängig, im Vakuum breiten sich EM-Wellen mit Lichtgeschwindigkeit aus.
-Ebene elektromagnetische Wellen: \textbf{E}-Vektor und \textbf{B}-Vektor schwingen transversal, also senkrecht zur Ausbreitungsrichtung (welche entlang einer Raumachse verläuft). Zudem sind \textbf{E}-Vektor und \textbf{B}-Vektor
-phasengleich in jedem Punkt.
+Ebene elektromagnetische Wellen: $\vb{E}$-Vektor und $\vb{B}$-Vektor schwingen transversal, also senkrecht zur Ausbreitungsrichtung (welche entlang einer Raumachse verläuft). Zudem sind $\vb{E}$-Vektor und $\vb{B}$-Vektor phasengleich in jedem Punkt. Der Wellenvektor $\vb{k}$ zeigt in die Ausbreitungsrichtung der Welle.
+
 \begin{equation}
-    \textbf{E} = \textbf{E}_0 e^{i(\textbf{kr} - \omega t)}
+    \label{eq:emwelleallgemein}
+    \vb{E} = \vb{E}_0 \cdot e^{i(\vb{kr} - \omega t)}
 \end{equation}
 
 \begin{figure}[H]
@@ -2214,7 +2215,10 @@ Vektoren von elektrischem und magnetischem Feld stehen senkrecht aufeinander. Si
 Elektrisches und magnetisches Feld stehen senkrecht zur Ausbreitungsrichtung. Elektrisches und
 magnetisches Feld schwingen in Phase.
 \begin{equation}
-    |\textbf{B}| = \frac{1}{c} |\textbf{E}|
+    \abs{\vb{B}} = \frac{1}{c} \abs{\vb{E}}
+\end{equation}
+\begin{equation}
+    \vb{B} = \frac{1}{\omega} \left( \vb{k} \cross \vb{E} \right)
 \end{equation}
 
 \paragraph{Skizzieren Sie zeitlichen und örtlichen Verlauf des elektrischen Feldes einer ebenen,
@@ -2226,18 +2230,35 @@ magnetisches Feld schwingen in Phase.
     \centering
     \includegraphics[width=8cm]{image/13/2.png}
 \end{figure}
-Wellengleichung für eine ebene und harmonische EM-Welle:
+
+Graph $a$ zeigt hierbei die Welle zu einem bestimmten Zeitpunkt $t_1 = \text{const.}$ Graph $b$ an einem bestimmten Ort $z_1 = \text{const.}$
+
+Allgemeine Gleichung für das elektrische Feld einer elektromagnetischen Welle (\autoref{eq:emwelleallgemein}):
+\[\vb{E} = \vb{E}_0 \cdot e^{i(\vb{kr} - \omega t)}\]
+
+Eine ebene elektromagnetische Welle ist nur von einer Ortskoordinate abhängig (z.B. von der $z$-Koordinate):
+\[\vb{r} \implies r_z = z\]
+\[\vb{E}(\vb{r},t) \implies \vb{E}(z,t)\]
+
+Die Welle breitet sich nur mehr in $z$-Richtung aus, die elektrische Feldstärke hat jedoch nur mehr variable Komponenten parallel zur $x$-$y$-Ebene, in $z$-Richtung ist sie konstant:
+\[\vb{E}(z,t) = \begin{pmatrix}E_x(z,t) \\ E_y(z,t) \\ E_z \end{pmatrix} \implies \pdv{E_z}{z} = 0\]
+
+Da sich die Welle nur in $z$-Richtung ausbreitet, gibt es keine Änderung der Feldstärke $\vb{E}$ in $x$- oder $y$-Richtung:
+\[\pdv{\vb{E}}{x} = \pdv{\vb{E}}{y} = \vb{0}\]
+
+Weiters gilt:
+\[\pdv[order={2}]{\vb{E}}{z} = \frac{1}{c^2} \pdv[order={2}]{\vb{E}}{t}\]
+
+
+\begin{center}
+    \href{https://de.universaldenker.org/lektionen/281}{\underline{Weitere Infos}}
+\end{center}
+
+
+Die Ausbreitungsgeschwindigkeit der Welle im Vakuum $c$, die Wellenlänge $\lambda$ und die Periodendauer $T$ hängen wie folgt zusammen:
+
 \begin{equation}
-    \begin{split}
-        \frac{\partial \vec{E}}{\partial x} = \frac{\partial \vec{E}}{\partial y} = \vec{0} \\
-        \frac{\partial^2 \vec{E}}{\partial z^2} = \frac{1}{c^2} \frac{\partial^2 \vec{E}}{\partial t^2} \\
-        \frac{\partial \vec{E}}{\partial \vec{z}} = 0 \quad \rightarrow E_z = a = \text{räumlich const.}
-    \end{split}
-\end{equation}
-Die Ausbreitungsgeschwindigkeit im Vakuum $c$, die Wellenlänge $\lambda$ und die Periodendauer $T$ hängen wie folgt zusammen:
-\begin{equation}
-    c = \lambda \cdot f \hspace{1cm}
-    c = \frac{\lambda}{T}
+    c = \lambda \cdot f = \frac{\lambda}{T}
 \end{equation}
 \paragraph{Was versteht man unter linearer, elliptischer, zirkulare Polarisation bzw. unter
     unpolarisiertem Licht?} ~
@@ -2300,7 +2321,10 @@ Die Welle wird an den Platten mit dem Ausfallswinkel $\alpha = \alpha'$ gegenpha
 gleicher Amplitude reflektiert.
 
 \begin{equation}
-    E = E_0(e^{i(k_x x + k_z z - \omega t)} - e^{i(-k_x x + k_z z - \omega t)})
+    \begin{split}
+        \vb{E} &= \vb{E}_0 \cdot \qty( e^{i(k_x x + k_z z - \omega t)} - e^{i(-k_x x + k_z z - \omega t)} ) \\
+        &= \vb{E}_0 \cdot e^{i(k_z z - \omega t)} \cdot 2i \sin(k_x x)
+    \end{split}
 \end{equation}
 
 \begin{figure}[H]
@@ -2361,21 +2385,28 @@ Wellenlängen. Das für den Menschen sichtbare Lichtspektrum ist ein kleiner Tei
 \paragraph{Was versteht man unter Brechungsindex und was bedeutet ein komplexwertiger
     Brechungsindex? Wie geht eine komplexwertiger Brechungsindex in die Wellengleichung ein?} ~
 
-Der Brechungsindex $n$ ist das Verhältnis der Wellenlänge $\lambda_{vac}$ im Vakuum zur Wellenlänge
-$\lambda_{med}$ im Medium.
+Der Brechungsindex $n$ ist das Verhältnis der Wellenlänge $\lambda_0$ im Vakuum zur Wellenlänge
+$\lambda$ im Medium.
 
-Der komplexwertige Brechungsindex $\mathbf{n} = n_r + i \cdot n_i$ vereint den klassischen
-Brechungsindex und die Dämpfung der Welle in einer komplexen Größe. Der Realteil beschreibt also die
-Dispersion, der Imaginärteil die Absorption der Welle im Medium.
 \begin{equation}
-    E(t,x) = E_0 \cdot e^{i(\omega t - \frac{\omega}{c} x \mathbf{n})}
+	n = \frac{\lambda_0}{\lambda} = \frac{k}{k_0} = \frac{c}{c_0} = \sqrt{\varepsilon_r \mu_r}
+\end{equation}
+
+Der komplexwertige Brechungsindex $n = n_r + i \kappa = n_r + i n_i$ vereint den klassischen
+Brechungsindex und die Dämpfung der Welle in einer komplexen Größe. Der Realteil $n_r$ beschreibt die
+Dispersion, der Imaginärteil $\kappa$ die Absorption der Welle im Medium, letzterer wird auch \textit{Extinktionskoeffizient}
+genannt (teilweise mit $k$ bezeichnet). Die komplexwertige Variante des Brechungsindexes ist ausschließlich bei
+monochromatischen Wellen sinnvoll, ansonsten ist der Brechungsindex $n(t)$ zeitabhängig!
+
+\begin{equation}
+    \vb{E}(\vb{r},t) = \vb{E}_0 \cdot e^{i(\omega t - n \vb{k}_0 \vb{r})}
 \end{equation}
 
 \paragraph{Schreiben Sie das Beer'sche Absorptionsgesetz an (Skizze). Erstellen Sie ein Diagramm der
     Intensität als Funktion der Ausbreitungslänge der Welle.} ~
 
 \begin{equation}
-    I = I_0 \cdot e^{- \alpha z} ~~~ \text{mit Absorptionskoeffizient} ~~~ \alpha = 2 k_0 \kappa
+    I = I_0 \cdot e^{- \alpha z} \qq{mit Absorptionskoeffizient} \alpha = 2 k_0 \kappa
 \end{equation}
 
 \begin{figure}[H]
@@ -2396,9 +2427,9 @@ Dispersion, der Imaginärteil die Absorption der Welle im Medium.
 
 \section{Wellen an Grenzflächen, optische Anisotropie und Polarisation}
 \label{Wellen an Grenzflaechen, optische Anisotropie und Polarisation}
-%
-\myparagraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s- und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dichteren Medium.}
-%
+
+\paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s- und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dichteren Medium.}~
+
 \begin{figure}[H]
     \centering
     \begin{samepage}
@@ -2408,9 +2439,8 @@ Dispersion, der Imaginärteil die Absorption der Welle im Medium.
     \end{samepage}
 \end{figure}
 
+\paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s- und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dünneren Medium.}~
 
-\myparagraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s- und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dünneren Medium.}
-%
 \begin{figure}[H]
     \centering
     \begin{samepage}
@@ -2421,14 +2451,51 @@ Dispersion, der Imaginärteil die Absorption der Welle im Medium.
 \end{figure}
 
 
-\paragraph{Was bedeutet „Reflexionskoeffizient“ und „Reflexionsvermögen“ (Reflektivität), „Transmissionskoeffizient“ und „Transmissionsvermögen“ (Transmissionsgrad)? Wie groß ist das Reflexionsvermögen einer Grenzfläche zwischen zwei transparenten Medien bei Lichteinfall senkrecht auf die Grenzfläche?}
+\paragraph{Was bedeutet „Reflexionskoeffizient“ und „Reflexionsvermögen“ (Reflektivität), „Transmissionskoeffizient“ und „Transmissionsvermögen“ (Transmissionsgrad)? Wie groß ist das Reflexionsvermögen einer Grenzfläche zwischen zwei transparenten Medien bei Lichteinfall senkrecht auf die Grenzfläche?}~
+
+\subsubsection*{Grundlagen}
+%
+Annahme: s-polarisierte Welle\\
+Die Amplituden der einfallenden und der reflektierten Welle müssen
+sich zur Amplitude der gebrochenen Welle addieren:
+%
+\begin{equation}
+	\vb{A}_{es} + \vb{A}_{rs} = \vb{A}_{gs}
+\end{equation}
+%
+Don't know $\implies$ \\
+Weiters gilt:
+%
+\begin{equation}
+	k_{ey} A_{es} + k_{ry} A_{rs} = k_{gy} A_{gs}
+\end{equation}
+%
+Bei der reflektierten Welle ändert die $y$-Komponente der reflektierten
+Welle nur ihr Vorzeichen:
+%
+\begin{equation}
+	k_{ry} = -k_{ey}
+\end{equation}
+%
+Daraus folgt:
+%
+\begin{equation}
+	A_{es} - A_{rs} = \frac{k_{gy}}{k_{ey}} A_{gs} = a A_{gs}
+\end{equation}
+%
+Der Vorfaktor $a$ lässt sich schreiben als:
+%
+\begin{equation}
+	a = \frac{k_{gy}}{k_{ey}} = \frac{n_2 \cos(\beta)}{n_1 \cos(\alpha)}
+\end{equation}
 %
 \subsubsection*{Reflexions- und Transmissionskoeffizient}
+%
 Der Reflexionskoeffizient $\varrho_s$ beschreibt das Verhältnis der Amplituden von reflektierter Welle zu Eingangswelle:
 %
 \begin{equation}
     \label{eq:reflexionskoeffizient}
-    \varrho_s = \frac{A_{\text{rs}}}{A_{\text{es}}} = \frac{1-a}{1+a} = -\frac{\sin (\alpha - \beta)}{\sin (\alpha + \beta)}
+    \varrho_s = \frac{A_{\text{rs}}}{A_{\text{es}}} = \frac{1-a}{1+a} = -\frac{\sin(\alpha - \beta)}{\sin(\alpha + \beta)}
 \end{equation}
 %
 Analog dazu der Transmissionskoeffizient $\tau_s$:
@@ -2511,69 +2578,39 @@ Summe:
 %
 s- und p-Polarisation beschreiben die Schwingungsebene der elektromagnetischen Welle Licht relativ zur Einfallsebene (siehe \autoref{fig:s-p-polarisation}). \enquote{s} steht für \enquote{senkrecht} zur Einfallsebene, \enquote{p} steht für \enquote{parallel} zur Einfallsebene (in der Einfallsebene liegend).
 %
-\subsubsection*{Herleitung Reflexionsgesetz\footnote{\url{https://de.wikipedia.org/wiki/Fermatsches_Prinzip}}}
-Das Reflexionsgesätz lässt sich über das Fermat'sche Prinzip herleiten. Es besagt, dass das Licht, das vom Punkt $P_1$ ausgesandt wird, den Punkt $P_2$ immer auf dem Wege erreicht, für den die Lichtlaufzeit ein Extremum (Minimum) ist.
+\subsubsection*{Herleitung Reflexionsgesetz}~
 %
-\begin{figure}[H]
-    \centering
-    \begin{samepage}
-        \includegraphics[width=0.4\textwidth]{image/15/reflexionsgesetz.png}
-        \caption{Skizze zur Herleitung des Reflexionsgesetzes}
-        \label{fig:reflexionsgesetz}
-    \end{samepage}
-\end{figure}
-%
-Die vergangene Laufzeit des Lichts ist abhängig von der momentanen Position des Lichtbündels:
-\[t(x) = \frac{1}{c_0} \cdot \left( \sqrt{x^2+a^2} + \sqrt{(d-x)^2 + b^2} \right)\]
-Extremum auffinden durch Ableiten (nach x) und mit Null gleichsetzen (und $c_0$ wegmultiplizieren):
-\[0 \overset{!}{=} \frac{x}{\sqrt{x^2 + a^2}} - \frac{d-x}{\sqrt{(d-x)^2 + b^2}}\]
-Wurzelausdrücke durch explizite Benennung der Längen ersetzen:
-\[0 = \frac{x}{l_1} - \frac{d-x}{l_2}\]
-Verhältnisse durch Sinus-Funktionen ersetzen:
-\[0 = \sin(\alpha) - \sin(\beta) \implies \sin(\alpha) = \sin(\beta)\]
-
-\subsubsection*{Herleitung Brechungsgesetz}
-%
-\begin{figure}[H]
-    \centering
-    \begin{samepage}
-        \includegraphics[width=0.4\textwidth]{image/15/brechungsgesetz.jpg}
-        \caption{Skizze zur Herleitung des Brechungsgesetzes}
-        \label{fig:brechungsgesetz}
-    \end{samepage}
-\end{figure}
-%
-Ein Lichtstrahl wird als räumlich ausgedehntes Lichtbündel interpretiert. Beim Übergang von beispielsweise einem optisch dünneren (Medium 1) in ein optisch dichteres Medium (2) verringert sich die Lichtgeschwindigkeit. Ein Teil des Lichtbündels wird früher, ein anderer erst später dieser Verlangsamung ausgesetzt, dadurch wird er abgelenkt. Die Übergangsstrecke sei mit $x$ bezeichnet, der noch nicht gebrochene Anteil mit $c_1 \cdot t$. Verhältnis als Sinus ausgedrückt:
+Für die Wellenvektoren der einfallenden, reflektierten und gebrochenen
+Welle muss für jeden beliebigen Punkt $\vb{r}$ auf der Einfallsebene
+gelten:
 %
 \begin{equation}
-    \begin{split}
-        \sin(\alpha) = \frac{c_1 \cdot t}{x} \\
-        \sin(\beta) = \frac{c_2 \cdot t}{x}
-    \end{split}
+	\vb{k}_e \vb{r} = \vb{k}_r \vb{r} = \vb{k}_g \vb{r}
 \end{equation}
 %
-Aus dem Verhältnis beider Gleichungen folgt:
-\begin{equation}
-    \label{eq:lichtbrechung_c}
-    \frac{\sin(\alpha)}{\sin(\beta)} = \frac{c_1}{c_2}
-\end{equation}
-%
-Für die Brechzahl $n$ gilt weiters:
-\begin{equation}
-    \label{eq:brechzahl}
-    n = \frac{c_0}{c_m}
-\end{equation}
-%
-$c_0$ beschreibt die Lichtgeschwindigkeit im Vakuum, $c_m$ die Lichtgeschwindigkeit im optisch durchlässigen Medium. Durch Einsetzen von \autoref{eq:brechzahl} in \autoref{eq:lichtbrechung_c} und Auflösen des Doppelbruchs folgt das Snellius'sche Brechungsgesetz:
+Die Einfallsebene liege in der $x$-$z$-Ebene. Für beliebige $x$ und $z$
+muss demnach gelten:
 %
 \begin{equation}
-    \label{eq:brechungsgesetz_n}
-    \frac{\sin(\alpha)}{\sin(\beta)} = \frac{n_2}{n_1}
+	\begin{split}
+		k_{ex} = k_{rx} = k_{gx} \\
+		k_{rz} = k_{gz} = 0
+	\end{split}
 \end{equation}
-
-
-
-\myparagraph{Was ist der Brewsterwinkel? Erstellen Sie eine Skizze einer Luft-Glas Grenzfläche und zeichnen Sie alle möglichen Brewsterwinkel ein. Wie ist der Polarisationszustand der reflektierten und transmittierten Welle bei unpolarisierter einfallender Welle?}
+%
+Aus der Konstanz von $k_x$ lässt sich ableiten:
+%
+\begin{equation}
+	k_x = n_1 k_0 \sin(\alpha) = n_1 k_0 \sin(\alpha') = n_2 k_0 \sin(\beta)
+\end{equation}
+%
+Da $\alpha' = \alpha$ gilt, folgt weiters das Snellius'sche Brechungsgesetz:
+%
+\begin{equation}
+	n_1 \sin(\alpha) = n_2 \sin(\beta)
+\end{equation}
+%
+\paragraph{Was ist der Brewsterwinkel? Erstellen Sie eine Skizze einer Luft-Glas Grenzfläche und zeichnen Sie alle möglichen Brewsterwinkel ein. Wie ist der Polarisationszustand der reflektierten und transmittierten Welle bei unpolarisierter einfallender Welle?}
 %
 \begin{figure}[H]
     \centering
@@ -2593,20 +2630,23 @@ Schließen bei Lichtbrechung und -reflexion der gebrochene und der reflektierte 
 
 
 
-\myparagraph{Was ist Totalreflextion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt die Polarisation dabei?}
+\paragraph{Was ist Totalreflextion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt die Polarisation dabei?}~
 %
 %\textbf{Rolle?}
 %
 Von Totalreflexion spricht man, wenn ein einfallender Lichtstrahl vollständig reflektiert und nicht teilweise transmittiert wird.
 Lässt man eine Lichtwelle aus einem optisch dichteren Medium 1 ins optische dünnere Medium 2 ($n_1 > n_2$) laufen (\textbf{nur dicht nach dünn!}), so folgt aus dem Brechungsgesetz für den Winkel $\alpha$:
 %
-\[\sin(\alpha) = \frac{n_1}{n_1} \cdot \sin(\beta)\]
+\[\sin(\alpha) = \frac{n_2}{n_1} \cdot \sin(\beta)\]
 %
-Aus $\sin(\beta) \leq 1$ folgt
+Aus der generellen Gültigkeit von
 %
-\[\sin(\alpha) \leq \frac{n_2}{n_1}\]
+\[\sin(\varphi) \leq 1 \quad \forall \varphi\]
 %
-damit die Welle überhaupt ins Medium 2 eintreten kann. Im Extremfall beträgt der Austrittswinkel $\beta = \SI{90}{\degree}$ und der Eintrittswinkel wird dann \textit{Grenzwinkel der Totalreflexion} $\alpha_G$ genannt.
+wird ersichtlich, dass $\sin(\beta)$ sehr klein (und damit $\beta$ sehr groß) werden muss, sodass
+$\sin(\alpha) \leq 1$ noch immer gewährleistet ist. Im Extremfall von $\beta = \SI{90}{\degree}$
+wird Licht bereits nicht mehr gebrochen, sondern nur mehr reflektiert, und man spricht vom
+\textit{Grenzwinkel der Totalreflexion $\alpha_G$}.
 %
 \begin{figure}[H]
     \centering
@@ -2624,7 +2664,7 @@ $\alpha_G$ berechnet sich wie folgt:
     \sin(\alpha_G) = \frac{n_2}{n_1}
 \end{equation}
 %
-Bei der Totalreflexion erfolgen für die beiden Polarisationskomponenten (s und p) Phasensprünge $\Delta \varphi_i$, die verschieden groß sind.
+Bei der Totalreflexion erfolgen für die beiden Polarisationskomponenten (s und p) Phasensprünge $\Delta \varphi_i$, die verschieden groß sind.\\
 %
 \textbf{senkrecht} polarisierte Komponente:
 %
@@ -2858,7 +2898,6 @@ Erzeugt eine ideale Abbildung, dass jeder Punkt P des Raumes einen anderen Punkt
     \includegraphics[width=8cm]{image/17/geo12}
 \end{figure}
 
-
 \paragraph{Erklären Sie den Unterschied zwischen einem reellen und einem virtuellen Bild.}
 
 reell: nur für einen Punkt eine genaue Abbildung, Bild ist wirklich vorhanden. Entsteht, wenn Lichtstrahlen von einem Objekt auf eine Fläche treffen und diese von dort in das Auge reflektiert werden.\\
@@ -2874,15 +2913,13 @@ virtuell: Jeder Punkt ist eine genaue Abbildung. Bild entsteht hinter dem Spiege
     \includegraphics[width=8cm]{image/17/geo14}
 \end{figure}
 
-
-
 Mittelpunktstrahl (rot): von dem Gegenstand durch den Mittelpunkt zur Linse und auf selben Weg wieder zurück.\\
 Brennpunktstrahl (grün): Vom Gegenstand durch den Brennpunkt und aufgrund der Umkehrbarkeit wird er zum parallel Strahl\\
 Parallelstrahl (blau): Vom Gegenstand zuerst parallel zur Linse dann durch den Brennpunkt (genau umgekehrt zum Brennpunktstrahl)
 
 \paragraph{Konstruieren Sie das Bild eines Gegenstandes durch eine dünne Sammellinse wenn (a) der
     Gegenstand mehr als $2f$ von der Linse entfernt ist und (b) wenn der Gegenstand weniger als $2f$ von
-    der Linse entfernt ist. Dabei ist $f$ die Brennweite der Linse.}
+    der Linse entfernt ist. Dabei ist $f$ die Brennweite der Linse.} ~
 
 a)
 \begin{figure}[H]
@@ -2890,24 +2927,15 @@ a)
     \includegraphics[width=8cm]{image/17/geo15a}
 \end{figure}
 
-
-
 b)
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{image/17/geo15b}
 \end{figure}
 
-
-
-
-
-
-
 \paragraph{Konstruieren Sie das Bild eines Gegenstandes durch eine dünne Zerstreuungslinse wenn (a)
     der Gegenstand mehr als $2f$ von der Linse entfernt ist und (b) wenn der Gegenstand weniger
-    als $2f$ von der Linse entfernt ist. Dabei ist $f$ die Brennweite der Linse.}
-
+    als $2f$ von der Linse entfernt ist. Dabei ist $f$ die Brennweite der Linse.} ~
 
 a)
 \begin{figure}[H]
@@ -2915,24 +2943,21 @@ a)
     \includegraphics[width=8cm]{image/17/geo16a}
 \end{figure}
 
-
-
 b)
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{image/17/geo16b}
 \end{figure}
 
-
-
-
-
-
-
-
 \paragraph{Wie ist die Vergrößerung definiert? Zeichen Sie die Abbildung mit einer dünnen
     Sammellinse und leiten Sie eine Formel zur Berechnung der Vergrößerung aus Bild- und
-    Gegenstandsweite her.}
+    Gegenstandsweite her.} ~
+	
+Die Vergrößerung $\beta$ ist definiert als das Verhältnis von Bildgröße $B$ zu Gegenstandsgröße $G$:
+
+\begin{equation}
+	\beta = \frac{B}{G}
+\end{equation}
 
 \paragraph{Wie ist die Vergrößerung definiert? Zeichen Sie die Abbildung mit einer dünnen
     Zerstreuungslinse und leiten Sie eine Formel zur Berechnung der Vergrößerung aus Bild- und
