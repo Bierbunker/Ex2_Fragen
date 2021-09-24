@@ -17,7 +17,7 @@ X Elias                             Transformator und Gleichrichter
 X David                             Elektromagnetische Schwingungen und Entstehung von Wellen
 X David                             Elektromagnetische Wellen
 X Dominik                           Wellen in Materie
-! Andi                              Wellen an Grenzflächen, optische Anisotropie und Polarisation   
+X Andi                              Wellen an Grenzflächen, optische Anisotropie und Polarisation   
 X Alisa                             Geometrische Optik I         
 X Alisa                             Geometrische Optik II         
 X Elias                             Interferenz
