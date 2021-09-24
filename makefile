@@ -11,8 +11,8 @@ target := $(patsubst %.tex,${output}/%.pdf,${source})
 
 ${target}: ${source} ${images}
 	@mkdir -p ${output}
-	@texfot.exe pdflatex --output-directory=${output} $<
-	@texfot.exe pdflatex --output-directory=${output} $<
+	@texfot pdflatex --output-directory=${output} $<
+	@texfot pdflatex --output-directory=${output} $<
 
 force:
 	@rm -f ${target}
