@@ -48,6 +48,9 @@
 % Line break after paragraph
 \newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 
+% numerical aperture
+\newcommand{\NA}{\ensuremath{\mathit{NA}}}
+
 
 
 \begin{document}
@@ -996,21 +999,24 @@ Dies ermöglicht die Messung eines verzehnfachten Stromes.
 
 \paragraph{Schreiben Sie das Ampere'sche Gesetz an. Leiten Sie daraus einen Ausdruck für das
     Magnetfeld eines geraden, sehr langen, zylindrischen Leiters ab, durch den ein elektrischer Strom
-    mit über den Leiterquerschnitt homogener Stromdichte fließt.}
+    mit über den Leiterquerschnitt homogener Stromdichte fließt.}~\\
+
 Das Ringintegral entlang einer geschlossenen Magnetfeldlinie, ist immer gleich dem eingeschlossenen Strom mal der magnetischen Feldkonstante,
-wie aus dem Ampere'schen Gesetz \ref{AmperschesGesetz} ersichtlich wird.
-\begin{equation} \\
-    \oint \textbf{B} \hspace{0.2em} d\textbf{s} = \mu_0\cdot I
+wie aus dem Ampere'schen Gesetz (\autoref{eq:amperegesetz}) ersichtlich wird.
+%
+\begin{equation}
+    \label{eq:amperegesetz}
+    \oint \vb{B} \dd{\vb{s}} = \mu_0 \cdot I
 \end{equation}
 Wählt man nun als Integrationsweg die den Draht umschließende Feldlinie mit dem Abstand $r$, so ergibt sich:
 \begin{equation}
-    \int_{0}^{2\pi} rBd\phi = 2 \pi r B(r) = \mu_0\cdot I
+    \int_{0}^{2\pi} r B \dd{\phi} = 2 \pi r B(r) = \mu_0\cdot I
 \end{equation}
 \begin{equation}
-    B(r) = \frac{\mu_0\cdot I}{2 \pi r} \hspace{2.5em} \text{für} \hspace{1em} r > r_0
+    B(r) = \frac{\mu_0 \cdot I}{2 \pi r} \qq{für} r > r_0
 \end{equation}
 \begin{equation}
-    B(r) = \frac{\mu_0\cdot I}{r_{0}^{2} 2 \pi} \cdot r  \hspace{2.5em} \text{für} \hspace{1em} r < r_0
+    B(r) = \frac{\mu_0 \cdot I}{r_0^2 2 \pi} \cdot r \qq{für} r < r_0
 \end{equation}
 \paragraph{Schreiben Sie das Ampere'sche Gesetz an. Leiten Sie daraus einen Ausdruck für das
     Magnetfeld im Inneren einer geraden, sehr langen, zylindrischen Leiterspule ab.}
@@ -1022,15 +1028,15 @@ Der Integrationsweg wird so gewählt, dass nur der Teil im Inneren der Spule ein
 \end{figure}
 $N$ ist in diesem Zusammenhang die Anzahl der Windungen.
 \begin{equation}
-    \int_A^{B} B \hspace{0.2em} ds = B\cdot L = N\mu_0 I
+    \int_A^B B \dd{s} = B \cdot L = N \mu_0 I
 \end{equation}
 \begin{equation}
-    B = \frac{N}{L}\mu_0 I \hspace{5em} \text{mit} \hspace{1em} \frac{N}{L} = n \hspace{0.5em} \text{(Windungsdichte)}
+    B = \frac{N}{L}\mu_0 I \qq{mit} \frac{N}{L} = n \qq{(Windungsdichte)}
 \end{equation}
 \paragraph{Schreiben Sie einen Ausdruck für die Lorentzkraft (nicht die verallgemeinerte
     Lorentzkraft) einer bewegten Ladung im Magnetfeld an. Beschreiben Sie alle verwendeten Formelsymbole
     und leiten Sie damit die Kraft auf einen geraden, stromdurchflossenen Leiter im homogenen Magnetfeld
-    her.}
+    her.}~\\
 \begin{equation}
     \textbf{F} = q(\textbf{v} \times \textbf{B})
 \end{equation}
@@ -1050,7 +1056,8 @@ $N$ ist in diesem Zusammenhang die Anzahl der Windungen.
 \paragraph{Schreiben Sie eine Ausdruck für das Magnetfeld zweier paralleler, stromdurchflossener,
     zylindrischer Leiter an. Erstellen Sie ein Diagramm der magnetischen Feldstärke als Funktion des
     Ortes entlang einer Linie, die die Achsen beider Leiter unter \SI{90}{\degree} schneidet. Welche
-    Richtung hat das Magnetfeld entlang dieser Linie?}
+    Richtung hat das Magnetfeld entlang dieser Linie?}~\\
+
 Nach dem Superpositionsprinzip addieren sich die beiden Magnetfelder ($r_0$: Radius des Drahtes):
 \begin{align}
     B_{ges} & =B_1 + B_2 \notag                                                 \\
@@ -1082,16 +1089,16 @@ Somit ergibt sich:
     homogenen Magnetfeld her. Die Drehachse ist parallel zu zwei Seiten der Leiterschleife und senkrecht
     zur Richtung des Magnetfeldes. Bei welchem Winkel zwischen Leiterschleife und Magnetfeldrichtung ist
     das Drehmoment maximal? Bei welchem Winkel ist der magnetische Fluss durch die Leiterschleife
-    maximal?}
+    maximal?}~\\
 \begin{figure}[H]
     \centering
     \label{Drehmoment}
     \includegraphics[height=6cm]{image/05/5.5.JPG}
 \end{figure}
-Ausgehend von den früher hergeleiteten Zusammenhang, kann man die Kraft, die auf die Leiterschleife wirkt als das Kreuzprodukt zwischen der Seite $a$ und dem Magnetfeld $B$ interpretieren.
+Ausgehend von den früher hergeleiteten Zusammenhang, kann man die Kraft, die auf die Leiterschleife wirkt als das Kreuzprodukt zwischen der Seite $a$ und dem Magnetfeld $\vb{B}$ interpretieren.
 Diese wirkt nur auf die Längen $a$, da diese parallel zur Drehachse liegen und somit die Vektoren des Magnetfeldes in beiden Drähten entgegengesetzte Richtungen aufzeigen.
 \begin{equation}
-    F = a I ( \hat{e}_a \times B)
+    \vb{F} = a I ( \vb{\hat{e}}_a \cross \vb{B})
 \end{equation}
 Um das wirkende Drehmoment zu bestimmen, wird das Kreuzprodukt des Abstandes vom Drehmittelpunkt mit der auf die Teile der Leiterschleife wirkende Kraft gebildet.
 \begin{equation}
@@ -1101,7 +1108,7 @@ Der Magnetische Fluss ist maximal, wenn das Flächenintegral aus Gleichung \ref{
 Skalarprodukt zwischen B-Vektor und dem Flächenvektor maximal ist. Also wenn die beiden Vektoren parallel sind.
 \begin{equation}
     \label{eq:magnetischerFluss}
-    \Phi_m = \int \textbf{B} d\textbf{A}
+    \Phi_m = \int \vb{B} \dd{\vb{A}}
 \end{equation}
 Was man aus diesem Zusammenhang erkennt ist, dass das Drehmoment am größten ist wenn der Flächennormalvektor $\textbf{A}$ orthogonal und somit im 90° Winkel zum Vektorfeld $\textbf{B}$ steht
 \paragraph{Ein geladenes Teilchen ist bei $t=0$ am Ort $x=(0,0,0)$ mit der Geschwindigkeit
@@ -1125,11 +1132,13 @@ Geschwindigkeit angepasst. Das Intervall kann direkt mit der Änderung der Spalt
 \begin{figure}[H]
     \includegraphics{image/05/5.7.JPG}
 \end{figure}
-\begin{align}
-    \textbf{F} & = q(\textbf{E} + \textbf{v} \times \textbf{B}) = 0 \\
-    \\
-    v          & = \frac{E}{B}
-\end{align}
+\begin{equation}
+    \vb{F} = q \cdot (\vb{E} + \vb{v} \cross \vb{B}) = \vb{0}
+\end{equation}
+%
+\begin{equation}
+    v = \frac{E}{B}
+\end{equation}
 \paragraph{Beschreiben Sie den Hall-Effekt und leiten Sie ausgehend von der Lorentzkraft einen
     Ausdruck für die Hall-Spannung für einen Leiter mit rechteckigem Querschnitt im homogenen Magnetfeld
     her.}
@@ -2389,7 +2398,7 @@ Der Brechungsindex $n$ ist das Verhältnis der Wellenlänge $\lambda_0$ im Vakuu
 $\lambda$ im Medium.
 
 \begin{equation}
-	n = \frac{\lambda_0}{\lambda} = \frac{k}{k_0} = \frac{c}{c_0} = \sqrt{\varepsilon_r \mu_r}
+    n = \frac{\lambda_0}{\lambda} = \frac{k}{k_0} = \frac{c}{c_0} = \sqrt{\varepsilon_r \mu_r}
 \end{equation}
 
 Der komplexwertige Brechungsindex $n = n_r + i \kappa = n_r + i n_i$ vereint den klassischen
@@ -2427,9 +2436,12 @@ monochromatischen Wellen sinnvoll, ansonsten ist der Brechungsindex $n(t)$ zeita
 
 \section{Wellen an Grenzflächen, optische Anisotropie und Polarisation}
 \label{Wellen an Grenzflaechen, optische Anisotropie und Polarisation}
-
-\paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s- und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dichteren Medium.}~
-
+%
+\paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s- und p-polarisiertes Licht
+    als Funktion des Einfallswinkels für Reflexion am optisch dichteren Medium.}~\\
+%
+dünn $\rightarrow$ dicht
+%
 \begin{figure}[H]
     \centering
     \begin{samepage}
@@ -2438,9 +2450,12 @@ monochromatischen Wellen sinnvoll, ansonsten ist der Brechungsindex $n(t)$ zeita
         \label{fig:reflexion_dicht}
     \end{samepage}
 \end{figure}
-
-\paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s- und p-polarisiertes Licht als Funktion des Einfallswinkels für Reflexion am optisch dünneren Medium.}~
-
+%
+\paragraph{Zeichnen Sie ein Diagramm mit dem winkelabhängigen Verlauf des Reflexionsvermögens für s- und p-polarisiertes Licht
+    als Funktion des Einfallswinkels für Reflexion am optisch dünneren Medium.}~\\
+%
+dicht $\rightarrow$ dünn
+%
 \begin{figure}[H]
     \centering
     \begin{samepage}
@@ -2449,204 +2464,173 @@ monochromatischen Wellen sinnvoll, ansonsten ist der Brechungsindex $n(t)$ zeita
         \label{fig:reflexion_duenn}
     \end{samepage}
 \end{figure}
-
-
+%
 \paragraph{Was bedeutet „Reflexionskoeffizient“ und „Reflexionsvermögen“ (Reflektivität), „Transmissionskoeffizient“ und „Transmissionsvermögen“ (Transmissionsgrad)? Wie groß ist das Reflexionsvermögen einer Grenzfläche zwischen zwei transparenten Medien bei Lichteinfall senkrecht auf die Grenzfläche?}~
-
-\subsubsection*{Grundlagen}
-%
-Annahme: s-polarisierte Welle\\
-Die Amplituden der einfallenden und der reflektierten Welle müssen
-sich zur Amplitude der gebrochenen Welle addieren:
-%
-\begin{equation}
-	\vb{A}_{es} + \vb{A}_{rs} = \vb{A}_{gs}
-\end{equation}
-%
-Don't know $\implies$ \\
-Weiters gilt:
-%
-\begin{equation}
-	k_{ey} A_{es} + k_{ry} A_{rs} = k_{gy} A_{gs}
-\end{equation}
-%
-Bei der reflektierten Welle ändert die $y$-Komponente der reflektierten
-Welle nur ihr Vorzeichen:
-%
-\begin{equation}
-	k_{ry} = -k_{ey}
-\end{equation}
-%
-Daraus folgt:
-%
-\begin{equation}
-	A_{es} - A_{rs} = \frac{k_{gy}}{k_{ey}} A_{gs} = a A_{gs}
-\end{equation}
-%
-Der Vorfaktor $a$ lässt sich schreiben als:
-%
-\begin{equation}
-	a = \frac{k_{gy}}{k_{ey}} = \frac{n_2 \cos(\beta)}{n_1 \cos(\alpha)}
-\end{equation}
 %
 \subsubsection*{Reflexions- und Transmissionskoeffizient}
 %
-Der Reflexionskoeffizient $\varrho_s$ beschreibt das Verhältnis der Amplituden von reflektierter Welle zu Eingangswelle:
+Der \textit{Reflexionskoeffizient $\varrho_s$} beschreibt das Verhältnis der Amplituden von reflektierter Welle $A_r$
+zu Eingangswelle $A_e$. Analog dazu beschreibt der \textit{Transmissionskoeffizient $\tau_s$} das Verhältnis von gebrochener
+Amplitude $A_g$ zu einfallender Amplitude $A_e$. Bei den Formeln für diese Verhältnisse muss zwischen s- und p-Polarisation
+unterschieden werden. Hilfsparameter $a$:
+%
+\[a = \frac{n_2 \cos(\beta)}{n_1 \cos(\alpha)}\]
+
+\textbf{s-Polarisation:}
 %
 \begin{equation}
-    \label{eq:reflexionskoeffizient}
-    \varrho_s = \frac{A_{\text{rs}}}{A_{\text{es}}} = \frac{1-a}{1+a} = -\frac{\sin(\alpha - \beta)}{\sin(\alpha + \beta)}
+    \label{eq:reflexionskoeffizient_s}
+    \varrho_s = \frac{A_{rs}}{A_{es}} = \frac{1-a}{1+a} = -\frac{\sin(\alpha - \beta)}{\sin(\alpha + \beta)}
 \end{equation}
 %
-Analog dazu der Transmissionskoeffizient $\tau_s$:
+\begin{equation}
+    \label{eq:transmissionskoeffizient_s}
+    \tau_s = \frac{A_{gs}}{A_{es}} = \frac{2}{1+a} = \frac{2 \sin (\beta) \cos{\alpha}}{\sin (\alpha + \beta)}
+\end{equation}
+%
+\textbf{p-Polarisation:}
 %
 \begin{equation}
-    \label{eq:transmissionskoeffizient}
-    \tau_s = \frac{A_{\text{gs}}}{A_{\text{es}}} = \frac{2}{1+a} = \frac{2 \sin (\beta) \cos{\alpha}}{\sin (\alpha + \beta)}
+    \label{eq:reflexionskoeffizient_p}
+    \varrho_p = \frac{A_{rp}}{A_{ep}} = \frac{\tan(\alpha - \beta)}{\tan(\alpha + \beta)}
+\end{equation}
+%
+\begin{equation}
+    \label{eq:transmissionskoeffizient_p}
+    \tau_p = \frac{A_{gp}}{A_{ep}} = \frac{2 \sin(\beta) \cos(\alpha)}{\sin(\alpha + \beta) \cos(\alpha - \beta)}
 \end{equation}
 %
 \subsubsection*{Reflexions- und Transmissionsvermögen}
-Das Transmissionsvermögen $T$ beschreibt das Verhältnis der Intensitäten der hindurchgeschickten zur einfallenden Welle im zeitlichen Mittel.
 %
-\begin{equation}
-    \label{eq:transmissionsvermoegen}
-    T = \frac{\bar{I}_{\text{t}} \cdot \cos (\beta)}{\bar{I}_{\text{e}}\cdot \cos (\alpha)} = \frac{n_2 \cos (\beta) A_{\text{g}}^2}{n_1 \cos (\alpha) A_{\text{e}}^2}
-\end{equation}
-%
-Reflexionsvermögen:
+Das Reflexionsvermögen $R$ beschreibt das Verhältnis der Intensitäten von reflektierter
+zu einfallender Welle und lässt sich durch den Reflexionskoeffizienten $\varrho$ ausdrücken.
 %
 \begin{equation}
     \label{eq:reflexionsvermoegen}
-    R = \frac{\bar{I}_{\text{r}}}{\bar{I}_{\text{e}}} = \frac{A_{\text{r}}^2}{A_{\text{e}}^2}
+    R = \frac{I_r}{I_e} = \varrho^2
 \end{equation}
 %
-Der Winkel spielt hierbei keine Rolle da $\alpha = \alpha'$ gilt.
-
-Normalkomponente von $R$ (s für senkrecht):
+Analog dazu beschreibt das Transmissionsvermögen $T$ das Verhältnis der Intensitäten der gebrochenen zur einfallenden Welle.
+Da der Lichtstrahl bei seiner Brechung eine Querschnittsänderung erfährt, ist zusätzlich zum Quadrat vom Transmissionskoeffizienten
+$\tau$ noch ein Korrekturfaktor nötig:
 %
 \begin{equation}
-    \label{eq:reflexionsvermoegen_senkrecht}
-    R_{\text{s}} = \left( \frac{\sin(\alpha - \beta)}{\sin(\alpha + \beta)} \right)^2
+    \label{eq:transmissionsvermoegen}
+    T = \frac{I_g}{I_e} = \tau^2 \cdot a = \tau^2 \cdot \frac{n_2 \cos(\beta)}{n_1 \cos(\alpha)}
 \end{equation}
 %
-Parallelkomponente:
-%
-\begin{equation}
-    \label{eq:reflexionsvermoegen_parallel}
-    R_{\text{p}} = \left( \frac{\tan(\alpha - \beta)}{\tan(\alpha + \beta)} \right)^2
-\end{equation}
-%
-Senkrechter Einfall:
+Reflektivität bei senkrechtem Einfall:
 %
 \begin{equation}
     \label{eq:reflexionsvermoegen_senkrechter_einfall}
     R(\alpha = 0) = \left( \frac{n_1 - n_2}{n_1 + n_2} \right)^2
 \end{equation}
 %
-Summe:
+Weiters müssen sich $R$ und $T$ im selben Polarisationszustand immer zu 1 addieren:
 %
 \begin{equation}
     \label{eq:summe_reflexion_transmission}
     \begin{split}
+        T + R     &= 1 \\
         T_p + R_p &= 1 \\
-        T_s + R_s &= 1 \\
-        T + R     &= 1
+        T_s + R_s &= 1
     \end{split}
 \end{equation}
-
-
-
-\myparagraph{Erklären Sie mithilfe einer Skizze die Begriffe „Einfallswinkel“, „Reflexionswinkel“, „Brechungswinkel“, „Einfallsebene“. Was bedeutet s- bzw. p-Polarisation? Leiten Sie das Reflexions und Brechungsgesetz her.}
+%
+\paragraph{Erklären Sie mithilfe einer Skizze die Begriffe „Einfallswinkel“, „Reflexionswinkel“, „Brechungswinkel“,
+    „Einfallsebene“. Was bedeutet s- bzw. p-Polarisation? Leiten Sie das Reflexions- und Brechungsgesetz her.}~
 %
 \begin{figure}[H]
     \centering
     \begin{samepage}
-        \includegraphics[width=0.6\textwidth]{image/15/brechung_reflexion.pdf}
+        \includegraphics[width=0.4\textwidth]{image/15/brechung_reflexion.pdf}
         \caption{Erklärung der Begriffe „Einfallswinkel“, „Reflexionswinkel“, „Brechungswinkel“, „Einfallsebene“}
         \label{fig:reflexion_brechung}
     \end{samepage}
 \end{figure}
 %
-\begin{figure}[!h]
+\begin{figure}[H]
     \centering
     \begin{samepage}
-        \includegraphics[width=0.5\textwidth]{image/15/p_s_polarisation.png}
+        \includegraphics[width=0.5\textwidth]{image/15/polarisationen.png}
         \caption{s- und p-Polarisation}
         \label{fig:s-p-polarisation}
     \end{samepage}
 \end{figure}
 %
-s- und p-Polarisation beschreiben die Schwingungsebene der elektromagnetischen Welle Licht relativ zur Einfallsebene (siehe \autoref{fig:s-p-polarisation}). \enquote{s} steht für \enquote{senkrecht} zur Einfallsebene, \enquote{p} steht für \enquote{parallel} zur Einfallsebene (in der Einfallsebene liegend).
+\textbf{s-} und \textbf{p-Polarisation} beschreiben die Schwingungsebene der elektromagnetischen Welle Licht relativ
+zur Einfallsebene (siehe \autoref{fig:s-p-polarisation}). \enquote{s} steht für \enquote{senkrecht} zur Einfallsebene,
+\enquote{p} steht für \enquote{parallel} zur Einfallsebene (in der Einfallsebene liegend).
 %
-\subsubsection*{Herleitung Reflexionsgesetz}~
+\subsubsection*{Herleitung Reflexions- und Brechungsgesetz}~
 %
 Für die Wellenvektoren der einfallenden, reflektierten und gebrochenen
-Welle muss für jeden beliebigen Punkt $\vb{r}$ auf der Einfallsebene
+Welle muss für jeden beliebigen Punkt $\vb{r}$ auf der Grenzfläche
 gelten:
 %
 \begin{equation}
-	\vb{k}_e \vb{r} = \vb{k}_r \vb{r} = \vb{k}_g \vb{r}
+    \vb{k}_e \vb{r} = \vb{k}_r \vb{r} = \vb{k}_g \vb{r}
 \end{equation}
 %
-Die Einfallsebene liege in der $x$-$z$-Ebene. Für beliebige $x$ und $z$
-muss demnach gelten:
+Die Projektionen auf die Grenzfläche sind also ident. Diese Fläche liege nun in der $x$-$z$-Ebene.
+Für beliebige $x$ und $z$ muss demnach gelten:
 %
 \begin{equation}
-	\begin{split}
-		k_{ex} = k_{rx} = k_{gx} \\
-		k_{rz} = k_{gz} = 0
-	\end{split}
+    \begin{split}
+        k_{ex} &= k_{rx} = k_{gx} \\
+        k_{rz} &= k_{gz} = 0
+    \end{split}
 \end{equation}
-%
-Aus der Konstanz von $k_x$ lässt sich ableiten:
-%
-\begin{equation}
-	k_x = n_1 k_0 \sin(\alpha) = n_1 k_0 \sin(\alpha') = n_2 k_0 \sin(\beta)
-\end{equation}
-%
-Da $\alpha' = \alpha$ gilt, folgt weiters das Snellius'sche Brechungsgesetz:
-%
-\begin{equation}
-	n_1 \sin(\alpha) = n_2 \sin(\beta)
-\end{equation}
-%
-\paragraph{Was ist der Brewsterwinkel? Erstellen Sie eine Skizze einer Luft-Glas Grenzfläche und zeichnen Sie alle möglichen Brewsterwinkel ein. Wie ist der Polarisationszustand der reflektierten und transmittierten Welle bei unpolarisierter einfallender Welle?}
 %
 \begin{figure}[H]
     \centering
     \begin{samepage}
-        \includegraphics[width=\textwidth]{image/15/brewster.jpg}
+        \includegraphics[width=0.4\textwidth]{image/15/brechungsgesetz_hohenau.png}
+        \caption{Brechungsgesetz}
+        \label{fig:brechungsgesetz}
+    \end{samepage}
+\end{figure}
+%
+Aus der Konstanz von $k_x$ lässt sich ableiten:
+%
+\begin{equation}
+    k_x = n_1 k_0 \sin(\alpha) = n_1 k_0 \sin(\alpha') = n_2 k_0 \sin(\beta)
+\end{equation}
+%
+Aus diesem Zusammenhang lässt sich das Reflexionsgesetz und damit wiederum das Brechungsgesetz ableiten:
+%
+\begin{align}
+    \alpha = \alpha' \\
+    \frac{\sin(\alpha)}{\sin(\beta)} = \frac{n_2}{n_1}
+\end{align}
+%
+\paragraph{Was ist der Brewsterwinkel? Erstellen Sie eine Skizze einer Luft-Glas Grenzfläche und zeichnen Sie alle
+    möglichen Brewsterwinkel ein. Wie ist der Polarisationszustand der reflektierten und transmittierten Welle bei
+    unpolarisierter einfallender Welle?}~\\
+
+\begin{figure}[H]
+    \centering
+    \begin{samepage}
+        \includegraphics[width=0.5\textwidth]{image/15/brewster_hohenau.png}
         \caption{Brewster-Winkel $\alpha_B$}
         \label{fig:brewster-winkel}
     \end{samepage}
 \end{figure}
 %
-Schließen bei Lichtbrechung und -reflexion der gebrochene und der reflektierte Lichtstrahl einen Winkel von \SI{90}{\degree} ein, so spricht man beim Eintrittswinkel vom \textit{Brewster-Winkel} $\alpha_B$. Sowohl das gebrochene, als auch das reflektierte Licht sind vollständig linear polarisiert, da nur s-polarisiertes Licht reflektiert wird. Das transmittierte Licht ist demnach p-polarisiert.
+Schließen bei Lichtbrechung und -reflexion der gebrochene und der reflektierte Lichtstrahl einen Winkel von \SI{90}{\degree} ein,
+so spricht man beim Eintrittswinkel vom \textit{Brewster-Winkel} $\alpha_B$. Das reflektierte Licht ist vollständig s-polarisiert,
+das gebrochene Licht hat sowohl s-, als auch p-Polarisationsanteile.
 %
 \begin{equation}
     \label{eq:brewster-winkel}
     \tan(\alpha_B) = \frac{n_2}{n_1}
 \end{equation}
+%
+\paragraph{Was ist Totalreflexion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt die Polarisation dabei?}~\\
 
-
-
-\paragraph{Was ist Totalreflextion und unter welchen Bedingungen tritt sie auf? Welche Rolle spielt die Polarisation dabei?}~
-%
-%\textbf{Rolle?}
-%
-Von Totalreflexion spricht man, wenn ein einfallender Lichtstrahl vollständig reflektiert und nicht teilweise transmittiert wird.
-Lässt man eine Lichtwelle aus einem optisch dichteren Medium 1 ins optische dünnere Medium 2 ($n_1 > n_2$) laufen (\textbf{nur dicht nach dünn!}), so folgt aus dem Brechungsgesetz für den Winkel $\alpha$:
-%
-\[\sin(\alpha) = \frac{n_2}{n_1} \cdot \sin(\beta)\]
-%
-Aus der generellen Gültigkeit von
-%
-\[\sin(\varphi) \leq 1 \quad \forall \varphi\]
-%
-wird ersichtlich, dass $\sin(\beta)$ sehr klein (und damit $\beta$ sehr groß) werden muss, sodass
-$\sin(\alpha) \leq 1$ noch immer gewährleistet ist. Im Extremfall von $\beta = \SI{90}{\degree}$
-wird Licht bereits nicht mehr gebrochen, sondern nur mehr reflektiert, und man spricht vom
-\textit{Grenzwinkel der Totalreflexion $\alpha_G$}.
+Von Totalreflexion spricht man, wenn ein einfallender Lichtstrahl vollständig reflektiert und nicht teilweise gebrochen wird.
+Dies ist \textbf{nur von dicht nach dünn} möglich! Theoretisch ist hierbei $\beta > \SI{90}{\degree}$, deshalb wird das Licht nur mehr
+reflektiert.
 %
 \begin{figure}[H]
     \centering
@@ -2659,13 +2643,14 @@ wird Licht bereits nicht mehr gebrochen, sondern nur mehr reflektiert, und man s
 \end{figure}
 %
 $\alpha_G$ berechnet sich wie folgt:
+%
 \begin{equation}
     \label{eq:grenzwinkel_totalreflexion}
     \sin(\alpha_G) = \frac{n_2}{n_1}
 \end{equation}
 %
-Bei der Totalreflexion erfolgen für die beiden Polarisationskomponenten (s und p) Phasensprünge $\Delta \varphi_i$, die verschieden groß sind.\\
-%
+Bei der Totalreflexion erfolgen für die beiden Polarisationskomponenten (s und p) Phasensprünge $\Delta \varphi_i$, die verschieden groß sind.
+
 \textbf{senkrecht} polarisierte Komponente:
 %
 \begin{equation}
@@ -2677,19 +2662,23 @@ Bei der Totalreflexion erfolgen für die beiden Polarisationskomponenten (s und 
 %
 \begin{equation}
     \label{eq:totalreflexion_p_polarisation}
-    \tan(\frac{\Delta \varphi_p}{2}) = \frac{n_1^2}{n_2^2} \cdot \frac{1}{\cos(\alpha)} \sqrt{\sin^2(\alpha) - \left(\frac{n_2}{n_1}\right)^2}
+    \tan(\frac{\Delta \varphi_p}{2}) = \left( \frac{n_1}{n_2} \right)^2 \cdot \frac{1}{\cos(\alpha)} \sqrt{\sin^2(\alpha) - \left(\frac{n_2}{n_1}\right)^2}
 \end{equation}
-
-
-\myparagraph{Was sind optisch anisotrope Kristalle und wie lassen sich die unterschiedlichen Richtungen der elektrischen Feldstärke und der dielektrischen Verschiebungsdichte mit dem mechanischen Analogmodell verstehen? Wie sieht der Zusammenhang zwischen elektrischer Feldstärke und dielektrischer Verschiebungsdichte dabei formal aus?}
 %
-In optisch anisotropen Medien ist die Brechzahl von der Ausbreitungsrichtung der elektromagnetischen Lichtwelle abhängig. Die Rückstellkräfte der einzelnen Elektronen (und damit auch die Schwingungsrichtung der Gesamtwelle) hängen von der Kristallstruktur ab. Diese Struktur ist nicht rotationssymetrisch um die optische Achse des Gitters.
+\paragraph{Was sind optisch anisotrope Kristalle und wie lassen sich die unterschiedlichen Richtungen
+    der elektrischen Feldstärke und der dielektrischen Verschiebungsdichte mit dem mechanischen Analogmodell
+    verstehen? Wie sieht der Zusammenhang zwischen elektrischer Feldstärke und dielektrischer Verschiebungsdichte dabei formal aus?}~
 
-Daraus resultiert, dass die elektrische Feldstärke $\textbf{E}$ und die dielektrischen Verschiebungsdichte $\textbf{D}$ im anisotropen Kristall \textit{nicht} unbedingt parallel sein müssen.
+In optisch anisotropen (= nicht in alle Richtungen gleiche physikalische Eigenschaften aufweisenden) Medien ist die Brechzahl
+von der Ausbreitungsrichtung der elektromagnetischen Welle abhängig. Die Rückstellkräfte der einzelnen Elektronen (und damit
+auch die Schwingungsrichtung der Gesamtwelle) hängen von der Kristallstruktur ab. Diese Struktur ist nicht rotationssymetrisch um
+die optische Achse des Gitters.
+
+Daraus resultiert, dass die elektrische Feldstärke $\vb{E}$ und die dielektrischen Verschiebungsdichte $\vb{D}$ im anisotropen Kristall \textit{nicht} unbedingt parallel sein müssen.
 
 Dies lässt sich durch ein mechanisches Analogmodell anschaulich beschreiben (\autoref{fig:mechanisches_analogmodell}):
 %
-\begin{figure}[!h]
+\begin{figure}[H]
     \centering
     \begin{samepage}
         \includegraphics[width=0.55\textwidth]{image/15/mechanisches_modell.jpg}
@@ -2698,51 +2687,53 @@ Dies lässt sich durch ein mechanisches Analogmodell anschaulich beschreiben (\a
     \end{samepage}
 \end{figure}
 %
-Zwei verschieden starke Spiralfedern sind in $x$- bzw. $y$-Richtung aufgespannt. Der Verbindungspunkt P ist durch eine schwarze Scheibe markiert. Zieht man jetzt die Scheibe in die Diagonalrichtung, so folgt sie nicht dieser Richtung, sondern der in der Skizze strichlierten Linie, die gegen die Diagonale geneigt ist (resultierender Kraftvektor). [Die schwache Feder in positive $x$-Richtung lässt sich leichter auslenken als die in positive $y$-Richtung.]
+Zwei verschieden starke Spiralfedern sind in $x$- bzw. $y$-Richtung aufgespannt. Der Verbindungspunkt P ist durch eine schwarze Scheibe markiert. Zieht man jetzt die Scheibe in die Diagonalrichtung, so folgt sie nicht dieser Richtung, sondern der in der Skizze strichlierten Linie, die gegen die Diagonale geneigt ist (resultierender Kraftvektor).
+Die rechte schwache Feder lässt sich leichter auslenken als die obere starke.]
 
 Um den Zusammenhang
-\[\textbf{D} = \varepsilon \cdot \varepsilon_0 \cdot \textbf{E}\]
-zu wahren, da nun -- wie bereits zuvor erwähnt -- $\textbf{E}$ und  $\textbf{D}$ \textit{nicht} mehr parallel sind, ist $\varepsilon$ keine Konstante (Skalar) mehr, sondern ein \textit{Tensor zweiter Stufe}.
+\[\vb{D} = \varepsilon \cdot \varepsilon_0 \cdot \vb{E}\]
+zu wahren, da $\textbf{E}$ und  $\textbf{D}$ nun \textit{nicht} mehr parallel sind, ist $\varepsilon$ keine Konstante (Skalar) mehr, sondern ein \textit{Tensor zweiter Stufe}.
 \[\varepsilon = \begin{pmatrix}
         \varepsilon_{xx} & \varepsilon_{xy} & \varepsilon_{xz} \\
         \varepsilon_{yx} & \varepsilon_{yy} & \varepsilon_{yz} \\
         \varepsilon_{zx} & \varepsilon_{zy} & \varepsilon_{zz} \\
     \end{pmatrix}\]
-
-
-\myparagraph{Was sind optisch einachsige bzw. optisch zweiachsige Kristalle. Wodurch unterscheidet sich deren $\epsilon$-Tensoren in Hauptachsendarstellung? Was ist die optische Achse eines doppelbrechenden Kristalles?}
 %
+\paragraph{Was sind optisch einachsige bzw. optisch zweiachsige Kristalle. Wodurch unterscheidet sich deren $\varepsilon$-Tensoren in Hauptachsendarstellung? Was ist die optische Achse eines doppelbrechenden Kristalles?}~\\
+
 Die Brechungseigenschaften gewisser optisch anisotroper Kristalle lassen sich durch ein zugehöriges \textit{Brechungsindex-Ellipsoid} beschreiben (siehe nächste Frage).
 
 Dabei kommen zwei Varianten des Indexellipsoides vor:
+%
 \begin{enumerate}
-    \item optisch einachsige Indexellipsoide
-    \item optisch zweiachsige Indexellipsoide
+    \item \textbf{Optisch einachsige} Indexellipsoide haben \textit{eine} optische Achse und \textit{zwei} verschiedene Brechungsindizes.
+    \item \textbf{Optisch zweiachsige} Indexellipsoide haben \textit{zwei} optische Achsen und \textit{drei} verschiedene Brechungsindizes.
 \end{enumerate}
-
-\textbf{Optisch einachsige} haben \textit{eine} optische Achse und \textit{zwei} verschiedene Brechungsindizes.
-
-\textbf{Optisch zweiachsige} haben \textit{zwei} optische Achsen und \textit{drei} verschiedene Brechungsindizes.
-
-
-\paragraph{Zeichnen und erklären Sie eine zweidimensionale Darstellung des Indexellipsoides eines optisch einachsigen Kristalles. Wie unterscheidet sich das Verhalten von ordentlichem und außerordentlichem Strahl bei optisch einachsigen Kristallen?}
+%
+\paragraph{Zeichnen und erklären Sie eine zweidimensionale Darstellung des Indexellipsoides eines optisch einachsigen Kristalles.
+    Wie unterscheidet sich das Verhalten von ordentlichem und außerordentlichem Strahl bei optisch einachsigen Kristallen?}
 %
 \subsubsection*{Indexellipsoid}
-Für nicht-absorbierende und nicht-optisch-aktive Medien wird der relative Dielektrizitätstensor symmetrisch, dadurch lässt sich dieser Tensor ($\approx$Matrix) diagonalisieren (Hauptachsen-Transformation).
+Für nicht-absorbierende und nicht-optisch-aktive Medien wird der relative Dielektrizitätstensor symmetrisch, dadurch lässt sich dieser
+Tensor diagonalisieren (Hauptachsen-Transformation).
+%
 \[\varepsilon_{HA} = \begin{pmatrix}
         \varepsilon_1 & 0             & 0             \\
         0             & \varepsilon_2 & 0             \\
         0             & 0             & \varepsilon_3 \\
     \end{pmatrix}\]
+%
 Der Brechungsindex $n$ steht mit der relativen Dielektrizitätskonstante in folgender Beziehung:
+%
 \begin{equation}
     \label{eq:brechungsindex_permittivitaet}
     n = \sqrt{\varepsilon}
 \end{equation}
+%
 Demnach lassen sich aus den Eigenwerten von $\varepsilon_{HA}$ nach \autoref{eq:brechungsindex_permittivitaet} drei Brechungsindizes berechnen.
 
 Trägt man in einem Hauptachsensystem $(n_1, n_2, n_3)$ einen Vektor
-\[\textbf{n} = \begin{pmatrix}
+\[\vb{n} = \begin{pmatrix}
         n_x \\
         n_y \\
         n_z
@@ -2797,23 +2788,33 @@ Der Nachteil der Polarisationsfolien ist ihre relativ große Abschwächung auch 
 %
 Der Grundkristall für einen Glan-Thompson-Polarisator ist so aus einem Kalkspat-Kristall geschnitten, dass die optische Achse parallel zur Eintrittsfläche liegt. Beim Einfall von unpolarisierem Licht wird dieses in einen ordentlichen und einen außerordentlichen Strahl aufgespalten, die \textbf{parallel} zueinander verlaufen, jedoch mit unterschiedlichen Wellengeschwindigkeiten ($c = c_0 / n_i$). Beide Strahlen treffen unter demselben Winkel auf die Klebefläche.
 Der Kleber (z.B. Kanadabalsam) hat einen Brechungsindex $n_K = \num{1.54}$, der kleiner ist als der Brechungsindex $n_o = \num{1.66}$ des
-ordentlichen Strahls, aber größer als der des außerordentlichen Strahls ($n_e = \num{1.49}$). Aufgrund unterschiedlicher Verhältnisse der Brechungsindizes wird der ordentliche Strahl totalreflektiert, der außerordentliche wird transmittiert und läuft in dieselbe Richtung weiter.
-
-
-\myparagraph{Beschreiben Sie die Funktion eines $\lambda/4$-Plättchens. Welche Bedingungen muss es erfüllen? (Skizze!)}
+ordentlichen Strahls, aber größer als der des außerordentlichen Strahls ($n_e = \num{1.49}$).
 %
+\[n_e < n_K < n_o\]
+%
+Aufgrund unterschiedlicher Verhältnisse der Brechungsindizes wird der ordentliche Strahl totalreflektiert, der außerordentliche wird transmittiert und läuft in dieselbe Richtung weiter.
+%
+\paragraph{Beschreiben Sie die Funktion eines $\lambda/4$-Plättchens. Welche Bedingungen muss es erfüllen? (Skizze!)}~\\
+
 Mit einem Zirkular-Polarisator ($\lambda/4$-Plättchen) lässt sich aus linear polarisiertem einfallenden Licht elliptisch oder zirkular polarisiertes transmittiertes Licht erzeugen (auch umgekehrte Richtung möglich).
 
-Beim Einfall in den Kristall wird das Licht in einen ordentlichen und einen außerordentlichen Lichtstrahl gebrochen (stehen orthogonal aufeinander). Diese erfahren unterschiedliche Brechungsindizes $n_1$ (schnell) bzw. $n_3$ (langsam) und haben nach Durchlaufen der Dicke $d$ des Kristalls die relative Phasenverschiebung
+Beim Einfall in den optisch anisotropen Kristall wird das Licht in einen ordentlichen und einen außerordentlichen Lichtstrahl gebrochen (stehen orthogonal aufeinander).
+Diese erfahren unterschiedliche Brechungsindizes $n_1 = n_{\text{schnell}} = n_s$ bzw. $n_3 = n_{\text{langsam}} = n_l$ und haben nach Durchlaufen der Dicke $d$ des Kristalls die relative Phasenverschiebung
 %
-\[\Delta \varphi = \frac{2\pi}{\lambda_0} \cdot d \cdot \bigg( n_{\text{langsam}} - n_{\text{schnell}} \bigg) \]
+\[\Delta \varphi = k_0 \cdot d \cdot (n_l - n_s) \]
 %
-Wählt man $d$ derart, dass $d \cdot (n_3 - n_1) = \lambda_0/4$ gilt, so beträgt die Phasenverschiebung, mit der sich die beiden Strahlen beim Austritt wieder überlagern, $\Delta \varphi = \pi/2$.
+Man wählt $d$ derart, dass
+%
+\[d = \frac{\lambda}{4} \cdot \frac{1}{n_l - n_s}\]
+%
+gilt. Die Phasenverschiebung, mit der sich die beiden Strahlen beim Austritt wieder überlagern, beträgt dann $\Delta \varphi = \pi/2$.
 
-Man dreht nun die optische Achse des Kristalls (dünne planparallele Platte mit optischer Achse in der Plattenebene, siehe \autoref{fig:lambda_viertel}) um einen bestimmten Winkel $\alpha$ gegen die Polarisationsrichtung $\textbf{E}$ der einfallenden Welle. Abhängig von $\alpha$ ist die austretende Welle
+Dreht man nun die optische Achse des Kristalls (dünne planparallele Platte mit optischer Achse in der Plattenebene,
+siehe \autoref{fig:lambda_viertel}) um einen bestimmten Winkel $\vartheta$ zwischen $\vb{E}$ und der optischen Achse,
+so ist die Polarisation der austretenden Welle abhängig von $\vartheta$:
 \begin{itemize}
-    \item $\alpha = \SI{45}{\degree} \implies$ zirkular polarisiert
-    \item $\alpha \notin \{0;45\}\si{\degree} \implies$ elliptisch polarisiert
+    \item $\vartheta = \SI{45}{\degree} \implies$ zirkular polarisiert
+    \item $\SI{0}{\degree} \neq \vartheta \neq \SI{45}{\degree} \implies$ elliptisch polarisiert
 \end{itemize}
 %Die Nulllage der resultierenden Lissajous-Figur ist um \SI{45}{\degree} gegenüber des Einfallwinkels gedreht (Überlagerung der um \SI{90}{\degree} verschobenen Komponenten).
 %Beträgt dagegen $\alpha = \SI{0}{\degree}$, so sind die beiden austretenden Strahlen wieder linear polarisiert, jedoch um $\pi/2$ phasenverschoben. Dies wird beim $\lambda/2$-Plättchen genutzt. %??
@@ -2822,55 +2823,49 @@ Man dreht nun die optische Achse des Kristalls (dünne planparallele Platte mit 
     \centering
     \begin{samepage}
         \includegraphics[width=0.5\textwidth]{image/15/lambda_viertel.jpg}
-        \caption{Prinzip des Zirkular-Polarisators ($\lambda/4$-Plättchen). \textbf{a} Anschauliche Darstellung; \textbf{b} Richtung des E-Vektors der einfallenden Welle}
+        \caption{Prinzip des Zirkular-Polarisators ($\lambda/4$-Plättchen). \textbf{a}) Anschauliche Darstellung; \textbf{b}) Richtung von $\vb{E}$ der einfallenden Welle}
         \label{fig:lambda_viertel}
     \end{samepage}
 \end{figure}
+%
+\paragraph{Beschreiben Sie die Funktion eines $\lambda/2$-Plättchens. Welche Bedingungen muss es erfüllen? (Skizze!)}~\\
 
-
-\myparagraph{Beschreiben Sie die Funktion eines $\lambda/2$-Plättchens. Welche Bedingungen muss es erfüllen? (Skizze!)}
+Ein Polarisationsdreher ($\lambda/2$-Plättchen) ergibt sich durch Hintereinanderschalten zweier $\lambda/4$-Plättchen bei paralleler
+Ausrichtung ihrer optischen Achsen. Das erste Plättchen polarisiert das einfallende linear polarisierte Licht zirkular, das zweite
+polarisiert das zirkulare Licht wieder linear. Das Prinzip ist ident zu dem eines $\lambda/4$-Plättchens: Für (Brechzahlen!)
 %
-Ein Polarisationsdreher ($\lambda/2$-Plättchen) ergibt sich durch Hintereinanderschalten zweier $\lambda/4$-Plättchen bei paralleler Ausrichtung ihrer optischen Achsen. Das erste Plättchen polarisiert das einfallende linear polarisierte Licht zirkular, das zweite polarisiert das zirkulare Licht wieder linear. Das Prinzip ist ident zu dem eines $\lambda/4$-Plättchens: Für
+\[d = \frac{\lambda}{2} \cdot \frac{1}{n_s - n_l}\]
 %
-\[d = \frac{\lambda_0}{2} \cdot \frac{1}{n_{\text{schnell}} - n_{\text{langsam}}}\]
-%
-ergibt sich eine Phasenverschiebung von $\Delta \varphi = \pi$ (statt $\pi/2$ bei $\lambda/4$) der beiden Komponenten. Fällt das Licht unter dem Winkel $\alpha$ ein, so verlässt es den Kristall wieder unter $-\alpha$, wurde also um $\Delta \alpha = -2 \alpha$ gedreht.
+ergibt sich eine Phasenverschiebung von $\Delta \varphi = \pi$ (statt $\pi/2$ bei $\lambda/4$) der beiden Komponenten. Fällt das
+Licht unter dem Winkel $\varphi$ ein, so verlässt es den Kristall wieder unter $-\varphi$, wurde also um $\Delta \varphi = -2 \varphi$ gedreht.
 %
 \begin{figure}[!h]
     \centering
     \begin{samepage}
-        \includegraphics[width=0.6\textwidth]{image/15/lambda_halbe.jpg}
+        \includegraphics[width=0.5\textwidth]{image/15/lambda_halbe_3.png}
         \caption{Drehung der Polarisationsebene einer polarisierten
             Welle durch ein $\lambda/2$-Plättchen}
         \label{fig:lambda_halbe}
     \end{samepage}
 \end{figure}
-
-
-\myparagraph{Was ist optische Aktivität und wie lässt sich eine Platte aus optisch aktivem Material von einer $\lambda/2$-Platte unterscheiden?}
 %
+\paragraph{Was ist optische Aktivität und wie lässt sich eine Platte aus optisch aktivem Material von einer $\lambda/2$-Platte unterscheiden?}~\\
+
 Optisch aktive Stoffe drehen bei beliebiger Richtung der Polarisationsebene des einfallenden linear polarisierten Lichtes diese Ebene beim Durchgang durch die Schichtdicke $d$ um einen Winkel
 %
 \[\alpha = \alpha_s \cdot d\]
 %
-Der Proportionalitätsfaktor $\alpha_s$ heißt \textit{spezifisches optisches Drehvermögen}. Man unterscheidet (inklusive Bezeichnungen):
+Der Proportionalitätsfaktor $\alpha_s$ heißt \textit{spezifisches optisches Drehvermögen}. Man unterscheidet
 \begin{itemize}
-    \item rechtsdrehende
-          \begin{itemize}
-              \item + (positiver Drehwinkel)
-              \item D (lat. \textit{dexter} = rechts)
-          \end{itemize}
-    \item linksdrehende
-          \begin{itemize}
-              \item - (negativer Drehwinkel)
-              \item L (lat. \textit{laevus} = links)
-          \end{itemize}
+    \item rechtsdrehende (mit + oder D bezeichnet)
+    \item linksdrehende (mit - oder L bezeichnet)
 \end{itemize}
-optisch aktive Medien. Grund für den Drehsinn sind Symmetrieeigenschaften der Moleküle (quantenmechanische Erklärung).
+optisch aktive Medien. Grund für den Drehsinn sind Symmetrieeigenschaften der Moleküle quantenmechanischen Ursprungs.
 
-\textbf{Unterschied?}\\
-Bei einem $\lambda$/2 Plättchen ist der Winkel des Plättchens zur einfallenden Ebene des lin. polarisierten Lichtes für den Drehwinkel entscheidend.
-Bei Optisch aktivem Material ist lediglich die Wegstrecke durch das Material von Bedeutung.
+\textbf{Unterschied:}\\
+Bei einem $\lambda$/2 Plättchen ist der Einfallswinkel $\varphi$ der Polarisationsebene des linear polarisierten Lichts
+zur optischen Achse des Kristalls für den Drehwinkel entscheidend. Bei optisch aktivem Material ist lediglich die Wegstrecke $d$
+durch das Material von Bedeutung.
 
 \newpage
 
@@ -2881,12 +2876,12 @@ Bei Optisch aktivem Material ist lediglich die Wegstrecke durch das Material von
     diese gut erfüllt sind.}
 
 \begin{enumerate}
-    \item In optisch homogenen Medien und Lichtstrahlen Geraden
-    \item An Grenzflächen gilt das Reflexions- und Brechungsgesetzt
-    \item Strahlen die sich durchdringen überlagern sich aber beeinflussen sich nicht gegenseitig
+    \item In optisch homogenen Medien sind Lichtstrahlen Geraden.
+    \item An Grenzflächen gilt das Reflexions- und Brechungsgesetz.
+    \item Strahlen, die sich durchdringen, überlagern sich, aber beeinflussen sich nicht gegenseitig.
 \end{enumerate}
 
-gilt nur bei optisch linearen Phänomenen.
+Diese gelten nur bei optisch linearen Phänomenen.
 
 \paragraph{Beschreiben Sie die Abbildung in einem ebenen Spiegel. Zeichen Sie den Strahlengang für
     die Abbildung von zwei Gegenständen in unterschiedlichem Abstand vom Spiegel.}
@@ -2898,85 +2893,115 @@ Erzeugt eine ideale Abbildung, dass jeder Punkt P des Raumes einen anderen Punkt
     \includegraphics[width=8cm]{image/17/geo12}
 \end{figure}
 
-\paragraph{Erklären Sie den Unterschied zwischen einem reellen und einem virtuellen Bild.}
+\paragraph{Erklären Sie den Unterschied zwischen einem reellen und einem virtuellen Bild.}~\\
 
-reell: nur für einen Punkt eine genaue Abbildung, Bild ist wirklich vorhanden. Entsteht, wenn Lichtstrahlen von einem Objekt auf eine Fläche treffen und diese von dort in das Auge reflektiert werden.\\
-virtuell: Jeder Punkt ist eine genaue Abbildung. Bild entsteht hinter dem Spiegel (optisches Abbild). Es entsteht zwischen Brennpunkt und Linse (Spiegelbild).  Abbild durch Spiegel ist seitenverkehrt.  Das Bild kann an dem Ort, an dem es erscheint, nicht auf dem Schirm abgebildet werden. Die Lichtstrahlen des Objektes werden so gebrochen, dass es für den Betrachter größer erscheint.
+\textbf{reell:}\\
+Ein reelles Bild ist wirklich vorhanden. Es entsteht, wenn Lichtstrahlen konvergieren und sich an einem Ort zu einem Bild vereinen, somit kann es auch auf einem
+Schirm aufgefangen werden.\\
+
+\textbf{virtuell:}\\
+Ein virtuelles Bild ist nicht wirklich vorhanden. Es entsteht, wenn divergierende Lichtstrahlen ins Auge treffen. Das Auge interprtiert diese automatisch als
+konvergent und verlängert die Strahlen weiter zu einem imaginären Punkt an dem sie konvergieren. Da das Bild nur von unserem Gehirn interpretiert wird und nicht
+reell vorhanden ist, kann es auch nicht auf einem Schirm aufgefangen werden.
+
 
 \paragraph{Zeichnen Sie die 3 Konstruktionsstrahlen bei der Abbildung durch eine dünne Linse.
     Erklären sie, warum diese Strahlen für die Bildkonstruktion gewählt werden und warum sie so
     verlaufen wie sie es eingezeichnet haben. Zeichen Sie Bildweite, Gegenstandsweite und Brennweite
-    ein.}
+    ein.}~\\
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{image/17/geo14}
 \end{figure}
 
-Mittelpunktstrahl (rot): von dem Gegenstand durch den Mittelpunkt zur Linse und auf selben Weg wieder zurück.\\
-Brennpunktstrahl (grün): Vom Gegenstand durch den Brennpunkt und aufgrund der Umkehrbarkeit wird er zum parallel Strahl\\
-Parallelstrahl (blau): Vom Gegenstand zuerst parallel zur Linse dann durch den Brennpunkt (genau umgekehrt zum Brennpunktstrahl)
+\begin{enumerate}
+    \item \textbf{Mittelpunktstrahl (rot):} vom Gegenstand durch den Mittelpunkt der Linse
+    \item \textbf{Brennpunktstrahl (grün):} vom Gegenstand durch den Brennpunkt und ab der Linse parallel zur optischen Achse
+    \item \textbf{Parallelstrahl (blau):} vom Gegenstand zuerst parallel zur optischen Achse bis zur Linse, dann durch den Brennpunkt (genau umgekehrt zum Brennpunktstrahl)
+\end{enumerate}
 
 \paragraph{Konstruieren Sie das Bild eines Gegenstandes durch eine dünne Sammellinse wenn (a) der
     Gegenstand mehr als $2f$ von der Linse entfernt ist und (b) wenn der Gegenstand weniger als $2f$ von
     der Linse entfernt ist. Dabei ist $f$ die Brennweite der Linse.} ~
 
-a)
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{image/17/geo15a}
+    \includegraphics[width=0.8\linewidth]{image/16/konvex_2f.png}
+    \caption{(a) $g > 2f$}
 \end{figure}
 
-b)
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{image/17/geo15b}
+    \includegraphics[width=0.8\linewidth]{image/16/konvex_f.png}
+    \caption{(b) $2f > g > f$}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{image/16/konvex_less.png}
+    \caption{(extra) $g < f$}
 \end{figure}
 
 \paragraph{Konstruieren Sie das Bild eines Gegenstandes durch eine dünne Zerstreuungslinse wenn (a)
     der Gegenstand mehr als $2f$ von der Linse entfernt ist und (b) wenn der Gegenstand weniger
     als $2f$ von der Linse entfernt ist. Dabei ist $f$ die Brennweite der Linse.} ~
 
-a)
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{image/17/geo16a}
+    \includegraphics[width=0.8\linewidth]{image/16/konkav_2f.png}
+    \caption{(a) $2f > g > f$}
 \end{figure}
 
-b)
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{image/17/geo16b}
+    \includegraphics[width=0.8\linewidth]{image/16/konkav_f.png}
+    \caption{(b) $g > 2f$}
 \end{figure}
 
-\paragraph{Wie ist die Vergrößerung definiert? Zeichen Sie die Abbildung mit einer dünnen
-    Sammellinse und leiten Sie eine Formel zur Berechnung der Vergrößerung aus Bild- und
-    Gegenstandsweite her.} ~
-	
-Die Vergrößerung $\beta$ ist definiert als das Verhältnis von Bildgröße $B$ zu Gegenstandsgröße $G$:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{image/16/konkav_less.png}
+    \caption{(extra) $g < f$}
+\end{figure}
 
+Das Bild einer Streulinse ist immer \textbf{virtuell, verkleinert} und \textbf{aufrecht}!
+
+\paragraph{Wie ist die Vergrößerung definiert? Zeichen Sie die Abbildung mit einer dünnen Sammel- und mit einer dünnen
+    Zerstreuungslinse und leiten Sie eine Formel zur Berechnung der Vergrößerung aus Bild- und Gegenstandsweite her.} ~
+
+Die \textit{Lateralvergrößerung $V$} ist definiert als das negative Verhältnis von Bildgröße $B$ zu Gegenstandsgröße $G$ oder äquivalent Bildweite $b$ zu Gegenstandsweite $g$:
 \begin{equation}
-	\beta = \frac{B}{G}
+    V = -\frac{B}{G} = -\frac{b}{g}
 \end{equation}
-
-\paragraph{Wie ist die Vergrößerung definiert? Zeichen Sie die Abbildung mit einer dünnen
-    Zerstreuungslinse und leiten Sie eine Formel zur Berechnung der Vergrößerung aus Bild- und
-    Gegenstandsweite her.}
+Die Gegenstandsweite $g$ ist zwangsweise immer positiv, das Vorzeichen der Bildweite $b$ dagegen entscheidet über reell oder virtuell.
+\begin{align*}
+    b & > 0 \implies \text{reelles Bild}    \\
+    b & > 0 \implies \text{virtuelles Bild}
+\end{align*}
+Das Vorzeichen der Lateralvergrößerung $V$ entscheidet über aufrecht oder verkehrt.
+\begin{align*}
+    V & > 0 \implies \text{aufrechtes Bild} \\
+    V & > 0 \implies \text{verkehrtes Bild}
+\end{align*}
+Da nun aber virtuelle Bilder einer Linse (nicht eines Linsensystems!) \underline{immer aufrecht} sind, wird das negative Vorzeichen in der Formel benötigt.
 
 \newpage
 
 \section{Geometrische Optik II}
 
 \paragraph{Erklären Sie die Bedeutung der Hauptebenen dicker Linsen sowie die Bildkonstruktion bei
-    dicken Linsen.}
+    dicken Linsen.}~\\
 
-Die Brechung kann an beiden Kugelflächen nicht mehr durch eine einzige, an der Mittelebene durchgeführte Brechung ersetzt werden. Deshalb wird die Grenzflächenberechnung gedanklich durch die beiden Hauptebenen ersetzt. Dadurch können alle Strahlen dazwischen als parallel zur optischen Achse angenommen werden
+Die Brechung kann an beiden Kugelflächen nicht mehr durch eine einzige, an der Mittelebene gedachte Brechung ersetzt werden.
+Deshalb wird die Grenzflächenberechnung gedanklich durch die beiden Hauptebenen ersetzt. Dadurch können alle Strahlen dazwischen
+als parallel zur optischen Achse angenommen werden.
 
 \paragraph{Zeichen Sie zwei Sammellinsen, deren Abstand kleiner als die kleinere von den beiden
     Brennweiten ist. Konstruieren Sie den Strahlengang für die Abbildung eines Objektes durch
     das Linsensystem.}
 
-\paragraph{Zeichen Sie zwei Sammellinsen, deren Abstand größer als die Summe der beiden
+\paragraph{Zeichnen Sie zwei Sammellinsen, deren Abstand größer als die Summe der beiden
     Brennweiten ist. Konstruieren Sie den Strahlengang für die Abbildung eines Objektes durch
     das Linsensystem.}
 
@@ -2995,65 +3020,102 @@ Die Brechung kann an beiden Kugelflächen nicht mehr durch eine einzige, an der 
 \end{figure}
 
 \begin{enumerate}
-    \item Chromatische Aberration: Entsteht, wenn Licht verschiedener Wellenlängen unterschiedlich Stark an einem Medium gebrochen wird. Rotes Licht beispielsweise eine größere Wellenlänge als blaues und wird weniger stark gebrochen. Dies führt dazu, dass die Lichtstrahlen nach ihrer Brechung nicht am selben Punkt wieder aufeinander treffen. Kurz- und langwelliges Licht hat also unterschiedliche Brennweiten, das heißt, je nach Wellenlänge bzw. Farbe des Lichts verschiebt sich der Brennpunkt der Linse und es entstehen kontrastreicher Bildmotive an den Kantenrändern. Man kann die chromatische Abberation mithilfe von zwei Linsen verringern.\\
-
-          Ursache: Wellenlängenabhängigkeit der Brechzahl des Linsenmaterials\\
-          Ausweg: Achromat (eine Farbabhängigkeit mehr)
-
-          \begin{figure}[H]
-              \centering
-              \includegraphics[width=8cm]{image/18/geo2chrom}
-          \end{figure}
-
-    \item Sphärische Aberration (auch Öffnungsfehler, Kugelgestaltsfehler): Ist ein Schärfefehler. Tritt bei einfachen konvexen Linsen auf. Lichtstahlen, die durch die Randzonen der Krümmung gehen, werden stärker gebrochen und dadurch an einen näher an der Linse liegenden Brennpunkt hin gebrochen. Die Folge ist ein leicht verschwommenes, unscharfes Bild.\\
-
-
-          Ursache: Brennweite für achsennahe und -ferne Strahlen verschieden -> keine Punkt- zu- Punkt- Abbildung
-          Verringern: Blende, Plan-Konvex Linse, Linsensystem
+    \item \textbf{Chromatische Aberration}
+          \begin{itemize}
+              \item Licht unterschiedlicher Wellenlänge und damit Farbe wird aufgrund der Wellenlängenabhängigkeit der Brechzahl
+                    unterschiedlich stark gebrochen. Hinter der Linse treffen die Lichtstrahlen verschiedener Farben nicht mehr auf
+                    einen gemeinsamen Punkt (\textbf{Dispersion}).
+              \item Ursache: Wellenlängenabhängigkeit der Brechzahl des Linsenmaterials
+              \item Abhilfe: achromatisches Linsenpaar (keine Farbabhängigkeit mehr)
+          \end{itemize}
 
           \begin{figure}[H]
               \centering
-              \includegraphics[width=8cm]{image/18/geo2sphae}
+              \includegraphics[width=8cm]{image/18/fehler_chromatisch.png}
           \end{figure}
 
-    \item Koma: Treffen Strahlen, die parallel zur optischen Achse sind, auf eine schief stehende Linse, oder treffen Strahlen unter einem Winkel auf eine nicht schiefe Linse, so kommt es zu einer Verschiebung der Brenn- punkte. Unter Koma versteht man also eine Brennpunktverschiebung.\\
+    \item \textbf{Sphärische Aberration} (Öffnungsfehler, Kugelgestaltsfehler)
+          \begin{itemize}
+              \item Die sphärische Aberration ist ein Schärfefehler und tritt bei einfachen konvexen Linsen auf.
+                    Die Bedingung, dass alle Strahlen in einem Punkt zusammentreffen, ist bei sphärischen Linsen nur für achsnahe
+                    Strahlen erfüllt. Lichtstahlen, die durch die Randzonen der Krümmung gehen, werden stärker gebrochen und liefern dadurch
+                    ein näher an der Linse liegendes Bild (näherer Brennpunkt). Die Folge ist ein leicht verschwommenes, unscharfes Bild.
+              \item Ursache: Brennweite für achsennahe und -ferne Strahlen verschieden -> keine Punkt-zu-Punkt-Abbildung
+              \item Abhilfe: Blende, Plan-Konvex-Linse, Linsensystem
+          \end{itemize}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=8cm]{image/18/fehler_sphaerisch.png}
+          \end{figure}
+
+    \item \textbf{Koma}
+          \begin{itemize}
+              \item Treffen Lichtstrahlen unter einem sehr steilen Winkel (etwa sehr achsfern) auf eine Linse [etwa auch, wenn die Linse schief liegt],
+                    so werden die Strahlen durch die Linse nicht mehr in einen Punkt zusammengeführt, es kommt zu einer Brennpunktverschiebung.
+              \item Ursache: Brechwinkel unterscheiden sich für die ober und unter der Mittelstrahl laufende Strahlen bei schief stehender Linse
+          \end{itemize}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=8cm]{image/18/fehler_koma.png}
+          \end{figure}
 
 
-          Ursache: Brechwinkel unterscheiden sich für die ober und unter der Mittelstrahl laufende Strahlen bei schief stehender Linse
-
-    \item Astigmatismus: Unterschiedliche Brechungen in x- und y-Achse der Linse tritt auf, wenn Objekt weit von der optischen Achse entfernt, wodurch die Eintrittswinkel für die Strahlen sich unterscheiden.
+    \item \textbf{Astigmatismus}
+          \begin{itemize}
+              \item Bei nicht-rotationssymmetrischen Linsen wird Licht der Meridianebene ($\approx$ horizontal) und der Sagittalebene ($\approx$ vertikal)
+                    unterschiedlich gebrochen. Dadurch entsteht ein Brennpunkt für horizontales Licht, wo keiner für vertikales liegt und umgekehrt. Fängt man einen
+                    Punkt, der durch eine astigmatische Linse gebrochen wurde (etwa eine zylindrische Linse) auf einem Schirm auf, erscheint er je nach Abstand als eher
+                    horizontal oder eher vertikal geneigte Ellipse.
+              \item Ursache: nicht-rotationssymmetrische Linse oder schiefe Strahlführung
+              \item Abhilfe: zylindrische Linse
+          \end{itemize}
 
           \begin{figure}[H]
               \centering
-              \includegraphics[width=8cm]{image/18/geo2koma}
+              \includegraphics[width=8cm]{image/18/fehler_astigmatismus.png}
           \end{figure}
 
 
-    \item Bildfeldwölbung: Bild wird nicht eben auf einer Fläche abgebildet, sondern gewölbt. Damit kann man das Bild nicht an allen Punkten gleichzeitig scharf stellen. Dieser Fehler steht, weil Punkte am Rand der Linse näher an der optischen Achse abgebildet werden. Das Bild ist nicht mehr in einer Ebene\\
 
-          Ursache: unterschiedlich schräg einfallende Strahlenbündel-> unterschiedlich starke Brechung, astigmatische Fehler, Bildweite bi für Ai hängt vom Achsenabstand von $A_i$ ab.
+    \item \textbf{Bildfeldwölbung}
+          \begin{itemize}
+              \item Bild wird nicht auf eine ebene Fläche abgebildet, sondern auf eine gewölbte. Damit kann man das Bild nicht an allen Punkten gleichzeitig scharf stellen.
+                    Dieser Fehler entsteht, weil Punkte am Rand der Linse näher an die optischen Achse abgebildet werden.
+          \end{itemize}
 
           \begin{figure}[H]
               \centering
-              \includegraphics[width=8cm]{image/18/geo2bildfeld}
+              \includegraphics[width=8cm]{image/18/fehler_bildfeldwoelbung.png}
           \end{figure}
 
-    \item Verzeichnung (Verzerrung): Geometrisch nicht maßstabsgetreue Abbildung eines Objekts. Dieser Fehler entsteht durch einen veränderten Abbildungsmaßstab bei weit von der optischen Achse entfernten Bildpunkten. Dadurch werden die Lichtstrahlen die nicht durch den Bildmittel- punkt laufen, gekrümmt.\\
+    \item \textbf{Verzeichnung} (Verzerrung)
+          \begin{itemize}
+              \item Geometrisch nicht maßstabsgetreue Abbildung eines Objekts. Dieser Fehler entsteht durch einen veränderten Abbildungsmaßstab bei weit von der optischen Achse entfernten Bildpunkten.
+                    Dadurch werden die Lichtstrahlen, die nicht durch den Bildmittelpunkt laufen, gekrümmt. Wird der Lichtstrahl durch eine Blende geführt, kann je nach Lage der Blende die Verzeichnung
+                    tonnenförmig bis kissenförmig sein.
 
-          Ursache: bei schrägen Strahlen und mit Ausblendung der Randstrahlen mittels Blende. Verzerrung flächenhafter Objekte.\\
-          Arten: Tonnenförmig und Kissenförmig
-
+              \item Ursache: bei schrägen Strahlen und mit Ausblendung der Randstrahlen mittels Blende. Verzerrung flächenhafter Objekte.
+              \item Arten: tonnenförmig und kissenförmig
+          \end{itemize}
           \begin{figure}[H]
               \centering
               \includegraphics[width=8cm]{image/18/geo2verzeich}
           \end{figure}
 
-    \item Aplantische Abbildung: Es werden kleine, zur optischen Achse senkrechten Flächenelemente durch Strahlenbündel mit großen Öffnungswinkel ohne Öffnungsfehler und ohne Koma scharf, aber nicht verzeichnungsfrei abgebildet.
-
-
+    \item \textbf{Aplanatische Abbildung}
+          \begin{itemize}
+              \item Abbildungen eines auf der optischen Achse liegenden Punktes wieder auf die optische Achse ohne sphärische Aberration
+                    oder Koma (ideale Punktabbildung). Die Abbildung ist jedoch nicht verzeichnungsfrei. Es gibt drei definierte aplanatische Punkte:
+                    \begin{enumerate}
+                        \item Objekt berührt sphärische Fläche (Abstand = 0) [wird wieder auf sich selbst abgebildet, logischerweise]
+                        \item Der Einfallswinkel zur sphärischen Fläche = 0 [wird wieder auf sich selbst abgebildet]
+                        \item Abstand erfüllt folgende Bedingung:
+                              \[s = \frac{n + n'}{n} \cdot r\]
+                    \end{enumerate}
+          \end{itemize}
           \begin{figure}[H]
               \centering
-              \includegraphics[width=8cm]{image/18/geo2aplant}
+              \includegraphics[width=8cm]{image/18/fehler_aplanatisch.png}
           \end{figure}
 
 \end{enumerate}
@@ -3068,34 +3130,36 @@ Die Brechung kann an beiden Kugelflächen nicht mehr durch eine einzige, an der 
 \myparagraph{Was versteht man unter „Interferenz“ und „Kohärenz“?}
 
 \textbf{Interferenz} ist die Überlagerung von Teilwellen. Die Folgen von konstruktiver und destruktiver Interferenz werden als Interferenzmuster bezeichnet.\\
-\textbf{Kohärenz} Wellen nennt man kohärent, wenn sie die gleiche Phasenbeziehung beibehalten. Dabei unterscheidet man:
+\textbf{Kohärenz} beschreibt eine konstante Phasenbeziehung (= Phasendifferenz) von Wellen. Dabei unterscheidet man:
 \begin{itemize}
-    \item \textbf{räumliche Kohärenz: } die Phasendifferenz zwischen Teilwellen bleibt räumlich konstant
-    \item \textbf{zeitliche Kohärenz: } die Phasendifferenz zwischen Teilwellen bleibt zeitlich konstant
+    \item \textbf{räumliche Kohärenz:} Die Phasendifferenz zwischen Teilwellen bleibt räumlich konstant.
+    \item \textbf{zeitliche Kohärenz:} Die Phasendifferenz zwischen Teilwellen bleibt zeitlich konstant.
 \end{itemize}
 
-\myparagraph{Erklären Sie die Beugung von Licht am Young‘schen Doppelspalt durch Interfernz. Bei
+\myparagraph{Erklären Sie die Beugung von Licht am Young'schen Doppelspalt durch Interfernz. Bei
     Welchen Winkeln trete im Fraunhoferschen Limit Intensitätsmaxima auf? Leiten Sie die
     Formel für diese Winkel her.}
 
 Einfallende Wellen treffen auf die beiden Spalten $S_1$ und $S_2$ und werden jeweils gebeugt. Am Schirm (B) bildet sich so ein Interferenzmuster.
-Dieses Interferenzmuster lässt sich durch die unterschiedliche Weglänge, welche von den Teilstrahlen zurückgelegt wird erklären.
+Dieses Interferenzmuster lässt sich durch die unterschiedliche Weglänge, welche von den Teilstrahlen zurückgelegt wird, erklären.
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{image/18_Interferenz/Youngscher_Doppelspalt.png}
 \end{figure}
-Frauenhofer-Limit $\rightarrow$ großer Abstand zwischen Quelle und Schirm, bzw. kleine Quelle.
+\textbf{Frauenhofer-Limit}: großer Abstand zwischen Quelle und Schirm, bzw. kleine Quelle
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{image/18_Interferenz/Doppelspalt_Wegunterschied.png}
 \end{figure}
-Der Winkel $\theta$ beschreibt die Verbindung eines beliebigen Punktes P mit der Mitte der beiden Spalte.
-In Abb. b) sieht man, dass $\Delta$ L (grün) die Phasendifferenz der beiden Strahlen r1 und r2 bestimmt. Beide
-Strahlen sind annähernd parallel dank großem Abstand zwischen Schirm und Doppelspalt.
-\[\sin \theta = \frac{\Delta L}{d} \hspace{1cm} \rightarrow \hspace{1cm} \Delta L = d \cdot \sin \theta\]
-Ist $\Delta$ L ein Vielfaches n$\in\mathbb{N}$ der Wellenlänge $\lambda$, entsteht konstruktive Interferenz/ein Maximum.
+Der Winkel $\theta$ beschreibt die Verbindung eines beliebigen Punktes $P$ mit der Mitte der beiden Spalte.
+In Abb. b) sieht man, dass $\Delta L$ (grün) die Phasendifferenz der beiden Strahlen $r_1$ und $r_2$ bestimmt.
+Beide Strahlen sind annähernd parallel dank großem Abstand zwischen Schirm und Doppelspalt.
+%
+\[\sin(\theta) = \frac{\Delta L}{d} \implies \Delta L = d \cdot \sin \theta\]
+%
+Ist $\Delta L$ ein Vielfaches $n \in \mathbb{N}$ der Wellenlänge $\lambda$, entsteht konstruktive Interferenz, ein Maximum.
 \[d \cdot \sin \theta = n \cdot \lambda\]
-Somit ergeben sich die die Intensitätsmaxima unter folgendem Winkel:
+Somit ergeben sich die die Intensitätsmaxima der Ordnung $n$ (0-indexiert, da das 0. Maximum das Hauptmaximum beschreibt) unter folgenden Winkeln:
 \begin{equation}
     \label{eq:Intensitaetsmaxima_Young_Doppelspalt}
     \theta = \arcsin(\frac{n \cdot \lambda}{d})
@@ -3115,7 +3179,7 @@ zwischen den Teilwellen kommt, da sich die Erde durch den Äther (vermutetes Aus
 \end{figure}
 Die Intensität am Detektor (B) ist gegeben durch:
 \[I_T = c \epsilon_0 (E_1+E_2)^2\]
-wobei $E_1$ und $E_2r$ durch:
+wobei $E_1$ und $E_2$ durch:
 \[E_1 = \sqrt{RT} A_e \cdot \cos(\omega t + \varphi_1) \hspace{5mm} \text{bzw.} \hspace{5mm} E_2 = \sqrt{RT} A_e \cdot \cos(\omega t + \varphi_2)\]
 gegeben sind. Somit ergibt sich $I_T$ weiter zu:
 \[I_T = c \epsilon_0 RT A_e^2[\cos(\omega t + \varphi_1) + \cos(\omega t + \varphi_2)]^2\]
@@ -3124,8 +3188,15 @@ Der Klammerterm unterscheidet sich nur um die Phase $\Delta \varphi$ welche sich
 \[\Delta \varphi = \varphi_1 - \varphi_2 = \frac{2\pi}{\lambda}\cdot \Delta s\]
 schreiben lässt. Setzt man nun $\varphi_1$ auf 0 und $\varphi_2$ auf $\Delta \varphi$ ergibt sich ein Term für die Intensität in Abhängigkeit der Längendifferenz:
 \begin{equation}
-    I_T = c \epsilon_0 RT A_e^2[\cos(\omega t) + \cos(\omega t + \frac{2\pi}{\lambda}\cdot \Delta s)]^2
+    I_T = c \epsilon_0 RT A_e^2 \left[ \cos(\omega t) + \cos(\omega t + \frac{2\pi}{\lambda} \cdot \Delta s) \right]^2
 \end{equation}
+%
+Für monochromatische ebene Wellen vereinfacht sich diese Gleichung zu:
+%
+\begin{equation}
+    I_T = \frac{1}{2} I_0 \left[ 1 + \cos(2\pi \frac{\Delta s}{\lambda}) \right]
+\end{equation}
+%
 Nochmals grafisch:
 \begin{figure}[H]
     \centering
@@ -3135,494 +3206,553 @@ Nochmals grafisch:
 \myparagraph{Was versteht man unter „zeitlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
     beeinflussen? Mit welchem Gerät könnte man sie wie bestimmen?}
 
-Als \glqq zeitlich kohärent \grqq bezeichnet man Wellen die ihre Phasendifferenz zeitlich beibehalten. Wie links abgebildet laufen die Wellen in beliebige Richtung aus der Quelle
+Als \enquote{zeitlich kohärent} bezeichnet man Wellen, die ihre Phasendifferenz zeitlich beibehalten. Wie links abgebildet laufen die Wellen in beliebige Richtung aus der Quelle
 starten jedoch alle bei der gleichen Phase (Nulldurchgang) und haben nach gleichen Zeitintervallen alle dieselbe Phasenverschiebung zum Ausgangspunkt [diskrete Zeiten farbig markiert].
 \begin{figure}[H]
     \centering
     \begin{minipage}[b]{0.3\textwidth}
         \centering
         \includegraphics[width=5cm]{image/18_Interferenz/Zeitlich_kohärent.png}
-        Zeitlich
     \end{minipage}
     \hspace{2cm}
     \begin{minipage}[b]{0.3\textwidth}
         \centering
         \includegraphics[width=5cm]{image/18_Interferenz/räumliche_kohärenz.png}
-        Räumlich
     \end{minipage}
+    \caption{Zeitliche (links) und räumliche (rechts) Kohärenz}
+    \label{fig:kohaerenz}
 \end{figure}
 
-\textbf{Kohärenzzeit $\Delta t_C$}: maximale Zeitspanne, während der sich die Phasendifferenz $\Delta \varphi$ um weniger als $2\pi$ ändert.
-$\Delta t_C = 1/(\Delta f)$ wobei $\Delta f$ die spektrale Frequenzbreite der Lichtquelle ist. \\\\
-Messung mittels Interferometer (z.B.: Michelson-Interferometer)\\\\
-Eine Quelle ist nicht zeitlich kohärente falls:
+Die \textit{Kohärenzzeit $\Delta t_C$} beschreibt die maximale Zeitspanne, während der sich die Phasendifferenz $\Delta \varphi$ um weniger als $2\pi$ ändert.
+%
+\[\Delta t_C = \frac{1}{\Delta f},\]
+%
+wobei $\Delta f$ die \textit{spektrale Frequenzbreite} der Lichtquelle ist.
+
+Eine Messung wird mittels Interferometer (z.B.: Michelson-Interferometer) durchgeführt.
+
+Eine Quelle ist nicht zeitlich kohärent bei
 \begin{enumerate}
-    \item Sich die Frequenz (des Senders) mit der Zeit ändert.
-    \item Bei endlichen Wellenzügen mit statistisch verteilten Phasen
-    \item Bei zeitlichen Änderungen des Brechungsindex zwischen Sender und Empfänger
+    \item zeitabhängiger Frequenz des Senders
+    \item endlichen Wellenzügen mit statistisch verteilten Phasen
+    \item zeitlichen Änderungen des Brechungsindex zwischen Sender und Empfänger
 \end{enumerate}
 \myparagraph{Was versteht man unter „räumlicher Kohärenz“? Wovon hängt sie ab bzw. wie kann man sie
     beeinflussen? Mit welchem Gerät könnte man sie wie bestimmen?}
 
-Als \glqq räumlich kohärent \grqq bezeichnet man Wellen welche entlang einer Achse (meist jene senkrecht zur Ausbreitungsrichtung) eine feste Phasendifferenz aufweisen (siehe rechts oben).
-Letztere Achse wird auch als Kohärenzfläche bezeichnet. \\
-\textbf{Kohärenzlänge $\Delta x$}: Länge welche das Licht während der Kohärenzzeit zurücklegt. \\$\Delta x = c \cdot \Delta t_C$.\\
-    Messung mittels Interferometer.
+Als \enquote{räumlich kohärent} bezeichnet man Wellen, welche entlang einer Achse (meist jene senkrecht zur Ausbreitungsrichtung)
+eine feste Phasendifferenz aufweisen (siehe \autoref{fig:kohaerenz}). Letztere Achse wird auch als \textit{Kohärenzfläche} bezeichnet.
 
-    \myparagraph{Zeichnen Sie den prinzipiellen Aufbau / Strahlengang eines Sagnac und eines Mach-Zehnder Interferometers.}
+Die \textit{Kohärenzlänge $\Delta x$} ist jene Länge, welche das Licht während der Kohärenzzeit zurücklegt.
+%
+\[\Delta x = c \cdot \Delta t_C\]
+%
+Eine Messung wird mittels Interferometer (z.B.: Michelson-Interferometer) durchgeführt.
+%
+\myparagraph{Zeichnen Sie den prinzipiellen Aufbau / Strahlengang eines Sagnac- und eines Mach-Zehnder Interferometers.}
 
-    \textbf{Sagnac:} Rotiert das Interferometer um seine Achse brauchen die beiden Teilstrahlen unterschiedlich Lange (Spiegel drehen sich von ihnen weg bzw. auf sie zu).
-    Damit wurde die Erdrotationsperiode gemessen.\\
-    \textbf{Mach-Zehnder:} Durch den unterschiedlichen Brechungsindex kommt es zu einer Wegdifferenz und somit zu einer Interferenz der beiden Teilstrahlen, dies erlaubt genaue Rückschlüsse auf den
-    Brechungsindex (z.B. von Gasen).
-    \begin{figure}[H]
+\textbf{Sagnac:} Rotiert das Interferometer um seine Achse brauchen die beiden Teilstrahlen unterschiedlich lange
+(Spiegel drehen sich von ihnen weg bzw. auf sie zu).
+Damit wurde die Erdrotationsperiode gemessen.
+
+\textbf{Mach-Zehnder:} Durch den unterschiedlichen Brechungsindex kommt es zu einer Wegdifferenz und somit zur Interferenz
+der beiden Teilstrahlen, dies erlaubt genaue Rückschlüsse auf den Brechungsindex (z.B. von Gasen).
+%
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.35\textwidth}
         \centering
-        \begin{minipage}[b]{0.35\textwidth}
-            \centering
-            \includegraphics[width=0.95\textwidth]{image/18_Interferenz/Sagnac_Interferometer.png}
-        \end{minipage}
-        \hspace{2cm}
-        \begin{minipage}[b]{0.5\textwidth}
-            \centering
-            \includegraphics[width=0.95\textwidth]{image/18_Interferenz/Mach-Zehnder_Interferometer.png}
-        \end{minipage}
-    \end{figure}
-
-    \myparagraph{Erklären Sie Aufbau, Funktion und Transmissionsverhalten eines
-        Fabry-Perot-Interferometers. Skizzieren Sie den spektralen Verlauf der Transmission als Funktion der
-        Finesse. Wie ist die Finesse definiert?}
-    Besteht aus 2-teilreflektierenden Platten. Die einzelnen Strahlen interferieren miteinander, wobei nur gewisse Wellenlängen größtenteils transmittiert werden.
-    \begin{figure}[H]
+        \includegraphics[width=0.95\textwidth]{image/18_Interferenz/Sagnac_Interferometer.png}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=10cm]{image/18_Interferenz/Fabry-Perot_Interferometer.png}
-    \end{figure}
-    Die Finesse F ist definiert als das Verhältnis zwischen freiem Spektralbereich $\Delta\lambda$ und der Halbwertsbreite $\delta\lambda$ eines einzelnen Maximums.
-    \begin{equation}
-        F = \frac{\Delta \lambda}{\delta \lambda} = \frac{\delta f}{\Delta f}
-    \end{equation}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/18_Interferenz/Finesse.png}
-    \end{figure}
-    Bei höherer Finesse wird mehr nach Wellenlänge \glqq selektiert \grqq. Es löscht sich also mehr Licht durch Interferenz aus und es wird gemittelt über einen Wellenlängenbereich weniger
-    transmittiert als bei geringerer Finesse. Exemplarisch ist dieser Zusammenhang unten dargestellt (y-Achse: Mittel der Transmittierten Intensität, x-Achse: Finesse)
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=10cm]{image/18_Interferenz/Finesse_gegen_Transmission.png}
-    \end{figure}
-
-    \myparagraph{Beschreiben Sie die Funktionsweise einer einfachen Antireflexbeschichtung aus einer
-        dielektrischen Schicht.}
-    Eine Antireflexbeschichtung besteht aus einem Träger (Glas) auf dem eine $\lambda/4$ - Schicht mit Brechungsindex zwischen Glas und Luft aufgetragen wird. Der einfallende Strahl
-$I_0$ wird zum Teil an der Grenzfläche $n_1$ - $n_2$ bzw. an $n_2$ - $n_3$ reflektiert. Wählt man $n_2$ richtig, so sind die beiden reflektierten Strahlen um $k \cdot \pi$ phasenverschoben,
-    was zu einer gegenseitigen Auslöschung führt.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/18_Interferenz/Antireflexionsbeschichtung.png}
-    \end{figure}
-    Durch verwenden von mehreren Schichten, kann ein größerer Spektralbereich abgedeckt werden.
-    \newpage
-
-    %Start Martin
-    \section{Beugung}
-    \label{Beugung}
-
-    \myparagraph{Leiten Sie die Formel für die Intensitätsverteilung einer regelmäßigen Anordnung von
-        kohärenten Emittern her und skizzieren Sie diese in einem Diagramm (Intensität vs.
-        Winkel).}
-    Das von den Emittern ausgesendete Licht, beobachtet in eine Richtung $\theta$, muss unterschiedlich lange Wegstrecken zurücklegen. Der Gangunterschied zwischen benachbarten
-    Teilwellen ist $\Delta s = d \cdot \sin \theta$.
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=10cm]{image/19/1.1}
-    \end{figure}
-
-    Dadurch kommt es zu einem Phasenversatz
-    \begin{align*}
-        \Delta \varphi = \frac{2 \pi}{\lambda} \Delta s = \frac{2 \pi}{\lambda} d \cdot \sin \theta
-    \end{align*}
-    zwischen benachbarten Teilwellen.
-    Die Gesamtamplitude von N Emittern auf der Geraden in x-Richtung ist dann für gleiche Teilamplituden $Aj = A$ der einzelnen Streuer
-    \begin{align*}
-        E = A \sum_{j=1}^{N} e^{i (\omega t + \varphi j)} = A e^{i \omega t} \sum_{j=1}^{N} e^{i (j -1) \Delta \varphi}
-    \end{align*}
-    wenn wir die Phase der ersten Teilwelle $\varphi_1 = 0$ setzen. Die
-    Summe der geometrischen Reihe ist:
-    \begin{align*}
-        \sum_{j=1}^{N} e^{i (j -1) \Delta \varphi} & = \frac{e^{i N \Delta \varphi} - 1}{e^{i \Delta \varphi} - 1}                                                                                                                 \\
-                                                   & = e^{i \frac{N-1}{2} \Delta \varphi} \cdot \frac{e^{i \frac{N}{2} \Delta \varphi} - e^{-i \frac{N}{2} \Delta \varphi}}{e^{i \Delta \varphi / 2} - e^{- i \Delta \varphi / 2}} \\
-                                                   & = e^{i \frac{N-1}{2} \Delta \varphi} \cdot \frac{\sin [(N/2) \Delta \varphi]}{sin(\varphi/2)}
-    \end{align*}
-    Für die Intensität $I = c \varepsilon_0 |E|^2$ der Welle in Richtung $\theta$ folgt daraus:
-    \begin{align*}
-        I(\theta) = I_0 \cdot \frac{\sin^2[N \pi (d/\lambda) \sin\theta]}{\sin^2[\pi (d/\lambda)\sin \theta]}
-    \end{align*}
-$I_0$ entspricht hier der von einem Emitter ausgestrahlten Intensität ($I_0 = c \varepsilon_0 A^2$).
-
-    \begin{figure}[H]
-        \centering
-        \caption{Streuintensität $I(\theta)$ für $d < \lambda$ und $D = N \cdot d = 100 \lambda$. Für die Fußpunktsbreite, zwischen den Nullstellen von $I(\theta)$, gilt $\Delta \theta = 2 \lambda / (N \cdot d)$.}
-        \includegraphics[width=10cm]{image/19/1.2}
-    \end{figure}
-
-
-    \myparagraph{Beugung am Einzelspalt: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
-        Fraunhofer‘schen Beugungsbild eines einzelnen, mit einer ebenen Welle beleuchteten
-        Spaltes an und skizzieren Sie diese in einem Diagramm. Bei welchem Winkel liegt das erste
-        Beugungsminimum und wie lässt sich dies einfach erklären?}
-
-    \begin{figure}[H]
-        \begin{minipage}{.47\textwidth}
-            \centering
-            \includegraphics[width=0.9\linewidth]{image/19/2.1}
-
-        \end{minipage}%
-        \hfill%
-        \begin{minipage}{.47\textwidth}
-            \centering
-            \includegraphics[width=0.92\linewidth]{image/19/2.2}
-        \end{minipage}
-    \end{figure}
-
-    Für die Intensität $I$ in Abhängigkeit vom Winkel $\theta$ ergibt sich der folgende Ausdruck:
-
-    \begin{align*}
-        I(\theta) = I_0 \cdot [\,\frac{\sin(\frac{\pi \cdot b \cdot \sin \theta}{\lambda})}{\frac{\pi \cdot b \cdot\sin \theta}{\lambda}}\,]^2
-    \end{align*}
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=10cm]{image/19/2.3}
-        \caption{Intensitätsverteilung $I(\theta)$ bei der Beugung am Spalt für verschiedene Werte des Verhältnisses $b/\lambda$}
-    \end{figure}
-
-    Das erste Beugungsminimum liegt bei $sin(\theta) = \lambda / b$. Es ergibt sich wenn der Gangunterschied $\Delta s = b \cdot \sin(\theta)$ der Randstrahlen genau $\lambda$ beträgt (destruktive Interferenz).
-
-    \myparagraph{Beugung am Gitter: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
-        Fraunhofer‘schen Beugungsbild eines mit einer ebenen Welle beleuchteten Spaltgitters an
-        und skizzieren Sie diese in einem Diagramm. Bei welchen Winkeln liegen die Hauptmaxima
-        und wie lassen sich diese Winkel einfach erklären?}
-
-    Die Intensität $I$ in Abhängigkeit von $\theta$ ergibt sich zu folgendem Ausdruck:
-    \begin{align*}
-        I(\theta) = I_s \cdot \frac{\sin^2[\pi (b/\lambda)\sin \theta]}{[\pi (b/\lambda) \sin \theta]^2} \cdot \frac{\sin^2 [N \pi (d/\lambda) \sin \theta]}{\sin^2[\pi (d/\lambda) \sin \theta]}
-    \end{align*}
-
-    Ein Hauptmaxima tritt auf wenn gilt:
-
-    \begin{align*}
-        d \cdot sin(\theta) = k \cdot \lambda \qquad \text{für} \qquad k \in {1;2;3;...}
-    \end{align*}
-
-    Maxima von $I(\theta)$ treten in denjenigen Richtungen auf, für welche der Gangunterschied zwischen äquivalenten Teilbündeln aus benachbarten Spalten ein ganzzahliges Vielfaches von $\lambda$ ist und es zu konstruktiver Interferenz kommt.
-
-    \begin{figure}[H]
-        \centering
-        \caption{Intensitätsverteilung $I(\theta)$ bei einem Beugungsgitter mit acht Spalten, bei dem $d/b = 2$ ist. In die zweite Interferenzordnung gelangt wegen des Beugungsminimums kein Licht}
-        \includegraphics[width=\textwidth]{image/19/3}
-    \end{figure}
-
-    Wie groß diese Maxima sind, hängt von der Beugungsverteilung der Einzelspalte, d. h. vom ersten Faktor der Formel für die Intensität ab. Die Beugung sorgt dafür, dass überhaupt Licht in die Richtungen $\theta > 0$ gelangt. Je breiter die Spalte sind, desto geringer werden die möglichen Winkel , bei denen noch eine merkliche Intensität $I(\theta)$ auftritt.
-
-    \myparagraph{Skizzieren Sie den Aufbau eins geblazeten Gitters und erklären Sie dessen Funktion.}
-
-    Unter einem geblazten Gitter versteht man ein Reflexionsgitter, dessen Reflexionsflächen geneigt zur Gitterfläche stehen.
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=10cm]{image/19/4.1}
-    \end{figure}
-
-    Es gilt:
-    \begin{align*}
-        I = I_s \cdot \frac{\sin^2[\pi (b/\lambda)(\sin(\alpha-\theta)-\sin(\beta + \theta))]}{[\pi (b/\lambda) (\sin(\alpha-\theta)-\sin(\beta + \theta))]^2} \cdot \frac{\sin^2 [N \pi (d/\lambda) (\sin\alpha - \sin\beta)]}{\sin^2[\pi (d/\lambda) (\sin \alpha - \sin \beta)]}
-    \end{align*}
-
-    Der sogenannte Blazewinkel $\theta$ kann für einen Bestimmten Wellenlängenbereich optimiert werden. Es kann eine Verschiebung der Hauptintensität von der 0. auf die m-te Ordnung bewirkt werden. Wählt man $\theta$ so, dass für die Mitte $\lambda_m$ des zu messenden Wellenlängenbereiches $\Delta \lambda$ der Winkel $\beta_m$, bei dem das Interferenzmaximum m-ter Ordnung auftritt, gleich dem Reflexionswinkel $r = \theta -\beta$ ist. Dann geht fast die gesamte reflektierte Intensität in die m-te Ordnung. Wegen der Beugung an jeder Furche der Breite b wird das reflektierte Licht in einen Winkelbereich $\Delta \beta$ um $\beta_m = r - \theta$ gebeugt, sodass man einen größeren Wellenlängenbereich $\Delta \lambda$ mit nur wenig variierender Intensität $I(\beta)$ messen kann.
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/19/4.2}
-    \end{figure}
-
-    Ein wichtiges Einsatzgebiert solcher Gitter befindet sich z.B. in der Spektroskopie.
-
-    \myparagraph{Erklären und Skizzieren Sie Aufbau und Funktion einer Fresnel‘schen Zonenplatte.}
-
-    Eine Fresnel'schen Zonenplatte kann genutzt werden um noch mehr Licht auf den Punkt P zu konzentrieren, als es mit einer einfachen kreisförmigen Blende möglich wäre. Dazu wird z.B. eine Glasplatte, mit aufgedampften, undurchlässige Kreisringe, welche so angebracht sind dass sie z.B. den ungeradzahligen Fresnel-Zonen entsprechen, verwendet. Dadurch werden alle Beiträge der geradzahligen Zonen durchgelassen, sodass in der Summe alle Glieder gleichen Vorzeichens in Phase aufsummiert werden.
-
-    \begin{figure}[H]
-        \begin{minipage}{.47\textwidth}
-            \centering
-            \includegraphics[width=0.5\linewidth]{image/19/5.1}
-
-        \end{minipage}%
-        \hfill%
-        \begin{minipage}{.47\textwidth}
-            \centering
-            \includegraphics[width=0.92\linewidth]{image/19/5.2}
-        \end{minipage}
-    \end{figure}
-
-    Die Wirkung der Zonenplatte entspricht somit der einer optischen Linse, woche die Brennweite der Platte wellenlängenabhängig ist. Für den Radius der m-ten Zone gilt:
-
-    \begin{align*}
-        \varrho_m = \sqrt{m r_0 \cdot \lambda}
-    \end{align*}
-
-    Die Zonenbreite nimmt mit steigendem $m$ ab, die Zonenfläche bleibt stets konstant.
-    Anwendung: Röntgenlinsen, Linsen für Teilchenstrahlen
-
-    \myparagraph{Beugung am Gitter: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
-        Fraunhofer‘schen Beugungsbild einer mit einer ebenen Welle beleuchteten Kreisblende an
-        und skizzieren Sie diese in einem Diagramm.}
-
-    Durch Lösen des Beugungsintegrals kann die Lösung als Funktion der Bessel-Funktion 1. Ordnung gefunden werden.
-
-    \begin{align*}
-        I(\theta) & = I_0 (\frac{2 J_1(x)}{x})^2          \\
-        x         & = \frac{2 \pi R}{\lambda} \sin \theta
-    \end{align*}
-
-    Das Interferenzmuster sieht folgendermaßen aus:
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/19/6}
-    \end{figure}
-
-    \newpage
-
-    \section{Optische Instrumente I}
-
-    \paragraph{Skizzieren und beschreiben Sie den Aufbau des Auges. Welche Arten von Sehzellen sind
-        vorhanden und welche spektrale Empfindlichkeit haben diese (Diagramm)?} ~
-
-    Arten von Sehzellen: Stäbchen (Schwarzweiß), Zapfen (Farben)
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=10cm]{image/20/1.png}
-    \end{figure}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=7cm]{image/20/2.png}
-    \end{figure}
-
-    \paragraph{Zeichnen Sie den Strahlengang für eine Lupe, wobei das Auge auf unendlich eingestellt
-        sein soll um ein scharfes Bild des Gegenstandes durch die Lupe zu sehen. Leiten Sie einen Ausdruck
-        für die Winkelvergrößerung der Lupe her.}~
-
-    Strahlengang:
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=9cm]{image/20/3.png}
-    \end{figure}
-    \begin{equation}
-        V \approx \frac{\text{tan}~ \epsilon}{\text{tan}~ \epsilon_0} = \frac{G}{f} \frac{s_0}{G} = \frac{s_0}{f}~ \text{mit} s_0 = 25~ \text{cm}
-    \end{equation}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=9cm]{image/20/4.png}
-    \end{figure}
-
-    \paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Mikroskops mit dem Abbildungsstrahlengang
-        (von einem Objektpunkt zum Bildpunkt). Wie ist die Vergrößerung definiert und wie kann man sie
-        berechnen)?} ~
-    \begin{figure}[H]
-        \centering
-        \begin{minipage}[b]{0.3\textwidth}
-            \centering
-            \includegraphics[width=9cm]{image/20/5.png}
-        \end{minipage}
-        \hspace{5cm}
-        \begin{minipage}[b]{0.3\textwidth}
-            \centering
-            \includegraphics[width=6cm]{image/20/6.png}
-        \end{minipage}
-    \end{figure}
-    Linkes Bild:
-    \begin{itemize}
-        \item Linse 1: reelles Zwischenbild (Objekt)
-        \item Linse 2: quasi Lupe für Zwischenbild (Okular)
-    \end{itemize}
-    wenn $g = f_1$:
-    \begin{equation}
-        V = \frac{(d- f_2)s_0}{f_1 f_2}
-    \end{equation}
-
-    \paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Keplerschen Fernrohres mit dem
-        Abbildungsstrahlengang (von einem weit entfernten Objektpunkt zum Bildpunkt). Wie ist die
-        Vergrößerung definiert und wie kann man sie berechnen?} ~
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/20/7.png}
-    \end{figure}
-    Die Vergrößerung des Fernrohrs ist gleich dem Verhältnis der Brennweiten von Objektiv und Okular.
-    \begin{equation}
-        V_F = \frac{f_1}{f_2}
-    \end{equation}
-
-    \paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Galilei'schen Fernrohres mit dem
-        Abbildungsstrahlengang (von einem weit entfernten Objektpunkt zum Bildpunkt). Wie ist die
-        Vergrößerung definiert und wie kann man sie berechnen?} ~
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/20/8.png}
-    \end{figure}
-    Die Vergrößerung des Fernrohrs ist gleich dem Verhältnis der Brennweiten von Objektiv und Okular.
-    \begin{equation}
-        V = \frac{\epsilon}{\epsilon_0} = \frac{f_1}{f_2} < 0
-    \end{equation}
-
-    \paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Projektors mit dem Abbildungsstrahlengang
-        und dem Beleuchtungsstrahlengang.} ~
-
-    A = Abbildungsstrahlengang, B = Beleuchtungsstrahlengang
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/20/9.png}
-    \end{figure}
-    Prinzipieller Aufbau eines Dialprojektors:
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/20/10.png}
-    \end{figure}
-
-    \paragraph{Was versteht man unter Schärfentiefe und Lichtstärke? Wie kann man diese Größen bei
-        einer gegebenen Linse beeinflussen? Beschreiben Sie wie sich die Größen ändern.} ~
-
-    \textbf{Schärfentiefe:} \\
-    Man nennt den Bereich, in dem man die Objekte verschieben kann, ohne dass die Fläche dieser Bildscheibchen des Objektpunktes $A$ größer als die minimale vom Auge in der deutlichen Sehweite noch auflösbare Fläche wird, die Schärfentiefe des optischen Instrumentes.
-    Die Schärfentiefe ist ein Maß für die Ausdehnung des scharfen Bereiches im Objektraum eines abbildenden optischen Systems. Die Schärfentiefe kann bei gegebener Linse durch den Durchmesser $u$ beeinflusst werden bzw. durch Veränderung der Abstände $b_v$ und $b_0$.
-    \begin{equation}
-        \frac{u}{D_B} = \frac{b_v - b_0}{b_v}
-    \end{equation}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/20/11.png}
-    \end{figure}
-    \textbf{Lichtstärke:}
-    Die Lichtstärke gibt den auf den Raumwinkel bezogenen Lichtstrom an. Sie beschreibt somit eine Eigenschaft der Lichtquelle und ist unabhängig von der Position des Beobachters. Ihre SI- Einheit ist Candela.
-    \begin{equation}
-        \Omega = \frac{\pi D^2/4}{f^2} = \frac{\pi}{4} (\frac{D}{f})^2
-    \end{equation}
-$\Omega$ = Raumwinkel, $D$ = Durchmesser Eintrittspupille, $f$ = Brennweite\\
-    Eine Veränderung des Blendendurchmesser $D$ beeinflusst die Lichtstärke.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/20/12.png}
-    \end{figure}
-
-    \paragraph{Welchen Einfluss hat Beugung auf die Abbildung mit einer Linse? Wie ist das
-        Auflösungsvermögen definiert? Wie groß ist das Auflösungsvermögen einer Linse mit gegebenem
-        Durchmesser und Brennweite für die Abbildung weit entfernter Gegenstände?} ~
-
-    \textbf{Auslösungsvermögen:}\\
-    Fähigkeit, zwei dicht nebeneinanderliegende Punkte unterscheiden zu können.
-    \begin{equation}
-        \Delta x_{min} = \frac{1,22 \cdot \lambda \cdot f}{D}
-    \end{equation}
-$f$ = Brennweite, $D$ = Öffnungsdurchmesser, $\lambda$ = Wellenlänge, $\Delta x_{min}$ = kleinster auflösbarer Abstand\\
-    Kleinster noch auflösbarer Winkelabstand:
-    \begin{equation}
-        \Theta_{min} = \frac{1,22 \lambda}{D}
-    \end{equation}
-    Kleinste noch auflösbare Länge:
-    \begin{equation}
-        \Delta x_{min} = f \cdot \text{sin} \Theta_{min} = \frac{1,22 \cdot \lambda \cdot f}{D}
-    \end{equation}
-    Einfluss der Beugung auf eine Abbildung mit Linse:
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/20/13.png}
-    \end{figure}
-
-    \newpage
-
-    \section{Optische Instrumente II}
-
-    \paragraph{Erklären Sie kurz die Abbe'sche Abbildungstheorie zur Bildentstehung} ~
-
-    Jedes Objekt ruft Beugungseffekte hervor. Bildinformation des Objektes wird auf die Beugungsmaxima aufgeteilt. je mehr Maxima für die Bildgebung genutzt werden können, desto mehr Informationen sind über das Objekt vorhanden und umso höher ist daher auch die Auflösung.
-    Es wird ein Gegenstand mit parallelem Licht beleuchtet (z.B.: Doppelspalt)
-    Das Bild wird mittels Linse auf einen Schirm projiziert. Die 0. Ordnung geht gerade ohne Ablenkung durch den Spalt die +- 1. Ordnungen bilden schließlich das Bild am Spalt. Um nun etwas abbilden zu können, muss die Linse zumindest die +- 1. Ordnung unter deren Winkel $\theta$ erfassen
-    Ein Objekt ist nur auflösbar wenn zumindest 0. und 1. Beugungsordnung erfasst werden.
-
-    \paragraph{Berechnen Sie am Beispiel eines Liniengitters das Auflösungsvermögen einer Abbildung
-        durch ein Objektiv.} ~
-
-    Auflösungsvermögen: Kleinster auflösbarer Abstand $\Delta x_{min}$
-    \begin{equation}
-        \Delta x_{min} = \frac{\lambda}{n \sin \alpha_{max}}
-    \end{equation}
-    Wobei $\alpha_{max}$ der maximale Öffnungswinkel des Objektivs und $n$ die Brechzahl dessen ist.
-    Es folgt also, dass ein Gitter mit $d \geq \frac{\lambda}{n \sin \alpha_{max}}$ von einer Linse mit maximalem Öffnungswinkel $\alpha_{max}$
-    auflösbar ist.
-
-    \paragraph{Was besagt die Abbe'sche Sinusbedingung? Erklären Sie anhand eines Gitters als Objekt
-        warum sie gelten muss, um eine gute Abbildung zu erreichen.} ~
-
-    ein kleines achsennahes und achsensenkrechtes Flächenelement frei von Bildfehler abzubilden
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/22/opt23}
-    \end{figure}
-
-
-    \paragraph{Zeichnen Sie den Strahlengang für die Abbildung eines Gitters durch eine oder zwei Linsen
-        sowohl für das Beugungsbild (und weiterer Strahlengang) als auch für das Bild. Achten Sie
-        auf die korrekte Konstruktion der Bild- bzw. Beugungsbildpunkte.} ~
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=10cm]{image/22/Gitter_Strahlengang.png}
-    \end{figure}
-
-    \paragraph{Schreiben Sie das Auflösungsvermögen für ein Mikroskopobjektiv an, wenn die
-        Gegenstandspunkte inkohärent leuchten bzw. inkohärent beleuchtet sind. Wie ist die Numerische
-        Apertur definiert (Skizze)?} ~
-
-    Bei einer numerischen Apertur: $A_N = n \sin \alpha_{max}$ gilt:
-    \begin{equation}
-        d_{min} = 1,22 \frac{\lambda}{2 A_N} = 1,22 \frac{\lambda}{2 n \sin \alpha_{max}}
-    \end{equation}
-    Mit $\alpha_{max}$ als maximalen Öffnungswinkel.\\
-    Die numerische Apertur beschreibt das Vermögen eines optischen Elements Licht zu fokussieren. eine größere numerische Apertur
-    bedeutet eine bessere Auflösung.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/22/opt25}
-    \end{figure}
-
-    \paragraph{Zeichen Sie den optischen Strahlengang eines Gittermonochromators (Czerny-Turner) und
-        bezeichnen Sie alle wesentlichen Elemente.} ~
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=8cm]{image/22/Czerny-Turner.png}
-    \end{figure}
-    \begin{itemize}
-        \item[] A: Lichtquelle
-        \item[] B, F: Spalt
-        \item[] C, E: Hohlspiegel
-        \item[] D: rotierbares geblaztes Gitter
-        \item[] G: Detektor
-    \end{itemize}
-    Durch Rotation kann eingestellt werden welche Wellenlänge durch den Spalt in den Detektor fällt.
-    \paragraph{Wie ist das spektrale Auflösungsvermögen definiert? Schreiben Sie einen Ausdruck für das
-        spektrale Auflösungsvermögen eins Gittermonochromators an.} ~
-
-    -als Quotient $\frac{\lambda}{\Delta \lambda}$ definiert wobei $\Delta \lambda = \lambda_1 - \lambda_2$ der minimale Abstand zweier Wellenlängen ist. Zwei getrennte Bilder im Eintrittspalt werden erhalten. Also zwei eng beieinanderliegende Spektrallinien gerade noch zu unterscheiden:
+        \includegraphics[width=0.95\textwidth]{image/18_Interferenz/Mach-Zehnder_Interferometer.png}
+    \end{minipage}
+\end{figure}
+
+\myparagraph{Erklären Sie Aufbau, Funktion und Transmissionsverhalten eines
+    Fabry-Perot-Interferometers. Skizzieren Sie den spektralen Verlauf der Transmission als Funktion der
+    Finesse. Wie ist die Finesse definiert?}
+Besteht aus zwei teilreflektierenden Platten. Die einzelnen Strahlen interferieren miteinander, wobei nur gewisse Wellenlängen größtenteils transmittiert werden.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/18_Interferenz/Fabry-Perot_Interferometer.png}
+\end{figure}
+Die \textit{Finesse $F$} ist definiert als das Verhältnis zwischen \textit{freiem Spektralbereich $\Delta\lambda$}
+und der \textit{Halbwertsbreite $\delta\lambda$} eines einzelnen Maximums. Sie gibt die effektive Anzahl interferierender Strahlen an
+und liegt normalerweise im Bereich von 100-200.
 \begin{equation}
-    R = \frac{\lambda}{\Delta \lambda}
+    F = \frac{\Delta \lambda}{\delta \lambda} = \frac{\delta f}{\Delta f} = \frac{\pi \sqrt{R}}{1 - R}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Finesse.png}
+\end{figure}
+Bei höherer Finesse wird mehr nach Wellenlänge \enquote{selektiert}. Es löscht sich also mehr Licht durch Interferenz aus und es wird gemittelt über einen Wellenlängenbereich weniger
+transmittiert als bei geringerer Finesse. Exemplarisch ist dieser Zusammenhang in \autoref{fig:finesse} dargestellt.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/18_Interferenz/Finesse_gegen_Transmission.png}
+    \caption{Transmittierte Intensität (y) aufgetragen gegen Finesse (x)}
+    \label{fig:finesse}
+\end{figure}
+
+\myparagraph{Beschreiben Sie die Funktionsweise einer einfachen Antireflexbeschichtung aus einer
+    dielektrischen Schicht.}
+Eine Antireflexbeschichtung besteht aus einem Träger (Glas) auf dem eine $\lambda/4$ - Schicht mit Brechungsindex zwischen Glas und Luft aufgetragen wird. Der einfallende Strahl
+$I_0$ wird zum Teil an der Grenzfläche $n_1$-$n_2$ bzw. an $n_2$-$n_3$ reflektiert. Wählt man $n_2$ richtig, so sind die beiden reflektierten Strahlen um $k \cdot \pi$ phasenverschoben,
+was zu einer gegenseitigen Auslöschung führt. Durch verwenden von mehreren Schichten, kann ein größerer Spektralbereich abgedeckt werden.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/18_Interferenz/Antireflexionsbeschichtung.png}
+\end{figure}
+
+\newpage
+
+%Start Martin
+\section{Beugung}
+\label{Beugung}
+
+\myparagraph{Leiten Sie die Formel für die Intensitätsverteilung einer regelmäßigen Anordnung von
+    kohärenten Emittern her und skizzieren Sie diese in einem Diagramm (Intensität vs.
+    Winkel).}
+Das von den Emittern ausgesendete Licht, beobachtet in eine Richtung $\theta$, muss unterschiedlich lange Wegstrecken zurücklegen. Der Gangunterschied zwischen benachbarten
+Teilwellen ist $\Delta s = d \cdot \sin \theta$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/19/1.1}
+\end{figure}
+
+Dadurch kommt es zu einem Phasenversatz
+\begin{align*}
+    \Delta \varphi = \frac{2 \pi}{\lambda} \Delta s = \frac{2 \pi}{\lambda} d \cdot \sin \theta
+\end{align*}
+zwischen benachbarten Teilwellen.
+Die Gesamtamplitude von N Emittern auf der Geraden in x-Richtung ist dann für gleiche Teilamplituden $A_j = A$ der einzelnen Streuer
+\begin{align*}
+    E = A \sum_{j=1}^{N} e^{i (\omega t + \varphi_j)} = A e^{i \omega t} \sum_{j=1}^{N} e^{i (j - 1) \Delta \varphi}
+\end{align*}
+wenn wir die Phase der ersten Teilwelle $\varphi_1 = 0$ setzen. Die
+Summe der geometrischen Reihe ist:
+\begin{align*}
+    \sum_{j=1}^{N} e^{i (j -1) \Delta \varphi} & = \frac{e^{i N \Delta \varphi} - 1}{e^{i \Delta \varphi} - 1}                                                                                                                             \\
+                                               & = e^{i \frac{N-1}{2} \Delta \varphi} \cdot \frac{e^{i \frac{N}{2} \Delta \varphi} - e^{-i \frac{N}{2} \Delta \varphi}}{e^{i \frac{\Delta \varphi}{2}} - e^{- i \frac{\Delta \varphi}{2}}} \\
+                                               & = e^{i \frac{N-1}{2} \Delta \varphi} \cdot \frac{\sin(\frac{N}{2} \Delta \varphi)}{\sin(\frac{\varphi}{2})}
+\end{align*}
+Für die Intensität $I = c \cdot \varepsilon_0 \cdot \abs{E}^2$ der Welle in Richtung $\theta$ folgt daraus:
+\begin{align*}
+    I(\theta) = I_0 \cdot \left[ \frac{\sin(N \pi \frac{d}{\lambda} \sin\theta)}{\sin(\pi \frac{d}{\lambda} \sin \theta)} \right]^2
+\end{align*}
+$I_0$ entspricht hier der von einem Emitter ausgestrahlten Intensität.
+\[I_0 = c \cdot \varepsilon_0 \cdot A_e^2\]
+
+\begin{figure}[H]
+    \centering
+    \caption{Streuintensität $I(\theta)$ für $d < \lambda$ und $D = N \cdot d = 100 \lambda$. Für die Fußpunktsbreite, zwischen den Nullstellen von $I(\theta)$, gilt $\Delta \theta = 2 \lambda / (N \cdot d)$.}
+    \includegraphics[width=10cm]{image/19/1.2}
+\end{figure}
+
+
+\myparagraph{Beugung am Einzelspalt: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
+    Fraunhofer'schen Beugungsbild eines einzelnen, mit einer ebenen Welle beleuchteten
+    Spaltes an und skizzieren Sie diese in einem Diagramm. Bei welchem Winkel liegt das erste
+    Beugungsminimum und wie lässt sich dies einfach erklären?}
+
+\begin{figure}[H]
+    \begin{minipage}{.47\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{image/19/2.1}
+
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}{.47\textwidth}
+        \centering
+        \includegraphics[width=0.92\linewidth]{image/19/2.2}
+    \end{minipage}
+\end{figure}
+
+Für die Intensität $I$ in Abhängigkeit vom Winkel $\theta$ ergibt sich der folgende Ausdruck:
+
+\begin{align*}
+    I(\theta) = I_0 \cdot \left[ \frac{\sin(\pi \frac{b}{\lambda} \sin \theta)}{\pi \frac{b}{\lambda} \sin \theta} \right]^2
+\end{align*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/19/2.3}
+    \caption{Intensitätsverteilung $I(\theta)$ bei der Beugung am Spalt für verschiedene Werte des Verhältnisses $b/\lambda$}
+\end{figure}
+
+Das erste Beugungsminimum liegt bei $\sin(\theta) = \lambda / b$. Es ergibt sich wenn der Gangunterschied $\Delta s = b \cdot \sin(\theta)$ der Randstrahlen genau $\lambda$ beträgt (destruktive Interferenz).
+
+\myparagraph{Beugung am Gitter: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
+    Fraunhofer‘schen Beugungsbild eines mit einer ebenen Welle beleuchteten Spaltgitters an
+    und skizzieren Sie diese in einem Diagramm. Bei welchen Winkeln liegen die Hauptmaxima
+    und wie lassen sich diese Winkel einfach erklären?}
+
+Die Intensität $I(\theta)$ in Abhängigkeit vom Einfallswinkel $\theta$ ergibt sich zu folgendem Ausdruck:
+\begin{align*}
+    I(\theta) = I_s \cdot \left[ \frac{\sin(\pi \frac{b}{\lambda} \sin \theta)}{\pi \frac{b}{\lambda} \sin \theta} \right]^2 \cdot \left[ \frac{\sin(N \pi \frac{d}{\lambda} \sin \theta)}{\sin(\pi \frac{d}{\lambda} \sin \theta)} \right]^2
+\end{align*}
+
+$I_s = N^2 \cdot I_0$ ist dabei die Intensität, die auf das Spaltgitter trifft. Ein Hauptmaxima tritt auf wenn gilt:
+
+\begin{align*}
+    d \cdot \sin(\theta) = k \cdot \lambda \qq{für} k \in \mathbb N_{\ne 0}
+\end{align*}
+
+Maxima von $I(\theta)$ treten in denjenigen Richtungen auf, für welche der Gangunterschied zwischen äquivalenten Teilbündeln aus benachbarten Spalten ein ganzzahliges Vielfaches von $\lambda$ ist und es zu konstruktiver Interferenz kommt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{image/19/3}
+    \caption{Intensitätsverteilung $I(\theta)$ bei einem Beugungsgitter mit acht Spalten, bei dem $d/b = 2$ ist. In die zweite Interferenzordnung gelangt wegen des Beugungsminimums kein Licht}
+\end{figure}
+
+Wie groß diese Maxima sind, hängt von der Beugungsverteilung der Einzelspalte, d. h. vom ersten Faktor der Formel für die Intensität ab. Die Beugung sorgt dafür, dass überhaupt Licht in die Richtungen $\theta > 0$ gelangt. Je breiter die Spalte sind, desto geringer werden die möglichen Winkel, bei denen noch eine merkliche Intensität $I(\theta)$ auftritt.
+
+\myparagraph{Skizzieren Sie den Aufbau eins geblazeten Gitters und erklären Sie dessen Funktion.}
+
+Unter einem geblazten Gitter versteht man ein Reflexionsgitter, dessen Reflexionsflächen geneigt zur Gitterfläche stehen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/19/4.1}
+\end{figure}
+
+Es gilt:
+\begin{align*}
+    I(\theta) = I_s \cdot%
+    \left[ \frac{\sin[\pi \frac{b}{\lambda} (\sin(\alpha - \theta) - \sin(\beta + \theta))]}{\pi \frac{b}{\lambda} (\sin(\alpha - \theta) - \sin(\beta + \theta))} \right]^2 \cdot%
+    \left[ \frac{\sin[N \pi \frac{d}{\lambda} (\sin \alpha - \sin \beta)]}{\sin[\pi \frac{d}{\lambda} (\sin \alpha - \sin \beta)]} \right]^2
+\end{align*}
+
+Der sogenannte \textit{Blazewinkel $\theta$} kann für einen bestimmten Wellenlängenbereich optimiert werden. Es kann eine Verschiebung der Hauptintensität
+von der 0. auf die $m$-te Ordnung bewirkt werden. Wählt man $\theta$ so, dass für die Mitte $\lambda_m$ des zu messenden Wellenlängenbereiches $\Delta \lambda$
+der Winkel $\beta_m$, bei dem das Interferenzmaximum $m$-ter Ordnung auftritt, gleich dem Reflexionswinkel $r = \theta -\beta$ ist. Dann geht fast die gesamte
+reflektierte Intensität in die m-te Ordnung. Wegen der Beugung an jeder Furche der Breite $b$ wird das reflektierte Licht in einen Winkelbereich $\Delta \beta$
+um $\beta_m = r - \theta$ gebeugt, sodass man einen größeren Wellenlängenbereich $\Delta \lambda$ mit nur wenig variierender Intensität $I(\beta)$ messen kann.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/19/4.2}
+\end{figure}
+
+Ein wichtiges Einsatzgebiert solcher Gitter befindet sich z.B. in der Spektroskopie.
+
+\myparagraph{Erklären und Skizzieren Sie Aufbau und Funktion einer Fresnel‘schen Zonenplatte.}
+
+Eine Fresnel'sche Zonenplatte kann genutzt werden um noch mehr Licht auf den Punkt $P$ zu konzentrieren,
+als es mit einer einfachen kreisförmigen Blende möglich wäre. Dazu wird z.B. eine Glasplatte mit aufgedampften,
+undurchlässige Kreisringen, welche so angebracht sind, dass sie z.B. den ungeradzahligen Fresnel-Zonen entsprechen,
+verwendet. Dadurch werden alle Beiträge der geradzahligen Zonen durchgelassen, sodass in der Summe alle Glieder
+gleichen Vorzeichens in Phase aufsummiert werden. Übrig bleibt nur konstruktive Interferenz, da die destruktiv
+interferierenden Teile ausgeblendet werden.
+
+\begin{figure}[H]
+    \begin{minipage}{.47\textwidth}
+        \centering
+        \includegraphics[width=0.5\linewidth]{image/19/5.1}
+
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}{.47\textwidth}
+        \centering
+        \includegraphics[width=0.92\linewidth]{image/19/5.2}
+    \end{minipage}
+\end{figure}
+
+Die Wirkung der Zonenplatte entspricht somit der einer optischen Linse, wobei die Brennweite der Platte wellenlängenabhängig
+ist. Für den Radius $\rho_m$ der $m$-ten Zone gilt:
+
+\begin{align*}
+    \rho_m = \sqrt{m \cdot r_0 \cdot \lambda}
+\end{align*}
+
+Die Zonenbreite nimmt mit steigendem $m$ ab, die Zonenfläche bleibt stets konstant.
+Anwendung: Röntgenlinsen, Linsen für Teilchenstrahlen
+
+\myparagraph{Beugung am Gitter: Schreiben Sie einen Ausdruck für die Intensitätsverteilung im
+    Fraunhofer‘schen Beugungsbild einer mit einer ebenen Welle beleuchteten Kreisblende an
+    und skizzieren Sie diese in einem Diagramm.}
+
+Durch Lösen des Beugungsintegrals kann die Lösung als Funktion der Bessel-Funktion 1. Ordnung $J_1$ gefunden werden.
+
+\begin{equation}
+    I(\theta) = I_0 \cdot \left( \frac{2 J_1(x)}{x} \right)^2 \qq{mit} x = \frac{2 \pi R}{\lambda} \sin(\theta)
 \end{equation}
 
-- ist immer gleich dem Produkt der Interferenzordnung m und der zahl der beleuchteten Gitterfurchen N
+Das Interferenzmuster sieht folgendermaßen aus:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/19/6}
+\end{figure}
+
+\newpage
+
+\section{Optische Instrumente I}
+
+\paragraph{Skizzieren und beschreiben Sie den Aufbau des Auges. Welche Arten von Sehzellen sind
+    vorhanden und welche spektrale Empfindlichkeit haben diese (Diagramm)?} ~
+
+Arten von Sehzellen:
+\begin{itemize}
+    \item Zapfen (Farbsehen)
+    \item Stäbchen (Schwarz-Weiß-Sehen)
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.64\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{image/20/1.png}
+    \end{minipage}%
+    \begin{minipage}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{image/20/2.png}
+    \end{minipage}
+\end{figure}
+
+\paragraph{Zeichnen Sie den Strahlengang für eine Lupe, wobei das Auge auf unendlich eingestellt
+    sein soll um ein scharfes Bild des Gegenstandes durch die Lupe zu sehen. Leiten Sie einen Ausdruck
+    für die Winkelvergrößerung der Lupe her.}~
+
+Strahlengang:
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{image/20/3.png}
+    \end{minipage}%
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{image/20/4.png}
+    \end{minipage}
+\end{figure}
+
+\begin{equation}
+    V \approx \frac{\tan(\varepsilon)}{\tan(\varepsilon_0)} = \frac{G}{f} \cdot \frac{s_0}{G} = \frac{s_0}{f} \qq{mit} s_0 = \SI{25}{cm}
+\end{equation}
+
+\paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Mikroskops mit dem Abbildungsstrahlengang
+    (von einem Objektpunkt zum Bildpunkt). Wie ist die Vergrößerung definiert und wie kann man sie
+    berechnen)?} ~
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[c]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{image/20/5.png}
+    \end{minipage}%
+    \qquad
+    \begin{minipage}[c]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{image/20/6.png}
+    \end{minipage}
+\end{figure}
+Linkes Bild:
+\begin{itemize}
+    \item Linse 1: reelles Zwischenbild (Objekt)
+    \item Linse 2: quasi Lupe für Zwischenbild (Okular)
+\end{itemize}
+wenn $g = f_1$:
+\begin{equation}
+    V = \frac{(d- f_2)s_0}{f_1 f_2}
+\end{equation}
+
+\paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Kepler'schen Fernrohres mit dem
+    Abbildungsstrahlengang (von einem weit entfernten Objektpunkt zum Bildpunkt). Wie ist die
+    Vergrößerung definiert und wie kann man sie berechnen?} ~
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{image/20/7.png}
+\end{figure}
+Die Vergrößerung des Fernrohrs ist gleich dem Verhältnis der Brennweiten von Objektiv und Okular.
+\begin{equation}
+    V_F = \frac{f_1}{f_2}
+\end{equation}
+
+\paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Galilei'schen Fernrohres mit dem
+    Abbildungsstrahlengang (von einem weit entfernten Objektpunkt zum Bildpunkt). Wie ist die
+    Vergrößerung definiert und wie kann man sie berechnen?} ~
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/8.png}
+\end{figure}
+Die Vergrößerung des Fernrohrs ist gleich dem Verhältnis der Brennweiten von Objektiv und Okular.
+\begin{equation}
+    V = \frac{\varepsilon}{\varepsilon_0} = \frac{f_1}{f_2} < 0
+\end{equation}
+
+\paragraph{Zeichnen Sie den prinzipiellen Aufbau eines Projektors mit dem Abbildungsstrahlengang
+    und dem Beleuchtungsstrahlengang.} ~
+
+Prinzipieller Aufbau eines Diaprojektors:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{image/20/10.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/9.png}
+\end{figure}
+A = Abbildungsstrahlengang, B = Beleuchtungsstrahlengang
+
+\paragraph{Was versteht man unter Schärfentiefe und Lichtstärke? Wie kann man diese Größen bei
+    einer gegebenen Linse beeinflussen? Beschreiben Sie wie sich die Größen ändern.} ~
+
+\textbf{Schärfentiefe:} \\
+Man nennt den Bereich, in dem man die Objekte verschieben kann, ohne dass die Fläche dieser Bildscheibchen des Objektpunktes $A$ größer als die minimale vom Auge in der deutlichen Sichtweite noch auflösbare Fläche wird, die Schärfentiefe des optischen Instrumentes.
+Die Schärfentiefe ist ein Maß für die Ausdehnung des scharfen Bereiches im Objektraum eines abbildenden optischen Systems. Die Schärfentiefe kann bei gegebener Linse durch den Durchmesser $u$ beeinflusst werden bzw. durch Veränderung der Abstände $b_v$ und $b_0$.
+\begin{equation}
+    \frac{u}{D_B} = \frac{b_v - b_0}{b_v}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/11.png}
+\end{figure}
+\textbf{Lichtstärke:}
+Die Lichtstärke $I_V$ gibt den auf den Raumwinkel $\Omega$ bezogenen Lichtstrom $\Phi_V$ an. Sie beschreibt somit eine Eigenschaft der Lichtquelle und ist unabhängig von der Position des Beobachters. Ihre SI-Einheit ist Candela ($\si{cd}$).
+\begin{equation}
+    \Omega = \frac{\pi \frac{D^2}{4}}{f^2} = \frac{\pi}{4} \left( \frac{D}{f} \right)^2
+\end{equation}
+$\Omega$ = Raumwinkel, $D$ = Durchmesser Eintrittspupille, $f$ = Brennweite\\
+Eine Veränderung des Blendendurchmesser $D$ beeinflusst die Lichtstärke.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/20/12.png}
+\end{figure}
+
+\paragraph{Welchen Einfluss hat Beugung auf die Abbildung mit einer Linse? Wie ist das
+    Auflösungsvermögen definiert? Wie groß ist das Auflösungsvermögen einer Linse mit gegebenem
+    Durchmesser und Brennweite für die Abbildung weit entfernter Gegenstände?} ~
+
+\textbf{Auslösungsvermögen:}\\
+Fähigkeit, zwei dicht nebeneinanderliegende Punkte unterscheiden zu können.
+
+\textbf{Kleinster noch auflösbarer Winkelabstand:}
+\begin{equation}
+    \Theta_{min} = \frac{1,22 \cdot \lambda}{D}
+\end{equation}
+
+\textbf{Kleinste noch auflösbare Länge:}
+\begin{equation}
+    \Delta x_{min} = f \cdot \sin(\Theta_{min}) = \frac{1,22 \cdot \lambda \cdot f}{D}
+\end{equation}
+
+$f$ = Brennweite, $D$ = Öffnungsdurchmesser, $\lambda$ = Wellenlänge, $\Delta x_{min}$ = kleinster auflösbarer Abstand
+
+\textbf{Einfluss der Beugung auf eine Abbildung mit Linse:}
+\begin{figure}[H]
+    \centering
+	\begin{minipage}{0.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{image/20/13.png}
+	\end{minipage}%
+	\begin{minipage}{0.45\linewidth}
+		\center
+		\includegraphics[width=\linewidth]{image/20/beugungsbegrenze_abbildung.png}
+		klare Trennung vs. Auflösungsgrenze
+	\end{minipage}
+\end{figure}
+
+\newpage
+
+\section{Optische Instrumente II}
+
+\paragraph{Erklären Sie kurz die Abbe'sche Abbildungstheorie zur Bildentstehung} ~
+
+Jedes Objekt ruft Beugungseffekte hervor. Bildinformation des Objektes wird auf die Beugungsmaxima aufgeteilt. Je mehr Maxima für die Bildgebung genutzt werden
+können, desto mehr Informationen sind über das Objekt vorhanden und umso höher ist daher auch die Auflösung. Es werde ein Objekt mit einer ebenen Lichtwelle
+beleuchtet (z.B. ein Doppelspalt). Das Bild wird mittels Linse auf einen Schirm projiziert. Die 0. Ordnung geht gerade ohne Ablenkung durch den Spalt,
+die $\pm$1. Ordnungen bilden schließlich die Umrisse des Bildes. Um also etwas abbilden zu können, muss die Linse zumindest den Austrittswinkel der $\pm$1.
+Ordnungen unter ihren maximalen Öffnungswinkel $\alpha_{max}$ fassen. Ein Objekt ist nur auflösbar, wenn zumindest 0. und 1. Beugungsordnung erfasst werden.
+
+\paragraph{Berechnen Sie am Beispiel eines Liniengitters das Auflösungsvermögen einer Abbildung
+    durch ein Objektiv.} ~
+
+\textit{Auflösungsvermögen:} kleinster auflösbarer Abstand $\Delta x_{min}$
+\begin{equation}
+    \Delta x_{min} = \frac{\lambda}{n \sin \alpha_{max}}
+\end{equation}
+Wobei $\alpha_{max}$ der maximale Öffnungswinkel des Objektivs und $n$ die Brechzahl dessen ist. Es folgt also, dass ein Gitter mit
+\[d \geq \frac{\lambda}{n \sin \alpha_{max}}\]
+von einer Linse mit maximalem Öffnungswinkel $\alpha_{max}$ auflösbar ist.
+
+\paragraph{Was besagt die Abbe'sche Sinusbedingung? Erklären Sie anhand eines Gitters als Objekt
+    warum sie gelten muss, um eine gute Abbildung zu erreichen.} ~
+
+Die \textit{Abbe'sche Sinusbedingung} ist eine notwendige Bedingung, um ein kleines achsnahes und achssenkrechtes
+Flächenelement frei von Bildfehlern abzubilden. Sie besagt, dass das Verhältnis von objekt- und bildseitiger \textit{numerischer Apertur $\NA$}
+\begin{equation}
+    \frac{\NA_1}{\NA_2} = \frac{n_1 \sin(\alpha)}{n_2 \sin(\beta)} = \frac{b}{g} = \text{const.}
+\end{equation}
+für alle Eintrittswinkel $\alpha$ und Austrittswinkel $\beta$ (zur optischen Achse gemessen) aller einfallender Lichtstrahlen konstant sein muss.
+Die Winkel beschreiben also alle Lichtstrahlen aller Maxima beliebiger Ordnung und werden zur optischen Achse -- nicht zur Hauptebene -- gemessen.
+Für beidseitig gleiche Brechzahl $n_1 = n_2$ kürzen sich diese aus der Gleichung.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/22/opt23}
+\end{figure}
+
+
+\paragraph{Zeichnen Sie den Strahlengang für die Abbildung eines Gitters durch eine oder zwei Linsen
+    sowohl für das Beugungsbild (und weiterer Strahlengang) als auch für das Bild. Achten Sie
+    auf die korrekte Konstruktion der Bild- bzw. Beugungsbildpunkte.} ~
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{image/22/Gitter_Strahlengang.png}
+\end{figure}
+
+\paragraph{Schreiben Sie das Auflösungsvermögen für ein Mikroskopobjektiv an, wenn die
+    Gegenstandspunkte inkohärent leuchten bzw. inkohärent beleuchtet sind. Wie ist die Numerische
+    Apertur definiert (Skizze)?} ~
+
+Die \textit{numerischen Apertur $\NA$} beschreibt das Vermögen eines optischen Elements Licht zu fokussieren. Eine größere numerische Apertur
+bedeutet eine bessere Auflösung.
+\begin{equation}
+    \NA = n \sin(\alpha_{max})
+\end{equation}
+Mit ihr gilt für die kleinste noch abbildbare Gitterkonstante $d_{min}$:
+\begin{equation}
+    d_{min} = 1,22 \frac{\lambda}{2 \NA} = 1,22 \frac{\lambda}{2 \cdot n \sin(\alpha_{max})}
+\end{equation}
+mit $\alpha_{max}$ als dem maximalen Öffnungswinkel.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/22/opt25}
+\end{figure}
+
+\paragraph{Zeichen Sie den optischen Strahlengang eines Gittermonochromators (Czerny-Turner) und
+    bezeichnen Sie alle wesentlichen Elemente.} ~
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{image/22/Czerny-Turner.png}
+\end{figure}
+\begin{itemize}
+    \item[] A: Lichtquelle
+    \item[] B, F: Spalt
+    \item[] C, E: Hohlspiegel
+    \item[] D: rotierbares geblaztes Gitter
+    \item[] G: Detektor
+\end{itemize}
+Durch Rotation kann eingestellt werden, welche Wellenlänge durch den Spalt in den Detektor fällt.
+\paragraph{Wie ist das spektrale Auflösungsvermögen definiert? Schreiben Sie einen Ausdruck für das
+    spektrale Auflösungsvermögen eines Gittermonochromators an.} ~
+
+Das \textit{spektrale Auflösungsvermögen} ist definiert als Quotient $\frac{\lambda}{\Delta \lambda}$, wobei $\Delta \lambda = \lambda_1 - \lambda_2$
+der minimale Abstand zweier Wellenlängen ist. Zwei eng beieinanderliegende, gerade noch zu unterscheidende Spektrallinien werden abgebildet. Es gilt:
 \begin{equation}
     \frac{\lambda}{\Delta \lambda} \leq mN
 \end{equation}
+mit $m$ als Ordnungszahl des Interferenzmaximums und $N$ als Anzahl der Gitteröffnungen.
 \newpage
 
 
